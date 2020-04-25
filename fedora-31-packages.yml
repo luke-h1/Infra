@@ -30,6 +30,7 @@
                             - cmake
                             - git
                             - thinkfan
+                            - libreoffice
           
 
 
@@ -102,6 +103,7 @@
                   - gnome-shell-extension-pomodoro
                   - terminator
                   - lame
+
 
           
           - name: install centos 7 minimal iso 
