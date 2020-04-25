@@ -104,13 +104,19 @@
                   - lame
 
           
+          - name:
+            get_url: 
+              url: http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso 
+              dest: /srv/isos/CentOS-7-x86_64-Minimal-1908.iso 
 
-                    #          - name: install centos minimal iso   
-                    #  get_url: url={{mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso}} dest={{/srv/isos}}{{CentOS-7-x86_64-Minimal-1908.iso}}  
-         
-                    #   - name: install fedora iso  
-                    #   get_url: url={{https://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-31-1.9.iso}} dest={{/srv/isos}}/{{Fedora-Workstation-Live-x86_64-31-1.9.iso}} 
+
+          - name: 
+            get_url:
+              url: http://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-31-1.9.iso
+              dest: /srv/isos/Fedora-Workstation-Live-x86_64-31-1.9.iso
+ 
           
-
-                    # - name: install arch iso  
-                    #get_url: url={{mirrors.manchester.m247.com/arch-linux/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso}} dest={{/srv/isos}}/{{archlinux-2020.04.01-x86_64.iso}} 
+          - name:
+            get_url: 
+              url: http://mirrors.manchester.m247.com/arch-linux/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso          
+              dest: /srv/isos/archlinux-2020.04.01-x86_64.iso 
