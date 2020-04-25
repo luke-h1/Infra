@@ -1,0 +1,116 @@
+---
+- hosts: localhost
+  tasks:
+          - name: Add a list of software on localhost ...
+            yum:
+                    name: "{{ packages }}"
+                    state: present
+            vars:
+                    packages:
+                            - vim
+                            - unzip
+                            - htop
+                            - atop
+                            - iftop
+                            - nmon
+                            - sysstat
+                            - iotop
+                            - nicstat
+                            - vnstat
+                            - vim
+                            - htop
+                            - nmap
+                            - ufw
+                            - bridge-utils
+                            - libvirt
+                            - virt-install
+                            - qemu-kvm
+                            - lightdm
+                            - terminator
+                            - cmake
+                            - git
+                            - thinkfan
+          
+
+
+
+          - name: create custom directories 
+            file: 
+              path: /srv/scripts 
+              path: /srv/git
+              path: /var/log/temperature.log 
+              path: /srv/isos 
+              state: directory
+
+
+
+          - name: remove certain directories 
+            file: 
+              state: "{{ item }}" 
+              path: "/home/lukehowsam/Pictures" 
+              path: "/home/lukehowsam/Documents" 
+              path: "/home/lukehowsam/Public" 
+              path: "/home/lukehowsam/Templates" 
+              path: "/home/lukehowsam/Music" 
+              path: "/home/lukehowsam/Videos"
+            with_items: 
+              - absent 
+              - directory  
+               
+          - name: Delete a list of software on localhost ...
+            yum:
+                    name: "{{ packages }}"
+                    state: absent
+            vars:
+                    packages:
+                            - nano
+                            - firewalld 
+                            - claws
+
+          - name: install dnf dev tools  
+            dnf: 
+                name: "@development tools" 
+
+          
+
+          - name: install multimedia group 
+            dnf: 
+                name: "@Multimedia"
+          
+  
+          - name: updates all packages 
+            dnf: 
+                name: "*"
+                state: latest 
+
+
+
+             
+
+          - name: install terminator, apache, mariadb, pomodoro timer & kvm + it's dependencies  
+            dnf: 
+                name:
+                  - httpd 
+                  - mariadb-server 
+                  - bridge-utils
+                  - libvirt
+                  - virt-install 
+                  - qemu-kvm 
+                  - virt-top
+                  - libguestfs-tools 
+                  - virt-manager
+                  - gnome-shell-extension-pomodoro
+                  - terminator
+                  - lame
+
+          
+
+                    #          - name: install centos minimal iso   
+                    #  get_url: url={{mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso}} dest={{/srv/isos}}{{CentOS-7-x86_64-Minimal-1908.iso}}  
+         
+                    #   - name: install fedora iso  
+                    #   get_url: url={{https://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-31-1.9.iso}} dest={{/srv/isos}}/{{Fedora-Workstation-Live-x86_64-31-1.9.iso}} 
+          
+
+                    # - name: install arch iso  
+                    #get_url: url={{mirrors.manchester.m247.com/arch-linux/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso}} dest={{/srv/isos}}/{{archlinux-2020.04.01-x86_64.iso}} 
