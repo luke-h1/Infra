@@ -105,7 +105,11 @@
                   - lame
 
 
-          
+          - name: install ubuntu 18.04 iso 
+            get_url: 
+              url: https://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-desktop-amd64.iso 
+              dest: /srv/isos/ubuntu-18.04.4-desktop-amd64.iso
+  
           - name: install centos 7 minimal iso 
             get_url: 
               url: http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso 
