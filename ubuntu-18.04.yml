@@ -3,11 +3,11 @@
 - hosts: localhost 
   tasks: 
           - name: add list of software to ubuntu vm 
-           apt:   
+            apt:   
                   name: "{{ packages }}"
                   state: present 
-           vars: 
-                  packages: 
+            vars: 
+                packages: 
                           - unzip 
                           - htop 
                           - atop 
@@ -41,17 +41,17 @@
               state: directory 
 
 
-         - name: delete list of software on vm 
-           apt: 
+          - name: delete list of software on vm 
+            apt: 
                   name: "{{ packages }}" 
                   state: absent 
-           vars: 
+            vars: 
                   packages: 
                           - nano 
                           - firewalld 
                           
-        - name: update all packages 
-          apt: 
+          - name: update all packages 
+            apt: 
               name: "*" 
               state: latest  
 
