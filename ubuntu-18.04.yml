@@ -21,14 +21,12 @@
                           - nmap
                           - ufw
                           - bridge-utils
-                          - libvirt
-                          - virt-install
                           - qemu-kvm
                           - terminator
                           - cmake
                           - git
                           - libreoffice
-                          - httpd
+                          - nginx 
                           - mariadb-server 
                           
 
