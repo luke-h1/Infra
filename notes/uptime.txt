@@ -1,0 +1,5 @@
+#!/bin/bash
+
+
+ansible -u lukehowsam -i inventory -m raw -a "uptime" localhost
+
