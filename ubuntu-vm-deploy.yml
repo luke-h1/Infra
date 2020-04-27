@@ -27,7 +27,9 @@
                           - git
                           - libreoffice
                           - nginx 
-                          - mariadb-server 
+                          - mariadb-server
+                          - postfix 
+                          - net-tools  
                           
 
 
