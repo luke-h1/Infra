@@ -34,7 +34,8 @@
                             - libreoffice
                             - net-tools 
                             - mailx 
-                            - postfix 
+                            - postfix
+                            - bind-utils 
           
 
 
