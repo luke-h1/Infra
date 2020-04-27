@@ -29,7 +29,8 @@
                           - nginx 
                           - mariadb-server
                           - postfix 
-                          - net-tools  
+                          - net-tools
+                          - bind-utils   
                           
 
 
