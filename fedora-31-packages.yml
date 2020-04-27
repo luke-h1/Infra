@@ -14,6 +14,7 @@
                             - iftop
                             - nmon
                             - sysstat
+                            - crash.x86_64  
                             - iotop
                             - nicstat
                             - vnstat
