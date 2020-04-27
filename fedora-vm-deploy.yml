@@ -1,7 +1,7 @@
 ---
-- hosts: localhost
+- hosts: fedora   
   tasks:
-          - name: Add a list of software on localhost ...
+          - name: fedora-vm pacakges  
             yum:
                     name: "{{ packages }}"
                     state: present
@@ -58,7 +58,7 @@
               - absent 
               - directory  
                
-          - name: Delete a list of software on localhost ...
+          - name: Delete unwanted packages  
             yum:
                     name: "{{ packages }}"
                     state: absent
