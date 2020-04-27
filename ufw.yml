@@ -1,0 +1,15 @@
+---
+- hosts: vms 
+  tasks: 
+
+  - name: rate-limiting ufw to prevent brute force attacks 
+    ufw: 
+      rule: limit 
+      port: ssh 
+      proto: tcp 
+
+
+  - name: allow ssh to vms  
+    ufw: 
+      rule: allow 
+      port: 22  

@@ -39,7 +39,6 @@
             file: 
               path: /srv/scripts 
               path: /srv/git
-              path: /var/log/temperature.log 
               path: /srv/isos 
               state: directory
 
