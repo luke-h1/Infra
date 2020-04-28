@@ -35,7 +35,8 @@
                             - net-tools 
                             - mailx 
                             - postfix
-                            - bind-utils 
+                            - bind-utils
+                            - bridge-utils  
           
 
 
