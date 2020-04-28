@@ -2,29 +2,35 @@
 
 various ansible playbook automation playbooks 
 
+This repository contains real world examples for Ansible playbooks, especially for Fedora and its downstream (RHEL), as well as modules that are not a part of Ansible's core distribution.
 
 ## Getting Started
+If you have just found Ansible, ubuntu or Fedora, you should start here:
 
-Install ansible on your local machine & add the IPs of your targeted machines you want to run playbooks on in the /etc/ansible/hosts file & /etc/ansible/inventory files. 
+ * [Fedora](http://www.fedoraproject.org)
+ * [Ansible project](https://github.com/ansible/ansible) -- see the examples directory
+ * [ubuntu](https://ubuntu.com/)
+
 
 
 ### Prerequisites
-Ansible installtion on host machine 
+The setup of Ansible is explained on the 
+[Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. 
+Here is only the setup of the managed nodes covered. For every system you want
+to manage, you need to have the client's SSH key in the *authorized_keys* file
+of the management system and Python.
 
+Make sure that [Python](http://www.python.org/) is installed. If not, install
+the Python package.
 
-### Installing
-
-install ansible on local machine 
-
-Centos / fedora 
+```bash
+$ sudo dnf -y install python
 ```
-sudo yum install -y ansible  
+
+```bash 
+$ sudo yum install -y ansible 
 ```
 
-Ubuntu / debian 
-```
-sudo apt install -y ansible  
-```
 
 
 
