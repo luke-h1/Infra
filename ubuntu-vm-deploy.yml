@@ -30,7 +30,8 @@
                           - mariadb-server
                           - postfix 
                           - net-tools
-                          - bind-utils   
+                          - bind-utils
+                          - bridge-utils   
                           
 
 
