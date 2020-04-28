@@ -41,7 +41,7 @@ sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
 
 ## Contributing
 
-Please read [CONTRIBUTING.md] for details on  code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on  code of conduct, and the process for submitting pull requests to us.
 
 
 
