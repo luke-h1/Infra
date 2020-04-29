@@ -72,7 +72,25 @@
               path: /srv/wallpapers 
               state: directory
 
+          - name: delete pre-existing xfce4 config directory  
+            file: 
+              path: /home/lukehowsam/.config/xfce4
+              state: absent
 
+
+          - name: move .vimrc to home directory 
+            command: mv /srv/git/configuration-files/.vimrc /home/lukehowsam/ 
+
+          - name: move xfce4 config file to ~/.config 
+            command: mv /srv/git/configuration-files/xfce4 /home/lukehowsam/.config/
+
+
+          - name: move Sly theme to /usr/share/themes 
+            command: mv /srv/git/xfce-themes/Sly /usr/share/themes 
+
+
+          - name: move notes file to home directory 
+            command: mv /srv/git/notes /home/lukehowsam  
 
           - name: remove certain directories 
             file: 
