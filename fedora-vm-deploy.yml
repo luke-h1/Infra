@@ -39,29 +39,6 @@
                             - dnf   
           
 
-          - name: checkout git repos 
-          - git: 
-              repo: "https://github.com/luke-h1/tools" 
-              dest: /srv/git/tools  
-
-
-          - name: checkout config-file repo 
-          - git: 
-              repo: "https://github.com/luke-h1/configuration-files" 
-              dest: /srv/git/configuration-files 
-
-
-         - name: checkout xfce-themes repo 
-         - git: 
-              repo: "https://github.com/luke-h1/xfce-themes"   
-              dest: /srv/git/xfce-themes 
-
-
-          - name: 
-          - git: 
-              repo: "https://github.com/luke-h1/notes" 
-              dest: /srv/git/notes 
-
 
           - name: create custom directories 
             file: 
@@ -71,25 +48,6 @@
               path: /srv/wallpapers 
               state: directory
 
-          - name: delete pre-existing xfce4 config directory  
-            file: 
-              path: /home/lukehowsam/.config/xfce4
-              state: absent
-
-
-          - name: move .vimrc to home directory 
-            command: mv /srv/git/configuration-files/.vimrc /home/lukehowsam/ 
-
-          - name: move xfce4 config file to ~/.config 
-            command: mv /srv/git/configuration-files/xfce4 /home/lukehowsam/.config/
-
-
-          - name: move Sly theme to /usr/share/themes 
-            command: mv /srv/git/xfce-themes/Sly /usr/share/themes 
-
-
-          - name: move notes file to home directory 
-            command: mv /srv/git/notes /home/lukehowsam  
 
           - name: remove certain directories 
             file: 
@@ -150,39 +108,6 @@
                   - terminator
                   - lame
                   - thinkfan 
-
-          - name: enable ufw 
-            systemd: 
-              name: ufw 
-              enabled: yes 
-              masked: no 
-
-          - name: start ufw 
-            systemd: 
-              state: started 
-              name: ufw 
-
-          - name: setup logging for ufw 
-          - ufw: 
-              logging: 'on' 
-
-          - name: rate limit ufw to prevent brute force
-          - ufw: 
-              rule: limit 
-              port: ssh 
-              proto: tcp 
-
-          - name: allow OPENSSH 
-          - ufw: 
-              rule: allow 
-              name: OpenSSH
-
-
-          - name: enable thinkfan 
-            systemd: 
-            name: thinkfan 
-            enabled: yes 
-            masked: no 
 
 
           - name: install ubuntu 18.04 iso 
