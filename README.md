@@ -36,24 +36,20 @@ $ sudo yum install -y ansible
 git checkout https://github.com/luke-h1/ansible-automation
 cd ~/ansible-automation 
 sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
+# -K -K = elevate to sudo 
+# --ask-pass = ask for SSH & BECOME password 
+# -vvv = verbose output 
 ```
-
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on  code of conduct, and the process for submitting pull requests to us.
 
 
-
 ## Authors
-
 * **luke howsam** 
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
-
-// TO DO 
 
