@@ -40,6 +40,28 @@
                             - dnf   
           
 
+          - name: checkout git repos 
+          - git: 
+              repo: "https://github.com/luke-h1/tools" 
+              dest: /srv/git/tools  
+
+
+          - name: checkout config-file repo 
+          - git: 
+              repo: "https://github.com/luke-h1/configuration-files" 
+              dest: /srv/git/configuration-files 
+
+
+         - name: checkout xfce-themes repo 
+         - git: 
+              repo: "https://github.com/luke-h1/xfce-themes"   
+              dest: /srv/git/xfce-themes 
+
+
+          - name: 
+          - git: 
+              repo: "https://github.com/luke-h1/notes" 
+              dest: /srv/git/notes 
 
 
           - name: create custom directories 
@@ -47,6 +69,7 @@
               path: /srv/scripts 
               path: /srv/git
               path: /srv/isos 
+              path: /srv/wallpapers 
               state: directory
 
 
