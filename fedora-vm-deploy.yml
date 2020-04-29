@@ -51,17 +51,14 @@
 
           - name: remove certain directories 
             file: 
-              state: "{{ item }}" 
               path: "/home/lukehowsam/Pictures" 
               path: "/home/lukehowsam/Documents" 
               path: "/home/lukehowsam/Public" 
               path: "/home/lukehowsam/Templates" 
               path: "/home/lukehowsam/Music" 
               path: "/home/lukehowsam/Videos"
-            with_items: 
-              - absent 
-              - directory  
-               
+              state: absent 
+
           - name: Delete unwanted packages  
             yum:
                     name: "{{ packages }}"
