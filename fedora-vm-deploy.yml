@@ -1,5 +1,5 @@
 ---
-- hosts: fedora   
+- hosts: localhost   
   tasks:
           - name: fedora-vm pacakges  
             yum:
@@ -36,7 +36,8 @@
                             - mailx 
                             - postfix
                             - bind-utils
-                            - bridge-utils  
+                            - bridge-utils
+                            - dnf   
           
 
 
