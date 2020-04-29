@@ -30,7 +30,6 @@
                             - terminator
                             - cmake
                             - git
-                            - thinkfan
                             - libreoffice
                             - net-tools 
                             - mailx 
@@ -150,6 +149,40 @@
                   - gnome-shell-extension-pomodoro
                   - terminator
                   - lame
+                  - thinkfan 
+
+          - name: enable ufw 
+            systemd: 
+              name: ufw 
+              enabled: yes 
+              masked: no 
+
+          - name: start ufw 
+            systemd: 
+              state: started 
+              name: ufw 
+
+          - name: setup logging for ufw 
+          - ufw: 
+              logging: 'on' 
+
+          - name: rate limit ufw to prevent brute force
+          - ufw: 
+              rule: limit 
+              port: ssh 
+              proto: tcp 
+
+          - name: allow OPENSSH 
+          - ufw: 
+              rule: allow 
+              name: OpenSSH
+
+
+          - name: enable thinkfan 
+            systemd: 
+            name: thinkfan 
+            enabled: yes 
+            masked: no 
 
 
           - name: install ubuntu 18.04 iso 
