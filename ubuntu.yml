@@ -1,0 +1,59 @@
+---
+- hosts: ubuntu  
+  remote_user: ansible 
+  tasks: 
+          - name: add list of software to ubuntu vm 
+            apt:   
+                  name: "{{ packages }}"
+                  state: present 
+            vars: 
+                packages: 
+                          - unzip 
+                          - htop 
+                          - atop 
+                          - iftop 
+                          - sysstat
+                          - iotop
+                          - nicstat
+                          - vnstat
+                          - vim
+                          - htop
+                          - nmap
+                          - ufw
+                          - bridge-utils
+                          - qemu-kvm
+                          - terminator
+                          - cmake
+                          - git
+                          - libreoffice
+                          - nginx 
+                          - mariadb-server
+                          - postfix 
+                          - net-tools
+                          - bind-utils
+                          - bridge-utils   
+                          
+
+
+          - name: create custom directories 
+            file: 
+              path: /srv/scripts
+              path: /srv/git 
+              path: /srv/isos 
+              state: directory 
+
+
+          - name: delete list of software on vm 
+            apt: 
+                  name: "{{ packages }}" 
+                  state: absent 
+            vars: 
+                  packages: 
+                          - nano 
+                          - firewalld 
+                          
+          - name: update all packages 
+            apt: 
+              name: "*" 
+              state: latest  
+

@@ -1,0 +1,13 @@
+---
+
+- hosts: localhost 
+
+  tasks: 
+          - name: get hostname for testing ansible 
+            command: /bin/hostname 
+            changed_when: False 
+            register: hostname 
+
+          - debug: var={{ item }}
+            with_items: 
+                    - hostname.stdout 
