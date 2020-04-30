@@ -1,24 +1,14 @@
 ---
 - hosts: localhost   
-  tasks:
+  tasks:  
           - name: fedora-vm pacakges  
             yum:
                     name: "{{ packages }}"
                     state: present
             vars:
                     packages:
-                            - vim
-                            - unzip
-                            - htop
                             - atop
                             - iftop
-                            - nmon
-                            - sysstat
-                            - crash.x86_64  
-                            - iotop
-                            - nicstat
-                            - vnstat
-                            - vim
                             - htop
                             - nmap
                             - ufw
@@ -32,11 +22,13 @@
                             - git
                             - libreoffice
                             - net-tools 
-                            - mailx 
                             - postfix
                             - bind-utils
                             - bridge-utils
-                            - dnf   
+                            - dnf
+                            - ffmpeg-libs 
+                            - vlc
+                            - gstreamer     
           
 
 
@@ -69,16 +61,12 @@
                             - firewalld 
                             - claws
 
-          - name: install dnf dev tools  
-            dnf: 
-                name: "@development tools" 
 
-          
 
-          - name: install multimedia group 
-            dnf: 
-                name: "@Multimedia"
-          
+
+
+
+           
   
           - name: updates all packages 
             dnf: 
@@ -87,24 +75,21 @@
 
 
 
-             
+          - name: install groups 
+            yum: 
+             name: 
+               - "@Virtualization Hypervisor" 
+               - "@Virtualization Client" 
+               - "@Security Tools" 
+               - "@Fedora Packager" 
+               - "@Compatibility Libraries"
+               - "@Xfce" 
+               - "@Development Tools"     
 
-          - name: install terminator, apache, mariadb, pomodoro timer & kvm + it's dependencies  
+          - name: mariadb  
             dnf: 
                 name:
-                  - httpd 
                   - mariadb-server 
-                  - bridge-utils
-                  - libvirt
-                  - virt-install 
-                  - qemu-kvm 
-                  - virt-top
-                  - libguestfs-tools 
-                  - virt-manager
-                  - gnome-shell-extension-pomodoro
-                  - terminator
-                  - lame
-                  - thinkfan 
 
 
           - name: install ubuntu 18.04 iso 
@@ -117,13 +102,6 @@
               url: http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso 
               dest: /srv/isos/CentOS-7-x86_64-Minimal-1908.iso 
 
-
-          - name:  install Fedora iso 
-            get_url:
-              url: http://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-31-1.9.iso
-              dest: /srv/isos/Fedora-Workstation-Live-x86_64-31-1.9.iso
- 
-          
           - name: install arch iso 
             get_url: 
               url: http://mirrors.manchester.m247.com/arch-linux/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso          
