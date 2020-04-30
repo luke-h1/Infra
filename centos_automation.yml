@@ -61,7 +61,12 @@
                             - firewalld 
                             - claws
 
-          
+
+
+
+
+
+           
   
           - name: updates all packages 
             dnf: 

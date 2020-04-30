@@ -1,9 +1,0 @@
----
-
-- hosts: localhost 
-  tasks: 
-           - name: updates all packages
-             dnf:
-                  name: "*"
-                  state: latest
-
