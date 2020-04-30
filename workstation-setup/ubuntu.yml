@@ -2,7 +2,7 @@
 - hosts: ubuntu  
   remote_user: ansible 
   tasks: 
-          - name: add list of software to ubuntu vm 
+          - name: ubuntu packages 
             apt:   
                   name: "{{ packages }}"
                   state: present 
@@ -43,13 +43,13 @@
               state: directory 
 
 
-          - name: delete list of software on vm 
+          - name: delete firewalld 
             apt: 
                   name: "{{ packages }}" 
                   state: absent 
             vars: 
                   packages: 
-                          - nano 
+                          
                           - firewalld 
                           
           - name: update all packages 
