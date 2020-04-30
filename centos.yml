@@ -29,6 +29,7 @@
                             - ffmpeg-libs 
                             - vlc
                             - gstreamer     
+                            - nano 
           
 
 
@@ -57,7 +58,6 @@
                     state: absent
             vars:
                     packages:
-                            - nano
                             - firewalld 
                             - claws
 
