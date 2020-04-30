@@ -43,12 +43,12 @@
 
           - name: remove certain directories 
             file: 
-              path: "/home/lukehowsam/Pictures" 
-              path: "/home/lukehowsam/Documents" 
-              path: "/home/lukehowsam/Public" 
-              path: "/home/lukehowsam/Templates" 
-              path: "/home/lukehowsam/Music" 
-              path: "/home/lukehowsam/Videos"
+              path: "/home/$USER/Pictures" 
+              path: "/home/$USER/Documents" 
+              path: "/home/$USER/Public" 
+              path: "/home/$USER/Templates" 
+              path: "/home/$USER/Music" 
+              path: "/home/$USER/Videos"
               state: absent 
 
           - name: Delete unwanted packages  
