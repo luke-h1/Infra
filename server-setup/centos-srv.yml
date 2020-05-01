@@ -1,0 +1,62 @@
+---
+
+- hosts: RHEL 
+  tasks: 
+         - name: install packages 
+           yum: 
+                 name: "{{packages}}"
+                 state: present 
+           vars: 
+                 packages:
+                          - atop
+                          - htop 
+                          - nmap 
+                          - ufw 
+                          - libvirt 
+                          - virt-install 
+                          - qemu-kvm 
+                          - cmake 
+                          - git 
+                          - net-tools 
+                          - postfix 
+                          - bind-utils 
+                          - bridge-utils 
+                          - dnf 
+                          - nano 
+                          - vim-enhanced.x86_64
+                          - mariadb-server 
+         
+         
+         - name: create custom directories 
+           file: 
+              path: /srv/scripts 
+              path: /srv/git 
+              state: directory 
+
+        
+
+         - name: install groups 
+           yum:
+             name: 
+               - "@Virtualization Hypervisor" 
+               - "@virtualization Client"
+               - "@Security Tools"
+               - "@Compatibility Libraries"
+               - "@Xfce"
+               - "@Development Tools" 
+
+
+
+
+         - name: updates all packages dnf 
+           dnf:
+               name: "*"
+               state: latest 
+
+
+
+         - name: updates all packages yum 
+           yum: 
+            name: "*"
+            state: latest 
+
