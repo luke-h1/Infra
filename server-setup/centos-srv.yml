@@ -1,6 +1,6 @@
 ---
 
-- hosts: RHEL 
+- hosts: localhost 
   tasks: 
          - name: install packages 
            yum: 
