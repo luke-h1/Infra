@@ -33,6 +33,13 @@
           
 
 
+
+
+
+
+
+
+
           - name: create custom directories 
             file: 
               path: /srv/scripts 
@@ -60,7 +67,29 @@
                     packages:
                             - firewalld 
                             - claws
+            tasks:
+           
+                    
+                    
+                    
+          - name: install epel repo 
+            yum: name=epel-release state=present 
 
+          - name: import REMI GPG key
+              rpm_key: 
+                 key: "https://rpms.remirepo.net/RPM-GPG-KEY-remi" 
+            state: present 
+
+
+
+          - name: install remi repo 
+            yum: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" 
+            state: present 
+
+
+
+          - name: install node.js & npm 
+            yum: name=npm state=present enablerepo=epel 
 
 
 
