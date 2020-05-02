@@ -37,6 +37,10 @@
                             - bind-utils
                             - bridge-utils
                             - dnf
+                            - tigervnc-server.x86_64
+                            - libXfont
+                            - pixman
+                            - xorg-x11-server-source.noarch
           
 
 
@@ -73,7 +77,15 @@
             dnf: 
                 name: "@development tools" 
 
-          
+          - name: install groups
+            yum: 
+                name: "@Container Managemen"
+                name: "@LibreOffice"
+                name: "@Network Servers"
+                name: "@RPM Development Tools"
+                name: "@Text-based Internet"
+                name: "@Sound and Video"
+                name: "@System Tools"          
 
           - name: install multimedia group 
             dnf: 
