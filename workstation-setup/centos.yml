@@ -30,6 +30,8 @@
                             - vlc
                             - gstreamer     
                             - nano 
+                            - vim-enhanced.x86_64
+                            - mariadb-server
           
 
 
@@ -71,31 +73,7 @@
            
                     
                     
-                    
-          - name: install epel repo 
-            yum: name=epel-release state=present 
-
-          - name: import REMI GPG key
-              rpm_key: 
-                 key: "https://rpms.remirepo.net/RPM-GPG-KEY-remi" 
-            state: present 
-
-
-
-          - name: install remi repo 
-            yum: "https://rpms.remirepo.net/enterprise/remi-release-7.rpm" 
-            state: present 
-
-
-
-          - name: install node.js & npm 
-            yum: name=npm state=present enablerepo=epel 
-
-
-
-
-
-           
+     
   
           - name: updates all packages 
             dnf: 
@@ -114,12 +92,6 @@
                - "@Compatibility Libraries"
                - "@Xfce" 
                - "@Development Tools"     
-
-          - name: mariadb  
-            dnf: 
-                name:
-                  - mariadb-server 
-
 
           - name: install ubuntu 18.04 iso 
             get_url: 
