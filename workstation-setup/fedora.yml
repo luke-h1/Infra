@@ -37,8 +37,6 @@
                             - bind-utils
                             - bridge-utils
                             - dnf
-                            - ffmpeg-libs 
-                            - vlc    
           
 
 
@@ -53,12 +51,12 @@
 
           - name: remove certain directories 
             file: 
-              path: "/home/$USER/Pictures" 
-              path: "/home/$USER/Documents" 
-              path: "/home/$USER/Public" 
-              path: "/home/$USER/Templates" 
-              path: "/home/$USER/Music" 
-              path: "/home/$USER/Videos"
+              path: "/home/lukehowsam/Pictures" 
+              path: "/home/lukehowsam/Documents" 
+              path: "/home/lukehowsam/Public" 
+              path: "/home/lukehowsam/Templates" 
+              path: "/home/lukehowsam/Music" 
+              path: "/home/lukehowsam/Videos"
               state: absent 
 
           - name: Delete unwanted packages  
@@ -106,26 +104,3 @@
                   - gnome-shell-extension-pomodoro
                   - terminator
                   - lame
-                  - thinkfan 
-                  - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
-                  - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm                   
-                  - mpv
-
-
-          - name: install ubuntu 18.04 iso 
-            get_url: 
-              url: https://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-desktop-amd64.iso 
-              dest: /srv/isos/ubuntu-18.04.4-desktop-amd64.iso
-  
-          - name: install centos 7 minimal iso 
-            get_url: 
-              url: http://mirrors.ukfast.co.uk/sites/ftp.centos.org/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso 
-              dest: /srv/isos/CentOS-7-x86_64-Minimal-1908.iso 
-
-
- 
-          
-          - name: install arch iso 
-            get_url: 
-              url: http://mirrors.manchester.m247.com/arch-linux/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso          
-              dest: /srv/isos/archlinux-2020.04.01-x86_64.iso 
