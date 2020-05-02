@@ -24,7 +24,12 @@
                           - dnf 
                           - nano 
                           - vim-enhanced.x86_64
-                          - mariadb-server 
+                          - mariadb-server
+                          - xorg-x11-server-source.noarch
+                          - pixman 
+                          - pixman-devel
+                          - libXfont 
+                          - tigervnc-server.x86_64 
          
          
          - name: create custom directories 
@@ -43,7 +48,11 @@
                - "@Security Tools"
                - "@Compatibility Libraries"
                - "@Xfce"
-               - "@Development Tools" 
+               - "@Development Tools"
+               - "Desktop"
+               - "@Desktop Platform"
+               - "@X Windows System"
+               - "@Fonts"
 
 
 
