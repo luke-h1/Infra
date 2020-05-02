@@ -32,6 +32,9 @@
                             - nano 
                             - vim-enhanced.x86_64
                             - mariadb-server
+                            - kernel-devel
+                            - kernel-headers 
+                            - gcc 
           
 
 
