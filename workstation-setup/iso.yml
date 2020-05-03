@@ -3,10 +3,10 @@
 - hosts: localhost 
   tasks: 
       
-          - name: install ubuntu 18.04 iso 
+          - name: install ubuntu 20.04 iso 
             get_url: 
-              url: https://releases.ubuntu.com/18.04.4/ubuntu-18.04.4-desktop-amd64.iso 
-              dest: /srv/isos/ubuntu-18.04.4-desktop-amd64.iso
+              url: https://releases.ubuntu.com/20.04/ubuntu-20.04-desktop-amd64.iso?_ga=2.227288724.806720311.1588532690-437922759.1588532690
+              dest: /srv/isos/ubuntu-20.04-desktop-amd64.iso
   
           - name: install centos 7 minimal iso 
             get_url: 
