@@ -43,6 +43,8 @@
                             - xorg-x11-server-source.noarch
                             - npm 
           
+          
+          
 
 
           - name: create custom directories 
@@ -52,6 +54,8 @@
               path: /srv/isos 
               path: /srv/wallpapers 
               state: directory
+
+
 
 
           - name: remove certain directories 
@@ -64,6 +68,8 @@
               path: "/home/<YOUR_USER_HERE>/Videos"
               state: absent 
 
+
+
           - name: Delete unwanted packages  
             yum:
                     name: "{{ packages }}"
@@ -73,9 +79,8 @@
                             - firewalld 
                             - claws-mail 
 
-          - name: install dnf dev tools  
-            dnf: 
-                name: "@development tools" 
+
+
 
           - name: install groups
             yum: 
@@ -85,22 +90,12 @@
                 name: "@RPM Development Tools"
                 name: "@Text-based Internet"
                 name: "@Sound and Video"
-                name: "@System Tools"          
-
-          - name: install multimedia group 
-            dnf: 
+                name: "@System Tools"
                 name: "@Multimedia"
+                name: "@development tools" 
+
+      
           
-  
-          - name: updates all packages 
-            dnf: 
-                name: "*"
-                state: latest 
-
-
-
-             
-
           - name: install terminator, apache, mariadb, pomodoro timer & kvm + it's dependencies  
             dnf: 
                 name:
@@ -116,3 +111,18 @@
                   - gnome-shell-extension-pomodoro
                   - terminator
                   - lame
+
+
+  
+          - name: updates all packages 
+            dnf: 
+                name: "*"
+                state: latest 
+                
+                
+                
+                
+
+
+
+             
