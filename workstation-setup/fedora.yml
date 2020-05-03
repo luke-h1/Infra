@@ -69,9 +69,8 @@
                     state: absent
             vars:
                     packages:
-                            - nano
                             - firewalld 
-                            - claws
+                            - claws-mail 
 
           - name: install dnf dev tools  
             dnf: 
