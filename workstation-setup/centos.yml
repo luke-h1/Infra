@@ -38,13 +38,6 @@
           
 
 
-
-
-
-
-
-
-
           - name: create custom directories 
             file: 
               path: /srv/scripts 
@@ -64,6 +57,7 @@
               path: "/home/$USER/Videos"
               state: absent 
 
+
           - name: Delete unwanted packages  
             yum:
                     name: "{{ packages }}"
@@ -72,19 +66,8 @@
                     packages:
                             - firewalld 
                             - claws
-            tasks:
            
-                    
-                    
-     
-  
-          - name: updates all packages 
-            dnf: 
-                name: "*"
-                state: latest 
-
-
-
+           
           - name: install groups 
             yum: 
              name: 
@@ -95,5 +78,15 @@
                - "@Compatibility Libraries"
                - "@Xfce" 
                - "@Development Tools"     
+          
+                    
+   
+          - name: updates all packages 
+            dnf: 
+                name: "*"
+                state: latest 
 
+
+
+          
  
