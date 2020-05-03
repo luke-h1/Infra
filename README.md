@@ -24,6 +24,7 @@ of the management system and Python.
 Make sure that [Python](http://www.python.org/) is installed. If not, install
 the Python package.
 
+Fedora & centos: 
 ```bash
 $ sudo dnf -y install python
 ```
@@ -31,6 +32,8 @@ $ sudo dnf -y install python
 ```bash 
 $ sudo yum install -y ansible 
 ```
+
+ubuntu / debian: 
 ```bash 
 $ sudo apt-get install -y ansible 
 $ sudo apt-get install -y python 
