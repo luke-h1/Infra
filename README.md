@@ -5,11 +5,12 @@ various ansible playbook automation playbooks
 This repository contains real world examples for Ansible playbooks, especially for Fedora and its downstream (RHEL), as well as modules that are not a part of Ansible's core distribution.
 
 ## Getting Started
-If you have just found Ansible, ubuntu or Fedora, you should start here:
+If you have just found Ansible,Centos ubuntu or Fedora, you should start here:
 
  * [Fedora](http://www.fedoraproject.org)
  * [Ansible project](https://github.com/ansible/ansible) -- see the examples directory
  * [ubuntu](https://ubuntu.com/)
+ * [centos](https://www.centos.org/) 
 
 
 
@@ -23,6 +24,7 @@ of the management system and Python.
 Make sure that [Python](http://www.python.org/) is installed. If not, install
 the Python package.
 
+Fedora & centos: 
 ```bash
 $ sudo dnf -y install python
 ```
@@ -30,6 +32,12 @@ $ sudo dnf -y install python
 ```bash 
 $ sudo yum install -y ansible 
 ```
+
+ubuntu / debian: 
+```bash 
+$ sudo apt-get install -y ansible 
+$ sudo apt-get install -y python 
+``` 
 
 ## Quick setup 
 ```
