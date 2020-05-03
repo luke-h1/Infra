@@ -41,6 +41,7 @@
                             - libXfont
                             - pixman
                             - xorg-x11-server-source.noarch
+                            - npm 
           
 
 
