@@ -10,7 +10,7 @@ If you have just found Ansible,Centos ubuntu or Fedora, you should start here:
  * [Fedora](http://www.fedoraproject.org)
  * [Ansible project](https://github.com/ansible/ansible) -- see the examples directory
  * [ubuntu](https://ubuntu.com/)
- * [CENTOS](https://www.centos.org/) 
+ * [centos](https://www.centos.org/) 
 
 
 
