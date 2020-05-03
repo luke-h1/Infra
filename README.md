@@ -5,11 +5,12 @@ various ansible playbook automation playbooks
 This repository contains real world examples for Ansible playbooks, especially for Fedora and its downstream (RHEL), as well as modules that are not a part of Ansible's core distribution.
 
 ## Getting Started
-If you have just found Ansible, ubuntu or Fedora, you should start here:
+If you have just found Ansible,Centos ubuntu or Fedora, you should start here:
 
  * [Fedora](http://www.fedoraproject.org)
  * [Ansible project](https://github.com/ansible/ansible) -- see the examples directory
  * [ubuntu](https://ubuntu.com/)
+ * [CENTOS](https://www.centos.org/) 
 
 
 
