@@ -31,6 +31,10 @@ $ sudo dnf -y install python
 ```bash 
 $ sudo yum install -y ansible 
 ```
+```bash 
+$ sudo apt-get install -y ansible 
+$ sudo apt-get install -y python 
+``` 
 
 ## Quick setup 
 ```
