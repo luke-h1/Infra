@@ -1,6 +1,6 @@
 ---
-- hosts: ubuntu  
-  remote_user: ansible 
+- hosts: localhost   
+  remote_user: cloud_user 
   tasks: 
           - name: ubuntu packages 
             apt:   
@@ -30,7 +30,6 @@
                           - mariadb-server
                           - postfix 
                           - net-tools
-                          - bind-utils
                           - bridge-utils   
                           
 
