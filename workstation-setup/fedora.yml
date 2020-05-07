@@ -84,7 +84,7 @@
 
           - name: install groups
             yum: 
-                name: "@Container Managemen"
+                name: "@Container Management"
                 name: "@LibreOffice"
                 name: "@Network Servers"
                 name: "@RPM Development Tools"
@@ -96,7 +96,7 @@
 
       
           
-          - name: install terminator, apache, mariadb, pomodoro timer & kvm + it's dependencies  
+          - name: install dnf packages 
             dnf: 
                 name:
                   - httpd 
@@ -120,9 +120,4 @@
                 state: latest 
                 
                 
-                
-                
-
-
-
              
