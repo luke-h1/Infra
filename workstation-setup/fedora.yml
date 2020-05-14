@@ -42,6 +42,7 @@
                             - pixman
                             - xorg-x11-server-source.noarch
                             - npm 
+                            
           
           
           
@@ -111,6 +112,7 @@
                   - gnome-shell-extension-pomodoro
                   - terminator
                   - lame
+                  - chromium 
 
 
   
