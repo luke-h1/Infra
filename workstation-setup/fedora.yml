@@ -42,6 +42,7 @@
                             - pixman
                             - xorg-x11-server-source.noarch
                             - npm 
+                            
           
           
           
@@ -111,9 +112,13 @@
                   - gnome-shell-extension-pomodoro
                   - terminator
                   - lame
+<<<<<<< HEAD
                   - fortune-mod
                   - cowsay 
 
+=======
+                  - chromium 
+>>>>>>> 63cad5b69e1117c0bc0398292a6f23ae77fb66ac
 
 
   
