@@ -29,7 +29,10 @@
                           - pixman 
                           - pixman-devel
                           - libXfont 
-                          - tigervnc-server.x86_64 
+                          - tigervnc-server.x86_64
+                          - sendmail 
+                          - python36 
+                          - python36-devel  
          
          
          - name: create custom directories 
