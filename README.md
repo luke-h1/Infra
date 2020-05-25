@@ -1,7 +1,4 @@
 # ansible automation 
-
-various ansible playbook automation playbooks 
-
 This repository contains real world examples for Ansible playbooks, especially for Fedora and its downstream (RHEL), as well as modules that are not a part of Ansible's core distribution.
 
 ## Getting Started
@@ -12,33 +9,26 @@ If you have just found Ansible,Centos ubuntu or Fedora, you should start here:
  * [ubuntu](https://ubuntu.com/)
  * [centos](https://www.centos.org/) 
 
-
-
 ### Prerequisites
 The setup of Ansible is explained on the 
 [Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. 
 Here is only the setup of the managed nodes covered. For every system you want
 to manage, you need to have the client's SSH key in the *authorized_keys* file
-of the management system and Python.
-
-Make sure that [Python](http://www.python.org/) is installed. If not, install
+of the management system and Python. Make sure that [Python](http://www.python.org/) is installed. If not, install
 the Python package.
 
 Fedora & centos: 
 ```bash
 $ sudo dnf -y install python
 ```
-
 ```bash 
 $ sudo yum install -y ansible 
 ```
-
 ubuntu / debian: 
 ```bash 
 $ sudo apt-get install -y ansible 
 $ sudo apt-get install -y python 
 ``` 
-
 ## Quick setup 
 ```
 git checkout https://github.com/luke-h1/ansible-automation
@@ -48,11 +38,8 @@ sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
 # --ask-pass = ask for SSH & BECOME password 
 # -vvv = verbose output 
 ```
-
 ## Contributing
-
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on  code of conduct, and the process for submitting pull requests to us.
-
 
 ## Authors
 * **luke howsam** 
