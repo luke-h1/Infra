@@ -38,8 +38,7 @@ sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
 # --ask-pass = ask for SSH & BECOME password 
 # -vvv = verbose output 
 ```
-## Contributing
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on  code of conduct, and the process for submitting pull requests to us.
+
 
 ## Authors
 * **luke howsam** 
