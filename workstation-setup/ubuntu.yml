@@ -33,7 +33,13 @@
                           - bridge-utils   
                           - build-essential
                           - xfce 
-                          
+                          - openvpn 
+                          - dialog 
+                          - python3-pip 
+                          - python3-setuptools 
+                      
+          - pip:
+              name: protonvpn-cli            
 
 
           - name: create custom directories 
