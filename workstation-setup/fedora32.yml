@@ -43,10 +43,6 @@
                             - xorg-x11-server-source.noarch
                             - npm 
                             
-          
-          
-          
-
 
           - name: create custom directories 
             file: 
@@ -55,7 +51,6 @@
               path: /srv/isos 
               path: /srv/wallpapers 
               state: directory
-
 
 
           - name: remove certain directories 
@@ -78,8 +73,6 @@
                             - claws-mail 
 
 
-
-
           - name: install groups
             yum: 
                 name: "@Container Management"
@@ -91,7 +84,6 @@
                 name: "@System Tools"
                 name: "@Multimedia"
                 name: "@development tools" 
-
       
           
           - name: install dnf packages 
@@ -116,7 +108,4 @@
           - name: updates all packages 
             dnf: 
                 name: "*"
-                state: latest 
-                
-                
-             
+                state: latest
