@@ -1,6 +1,6 @@
 ---
 - hosts: localhost   
-  remote_user: cloud_user 
+  remote_user: root
   tasks: 
           - name: ubuntu packages 
             apt:   
@@ -36,20 +36,12 @@
 
           - name: create custom directories 
             file: 
-              path: /srv/scripts
               path: /srv/git 
               path: /srv/isos 
               state: directory 
 
 
-          - name: delete firewalld 
-            apt: 
-                  name: "{{ packages }}" 
-                  state: absent 
-            vars: 
-                  packages: 
-                          
-                          - firewalld 
+       
                           
           - name: update all packages 
             apt: 
