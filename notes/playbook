@@ -1,3 +1,0 @@
-
- ansible-playbook  -u root --ask-pass -K -K -vvv <playbook_name> 
-                                                         
