@@ -41,6 +41,16 @@
               state: directory 
 
 
+          - name: remove certain directories 
+            file: 
+              path: "/home/lukehowwsam/Pictures" 
+              path: "/home/lukehowwsam/Documents" 
+              path: "/home/lukehowwsam/Public" 
+              path: "/home/lukehowwsam/Templates" 
+              path: "/home/lukehowwsam/Music" 
+              path: "/home/lukehowwsam/Videos"
+              state: absent 
+
        
                           
           - name: update all packages 
