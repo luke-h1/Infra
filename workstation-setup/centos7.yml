@@ -32,7 +32,6 @@
                             - gcc 
           
 
-
           - name: create custom directories 
             file: 
               path: /srv/scripts 
@@ -79,9 +78,4 @@
           - name: updates all packages 
             dnf: 
                 name: "*"
-                state: latest 
-
-
-
-          
- 
+                state: latest
