@@ -36,7 +36,9 @@
                           - openvpn 
                           - dialog 
                           - python3-pip 
-                          - python3-setuptools 
+                          - python3-setuptools
+                          - lm-sensors 
+                          - thinkfan 
                       
           - pip:
               name: protonvpn-cli            
