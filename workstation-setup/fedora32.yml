@@ -58,18 +58,15 @@
 
 
 
-
           - name: remove certain directories 
             file: 
-              path: "/home/<YOUR_USER_HERE>/Pictures" 
-              path: "/home/<YOUR_USER_HERE>/Documents" 
-              path: "/home/<YOUR_USER_HERE>/Public" 
-              path: "/home/<YOUR_USER_HERE>/Templates" 
-              path: "/home/<YOUR_USER_HERE>/Music" 
-              path: "/home/<YOUR_USER_HERE>/Videos"
+              path: "/home/lukehowwsam/Pictures" 
+              path: "/home/lukehowwsam/Documents" 
+              path: "/home/lukehowwsam/Public" 
+              path: "/home/lukehowwsam/Templates" 
+              path: "/home/lukehowwsam/Music" 
+              path: "/home/lukehowwsam/Videos"
               state: absent 
-
-
 
           - name: Delete unwanted packages  
             yum:
