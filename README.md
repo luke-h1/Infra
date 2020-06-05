@@ -9,6 +9,17 @@ If you have just found Ansible,Centos ubuntu or Fedora, you should start here:
  * [ubuntu](https://ubuntu.com/)
  * [centos](https://www.centos.org/) 
 
+
+1. server-setup/centos.yml - contains playbook for setting up a Centos server 
+2. workstation-setup/centos7.yml - setups Centos for workstation use 
+3. workstation-setup/fedora32.yml - setups centos for workstation use 
+4. workstation-setup/ubuntu20.04.yml - setups Ubuntu for workstation use 
+
+
+
+
+
+
 ### Prerequisites
 The setup of Ansible is explained on the 
 [Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. 
