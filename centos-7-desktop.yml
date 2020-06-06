@@ -31,8 +31,6 @@
                             - kernel-headers 
                             - gcc 
           
-
-
           - name: create custom directories 
             file: 
               path: /srv/scripts 
@@ -40,7 +38,6 @@
               path: /srv/isos 
               path: /srv/wallpapers 
               state: directory
-
 
           - name: remove certain directories 
             file: 
@@ -52,7 +49,6 @@
               path: "/home/lukehowwsam/Videos"
               state: absent 
 
-
           - name: Delete unwanted packages  
             yum:
                     name: "{{ packages }}"
@@ -61,7 +57,6 @@
                     packages:
                             - firewalld 
                             - claws
-           
            
           - name: install groups 
             yum: 
@@ -74,8 +69,7 @@
                - "@Xfce" 
                - "@Development Tools"     
           
-                    
-   
+
           - name: updates all packages 
             dnf: 
                 name: "*"

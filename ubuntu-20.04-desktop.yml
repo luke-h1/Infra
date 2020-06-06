@@ -86,10 +86,7 @@
               name: chalk 
               name: debug 
               global: yes 
-
-
-       
-                          
+          
           - name: update all packages 
             apt: 
               name: "*" 

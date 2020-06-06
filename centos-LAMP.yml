@@ -42,7 +42,6 @@
               state: directory 
 
         
-
          - name: install groups 
            yum:
              name: 
@@ -55,14 +54,10 @@
                - "@Fonts"
 
 
-
-
          - name: updates all packages dnf 
            dnf:
                name: "*"
                state: latest 
-
-
 
          - name: updates all packages yum 
            yum: 
