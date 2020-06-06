@@ -42,11 +42,6 @@
                             - pixman
                             - xorg-x11-server-source.noarch
                             - npm 
-                            
-          
-          
-          
-
 
           - name: create custom directories 
             file: 
@@ -55,8 +50,6 @@
               path: /srv/isos 
               path: /srv/wallpapers 
               state: directory
-
-
 
           - name: remove certain directories 
             file: 
@@ -77,9 +70,6 @@
                             - firewalld 
                             - claws-mail 
 
-
-
-
           - name: install groups
             yum: 
                 name: "@Container Management"
@@ -92,8 +82,6 @@
                 name: "@Multimedia"
                 name: "@development tools" 
 
-      
-          
           - name: install dnf packages 
             dnf: 
                 name:
