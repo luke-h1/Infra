@@ -2,6 +2,12 @@
 - hosts: localhost   
   remote_user: root
   tasks: 
+
+          - apt_repository:
+              repo: ppa:mikhailnov/pulseeffects
+
+
+
           - name: ubuntu packages 
             apt:   
                   name: "{{ packages }}"
@@ -32,14 +38,20 @@
                           - net-tools
                           - bridge-utils   
                           - build-essential
-                          - xfce 
                           - openvpn 
                           - dialog 
                           - python3-pip 
                           - python3-setuptools
                           - lm-sensors 
-                          - thinkfan
                           - virt-manager  
+                          - nodejs 
+                          - alsa-base 
+                          - pulseaudio 
+                          - pavucontrol 
+                          - pulseeffects
+                          - build-essential
+                          - xfce4  
+
                       
           - pip:
               name: protonvpn-cli            
@@ -62,10 +74,25 @@
               path: "/home/lukehowwsam/Videos"
               state: absent 
 
+          - name: install npm stuff 
+            npm: 
+              name: react 
+              name: prop-types 
+              name: moment 
+              name: express 
+              name: request 
+              name: lodash 
+              name: async 
+              name: chalk 
+              name: debug 
+              global: yes 
+
+
        
                           
           - name: update all packages 
             apt: 
               name: "*" 
               state: latest  
+
 
