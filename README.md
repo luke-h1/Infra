@@ -12,7 +12,7 @@ If you have just found Ansible,Centos ubuntu or Fedora, you should start here:
 
 1. server-setup/centos.yml - contains playbook for setting up a Centos server 
 2. workstation-setup/centos7.yml - setups Centos for workstation use 
-3. workstation-setup/fedora32.yml - setups centos for workstation use 
+3. workstation-setup/fedora32.yml - setups Fedora for workstation use 
 4. workstation-setup/ubuntu20.04.yml - setups Ubuntu for workstation use 
 
 
