@@ -5,6 +5,9 @@
 
           - apt_repository:
               repo: ppa:mikhailnov/pulseeffects
+              repo: ppa:libreoffice/ppa
+              repo: ppa:ferramroberto/linuxfreedomlucid
+              repo: ppa:ubuntu-x-swat/x-updates
 
 
 
