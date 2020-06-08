@@ -32,11 +32,13 @@
               name: htop 
               name: nginx 
               name: vim 
-              name: mariadb-server 
               name: macvim 
               name: openvpn 
               name: dialog 
               state: present
+
+          - homebrew: 
+            update_homebrew: yes 
 
 
           - name: install NPM stuff 
