@@ -86,6 +86,7 @@
               name: async 
               name: chalk 
               name: debug 
+              name: lite-server 
               global: yes 
           
           - name: update all packages 
