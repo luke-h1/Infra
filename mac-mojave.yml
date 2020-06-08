@@ -25,5 +25,86 @@
 
           - homebrew_cask: 
               upgrade_all: true 
+
+
+
+          - homebrew: 
+              name: htop 
+              name: nginx 
+              name: vim 
+              name: mariadb-server 
+              name: macvim 
+              name: openvpn 
+              name: dialog 
+              state: present
+
+
+          - name: install NPM stuff 
+            npm:
+              name: react 
+              name: prop-types
+              name: moment 
+              name: express
+              name: request
+              name: lodash
+              name: async 
+              name: chalk 
+              name: debug 
+              name: lite-server 
+              global: yes 
+
+
+          - name: create custom dirs 
+            file: 
+              path: "/srv/git" 
+              path: "/srv/scripts"
+              path: "/srv/isos" 
+              path: "/courses"
+              state: directory  
             
+
+          - git: 
+              repo: https://github.com/luke-h1/dotfiles
+              dest: /srv/git/dotfiles 
+
+          - git: 
+              repo: https://github.com/luke-h1/bash 
+              dest: /srv/git/bash 
+
+          - git: 
+              repo: https://github.com/luke-h1/responsive-webdesign-bootcamp
+              dest: /srv/git/responsive-webdesign-bootcamp  
+
+          - git: 
+              repo: https://github.com/luke-h1/documentation-website 
+              dest: /srv/git/documentation-website 
+
+          - git: 
+              repo: https://github.com/luke-h1/html-css 
+              dest: /srv/git/html-css 
+
+
+          - git: 
+              repo: https://github.com/luke-h1/watch-website 
+              dest: /srv/git/watch-website 
+
+
+          - git: 
+              repo: https://github.com/luke-h1/navigation-bar-css 
+              dest: /srv/git/navigation-bar-css 
+
+
+          - git: 
+              repo: https://github.com/luke-h1/survey-website 
+              dest: /srv/git/survey-website 
+
+
+          - git: 
+              repo: https://github.com/luke-h1/javascript-projects 
+              dest: /srv/git/javascript-projects 
+
+
+
+
+
              

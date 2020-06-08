@@ -52,6 +52,12 @@
                           - pulseeffects
                           - build-essential
                           - xfce4  
+                          - virtualbox 
+                          - virtualbox-dkms
+                          - virtualbox-ext-pack
+                          - virtualbox-guest-additions-iso 
+                          - virtualbox-guest-utils 
+                          - virtualbox-qt 
 
                       
           - pip:
@@ -60,8 +66,9 @@
 
           - name: create custom directories 
             file: 
-              path: /srv/git 
-              path: /srv/isos 
+              path: "/srv/git" 
+              path: "/srv/isos" 
+              path: "/courses"
               state: directory 
 
 
@@ -88,7 +95,37 @@
               name: debug 
               name: lite-server 
               global: yes 
-          
+
+
+          - git: 
+              repo: https://github.com/luke-h1/dotfiles
+              dest: /srv/git/dotfiles  
+
+          - git: 
+              repo: https://github.com/luke-h1/bash 
+              dest: /srv/git/bash  
+
+          - git: 
+              repo: https://github.com/luke-h1/responsive-webdesign-bootcamp 
+              dest: /srv/git/responsive-webdesign-bootcamp   
+
+          - git: 
+              repo: https://github.com/luke-h1/documentation-website  
+              dest: /srv/git/documentation-website  
+              
+          - git: 
+              repo:  https://github.com/luke-h1/html-css  
+              dest: /srv/git/html-css 
+
+          - git: 
+              repo: https://github.com/luke-h1/watch-website 
+              dest: /srv/git/watch-website  
+
+          - git: 
+            repo: https://github.com/luke-h1/navigation-bar-css 
+            dest: /srv/git/navigation-bar-css  
+
+
           - name: update all packages 
             apt: 
               name: "*" 
