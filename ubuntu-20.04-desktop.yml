@@ -82,6 +82,7 @@
               path: "/home/lukehowsam/Videos"
               state: absent 
 
+
           - name: install npm stuff 
             npm: 
               name: react 
@@ -97,36 +98,3 @@
               global: yes 
 
 
-- 
-  git: 
-    dest: /srv/git/dotfiles
-    repo: "https://github.com/luke-h1/dotfiles"
-- 
-  git: 
-    dest: /srv/git/bash
-    repo: "https://github.com/luke-h1/bash"
-- 
-  git: 
-    dest: /srv/git/responsive-webdesign-bootcamp
-    repo: "https://github.com/luke-h1/responsive-webdesign-bootcamp"
-- 
-  git: 
-    dest: /srv/git/documentation-website
-    repo: "https://github.com/luke-h1/documentation-website"
-- 
-  git: 
-    dest: /srv/git/html-css
-    repo: "https://github.com/luke-h1/html-css"
-- 
-  git: 
-    dest: /srv/git/watch-website
-    repo: "https://github.com/luke-h1/watch-website"
-- 
-  dest: /srv/git/navigation-bar-css
-  git: ~
-  repo: "https://github.com/luke-h1/navigation-bar-css"
-- 
-  apt: 
-    name: "*"
-    state: latest
-  name: "update all packages"
