@@ -53,8 +53,7 @@
                           - build-essential
                           - xfce4  
                         
-
-                      
+ 
           - pip:
               name: protonvpn-cli            
 
