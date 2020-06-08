@@ -7,7 +7,7 @@
 ```
 git clone https://github.com/luke-h1/Automation 
 cd ~/Automation
-sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv Ansible/<playbook_name>
+sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
 ``` 
 
 ## Authors
