@@ -16,6 +16,8 @@
              name: gpg
              name: ssh-copy-id 
              name: bash-completion 
+             name: spectacle 
+             name: alfred 
              state: absent 
 
           - pip: 
