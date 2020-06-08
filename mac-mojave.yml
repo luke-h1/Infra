@@ -1,0 +1,29 @@
+--- 
+- hosts: localhost 
+  remote_user: root 
+  tasks: 
+          - homebrew_cask: 
+             name: iterm2 
+             name: git 
+             name: vcprompt 
+             name: bash
+             name: firefox 
+             name: google-chrome 
+             name: visual-studio-code 
+             name: docker 
+             name: autoconf 
+             name: wget
+             name: gpg
+             name: ssh-copy-id 
+             name: bash-completion 
+             name: spectacle 
+             name: alfred 
+             state: absent 
+
+          - pip: 
+              name: ansible 
+
+          - homebrew_cask: 
+              upgrade_all: true 
+            
+             
