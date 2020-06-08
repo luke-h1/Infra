@@ -58,14 +58,12 @@
           - pip:
               name: protonvpn-cli            
 
-
           - name: create custom directories 
             file: 
               path: "/srv/git" 
               path: "/srv/isos" 
               path: "/courses"
               state: directory 
-
 
           - name: remove certain directories 
             file: 
@@ -76,7 +74,6 @@
               path: "/home/lukehowsam/Music" 
               path: "/home/lukehowsam/Videos"
               state: absent 
-
 
           - name: install npm stuff 
             npm: 
@@ -91,7 +88,6 @@
               name: debug 
               name: lite-server 
               global: yes 
-
 
           - name: apt-get update 
             apt: 
