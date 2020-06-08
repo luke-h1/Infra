@@ -74,12 +74,12 @@
 
           - name: remove certain directories 
             file: 
-              path: "/home/lukehowwsam/Pictures" 
-              path: "/home/lukehowwsam/Documents" 
-              path: "/home/lukehowwsam/Public" 
-              path: "/home/lukehowwsam/Templates" 
-              path: "/home/lukehowwsam/Music" 
-              path: "/home/lukehowwsam/Videos"
+              path: "/home/lukehowsam/Pictures" 
+              path: "/home/lukehowsam/Documents" 
+              path: "/home/lukehowsam/Public" 
+              path: "/home/lukehowsam/Templates" 
+              path: "/home/lukehowsam/Music" 
+              path: "/home/lukehowsam/Videos"
               state: absent 
 
           - name: install npm stuff 
@@ -97,38 +97,36 @@
               global: yes 
 
 
-          - git: 
-              repo: https://github.com/luke-h1/dotfiles
-              dest: /srv/git/dotfiles  
-
-          - git: 
-              repo: https://github.com/luke-h1/bash 
-              dest: /srv/git/bash  
-
-          - git: 
-              repo: https://github.com/luke-h1/responsive-webdesign-bootcamp 
-              dest: /srv/git/responsive-webdesign-bootcamp   
-
-          - git: 
-              repo: https://github.com/luke-h1/documentation-website  
-              dest: /srv/git/documentation-website  
-              
-          - git: 
-              repo:  https://github.com/luke-h1/html-css  
-              dest: /srv/git/html-css 
-
-          - git: 
-              repo: https://github.com/luke-h1/watch-website 
-              dest: /srv/git/watch-website  
-
-          - git: 
-            repo: https://github.com/luke-h1/navigation-bar-css 
-            dest: /srv/git/navigation-bar-css  
-
-
-          - name: update all packages 
-            apt: 
-              name: "*" 
-              state: latest  
-
-
+- 
+  git: 
+    dest: /srv/git/dotfiles
+    repo: "https://github.com/luke-h1/dotfiles"
+- 
+  git: 
+    dest: /srv/git/bash
+    repo: "https://github.com/luke-h1/bash"
+- 
+  git: 
+    dest: /srv/git/responsive-webdesign-bootcamp
+    repo: "https://github.com/luke-h1/responsive-webdesign-bootcamp"
+- 
+  git: 
+    dest: /srv/git/documentation-website
+    repo: "https://github.com/luke-h1/documentation-website"
+- 
+  git: 
+    dest: /srv/git/html-css
+    repo: "https://github.com/luke-h1/html-css"
+- 
+  git: 
+    dest: /srv/git/watch-website
+    repo: "https://github.com/luke-h1/watch-website"
+- 
+  dest: /srv/git/navigation-bar-css
+  git: ~
+  repo: "https://github.com/luke-h1/navigation-bar-css"
+- 
+  apt: 
+    name: "*"
+    state: latest
+  name: "update all packages"
