@@ -36,9 +36,7 @@
               name: openvpn 
               name: dialog 
               state: present
-
-          - homebrew: 
-            update_homebrew: yes 
+              update_homebrew: yes 
 
 
           - name: install npm stuff 
