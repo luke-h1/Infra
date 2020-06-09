@@ -9,6 +9,7 @@ git clone https://github.com/luke-h1/Automation
 cd ~/Automation
 sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
 ``` 
+Note: Mac playbook not fully tested. May have some YAML issues 
 
 ## Authors
 * **luke howsam** 
