@@ -6,6 +6,7 @@
           - apt_repository:
               repo: ppa:mikhailnov/pulseeffects
               repo: ppa:libreoffice/ppa
+              repo: ppa:otto-kesselgulasch/gimp 
 
 
 
@@ -53,6 +54,7 @@
                           - build-essential
                           - xfce4  
                           - curl 
+                          - gimp 
                         
  
           - pip:
