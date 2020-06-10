@@ -17,7 +17,9 @@
              name: ssh-copy-id 
              name: bash-completion 
              name: spectacle 
-             name: alfred 
+             name: alfred  
+             name: rocket 
+             name: virtualbox 
              state: absent 
 
           - pip: 
@@ -34,7 +36,13 @@
               name: vim 
               name: macvim 
               name: openvpn 
+              name: tmux 
+              name: screen
               name: dialog 
+              name: docker-compose 
+              name: docker-machine 
+              name: docker 
+              name: kafka 
               state: present
               update_homebrew: yes 
 
