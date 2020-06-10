@@ -33,6 +33,10 @@ code --install-extension PeterJausovec.vscode-docker \
      --install-extension pkief.material-icon-theme-4.1.0 \ 
      --install-extension ritwickdey.liveserver-5.6.1 \ 
      --install-extension zignd.html-css-class-completion-1.19.0 \ 
+     --install-extension shakram02.bash-beautify-0.1.1 \ 
+     --install-extension michelemelluso.code-beautifier-2.3.3 \ 
+     --install-extension ionutvmi.path-autocomplete-1.13.6 \ 
+
 
 echo "VS code extensions now configured..."     
 
