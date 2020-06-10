@@ -44,3 +44,6 @@ echo "enter your github email"
 read email
 git config --global --replace-all user.email "$email"
 
+
+
+echo "script finished ......."
