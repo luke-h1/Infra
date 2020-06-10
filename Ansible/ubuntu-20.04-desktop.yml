@@ -53,7 +53,8 @@
                           - build-essential
                           - xfce4  
                           - curl 
-                          - macchanger 
+                          - macchanger
+                          - apt-transport-https 
                         
  
           - pip:
