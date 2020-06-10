@@ -14,4 +14,11 @@ echo "added your username to git config global"
 echo "enter your github email" 
 read email 
 git config --global --replace-all user.email "$email" 
+echo "added your email to git config global" 
+
+echo "done. Exiting now...." 
+sleep 2 
+
+
+
 
