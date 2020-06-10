@@ -4,6 +4,7 @@ git clone https://github.com/luke-h1/dotfiles
 git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/navbar-animation-css 
 git clone https://github.com/luke-h1/div-span-button-box-css
+git clone https://github.com/luke-h1/coffeeshop-html-css
 git clone https://github.com/luke-h1/xfce
 sudo apt-get update -y  
 sudo apt-get install -y nodejs npm nvm 
