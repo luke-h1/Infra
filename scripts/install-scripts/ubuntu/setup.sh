@@ -20,21 +20,20 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt update
 sudo apt install code
 echo "configuring vs code extensions....." 
-sleep 1  
 code --install-extension PeterJausovec.vscode-docker \
-     --install-extension christian-kohler.npm-intellisense \
-     --install-extension nur.just-black \ 
-     --install-extension esbenp.prettier-vscode-4.7.0 \ 
-     --install-extension hookyqr.beautify-1.5.0 \ 
-     --install-extension dbaeumer.vscode-eslint-2.1.5 \ 
-     --install-extension christian-kohler.path-intellisense-1.4.2 \ 
-     --install-extension coenraads.bracket-pair-colorizer-1.0.61  \ 
-     --install-extension pkief.material-icon-theme-4.1.0 \ 
-     --install-extension ritwickdey.liveserver-5.6.1 \ 
-     --install-extension zignd.html-css-class-completion-1.19.0 \ 
-     --install-extension shakram02.bash-beautify-0.1.1 \ 
-     --install-extension michelemelluso.code-beautifier-2.3.3 \ 
-     --install-extension ionutvmi.path-autocomplete-1.13.6 \ 
+code --install-extension christian-kohler.npm-intellisense \
+code --install-extension nur.just-black \ 
+code --install-extension esbenp.prettier-vscode-4.7.0 \ 
+code --install-extension hookyqr.beautify-1.5.0 \ 
+code --install-extension dbaeumer.vscode-eslint-2.1.5 \ 
+code --install-extension christian-kohler.path-intellisense-1.4.2 \ 
+code --install-extension coenraads.bracket-pair-colorizer-1.0.61  \ 
+code --install-extension pkief.material-icon-theme-4.1.0 \ 
+code --install-extension ritwickdey.liveserver-5.6.1 \ 
+code --install-extension zignd.html-css-class-completion-1.19.0 \ 
+code --install-extension shakram02.bash-beautify-0.1.1 \ 
+code --install-extension michelemelluso.code-beautifier-2.3.3 \ 
+code --install-extension ionutvmi.path-autocomplete-1.13.6 \ 
 
 
 echo "VS code extensions now configured..."     
@@ -44,7 +43,7 @@ echo "enter your github username:"
 read user
 git config --global --replace-all user.name "$user"
 echo "added your username to git config global"
-echo "enter your github email"
+echo "enter your github email:"
 read email
 git config --global --replace-all user.email "$email"
 
