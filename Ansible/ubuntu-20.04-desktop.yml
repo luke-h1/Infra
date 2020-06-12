@@ -52,9 +52,11 @@
                           - pulseeffects
                           - build-essential
                           - xfce4  
-                          - curl 
+                          - curl
                           - macchanger 
                           - at 
+
+
                         
  
           - pip:
