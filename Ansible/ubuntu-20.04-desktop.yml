@@ -54,6 +54,7 @@
                           - xfce4  
                           - curl 
                           - macchanger 
+                          - at 
                         
  
           - pip:
