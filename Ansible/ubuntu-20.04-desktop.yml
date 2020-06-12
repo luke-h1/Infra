@@ -52,30 +52,17 @@
                           - pulseeffects
                           - build-essential
                           - xfce4  
-                          - curl 
-                          - macchanger
-                          - apt-transport-https 
+                          - curl
+                          - macchanger 
+                          - at 
+
+
                         
  
           - pip:
               name: protonvpn-cli            
 
-          - name: create custom directories 
-            file: 
-              path: "/srv/git" 
-              path: "/srv/isos" 
-              path: "/courses"
-              state: directory 
-
-          - name: remove certain directories 
-            file: 
-              path: "/home/lukehowsam/Pictures" 
-              path: "/home/lukehowsam/Documents" 
-              path: "/home/lukehowsam/Public" 
-              path: "/home/lukehowsam/Templates" 
-              path: "/home/lukehowsam/Music" 
-              path: "/home/lukehowsam/Videos"
-              state: absent 
+        
 
           - name: install npm stuff 
             npm: 

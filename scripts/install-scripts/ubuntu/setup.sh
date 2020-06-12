@@ -29,7 +29,16 @@ echo "added your username to git config global"
 echo "enter your github email:"
 read email
 git config --global --replace-all user.email "$email"
+mkdir /srv/git 
+mkdir /srv/isos 
+mkdir /srv/courses 
+rm -rf /home/lukehowsam/Pictures  
+rm -rf /home/lukehowsam/Documents  
+rm -rf /home/lukehowsam/Public 
+rm -rf /home/lukehowsam/Templates 
+rm -rf /home/lukehowsam/Music
+rm -rf /home/lukehowsam/Videos 
+echo "script finished"
+echo "rebooting in 5 seconds" 
+telinit 6 
 
-
-
-echo "script finished ......."
