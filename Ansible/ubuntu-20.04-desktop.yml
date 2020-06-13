@@ -55,6 +55,11 @@
                           - curl
                           - macchanger 
                           - at 
+                          - bluez
+                          - blueman 
+                          - pulseaudio-module-bluetooth 
+                          - ubuntu-desktop 
+                          - unity-control-center
 
 
                         
