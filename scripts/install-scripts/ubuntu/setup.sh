@@ -4,6 +4,7 @@ git clone https://github.com/luke-h1/dotfiles
 git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/navbar-animation-css 
 git clone https://github.com/luke-h1/div-span-button-box-css
+git clone https://github.com/luke-h1/coffeeshop-html-css
 git clone https://github.com/luke-h1/xfce
 sudo apt-get update -y  
 sudo apt-get install -y nodejs npm nvm 
@@ -20,7 +21,6 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install code
-echo "VS code extensions now configured..."     
 echo "now configuring your github" 
 echo "enter your github username:"
 read user

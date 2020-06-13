@@ -7,7 +7,10 @@
 ```
 git clone https://github.com/luke-h1/Automation 
 cd ~/Automation
-sudo ansible-playbook  -u <your_user> --ask-pass -K -K -vvv <playbook_name>
+``` 
+``` 
+Ansible - Contains various Ansible playbooks mainly for Linux 
+Scripts - Contains useful maintenance & installation bash scripts 
 ``` 
 
 ## Authors
