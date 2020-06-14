@@ -9,7 +9,7 @@ git clone https://github.com/luke-h1/Automation
 cd ~/Automation
 ``` 
 ``` 
-Ansible - Contains various Ansible playbooks mainly for Linux 
+Ansible - Contains various Ansible playbooks for Linux & Mac 
 Scripts - Contains useful maintenance & installation bash scripts 
 ``` 
 
@@ -18,6 +18,3 @@ Scripts - Contains useful maintenance & installation bash scripts
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-
-
