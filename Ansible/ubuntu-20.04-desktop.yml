@@ -80,6 +80,8 @@
               name: async 
               name: chalk 
               name: debug 
+              name: eslint-plugin-import 
+              name: puppeteer 
               name: lite-server 
               global: yes 
 
