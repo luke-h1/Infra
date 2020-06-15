@@ -12,6 +12,9 @@ echo "added your username to git config global"
 echo "enter your github email" 
 read email 
 git config --global --replace-all user.email "$email" 
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+brew cask install postman
+
 echo "added your email to git config global" 
 echo "done. Exiting now...." 
  

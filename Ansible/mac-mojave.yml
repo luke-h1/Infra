@@ -20,6 +20,7 @@
              name: alfred  
              name: rocket 
              name: virtualbox 
+             name: insomnia 
              state: absent 
 
           - pip: 

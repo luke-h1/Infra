@@ -38,6 +38,17 @@ rm -rf /home/lukehowsam/Public
 rm -rf /home/lukehowsam/Templates 
 rm -rf /home/lukehowsam/Music
 rm -rf /home/lukehowsam/Videos 
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update -y 
+sudo apt install yarn
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc  | sudo apt-key add - 
+sudo apt-get update -y 
+sudo apt-get install insomnia 
+   
+
+
 echo "script finished"
 echo "rebooting in 5 seconds" 
 telinit 6 
