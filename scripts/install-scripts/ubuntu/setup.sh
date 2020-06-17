@@ -1,10 +1,8 @@
 #!/bin/bash 
-git clone https://github.com/luke-h1/scrimba-html-css 
 git clone https://github.com/luke-h1/dotfiles 
 git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/navbar-animation-css 
 git clone https://github.com/luke-h1/div-span-button-box-css
-git clone https://github.com/luke-h1/coffeeshop-html-css
 git clone https://github.com/luke-h1/xfce
 sudo apt-get update -y  
 sudo apt-get install -y nodejs npm nvm 
@@ -20,7 +18,8 @@ sudo apt install software-properties-common apt-transport-https wget -y
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
-sudo apt install code
+sudo apt install code 
+sudo apt-get install -y npm 
 echo "now configuring your github" 
 echo "enter your github username:"
 read user
@@ -46,7 +45,8 @@ echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc  | sudo apt-key add - 
 sudo apt-get update -y 
 sudo apt-get install insomnia 
-   
+sudo apt install -y openvpn dialog python3-pip python3-setuptools
+sudo pip3 install protonvpn-cli
 
 
 echo "script finished"
