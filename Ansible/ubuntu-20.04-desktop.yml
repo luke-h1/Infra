@@ -49,11 +49,9 @@
                           - alsa-base 
                           - pulseaudio 
                           - pavucontrol 
-                          - pulseeffects
                           - build-essential
                           - xfce4  
                           - curl
-                          - macchanger 
                           - at 
                           - bluez
                           - blueman 
@@ -63,9 +61,6 @@
 
 
                         
- 
-          - pip:
-              name: protonvpn-cli            
 
         
 
