@@ -33,7 +33,6 @@
 
           - homebrew: 
               name: htop 
-              name: nginx 
               name: vim 
               name: macvim 
               name: openvpn 
@@ -44,6 +43,7 @@
               name: docker-machine 
               name: docker 
               name: kafka 
+              name: node 
               state: present
               update_homebrew: yes 
 
@@ -63,11 +63,4 @@
               global: yes 
 
 
-          - name: create custom directories 
-            file: 
-              path: "/srv/git" 
-              path: "/srv/scripts"
-              path: "/srv/isos" 
-              path: "/courses"
-              state: directory  
-            
+      
