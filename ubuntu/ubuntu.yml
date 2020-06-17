@@ -4,10 +4,7 @@
   tasks: 
 
           - apt_repository:
-              repo: ppa:mikhailnov/pulseeffects
               repo: ppa:libreoffice/ppa
-
-
 
           - name: ubuntu packages 
             apt:   
@@ -21,8 +18,6 @@
                           - iftop 
                           - sysstat
                           - iotop
-                          - nicstat
-                          - vnstat
                           - vim
                           - htop
                           - nmap
@@ -33,10 +28,6 @@
                           - cmake
                           - git
                           - libreoffice
-                          - nginx 
-                          - mariadb-server
-                          - postfix 
-                          - net-tools
                           - bridge-utils   
                           - build-essential
                           - openvpn 
@@ -59,10 +50,6 @@
                           - ubuntu-desktop 
                           - unity-control-center
 
-
-                        
-
-        
 
           - name: install npm stuff 
             npm: 
