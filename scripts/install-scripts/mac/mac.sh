@@ -14,7 +14,24 @@ read email
 git config --global --replace-all user.email "$email" 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 brew cask install postman
-
-echo "added your email to git config global" 
-echo "done. Exiting now...." 
+# Make sure you are in the /srv directory for this step: 
+git clone https://github.com/luke-h1/scrimba-html-css 
+git clone https://github.com/luke-h1/dotfiles 
+git clone https://github.com/luke-h1/responsive-webdesign
+git clone https://github.com/luke-h1/navbar-animation-css 
+git clone https://github.com/luke-h1/div-span-button-box-css
+git clone https://github.com/luke-h1/coffeeshop-html-css
+git clone https://github.com/luke-h1/xfce
+mkdir /srv/git 
+mkdir /srv/isos 
+mkdir /srv/courses 
+rm -rf /home/lukehowsam/Pictures  
+rm -rf /home/lukehowsam/Documents  
+rm -rf /home/lukehowsam/Public 
+rm -rf /home/lukehowsam/Templates 
+rm -rf /home/lukehowsam/Music
+rm -rf /home/lukehowsam/Videos 
+echo "script finished" 
+echo "rebooting in 5 seconds" 
+telinit 6 
  
