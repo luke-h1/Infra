@@ -48,7 +48,10 @@ sudo apt-get update -y
 sudo apt-get install insomnia 
 sudo apt install -y openvpn dialog python3-pip python3-setuptools
 sudo pip3 install protonvpn-cli
-
+sudo ufw enable 
+sudo ufw start 
+sudo systemctl enable ufw 
+sudo systemctl start ufw 
 
 echo "script finished"
 echo "rebooting in 5 seconds" 
