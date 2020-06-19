@@ -26,12 +26,13 @@ git clone https://github.com/luke-h1/dotfiles
 git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/navbar-animation-css 
 git clone https://github.com/luke-h1/div-span-button-box-css
-git clone https://github.com/luke-h1/coffeeshop-html-css
-git clone https://github.com/luke-h1/xfce
+git clone https://github.com/luke-h1/Automation
 git clone https://github.com/transmission/transmission-releases/raw/master/Transmission-3.00.dmg
 mkdir /srv/dev  
 mkdir /srv/isos 
-mkdir /srv/courses 
+mkdir /srv/courses
+mkdir /home/lukehowsam/notes 
+mkdir /home/lukehowsam/wallpapers  
 rm -rf /home/lukehowsam/Pictures  
 rm -rf /home/lukehowsam/Documents  
 rm -rf /home/lukehowsam/Public 
@@ -45,7 +46,7 @@ sleep 5
 wget https://videolan.mirror.liteserver.nl/vlc/3.0.11/macosx/vlc-3.0.11.dmg
 wget //download.documentfoundation.org/libreoffice/stable/6.4.4/mac/x86_64/LibreOffice_6.4.4_MacOS_x86-64.dmg
 echo "script finished" 
-echo "rebooting in 5 seconds" 
+echo "rebooting in 5 seconds"  
 sleep 5  
 telinit 6 
  
