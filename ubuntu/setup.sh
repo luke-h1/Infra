@@ -65,4 +65,3 @@ echo "script finished"
 echo "rebooting in 5 seconds" 
 sleep 5 
 telinit 6 
-
