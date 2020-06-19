@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "starting the install script..." 
+sleep 2 
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
@@ -18,7 +20,9 @@ echo "added your username to git config global"
 echo "enter your github email" 
 read email 
 git config --global --replace-all user.email "$email" 
-brew cask install postman
+echo "configured your github name & email globally"
+sleep 3 
+brew cask install postman -y 
 cd /srv 
 sleep 3  
 git clone https://github.com/luke-h1/scrimba-html-css 
