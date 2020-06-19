@@ -1,66 +1,64 @@
 --- 
-- hosts: localhost 
-  remote_user: root 
-  tasks: 
-          - homebrew_cask: 
-             name: iterm2 
-             name: git 
-             name: vcprompt 
-             name: bash
-             name: firefox 
-             name: google-chrome 
-             name: visual-studio-code 
-             name: docker 
-             name: autoconf 
-             name: wget
-             name: gpg
-             name: ssh-copy-id 
-             name: bash-completion 
-             name: spectacle 
-             name: alfred  
-             name: rocket 
-             name: virtualbox 
-             name: insomnia 
-             state: absent 
-
-          - pip: 
-              name: ansible 
-
-          - homebrew_cask: 
-              upgrade_all: true 
-
-
-
-          - homebrew: 
-              name: htop 
-              name: vim 
-              name: macvim 
-              name: openvpn 
-              name: tmux 
-              name: screen
-              name: dialog 
-              name: docker-compose 
-              name: docker-machine 
-              name: docker 
-              name: kafka 
-              name: node 
-              state: present
-              update_homebrew: yes 
-
-
-          - name: install npm stuff 
-            npm:
-              name: react 
-              name: prop-types
-              name: moment 
-              name: express
-              name: request
-              name: lodash
-              name: async 
-              name: chalk 
-              name: debug 
-              name: lite-server 
-              global: yes 
-
-
-      
+  - hosts: localhost 
+    remote_user: root 
+    tasks: 
+            - homebrew_cask: 
+               name: iterm2 
+               name: git 
+               name: vcprompt 
+               name: bash
+               name: firefox 
+               name: google-chrome 
+               name: visual-studio-code 
+               name: docker 
+               name: autoconf 
+               name: wget
+               name: gpg
+               name: ssh-copy-id 
+               name: bash-completion 
+               name: spectacle 
+               name: alfred  
+               name: rocket 
+               name: virtualbox 
+               name: insomnia 
+               state: absent 
+  
+            - pip: 
+                name: ansible 
+  
+            - homebrew_cask: 
+                upgrade_all: true 
+  
+  
+  
+            - homebrew: 
+                name: htop 
+                name: vim 
+                name: macvim 
+                name: openvpn 
+                name: tmux 
+                name: screen
+                name: dialog 
+                name: docker-compose 
+                name: docker-machine 
+                name: docker 
+                name: kafka 
+                name: node 
+                state: present
+                update_homebrew: yes 
+  
+  
+            - name: install npm stuff 
+              npm:
+                name: react 
+                name: prop-types
+                name: moment 
+                name: express
+                name: request
+                name: lodash
+                name: async 
+                name: chalk 
+                name: debug 
+                name: lite-server 
+                global: yes 
+  

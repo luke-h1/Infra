@@ -1,78 +1,77 @@
 ---
-- hosts: localhost   
-  remote_user: root
-  tasks: 
-
-          - apt_repository:
-              repo: ppa:libreoffice/ppa
-
-          - name: ubuntu packages 
-            apt:   
-                  name: "{{ packages }}"
-                  state: present 
-            vars: 
-                packages: 
-                          - unzip 
-                          - htop 
-                          - atop 
-                          - iftop 
-                          - sysstat
-                          - iotop
-                          - vim
-                          - htop
-                          - nmap
-                          - ufw
-                          - bridge-utils
-                          - qemu-kvm
-                          - terminator
-                          - cmake
-                          - git
-                          - libreoffice
-                          - bridge-utils   
-                          - build-essential
-                          - openvpn 
-                          - dialog 
-                          - python3-pip 
-                          - python3-setuptools
-                          - lm-sensors 
-                          - virt-manager  
-                          - nodejs 
-                          - alsa-base 
-                          - pulseaudio 
-                          - pavucontrol 
-                          - build-essential
-                          - xfce4  
-                          - curl
-                          - at 
-                          - bluez
-                          - blueman 
-                          - pulseaudio-module-bluetooth 
-                          - ubuntu-desktop 
-                          - unity-control-center
-
-
-          - name: install npm stuff 
-            npm: 
-              name: react 
-              name: prop-types 
-              name: moment 
-              name: express 
-              name: request 
-              name: lodash 
-              name: async 
-              name: chalk 
-              name: debug 
-              name: eslint-plugin-import 
-              name: puppeteer 
-              name: lite-server 
-              global: yes 
-
-          - name: apt-get update 
-            apt: 
-              update_cache: yes 
-
-          - name: apt-get upgrade
-            apt: 
-              upgrade: dist 
-
-
+  - hosts: localhost   
+    remote_user: root
+    tasks: 
+  
+            - apt_repository:
+                repo: ppa:libreoffice/ppa
+  
+            - name: ubuntu packages 
+              apt:   
+                    name: "{{ packages }}"
+                    state: present 
+              vars: 
+                  packages: 
+                            - unzip 
+                            - htop 
+                            - atop 
+                            - iftop 
+                            - sysstat
+                            - iotop
+                            - vim
+                            - htop
+                            - nmap
+                            - ufw
+                            - bridge-utils
+                            - qemu-kvm
+                            - terminator
+                            - cmake
+                            - git
+                            - libreoffice
+                            - bridge-utils   
+                            - build-essential
+                            - openvpn 
+                            - dialog 
+                            - python3-pip 
+                            - python3-setuptools
+                            - lm-sensors 
+                            - virt-manager  
+                            - nodejs 
+                            - alsa-base 
+                            - pulseaudio 
+                            - pavucontrol 
+                            - build-essential
+                            - xfce4  
+                            - curl
+                            - at 
+                            - bluez
+                            - blueman 
+                            - pulseaudio-module-bluetooth 
+                            - ubuntu-desktop 
+                            - unity-control-center
+  
+  
+            - name: install npm stuff 
+              npm: 
+                name: react 
+                name: prop-types 
+                name: moment 
+                name: express 
+                name: request 
+                name: lodash 
+                name: async 
+                name: chalk 
+                name: debug 
+                name: eslint-plugin-import 
+                name: puppeteer 
+                name: lite-server 
+                global: yes 
+  
+            - name: apt-get update 
+              apt: 
+                update_cache: yes 
+  
+            - name: apt-get upgrade
+              apt: 
+                upgrade: dist 
+  
