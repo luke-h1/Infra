@@ -48,6 +48,7 @@ wget https://dl4.cdn.filezilla-project.org/client/FileZilla_3.48.1_macosx-x86.ap
 tar -xvf * 
 sleep 5 
 wget https://videolan.mirror.liteserver.nl/vlc/3.0.11/macosx/vlc-3.0.11.dmg
+wget https://download.virtualbox.org/virtualbox/6.1.10/VirtualBox-6.1.10-138449-OSX.dmg
 wget //download.documentfoundation.org/libreoffice/stable/6.4.4/mac/x86_64/LibreOffice_6.4.4_MacOS_x86-64.dmg
 echo "script finished" 
 echo "rebooting in 5 seconds"  
