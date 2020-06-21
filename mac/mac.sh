@@ -55,6 +55,7 @@ wget https://cdimage.kali.org/kali-2020.2/kali-linux-2020.2-live-amd64.iso
 wget ubuntu-18.04.4-desktop-amd64.iso 
 echo "script finished" 
 echo "rebooting in 5 seconds"  
+echo "VPN TO-DO: https://hide.me/en/?friend=54b08be283830&chan=ba_e"  
 sleep 5  
 telinit 6 
  
