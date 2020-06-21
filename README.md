@@ -1,6 +1,6 @@
 ## Getting Started
 
- * [Ansible project]https://github.com/ansible/ansible/tree/devel/examples) -- see the examples directory
+ * [Ansible project](https://github.com/ansible/ansible/tree/devel/examples) -- see the examples directory
 
 
 ## Quick setup 
