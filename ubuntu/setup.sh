@@ -4,19 +4,15 @@ git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/navbar-animation-css 
 git clone https://github.com/luke-h1/div-span-button-box-css
 git clone https://github.com/luke-h1/xfce
+sudo apt-get install -y curl 
 sudo apt-get update -y  
 sudo apt-get install -y nodejs npm nvm 
-bash --login 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-bash --login 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-bash --login 
 nvm install node
 nvm install 8.10.0
 nvm use 10.16.3
 nvm alias default 10.16.3
-bash --login 
-sudo apt update -y 
 sudo apt-get install -y xfce4* 
 sudo apt install software-properties-common apt-transport-https wget -y 
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
@@ -24,7 +20,7 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt update
 sudo apt install code 
 sudo apt-get install -y npm 
-bash --login 
+
 echo "now configuring your github" 
 echo "enter your github username:"
 read user
@@ -44,18 +40,18 @@ rm -rf /home/lukehowsam/Templates
 rm -rf /home/lukehowsam/Music
 rm -rf /home/lukehowsam/Videos 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-bash --login 
+
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update -y 
 sudo apt install yarn
-bash --login 
+
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc  | sudo apt-key add - 
 sudo apt-get update -y 
 sudo apt-get install insomnia 
 sudo apt install -y openvpn dialog python3-pip python3-setuptools
 sudo pip3 install protonvpn-cli
-bash --login 
+
 sudo ufw enable 
 sudo ufw start 
 sudo systemctl enable ufw 
