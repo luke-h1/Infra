@@ -53,7 +53,7 @@ sudo apt install -y openvpn dialog python3-pip python3-setuptools
 sudo pip3 install protonvpn-cli
 
 sudo ufw enable 
-sudo ufw start 
+sudo ufw allow 22/tcp  
 sudo systemctl enable ufw 
 sudo systemctl start ufw 
 
