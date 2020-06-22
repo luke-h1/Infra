@@ -87,6 +87,7 @@ sudo npm i lite-server -g
 cd /Users/lukehowsam/.nvm 
 
 sudo git fetch
+#https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html
 echo "script finished" 
 echo "rebooting in 5 seconds"  
 echo "VPN TO-DO: https://hide.me/en/?friend=54b08be283830&chan=ba_e"  
