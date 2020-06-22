@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "starting the install script..." 
-sleep 2 
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
@@ -11,10 +10,17 @@ nvm install stable
 brew update 
 brew upgrade node 
 npm install -g lite-server eslint #install lite-server & eslint globally 
+echo "now configuring your github username & email globally..."
+echo "" 
+echo ""
 echo "enter your github username:" 
 read user 
 git config --global --replace-all user.name "$user" 
+echo "" 
+echo "" 
 echo "added your username to git config global" 
+echo "" 
+echo "" 
 echo "enter your github email" 
 read email 
 git config --global --replace-all user.email "$email" 
@@ -43,7 +49,12 @@ wget https://videolan.mirror.liteserver.nl/vlc/3.0.11/macosx/vlc-3.0.11.dmg
 brew install python 
 brew install bash
 echo "installing protonvpn" 
-sudo bash -c "git clone https://github.com/ProtonVPN/protonvpn-cli.git && ./protonvpn-cli/protonvpn-cli.sh --install"
+sudo pip3 install protonvpn-cli 
+echo "" 
+echo ""
+echo "configuring protonvpn for root usage"
+echo "/usr/local/sbin" >> /etc/paths 
+echo "run as root user: protonvpn init & enter your details"
 wget https://download.virtualbox.org/virtualbox/6.1.10/VirtualBox-6.1.10-138449-OSX.dmg
 brew install python
 brew cask install iterm2 
@@ -80,10 +91,11 @@ sudo npm i async -g
 sudo npm i chalk -g 
 sudo npm i debug -g 
 sudo npm i lite-server -g 
+brew install iproute2mac 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 #https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html
->>>>>>> a5d2bdf745f70d6a4079854cde7c5a4be468175e
+echo "/usr/local/sbin" >> /etc/paths 
 echo "script finished" 
 echo "rebooting in 5 seconds"  
 
