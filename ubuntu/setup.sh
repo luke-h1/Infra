@@ -5,6 +5,7 @@ git clone https://github.com/luke-h1/navbar-animation-css
 git clone https://github.com/luke-h1/div-span-button-box-css
 git clone https://github.com/luke-h1/xfce
 sudo apt-get install -y curl 
+sudo apt-get install -y ansible 
 sudo apt-get update -y  
 sudo apt-get install -y nodejs npm nvm 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
@@ -19,7 +20,7 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt update
 sudo apt install code 
-sudo apt-get install -y npm 
+sudo apt-get install -y npm* --skip-broken
 
 echo "now configuring your github" 
 echo "enter your github username:"
@@ -53,7 +54,7 @@ sudo apt install -y openvpn dialog python3-pip python3-setuptools
 sudo pip3 install protonvpn-cli
 
 sudo ufw enable 
-sudo ufw start 
+sudo ufw allow 22/tcp  
 sudo systemctl enable ufw 
 sudo systemctl start ufw 
 
