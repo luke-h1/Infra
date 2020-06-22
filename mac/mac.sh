@@ -48,7 +48,8 @@ brew install wget
 wget https://dl4.cdn.filezilla-project.org/client/FileZilla_3.48.1_macosx-x86.app.tar.bz2?h=wwgqOzBgcM_1qpU8jV-1gw&amp;x=1592412932
 wget https://videolan.mirror.liteserver.nl/vlc/3.0.11/macosx/vlc-3.0.11.dmg
 wget https://download.virtualbox.org/virtualbox/6.1.10/VirtualBox-6.1.10-138449-OSX.dmg
-wget //download.documentfoundation.org/libreoffice/stable/6.4.4/mac/x86_64/LibreOffice_6.4.4_MacOS_x86-64.dmg
+wget //download.documentfoundation.org/libreoffice/stable/6.4.4/mac/x86_64/LibreOffice_6.4.4_MacOS_x86-64.dmg 
+brew install python 
 echo "script finished" 
 echo "rebooting in 5 seconds"  
 echo "VPN TO-DO: https://hide.me/en/?friend=54b08be283830&chan=ba_e"  
