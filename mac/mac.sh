@@ -8,9 +8,8 @@ brew update
 brew install ansible
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash #install nvm 
 nvm install stable
-bash --login 
-sudo brew update 
-sudo brew upgrade node 
+brew update 
+brew upgrade node 
 npm install -g lite-server eslint #install lite-server & eslint globally 
 echo "enter your github username:" 
 read user 
@@ -35,8 +34,8 @@ git clone https://github.com/luke-h1/Automation
 git clone https://github.com/transmission/transmission-releases/raw/master/Transmission-3.00.dmg
 mkdir -p /srv/isos 
 mkdir -p /srv/courses
-mkdir -p /home/lukehowsam/notes 
-mkdir -p /home/lukehowsam/wallpapers  
+mkdir -p /Users/lukehowsam/notes 
+mkdir -p /Users/lukehowsam/wallpapers  
 rm -rf /Users/lukehowsam/Pictures  
 rm -rf /Users/lukehowsam/Documents  
 rm -rf /Users/lukehowsam/Public 
