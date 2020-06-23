@@ -131,6 +131,7 @@ brew install webpack
 brew install gnu-which
 brew install terminator
 brew install vcprompt 
+brew cask install caffeine
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 echo "script finished" 
