@@ -83,7 +83,54 @@ sudo npm i async -g
 sudo npm i chalk -g 
 sudo npm i debug -g 
 sudo npm i lite-server -g 
+brew install nmap
+brew install links
 brew install iproute2mac 
+brew install watch
+brew install coreutils
+brew install openssl
+brew install pkg-config
+brew install cmake 
+brew install readline
+brew install heroku
+brew install tree
+brew install gcc
+brew install gnupg 
+brew install mariadb
+brew install p7zip
+brew install ack 
+brew install midnight-commander
+brew install gnutls
+brew install subversion
+brew install certbot
+brew install mtr 
+brew install gnu-sed
+brew install cowsay
+brew install speedtest-cli
+brew install findutils
+brew install gnu-tar
+brew install aircrack-ng
+brew install mcrypt
+brew install libusb
+brew install fortune
+brew install openssh 
+brew install md5sha1sum 
+brew install pstree 
+brew install grep
+brew install brew-cask-completion
+brew install moreutils
+brew install screenfetch
+brew install docker-completion
+brew install gpg-agent
+brew install dockutil
+brew install trash
+brew install findutils
+brew install lolcat
+brew install e2fsprogs
+brew install webpack
+brew install gnu-which
+brew install terminator
+brew install vcprompt 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 echo "script finished" 
