@@ -45,17 +45,9 @@ mkdir -p /Users/lukehowsam/wallpapers
 mkdir /opt
 cd /opt
 brew install wget  
-wget https://videolan.mirror.liteserver.nl/vlc/3.0.11/macosx/vlc-3.0.11.dmg
 brew install python 
 brew install bash
-echo "installing protonvpn" 
-sudo pip3 install protonvpn-cli 
-echo "" 
-echo ""
-echo "configuring protonvpn for root usage"
 echo "/usr/local/sbin" >> /etc/paths 
-echo "run as root user: protonvpn init & enter your details"
-wget https://download.virtualbox.org/virtualbox/6.1.10/VirtualBox-6.1.10-138449-OSX.dmg
 brew install python
 brew cask install iterm2 
 brew cask install vcprompt 
@@ -94,11 +86,8 @@ sudo npm i lite-server -g
 brew install iproute2mac 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-#https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html
-echo "/usr/local/sbin" >> /etc/paths 
 echo "script finished" 
 echo "rebooting in 5 seconds"  
-
 sleep 5
 sudo reboot   
  
