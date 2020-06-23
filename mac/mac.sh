@@ -104,7 +104,7 @@ brew install gnutls
 brew install subversion
 brew install certbot
 brew install mtr 
-brew install nu-sed
+brew install gnu-sed
 brew install cowsay
 brew install speedtest-cli
 brew install findutils
