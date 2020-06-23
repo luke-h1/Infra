@@ -12,7 +12,7 @@ brew upgrade node
 npm install -g lite-server eslint #install lite-server & eslint globally 
 echo "now configuring your github username & email globally..."
 echo "" 
-echo ""
+vcecho ""
 echo "enter your github username:" 
 read user 
 git config --global --replace-all user.name "$user" 
@@ -50,7 +50,7 @@ brew install bash
 echo "/usr/local/sbin" >> /etc/paths 
 brew install python
 brew cask install iterm2 
-brew cask install vcprompt 
+brew install vcprompt 
 brew install bash
 brew upgrade bash
 brew cask install google-chrome 
