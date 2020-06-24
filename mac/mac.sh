@@ -131,6 +131,7 @@ brew install webpack
 brew install gnu-which
 brew install terminator
 brew install vcprompt 
+sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 echo "script finished" 
