@@ -37,13 +37,11 @@ git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/navbar-animation-css 
 git clone https://github.com/luke-h1/div-span-button-box-css
 git clone https://github.com/luke-h1/Automation
-git clone https://github.com/transmission/transmission-releases/raw/master/Transmission-3.00.dmg
 mkdir -p /srv/isos 
 mkdir -p /srv/courses
 mkdir -p /Users/lukehowsam/notes 
 mkdir -p /Users/lukehowsam/wallpapers  
 mkdir /opt
-cd /opt
 brew install wget  
 brew install python 
 brew install bash
