@@ -131,6 +131,7 @@ brew install webpack
 brew install gnu-which
 brew install terminator
 brew install vcprompt 
+brew install yarn 
 brew cask install responsively
 sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
