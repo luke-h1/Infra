@@ -72,10 +72,13 @@ sudo npm i moment -g
 sudo npm i express -g 
 sudo npm i request -g 
 sudo npm i lodash -g 
+sudo npm i next -g 
 sudo npm i async -g 
 sudo npm i chalk -g 
 sudo npm i debug -g 
 sudo npm i lite-server -g 
+sudo npm update
+sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 brew install nmap
 brew install links
 brew install iproute2mac 
@@ -124,6 +127,8 @@ brew install webpack
 brew install gnu-which
 brew install terminator
 brew install vcprompt 
+brew install yarn 
+brew cask install responsively
 sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
