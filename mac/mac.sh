@@ -9,12 +9,26 @@ bash --login
 nvm install stable
 brew update 
 brew upgrade node 
+sudo mkdir /srv 
+sudo mkdir -p /srv/isos 
+sudo mkdir -p /srv/dev 
+sudo mkdir -p /srv/courses
+sudo mkdir -p /Users/lukehowsam/notes 
+sudo mkdir -p /Users/lukehowsam/wallpapers 
+echo "github username:" 
+read user 
+git config --global --replace-all user.name "$user" 
+echo "enter github email address:" 
+read email 
+git config --global --replace-all user.email "$email" 
+sleep 2 
+echo "configured your github name & email globally"
 npm install -g eslint 
 brew cask install postman  
 brew install wget  
 brew install python 
 brew install bash
-sudo echo "/usr/local/sbin" >> /etc/paths #already in /etc/paths but this returns a permission denied error
+sudo echo "/usr/local/sbin" >> /etc/paths 
 brew install python
 brew cask install iterm2 
 brew install vcprompt 
@@ -103,10 +117,9 @@ brew install bash-completion
 brew install bash-git-prompt
 brew install yarn 
 brew cask install responsively
-sudo log config --mode "private_data:on" #get an error. need to fix 
+sudo log config --mode "private_data:on" 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-echo "some things are broken but catalina seems to be fine without the packages...." 
 echo "script finished" 
 sudo reboot   
  
