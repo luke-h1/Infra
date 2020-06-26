@@ -5,44 +5,26 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew update
 brew install ansible
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash #install nvm 
+bash --login 
 nvm install stable
 brew update 
 brew upgrade node 
-npm install -g eslint 
-echo "now configuring your github username & email globally..."
-echo "===================enter your github username==============
-=================================================================
-=================================================================:" 
-read user 
-git config --global --replace-all user.name "$user" 
-
-echo "added your username to git config global" 
-
-echo "===================enter your github email==============
-=================================================================
-=================================================================:" 
-read email 
-git config --global --replace-all user.email "$email" 
-echo "configured your github name & email globally"
-brew cask install postman  
-mkdir /srv/dev  
-cd /srv/dev 
-git clone https://github.com/luke-h1/scrimba-html-css 
-echo "putting github repos in /srv/dev directory..." 
-git clone https://github.com/luke-h1/dotfiles 
-git clone https://github.com/luke-h1/responsive-webdesign
-git clone https://github.com/luke-h1/Automation
-mkdir -p /srv/isos 
-mkdir -p /srv/courses
-mkdir -p /Users/lukehowsam/notes 
-mkdir -p /Users/lukehowsam/wallpapers  
-mkdir /opt
-cd /opt
+sudo mkdir /srv 
 sudo mkdir -p /srv/isos 
+sudo mkdir -p /srv/dev 
 sudo mkdir -p /srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
-sudo mkdir -p /Users/lukehowsam/wallpapers  
-sudo mkdir /opt
+sudo mkdir -p /Users/lukehowsam/wallpapers 
+echo "github username:" 
+read user 
+git config --global --replace-all user.name "$user" 
+echo "enter github email address:" 
+read email 
+git config --global --replace-all user.email "$email" 
+sleep 2 
+echo "configured your github name & email globally"
+npm install -g eslint 
+brew cask install postman  
 brew install wget  
 brew install python 
 brew install bash
@@ -60,7 +42,6 @@ brew install docker-machine
 brew install wget
 brew cask install gpg-suite 
 brew install ssh-copy-id 
-brew cask install bash-completion 
 brew cask install spectacle 
 brew cask install virtualbox 
 brew cask install insomnia 
@@ -132,14 +113,15 @@ brew install webpack
 brew install gnu-which
 brew install terminator
 brew install vcprompt 
+brew install bash-completion 
+brew install bash-git-prompt
 brew install yarn 
 brew cask install responsively
-sudo log config --mode "private_data:on"
+sudo log config --mode "private_data:on" 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
+brew services enable openvpn
 echo "script finished" 
-echo "rebooting in 5 seconds"  
-sleep 5
 sudo reboot   
  
   
