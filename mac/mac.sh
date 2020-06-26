@@ -10,32 +10,7 @@ nvm install stable
 brew update 
 brew upgrade node 
 npm install -g eslint 
-echo "enter your github username: " 
-read user 
-git config --global --replace-all user.name "$user" 
-sleep 3 
-echo "enter your github email: " 
-read email 
-git config --global --replace-all user.email "$email" 
-sleep 3 
-echo "configured your github name & email globally"
 brew cask install postman  
-sudo mkdir -p Users/lukehowsam/srv/dev  
-cd Users/lukehowsam/srv/dev 
-git clone https://github.com/luke-h1/scrimba-html-css 
-echo "putting github repos in Users/lukehowsam/srv/dev directory..." 
-git clone https://github.com/luke-h1/dotfiles 
-git clone https://github.com/luke-h1/responsive-webdesign
-git clone https://github.com/luke-h1/Automation
-sudo mkdir -p Users/lukehowsam/srv/isos 
-sudo mkdir -p Users/lukehowsam/srv/courses
-sudo mkdir -p /Users/lukehowsam/notes 
-sudo mkdir -p /Users/lukehowsam/wallpapers  
-sudo mkdir -p Users/lukehowsam/opt
-sudo mkdir -p Users/lukehowsam/srv/isos 
-sudo mkdir -p Users/lukehowsam/srv/courses
-sudo mkdir -p /Users/lukehowsam/notes 
-sudo mkdir -p /Users/lukehowsam/wallpapers  
 brew install wget  
 brew install python 
 brew install bash
