@@ -34,7 +34,6 @@ brew cask install iterm2
 brew install vcprompt 
 brew install bash
 brew upgrade bash
-brew cask install google-chrome 
 brew cask install visual-studio-code 
 brew cask install docker
 brew install docker-compose
