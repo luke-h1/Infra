@@ -5,6 +5,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew update
 brew install ansible
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash #install nvm 
+bash --login 
 nvm install stable
 brew update 
 brew upgrade node 
@@ -25,24 +26,22 @@ read email
 git config --global --replace-all user.email "$email" 
 echo "configured your github name & email globally"
 brew cask install postman  
-mkdir /srv/dev  
-cd /srv/dev 
+sudo mkdir -p Users/lukehowsam/srv/dev  
+cd Users/lukehowsam/srv/dev 
 git clone https://github.com/luke-h1/scrimba-html-css 
-echo "putting github repos in /srv/dev directory..." 
+echo "putting github repos in Users/lukehowsam/srv/dev directory..." 
 git clone https://github.com/luke-h1/dotfiles 
 git clone https://github.com/luke-h1/responsive-webdesign
 git clone https://github.com/luke-h1/Automation
-mkdir -p /srv/isos 
-mkdir -p /srv/courses
-mkdir -p /Users/lukehowsam/notes 
-mkdir -p /Users/lukehowsam/wallpapers  
-mkdir /opt
-cd /opt
-sudo mkdir -p /srv/isos 
-sudo mkdir -p /srv/courses
+sudo mkdir -p Users/lukehowsam/srv/isos 
+sudo mkdir -p Users/lukehowsam/srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
 sudo mkdir -p /Users/lukehowsam/wallpapers  
-sudo mkdir /opt
+sudo mkdir Users/lukehowsam/opt
+sudo mkdir -p Users/lukehowsam/srv/isos 
+sudo mkdir -p Users/lukehowsam/srv/courses
+sudo mkdir -p /Users/lukehowsam/notes 
+sudo mkdir -p /Users/lukehowsam/wallpapers  
 brew install wget  
 brew install python 
 brew install bash
@@ -138,8 +137,6 @@ sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 echo "script finished" 
-echo "rebooting in 5 seconds"  
-sleep 5
 sudo reboot   
  
   
