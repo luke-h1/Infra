@@ -120,6 +120,7 @@ brew cask install responsively
 sudo log config --mode "private_data:on" 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
+brew services enable openvpn
 echo "script finished" 
 sudo reboot   
  
