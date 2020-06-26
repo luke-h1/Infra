@@ -10,20 +10,14 @@ nvm install stable
 brew update 
 brew upgrade node 
 npm install -g eslint 
-echo "now configuring your github username & email globally..."
-echo "===================enter your github username==============
-=================================================================
-=================================================================:" 
+echo "enter your github username: " 
 read user 
 git config --global --replace-all user.name "$user" 
-
-echo "added your username to git config global" 
-
-echo "===================enter your github email==============
-=================================================================
-=================================================================:" 
+sleep 3 
+echo "enter your github email: " 
 read email 
 git config --global --replace-all user.email "$email" 
+sleep 3 
 echo "configured your github name & email globally"
 brew cask install postman  
 sudo mkdir -p Users/lukehowsam/srv/dev  
@@ -37,7 +31,7 @@ sudo mkdir -p Users/lukehowsam/srv/isos
 sudo mkdir -p Users/lukehowsam/srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
 sudo mkdir -p /Users/lukehowsam/wallpapers  
-sudo mkdir Users/lukehowsam/opt
+sudo mkdir -p Users/lukehowsam/opt
 sudo mkdir -p Users/lukehowsam/srv/isos 
 sudo mkdir -p Users/lukehowsam/srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
@@ -45,7 +39,7 @@ sudo mkdir -p /Users/lukehowsam/wallpapers
 brew install wget  
 brew install python 
 brew install bash
-sudo echo "/usr/local/sbin" >> /etc/paths 
+sudo echo "/usr/local/sbin" >> /etc/paths #already in /etc/paths but this returns a permission denied error
 brew install python
 brew cask install iterm2 
 brew install vcprompt 
@@ -134,7 +128,7 @@ brew install bash-completion
 brew install bash-git-prompt
 brew install yarn 
 brew cask install responsively
-sudo log config --mode "private_data:on"
+sudo log config --mode "private_data:on" #get an error. need to fix 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 echo "some things are broken but catalina seems to be fine without the packages...." 
