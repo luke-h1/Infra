@@ -59,7 +59,6 @@ brew install docker-machine
 brew install wget
 brew cask install gpg-suite 
 brew install ssh-copy-id 
-brew cask install bash-completion 
 brew cask install spectacle 
 brew cask install virtualbox 
 brew cask install insomnia 
@@ -131,6 +130,8 @@ brew install webpack
 brew install gnu-which
 brew install terminator
 brew install vcprompt 
+brew install bash-completion 
+brew install bash-git-prompt
 brew install yarn 
 brew cask install responsively
 sudo log config --mode "private_data:on"
