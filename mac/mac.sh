@@ -136,6 +136,7 @@ brew cask install responsively
 sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
+echo "some things are broken but catalina seems to be fine without the packages...." 
 echo "script finished" 
 sudo reboot   
  
