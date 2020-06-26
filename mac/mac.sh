@@ -28,10 +28,9 @@ brew cask install postman
 mkdir /srv/dev  
 cd /srv/dev 
 git clone https://github.com/luke-h1/scrimba-html-css 
+echo "putting github repos in /srv/dev directory..." 
 git clone https://github.com/luke-h1/dotfiles 
 git clone https://github.com/luke-h1/responsive-webdesign
-git clone https://github.com/luke-h1/navbar-animation-css 
-git clone https://github.com/luke-h1/div-span-button-box-css
 git clone https://github.com/luke-h1/Automation
 mkdir -p /srv/isos 
 mkdir -p /srv/courses
@@ -39,6 +38,11 @@ mkdir -p /Users/lukehowsam/notes
 mkdir -p /Users/lukehowsam/wallpapers  
 mkdir /opt
 cd /opt
+sudo mkdir -p /srv/isos 
+sudo mkdir -p /srv/courses
+sudo mkdir -p /Users/lukehowsam/notes 
+sudo mkdir -p /Users/lukehowsam/wallpapers  
+sudo mkdir /opt
 brew install wget  
 brew install python 
 brew install bash
@@ -58,7 +62,6 @@ brew cask install gpg-suite
 brew install ssh-copy-id 
 brew cask install bash-completion 
 brew cask install spectacle 
-brew cask install alfred 
 brew cask install virtualbox 
 brew cask install insomnia 
 brew install htop 
