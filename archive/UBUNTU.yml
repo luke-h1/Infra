@@ -1,6 +1,6 @@
 ---
 - hosts: localhost   
-  remote_user: root 
+  remote_user: cloud_user 
   tasks: 
           - name: ubuntu packages 
             apt:   
@@ -22,14 +22,26 @@
                           - ufw
                           - bridge-utils
                           - qemu-kvm
+                          - terminator
                           - cmake
                           - git
+                          - libreoffice
                           - nginx 
                           - mariadb-server
                           - postfix 
                           - net-tools
                           - bridge-utils   
-                         
+                          
+
+
+          - name: create custom directories 
+            file: 
+              path: /srv/scripts 
+              path: /srv/isos 
+              state: directory 
+
+
+       
                           
           - name: update all packages 
             apt: 
