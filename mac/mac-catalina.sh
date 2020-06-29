@@ -9,20 +9,20 @@ bash --login #new shell
 nvm install stable
 brew update 
 brew upgrade node 
-DIRECTORY1="/Users/lukehowsam/srv"
-DIRECTORY2="/Users/lukehowsam/srv/isos"
-DIRECTORY3="/Users/lukehowsam/srv/dev"
-DIRECTORY4="/Users/lukehowsam/srv/courses"
-DIRECTORY5="/Users/lukehowsam/notes"
+DIRECTORY1="/Users/$USER/srv"
+DIRECTORY2="/Users/$USER/srv/isos"
+DIRECTORY3="/Users/$USER/srv/dev"
+DIRECTORY4="/Users/$USER/srv/courses"
+DIRECTORY5="/Users/$USER/notes"
 #simple for loop that will loop over the above directories. 
 #Add your own custom directories as needed & adjust regex below as needed
 for i in $DIRECTORY[0-5] ;
         do
-                sudo mkdir -p $DIRECTORY1
-                sudo mkdir -p $DIRECTORY2
-                sudo mkdir -p $DIRECTORY3
-                sudo mkdir -p $DIRECTORY4
-                sudo mkdir -p $DIRECTORY5
+                 mkdir -p $DIRECTORY1
+                 mkdir -p $DIRECTORY2
+                 mkdir -p $DIRECTORY3
+                 mkdir -p $DIRECTORY4
+                 mkdir -p $DIRECTORY5
                 done
 echo "$(tput setaf 4)Enter your github username:$(tput sgr0)"
 read user 
