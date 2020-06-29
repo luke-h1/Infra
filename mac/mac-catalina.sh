@@ -9,18 +9,33 @@ bash --login
 nvm install stable
 brew update 
 brew upgrade node 
-if [ -d $DIRECTORY* ] ; 
-  then 
-   echo "creating custom directories..." 
-   
-sudo mkdir -p /Users/lukehowsam/srv 
-sudo mkdir -p /Users/lukehowsam/srv/isos 
-sudo mkdir -p /Users/lukehowsam/srv/dev 
-sudo mkdir -p /Users/lukehowsam/srv/courses
-sudo mkdir -p /Users/lukehowsam/notes 
-else 
- echo "directories exist." 
- fi 
+DIRECTORY1="/Users/lukehowsam/srv" 
+DIRECTORY2="/Users/lukehowsam/srv/isos" 
+DIRECTORY3="/Users/lukehowsam/srv/dev"
+DIRECTORY4="/Users/lukehowsam/srv/courses"
+DIRECTORY5="/Users/lukehowsam/notes" 
+
+# checks if directories exist and if not create them 
+if [ -d $DIRECTORY ] 
+then
+	echo "directories all ready exist. refusing to make the same directory...." 
+elif 
+	echo "directories don't exist yet... creating custom directories now" 
+then
+	sudo mkdir -p /Users/lukehowsam/srv 
+	sudo mkdir -p /Users/lukehowsam/srv/isos 
+	sudo mkdir -p /Users/lukehowsam/srv/dev
+	sudo mkdir -p /Users/lukehowsam/srv/courses
+	sudo mkdir -p /Users/lukehowsam/notes
+
+fi 	
+# checks if the above if statement worked and if not let user know that it has failed	
+if [ -d $DIRECTORY ] ; 
+then
+	echo "directories have been created successfully" 
+else
+	echo "something went wrong with this script..." 
+fi 
 echo "github username:" 
 read user 
 git config --global --replace-all user.name "$user" 
@@ -122,6 +137,7 @@ cd /Users/lukehowsam/.nvm
 sudo git fetch
 brew services enable openvpn
 echo "script finished" 
+
+
 sudo reboot   
  
-  
