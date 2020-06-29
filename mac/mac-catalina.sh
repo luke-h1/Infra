@@ -9,10 +9,10 @@ bash --login
 nvm install stable
 brew update 
 brew upgrade node 
-sudo mkdir /srv 
-sudo mkdir -p /srv/isos 
-sudo mkdir -p /srv/dev 
-sudo mkdir -p /srv/courses
+sudo mkdir -p Users/lukehowsam/srv 
+sudo mkdir -p Users/lukehowsam/srv/isos 
+sudo mkdir -p Users/lukehowsam/srv/dev 
+sudo mkdir -p Users/lukehowsam/srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
 sudo mkdir -p /Users/lukehowsam/wallpapers 
 echo "github username:" 
@@ -33,7 +33,6 @@ brew cask install iterm2
 brew install vcprompt 
 brew install bash
 brew upgrade bash
-brew cask install google-chrome 
 brew cask install visual-studio-code 
 brew cask install docker
 brew install docker-compose
