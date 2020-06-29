@@ -4,8 +4,8 @@ xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 brew update
 brew install ansible
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash #install nvm 
-bash --login 
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
+bash --login #new shell 
 nvm install stable
 brew update 
 brew upgrade node 
@@ -23,14 +23,13 @@ for i in $DIRECTORY[0-5] ;
                 sudo mkdir -p $DIRECTORY4
                 sudo mkdir -p $DIRECTORY5
                 done
-echo "github username:" 
+echo "$(tput setaf 4)Enter your github username:$(tput sgr0)"
 read user 
 git config --global --replace-all user.name "$user" 
-echo "enter github email address:" 
+echo "$(tput setaf 4)Enter your github email:$(tput sgr0)"
 read email 
 git config --global --replace-all user.email "$email" 
-sleep 2 
-echo "configured your github name & email globally"
+echo "$(tput setaf 1)Your github information has now been configured globally...$(tput sgr0)"
 brew cask install postman  
 brew install wget  
 brew install python 
