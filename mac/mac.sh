@@ -63,6 +63,7 @@ sudo npm i async -g
 sudo npm i chalk -g 
 sudo npm i debug -g 
 sudo npm i lite-server -g 
+sudo npm i nodemon -g 
 sudo npm update
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 brew install nmap
