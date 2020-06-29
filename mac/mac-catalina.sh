@@ -9,12 +9,18 @@ bash --login
 nvm install stable
 brew update 
 brew upgrade node 
+if [ -d $DIRECTORY* ] ; 
+  then 
+   echo "creating custom directories..." 
+   
 sudo mkdir -p /Users/lukehowsam/srv 
 sudo mkdir -p /Users/lukehowsam/srv/isos 
 sudo mkdir -p /Users/lukehowsam/srv/dev 
 sudo mkdir -p /Users/lukehowsam/srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
-sudo mkdir -p /Users/lukehowsam/wallpapers 
+else 
+ echo "directories exist." 
+ fi 
 echo "github username:" 
 read user 
 git config --global --replace-all user.name "$user" 
