@@ -14,7 +14,8 @@ DIRECTORY2="/Users/lukehowsam/srv/isos"
 DIRECTORY3="/Users/lukehowsam/srv/dev"
 DIRECTORY4="/Users/lukehowsam/srv/courses"
 DIRECTORY5="/Users/lukehowsam/notes"
-#simple for loop that will loop over the above directories. Add your own custom directories as needed & adjust regex below as needed
+#simple for loop that will loop over the above directories. 
+#Add your own custom directories as needed & adjust regex below as needed
 for i in $DIRECTORY[0-5] ;
         do
                 sudo mkdir -p $DIRECTORY1
