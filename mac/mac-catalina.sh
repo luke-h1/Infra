@@ -49,7 +49,6 @@ brew install wget
 brew cask install gpg-suite 
 brew install ssh-copy-id 
 brew cask install spectacle 
-brew cask install virtualbox 
 brew cask install insomnia 
 brew install htop 
 brew install vim 
