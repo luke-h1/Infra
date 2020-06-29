@@ -144,7 +144,7 @@ read choice
 if [ $choice == "y"|"Y" ] ; 
 then
 	sudo reboot  
-elif [ $choice == "n" ] ; 
+elif [ $choice == "n"|"N" ] ; 
 then
 	echo "not rebooting" 
 	exit 55 
