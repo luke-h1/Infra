@@ -29,6 +29,8 @@ then
 	sudo mkdir -p /Users/lukehowsam/notes
 
 fi 	
+
+
 # checks if the above if statement worked and if not let user know that it has failed	
 if [ -d $DIRECTORY ] ; 
 then
@@ -136,8 +138,13 @@ sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 brew services enable openvpn
-echo "script finished" 
-
-
-sudo reboot   
- 
+echo "script finished"
+echo "would you like to reboot ? (y/n) " 
+read choice 
+if [ $choice == "y"|"Y" ] ; 
+then
+	sudo reboot  
+elif [ $choice == "n" ] ; 
+then
+	echo "not rebooting" 
+	exit 55 
