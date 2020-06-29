@@ -9,10 +9,10 @@ bash --login
 nvm install stable
 brew update 
 brew upgrade node 
-sudo mkdir -p Users/lukehowsam/srv 
-sudo mkdir -p Users/lukehowsam/srv/isos 
-sudo mkdir -p Users/lukehowsam/srv/dev 
-sudo mkdir -p Users/lukehowsam/srv/courses
+sudo mkdir -p /Users/lukehowsam/srv 
+sudo mkdir -p /Users/lukehowsam/srv/isos 
+sudo mkdir -p /Users/lukehowsam/srv/dev 
+sudo mkdir -p /Users/lukehowsam/srv/courses
 sudo mkdir -p /Users/lukehowsam/notes 
 sudo mkdir -p /Users/lukehowsam/wallpapers 
 echo "github username:" 
