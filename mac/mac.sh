@@ -23,7 +23,6 @@ read email
 git config --global --replace-all user.email "$email" 
 sleep 2 
 echo "configured your github name & email globally"
-npm install -g eslint 
 brew cask install postman  
 brew install wget  
 brew install python 
@@ -59,6 +58,7 @@ sudo npm i express -g
 sudo npm i request -g 
 sudo npm i lodash -g 
 sudo npm i next -g 
+sudo npi i eslint -g 
 sudo npm i async -g 
 sudo npm i chalk -g 
 sudo npm i debug -g 
@@ -78,17 +78,13 @@ brew install heroku
 brew install tree
 brew install gcc
 brew install gnupg 
-brew install mariadb
 brew install p7zip
 brew install ack 
-brew install midnight-commander
 brew install gnutls
-brew install subversion
 brew install certbot
 brew install mtr 
 brew install gnu-sed
 brew install cowsay
-brew install speedtest-cli
 brew install findutils
 brew install gnu-tar
 brew install aircrack-ng
@@ -111,7 +107,6 @@ brew install lolcat
 brew install e2fsprogs
 brew install webpack
 brew install gnu-which
-brew install terminator
 brew install vcprompt 
 brew install bash-completion 
 brew install bash-git-prompt
