@@ -1,10 +1,7 @@
 #!/bin/bash 
 git clone https://github.com/luke-h1/dotfiles 
-git clone https://github.com/luke-h1/xfce
 sudo apt-get install -y curl 
 sudo apt-get install -y ansible 
-sudo apt-get update -y  
-sudo apt-get install -y nodejs npm nvm 
 sudo apt install software-properties-common apt-transport-https wget -y 
 echo "now configuring your github" 
 echo "enter your github username:"
