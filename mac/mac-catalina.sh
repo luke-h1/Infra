@@ -32,6 +32,7 @@ read email
 git config --global --replace-all user.email "$email" 
 echo "$(tput setaf 1)Your github information has now been configured globally...$(tput sgr0)"
 brew cask install postman  
+brew cask install transmission
 brew install wget  
 brew install python 
 brew install bash
@@ -42,6 +43,7 @@ brew install vcprompt
 brew install bash
 brew upgrade bash
 brew cask install caffeine 
+brew cask install vlc
 brew cask install visual-studio-code 
 brew cask install docker
 brew install docker-compose
