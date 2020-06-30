@@ -1,5 +1,4 @@
 ---
-
 - hosts: localhost 
   remote_user: lukehowsam 
   tasks: 
@@ -589,12 +588,5 @@
               name: lite-server
               global: yes
               become: yes 
-          
-
-          
-
-        
-
-
-
+      
           
