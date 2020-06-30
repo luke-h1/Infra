@@ -1,0 +1,485 @@
+---
+
+- hosts: localhost 
+  remote_user: lukehowsam 
+  tasks: 
+          - homebrew_cask:
+               name: caffeine 
+               state: upgraded
+               become: false  
+
+
+          - homebrew_cask:
+               name: iterm2  
+               state: upgraded
+               become: false
+
+
+          - homebrew_cask:
+               name: visual-studio-code  
+               state: upgraded
+               become: false
+
+
+          - homebrew_cask:
+               name: caffeine 
+               state: upgraded
+               become: false  
+
+
+          - homebrew_cask:
+               name: docker  
+               state: upgraded
+               become: false
+
+
+          - homebrew_cask:
+               name: docker-compose  
+               state: upgraded
+               become: false
+
+
+          - homebrew_cask:
+               name: docker-machine 
+               state: upgraded
+               become: false  
+
+
+          - homebrew_cask:
+               name: gpg-suite  
+               state: upgraded
+               become: false
+
+
+          - homebrew_cask:
+               name: spectacle  
+               state: upgraded
+               become: false
+
+          - homebrew_cask:
+               name: insomnia 
+               state: upgraded
+               become: false
+
+
+          - homebrew_cask:
+               name: responsively  
+               state: upgraded
+               become: false  
+               
+
+          - homebrew:
+               name: wget
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: bash
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: python
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: vcprompt
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: docker-compose
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: docker-machine
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: htop
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: vim
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: openvpn
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: tmux
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: screen
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: dialog
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: node
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: nmap
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: links
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+              
+          - homebrew:
+               name: iproute2mac
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: watch
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: coreutils
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: openssl
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: pkg-config
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: cmake
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: readline
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: heroku
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: tree
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: gcc
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: gnupg
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: p7zip
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: ack
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: gnutls
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: certbot
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: mtr
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: gnu-sed
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: cowsay
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: findutils
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: gnu-tar
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: aircrack-ng
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: mcrypt
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: libusb
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: fortune
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: openssh
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: md5sha1sum
+               state: latest
+               update_homebrew: yes 
+               become: false
+
+
+          - homebrew:
+               name: pstree
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: grep
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: brew-cask-completion 
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+              
+          - homebrew:
+               name: moreutils 
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: screenfetch
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: docker-completion
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: gpg-agent
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: dockutil
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: trash
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: findutils
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: lolcat
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: e2fsprogs
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: webpack
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: gnu-which
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: ash-completion
+               state: latest
+               update_homebrew: yes
+               become: false 
+
+
+          - homebrew:
+               name: bash-git-prompt
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          - homebrew:
+               name: yarn
+               state: latest
+               update_homebrew: yes
+               become: false
+
+
+          
+
+        
+
+
+
+          
