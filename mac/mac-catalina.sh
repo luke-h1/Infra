@@ -35,7 +35,7 @@ brew cask install postman
 brew install wget  
 brew install python 
 brew install bash
-sudo echo "/usr/local/sbin" >> /etc/paths 
+sudo echo "/usr/local/sbin" >> /etc/paths # /usr/local/sbin already in /etc/paths as of Catalina 10.15 
 brew install python
 brew cask install iterm2 
 brew install vcprompt 
