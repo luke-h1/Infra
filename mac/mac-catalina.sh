@@ -1,4 +1,7 @@
 #!/bin/bash
+
+echo "$(tput setaf 4)make sure you have ownership of this script as it will take in env variables such as \$USER.       
+you can change ownership by running the following command: sudo chown -R <your_username>:staff mac-catalina.sh$(tput sgr0)"
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
