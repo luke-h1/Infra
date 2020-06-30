@@ -40,6 +40,8 @@
                             - curl
                             - at 
                             - bluez
+                            - xfce 
+                            - terminator 
                             - blueman 
                             - pulseaudio-module-bluetooth 
                             - ubuntu-desktop 
