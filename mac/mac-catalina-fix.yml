@@ -456,7 +456,7 @@
 
 
           - homebrew:
-               name: ash-completion
+               name: bash-completion
                state: latest
                update_homebrew: yes
                become: false 
@@ -475,6 +475,121 @@
                update_homebrew: yes
                become: false
 
+          - name: Create srv directory 
+            file:
+               path: /Users/lukehowsam/srv
+               state: directory
+               mode: '0755'
+
+
+          - name: Create iso directory 
+            file:
+               path: /Users/lukehowsam/srv/isos
+               state: directory
+               mode: '0755'
+
+
+          - name: Create /srv/dev directory 
+            file:
+               path: /Users/lukehowsam/srv/dev
+               state: directory
+               mode: '0755'
+
+
+          - name: Create /srv/courses directory 
+            file:
+               path: Users/lukehowsam/srv/courses
+               state: directory
+               mode: '0755'
+
+          - name: Create notes directory 
+            file:
+               path: Users/lukehowsam/notes 
+               state: directory
+               mode: '0755'
+
+
+          - name: Install "react" node.js package globally.
+            npm:
+              name: react
+              global: yes
+              become: yes
+
+          - name: Install "prop-types" node.js package globally.
+            npm:
+              name: prop-types
+              global: yes
+              become: yes
+
+          - name: Install "moment" node.js package globally.
+            npm:
+              name: moment
+              global: yes
+              become: yes
+
+          - name: Install "express" node.js package globally.
+            npm:
+              name: express
+              global: yes
+              become: yes
+
+          - name: Install "request" node.js package globally.
+            npm:
+              name: request
+              global: yes
+              become: yes
+
+          - name: Install "lodash" node.js package globally.
+            npm:
+              name: lodash
+              global: yes
+              become: yes
+
+          - name: Install "next" node.js package globally.
+            npm:
+              name: next
+              global: yes
+              become: yes
+
+
+          - name: Install "eslint" node.js package globally.
+            npm:
+              name: eslint
+              global: yes
+              become: yes
+
+          - name: Install "async" node.js package globally.
+            npm:
+              name: async
+              global: yes
+              become: yes
+
+          - name: Install "vue" node.js package globally.
+            npm:
+              name: vue
+              global: yes
+              become: yes
+
+
+          - name: Install "chalk" node.js package globally.
+            npm:
+              name: chalk
+              global: yes
+              become: yes
+
+          - name: Install "debug" node.js package globally.
+            npm:
+              name: debug
+              global: yes
+              become: yes
+
+
+          - name: Install "lite-server" node.js package globally.
+            npm:
+              name: lite-server
+              global: yes
+              become: yes 
+          
 
           
 
