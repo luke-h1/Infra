@@ -5,7 +5,7 @@
 
 
           - name: Change the working directory to /Users/<your_username>/Automation/mac/ before executing the command.
-            shell: mac-catalina.sh >> /Users/$USER/catalina-install-log.txt
+            shell: mac-catalina.sh 
             args:
                chdir: /Users/$USER/Automation/mac/ 
 
