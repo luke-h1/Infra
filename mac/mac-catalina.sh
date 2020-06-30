@@ -124,11 +124,12 @@ sudo git fetch
 brew services enable openvpn
 echo "script finished"
 echo "would you like to reboot ? (y/n) " 
-read choice 
-if [ $choice == "y"|"Y" ] ; 
+read choice
+if [ $choice == "y" ] ;
 then
-	sudo reboot  
-elif [ $choice == "n"|"N" ] ; 
+        sudo reboot -h now
+elif [ $choice == "n" ] ;
 then
-	echo "not rebooting" 
-	exit 55 
+        echo "not rebooting"
+fi
+        exit 55
