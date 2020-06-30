@@ -40,11 +40,12 @@
                             - curl
                             - at 
                             - bluez
+                            - xfce 
+                            - terminator 
                             - blueman 
                             - pulseaudio-module-bluetooth 
                             - ubuntu-desktop 
                             - unity-control-center
-
   
             - name: apt-get update 
               apt: 
