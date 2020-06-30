@@ -4,8 +4,8 @@
   tasks: 
 
 
-          - name: Change the working directory to somedir/ before executing the command.
-            shell: mac-catalina.sh >> catalina-install-log.txt
+          - name: Change the working directory to /Users/<your_username>/Automation/mac/ before executing the command.
+            shell: mac-catalina.sh >> /Users/$USER/catalina-install-log.txt
             args:
                chdir: /Users/$USER/Automation/mac/ 
 
