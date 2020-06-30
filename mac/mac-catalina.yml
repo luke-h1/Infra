@@ -2,6 +2,14 @@
 - hosts: localhost 
   remote_user: lukehowsam 
   tasks: 
+
+
+          - name: Change the working directory to somedir/ before executing the command.
+            shell: mac-catalina.sh >> catalina-install-log.txt
+            args:
+               chdir: /Users/$USER/Automation/mac/ 
+
+
           - homebrew_cask:
                name: caffeine 
                state: upgraded
