@@ -7,416 +7,387 @@
           - homebrew_cask:
                name: caffeine 
                state: upgraded
-               become: no  
 
 
           - homebrew_cask:
                name: iterm2  
                state: upgraded
-               become: no
 
 
           - homebrew_cask:
                name: visual-studio-code  
                state: upgraded
-               become: no
 
 
           - homebrew_cask:
                name: caffeine 
                state: upgraded
-               become: no  
 
 
           - homebrew_cask:
                name: docker  
                state: upgraded
-               become: no
 
 
           - homebrew_cask:
                name: docker-compose  
                state: upgraded
-               become: no
 
 
           - homebrew_cask:
                name: docker-machine 
                state: upgraded
-               become: no  
 
 
           - homebrew_cask:
                name: gpg-suite  
                state: upgraded
-               become: no
 
 
           - homebrew_cask:
                name: spectacle  
                state: upgraded
-               become: no
 
           - homebrew_cask:
                name: insomnia 
                state: upgraded
-               become: no
 
 
           - homebrew_cask:
                name: responsively  
                state: upgraded
-               become: no  
                
 
           - homebrew:
                name: wget
                state: latest
-               become: no
 
 
           - homebrew:
                name: bash
                state: latest
-               become: no
 
 
           - homebrew:
                name: python
                state: latest
-               become: no
 
 
           - homebrew:
                name: vcprompt
                state: latest
-               become: no
 
 
           - homebrew:
                name: docker-compose
                state: latest
-               become: no
 
 
           - homebrew:
                name: docker-machine
                state: latest
-               become: no
 
 
           - homebrew:
                name: htop
                state: latest
-               become: no
 
 
           - homebrew:
                name: vim
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: openvpn
                state: latest
-               become: no
+      
 
 
           - homebrew:
                name: tmux
                state: latest
-               become: no
-
+       
 
           - homebrew:
                name: screen
                state: latest
-               become: no
+     
 
 
           - homebrew:
                name: dialog
                state: latest
-               become: no
+    
 
 
           - homebrew:
                name: node
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: nmap
                state: latest
-               become: no
+      
 
 
           - homebrew:
                name: links
                state: latest
-               become: no
+    
 
 
               
           - homebrew:
                name: iproute2mac
                state: latest
-               become: no
+       
 
 
           - homebrew:
                name: watch
                state: latest
-               become: no
-
+   
 
           - homebrew:
                name: coreutils
                state: latest
-               become: no
+  
 
 
           - homebrew:
                name: openssl
                state: latest
-               become: no 
+      
 
 
           - homebrew:
                name: pkg-config
                state: latest
-               become: no
-
+      
 
           - homebrew:
                name: cmake
                state: latest
-               become: no
+ 
 
 
           - homebrew:
                name: readline
                state: latest
-               become: no
+ 
 
 
           - homebrew:
                name: heroku
                state: latest
-               become: no
+   
 
 
           - homebrew:
                name: tree
                state: latest
-               become: no
+  
 
 
           - homebrew:
                name: gcc
                state: latest
-               become: no
+ 
 
 
           - homebrew:
                name: gnupg
                state: latest
-               become: no
+   
 
 
           - homebrew:
                name: p7zip
                state: latest
-               become: no
+    
 
 
           - homebrew:
                name: ack
                state: latest
-               become: no
-
+         
 
           - homebrew:
                name: gnutls
                state: latest
-               become: no
-
+        
 
           - homebrew:
                name: certbot
                state: latest
-               become: no
+        
 
 
           - homebrew:
                name: mtr
                state: latest
-               become: no
+      
 
 
           - homebrew:
                name: gnu-sed
                state: latest
-               become: no
+ 
 
 
           - homebrew:
                name: cowsay
                state: latest
-               become: no
+   
 
 
           - homebrew:
                name: findutils
                state: latest
-               become: no
+    
 
 
           - homebrew:
                name: gnu-tar
                state: latest
-               become: no 
+
 
 
           - homebrew:
                name: aircrack-ng
                state: latest
-               become: no
 
 
           - homebrew:
                name: mcrypt
                state: latest
-               become: no
 
 
           - homebrew:
                name: libusb
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: fortune
                state: latest
-               become: no
+      
 
 
           - homebrew:
                name: openssh
                state: latest
-               become: no
 
 
           - homebrew:
                name: md5sha1sum
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: pstree
                state: latest
-               become: no
+   
 
 
           - homebrew:
                name: grep
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: brew-cask-completion 
                state: latest
-               become: no
 
 
               
           - homebrew:
                name: moreutils 
                state: latest
-               become: no
 
 
           - homebrew:
                name: screenfetch
                state: latest
-               become: no 
+   
 
 
           - homebrew:
                name: docker-completion
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: gpg-agent
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: dockutil
                state: latest
-               become: no
+  
 
 
           - homebrew:
                name: trash
                state: latest
-               become: no 
+
 
 
           - homebrew:
                name: findutils
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: lolcat
                state: latest
-               become: no 
+
 
 
           - homebrew:
                name: e2fsprogs
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: webpack
                state: latest
-               become: no 
+
 
 
           - homebrew:
                name: gnu-which
                state: latest
-               become: no
+     
 
 
           - homebrew:
                name: bash-completion
                state: latest
-               become: no 
+
 
 
           - homebrew:
                name: bash-git-prompt
                state: latest
-               become: no
+
 
 
           - homebrew:
                name: yarn
                state: latest
-               become: no
                update_homebrew: yes 
 
 
@@ -458,81 +429,79 @@
             npm:
               name: react
               global: yes 
-              become: yes
+       
 
           - name: Install "prop-types" node.js package globally.
             npm:
               name: prop-types
               global: yes 
-              become: yes
+        
 
           - name: Install "moment" node.js package globally.
             npm:
               name: moment
               global: yes 
-              become: yes 
+        
 
           - name: Install "express" node.js package globally.
             npm:
               name: express
               global: yes 
-              become: yes
+  
 
           - name: Install "request" node.js package globally.
             npm:
               name: request
               global: yes 
-              become: yes
+   
 
           - name: Install "lodash" node.js package globally.
             npm:
               name: lodash
               global: yes 
-              become: yes
+       
 
           - name: Install "next" node.js package globally.
             npm:
               name: next
               global: yes 
-              become: yes
+      
 
 
           - name: Install "eslint" node.js package globally.
             npm:
               name: eslint
               global: yes 
-              become: yes
+      
 
           - name: Install "async" node.js package globally.
             npm:
               name: async
               global: yes 
-              become: yes
+
 
           - name: Install "vue" node.js package globally.
             npm:
               name: vue
               global: yes 
-              become: yes
 
 
           - name: Install "chalk" node.js package globally.
             npm:
               name: chalk
               global: yes 
-              become: yes
 
           - name: Install "debug" node.js package globally.
             npm:
               name: debug
               global: yes 
-              become: yes
+     
 
 
           - name: Install "lite-server" node.js package globally.
             npm:
               name: lite-server
               global: yes 
-              become: yes
+
       
           
