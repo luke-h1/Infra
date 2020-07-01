@@ -24,15 +24,6 @@
                state: upgraded
 
 
-          - homebrew_cask:
-               name: docker-compose  
-               state: upgraded
-
-
-          - homebrew_cask:
-               name: docker-machine 
-               state: upgraded
-
 
           - homebrew_cask:
                name: gpg-suite  
@@ -73,15 +64,6 @@
                state: latest
 
 
-          - homebrew:
-               name: docker-compose
-               state: latest
-
-
-          - homebrew:
-               name: docker-machine
-               state: latest
-
 
           - homebrew:
                name: htop
@@ -109,7 +91,6 @@
                name: screen
                state: latest
      
-
 
           - homebrew:
                name: dialog
@@ -174,11 +155,6 @@
                name: readline
                state: latest
  
-
-
-          - homebrew:
-               name: heroku
-               state: latest
    
 
 
@@ -280,12 +256,6 @@
 
 
           - homebrew:
-               name: md5sha1sum
-               state: latest
-
-
-
-          - homebrew:
                name: pstree
                state: latest
    
@@ -300,7 +270,6 @@
           - homebrew:
                name: brew-cask-completion 
                state: latest
-
 
               
           - homebrew:
@@ -321,16 +290,9 @@
 
 
           - homebrew:
-               name: gpg-agent
-               state: latest
-
-
-
-          - homebrew:
                name: dockutil
                state: latest
   
-
 
           - homebrew:
                name: trash
