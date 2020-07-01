@@ -19,9 +19,7 @@
                state: upgraded
 
 
-          - homebrew_cask:
-               name: caffeine 
-               state: upgraded
+
 
 
           - homebrew_cask:
