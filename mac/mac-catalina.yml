@@ -19,9 +19,6 @@
                state: upgraded
 
 
-
-
-
           - homebrew_cask:
                name: docker  
                state: upgraded
