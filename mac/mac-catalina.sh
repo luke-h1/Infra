@@ -9,13 +9,13 @@ bash --login #new shell
 nvm install stable
 brew update 
 brew upgrade node 
-echo "$(tput setaf 4)Enter your github username:$(tput sgr0)"
+echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
-echo "$(tput setaf 4)Enter your github email:$(tput sgr0)"
+echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
-echo "$(tput setaf 1)Your github information has now been configured globally...$(tput sgr0)"
+echo "Your github information has now been configured globally.."
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" 
 cd /Users/lukehowsam/.nvm 
