@@ -9,15 +9,8 @@ bash --login #new shell
 nvm install stable
 brew update 
 brew upgrade node 
-echo "Enter your github username:"
-read user 
-git config --global --replace-all user.name "$user" 
-echo "Enter your github email:"
-read email 
-git config --global --replace-all user.email "$email" 
-echo "Your github information has now been configured globally.."
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-brew services enable openvpn
+brew services start openvpn
