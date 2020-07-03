@@ -107,6 +107,24 @@
           - homebrew:
                name: nmap
                state: latest
+
+
+          - homebrew:
+               name: zsh
+               state: latest
+
+          - homebrew:
+               name: zsh-completions 
+               state: latest
+
+
+          - homebrew:
+               name: zsh-syntax-highlighting 
+               state: latest
+
+          - homebrew:
+               name: zsh-git-prompt 
+               state: latest
       
 
 
