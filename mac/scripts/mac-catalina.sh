@@ -14,8 +14,6 @@ sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 brew services start openvpn
-brew tap mongodb/brew 
-brew install mongodb-community@4.2 
 brew services start mongodb-community@4.2 
 echo "script finished :) " 
 exit 55 
