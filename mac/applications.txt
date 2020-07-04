@@ -5,3 +5,4 @@ any applications listed here have either not been automated or cannot be automat
 [x] - https://protonvpn.com/download/ProtonVPN.dmg
 [x] - https://crystalidea.com/macs-fan-control/download 
 [x] - bandwidth + 
+[x] - xcode 
