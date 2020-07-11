@@ -36,3 +36,7 @@ sudo addgroup sftp
 sudo useradd -m sftpuser -g sftp 
 sudo passwd sftpuser
 sudo chmod 700 /home/sftpuser/ 
+
+echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
+sudo ufw disable
+sudo ufw enable
