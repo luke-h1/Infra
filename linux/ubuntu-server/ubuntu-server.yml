@@ -1,6 +1,6 @@
 ---
 - hosts: localhost   
-  remote_user: cloud_user 
+  remote_user: lukehowsam 
   tasks: 
           - name: ubuntu packages 
             apt:   
@@ -32,19 +32,15 @@
                           - postfix 
                           - net-tools
                           - bridge-utils   
+                          - transmission-gtk 
                           
 
 
-          - name: create custom directories 
-            file: 
-              path: /srv/scripts 
-              path: /srv/isos 
-              state: directory 
-
-
-       
-                          
-          - name: update all packages 
-            apt: 
-              name: "*" 
-              state: latest  
+        - name: apt-get update 
+          apt: 
+            update_cache: yes 
+  
+        - name: apt-get upgrade
+          apt: 
+            upgrade: dist 
+  
