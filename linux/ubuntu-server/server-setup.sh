@@ -23,7 +23,7 @@ sudo systemctl enable ufw
 sudo systemctl start ufw 
 sudo apt-get install -y openssh* 
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb 
-sudo dpkg -i ./teamviewer_amd64.deb 
+sudo apt install ./teamviewer_amd64.deb 
 sudo apt-get install -y ssh*  
 sudo apt-get install -y xfce* 
 echo
