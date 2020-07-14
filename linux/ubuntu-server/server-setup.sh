@@ -1,5 +1,5 @@
 #!/bin/bash 
-udo apt-get install -y curl 
+sudo apt-get install -y curl 
 sudo apt install software-properties-common apt-transport-https wget -y 
 echo "now configuring your github" 
 echo "enter your github username:"
@@ -36,7 +36,11 @@ sudo addgroup sftp
 sudo useradd -m sftpuser -g sftp 
 sudo passwd sftpuser
 sudo chmod 700 /home/sftpuser/ 
-
+echo "elevating to root to change ufw settings..."
+sudo su - 
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 sudo ufw disable
 sudo ufw enable
+echo "rebooting now..."
+sleep 3 
+sudo reboot -h 3
