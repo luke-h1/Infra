@@ -33,6 +33,10 @@
         state: upgraded
 
     - homebrew_cask:
+        name: vlc
+        state: upgraded
+
+    - homebrew_cask:
         name: gpg-suite
         state: upgraded
 
