@@ -23,7 +23,9 @@ sudo systemctl enable ufw
 sudo systemctl start ufw 
 sudo apt-get install -y openssh* 
 wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb 
-sudo apt install ./teamviewer_amd64.deb
+sudo apt install ./teamviewer_amd64.deb 
+sudo apt-get install -y ssh*  
+sudo apt-get install -y xfce* 
 echo
 "Match group sftp
 ChrootDirectory /home
@@ -38,6 +40,7 @@ sudo passwd sftpuser
 sudo chmod 700 /home/sftpuser/ 
 echo "elevating to root to change ufw settings..."
 sudo su - 
+sudo chmod 700 /home/sftpuser/  
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 sudo ufw disable
 sudo ufw enable
