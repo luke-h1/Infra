@@ -15,5 +15,6 @@ cd /Users/lukehowsam/.nvm
 sudo git fetch
 brew services start openvpn
 brew services start mongodb-community@4.2 
-echo "script finished :) " 
+echo "script finished 😀 "  
+sleep 3 
 exit 55 

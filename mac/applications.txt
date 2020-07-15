@@ -1,6 +1,6 @@
 any applications listed here have either not been automated or cannot be automated: 
 
-[x] - https://download.mozilla.org/?product=firefox-devedition-latest-ssl&amp;os=linux64&amp;lang=en-US
-[x] - /content/dam/develop/external/us/en/documents/Intel%20Power%20Gadget.dmg
-[x] - https://protonvpn.com/download/ProtonVPN.dmg
-[x] - https://crystalidea.com/macs-fan-control/download 
+[x] - <a href="https://download.mozilla.org/?product=firefox-devedition-latest-ssl&amp;os=linux64&amp;lang=en-US">Firefox developer edition</a> 
+[x] - <a href="/content/dam/develop/external/us/en/documents/Intel%20Power%20Gadget.dmg">Intel power gadget</a> 
+[x] - <a href="https://protonvpn.com/download/ProtonVPN.dmg">ProtonVPN</a> 
+[x] - <a href="https://crystalidea.com/macs-fan-control/download">Mac fan control</a> 
