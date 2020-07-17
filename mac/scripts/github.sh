@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/zsh 
 echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
