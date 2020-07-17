@@ -14,7 +14,15 @@ sudo log config --mode "private_data:on"
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 brew services start openvpn
-brew services start mongodb-community@4.2 
+brew services start mongodb-community@4.2  
+zsh --login 
+echo "Enter your github username:"
+read user 
+git config --global --replace-all user.name "$user" 
+echo "Enter your github email:"
+read email 
+git config --global --replace-all user.email "$email" 
+echo "Your github information has now been configured globally.."
 echo "script finished 😀 "  
 sleep 3 
 exit 55 
