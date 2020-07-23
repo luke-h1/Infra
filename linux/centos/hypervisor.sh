@@ -7,6 +7,7 @@ echo "added your username to git config global"
 echo "enter your github email:"
 read email
 git config --global --replace-all user.email "$email"
+sudo yum install -y ansible 
 rm -rf /home/lukehowsam/Pictures  
 rm -rf /home/lukehowsam/Documents  
 rm -rf /home/lukehowsam/Public 
@@ -30,7 +31,6 @@ sudo useradd -c "account for sftp user" -m sftpuser -g sftp
 sudo passwd sftpuser
 bash --login
 sudo chmod 700 /home/sftpuser/ 
-sudo yum install -y ufw  
 bash --login 
 sudo echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 
