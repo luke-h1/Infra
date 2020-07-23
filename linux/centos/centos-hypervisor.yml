@@ -33,6 +33,7 @@
                             - kernel-devel
                             - kernel-headers 
                             - gcc 
+                            - caffeine-ng
           
 
 
@@ -58,6 +59,8 @@
                - "@Compatibility Libraries"
                - "@KDE Plasma Workspaces" 
                - "@Development Tools"     
+               - "GNOME Desktop" 
+               - "@Graphical Administration Tools"
           
                     
    
