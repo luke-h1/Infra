@@ -42,6 +42,9 @@ echo "elevating to root to change ufw settings..."
 sudo su - 
 sudo chmod 700 /home/sftpuser/  
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
+sudo yum groupinstall "Server with GUI" -y
+sudo yum groupinstall "Xfce" -y
+sudo systemctl set-default graphical.target
 sudo ufw disable
 sudo ufw enable
 echo "rebooting now..."
