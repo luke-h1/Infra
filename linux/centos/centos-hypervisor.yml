@@ -26,7 +26,6 @@
                             - bind-utils
                             - bridge-utils
                             - dnf
-                            - ffmpeg-libs 
                             - vlc
                             - gstreamer     
                             - nano 
