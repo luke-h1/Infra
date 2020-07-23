@@ -34,6 +34,8 @@
                             - kernel-headers 
                             - gcc 
                             - caffeine-ng
+                            - transmission-gtk 
+                            - tor 
           
 
 
