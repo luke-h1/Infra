@@ -26,7 +26,6 @@
                             - bind-utils
                             - bridge-utils
                             - dnf
-                            - vlc
                             - gstreamer     
                             - nano 
                             - vim-enhanced.x86_64
