@@ -30,5 +30,7 @@ sudo useradd -c "account for sftp user" -m sftpuser -g sftp
 sudo passwd sftpuser
 bash --login
 sudo chmod 700 /home/sftpuser/ 
+sudo yum install -y ufw  
+bash --login 
 sudo echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 
