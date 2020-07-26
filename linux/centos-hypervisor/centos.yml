@@ -34,10 +34,7 @@
                             - kernel-headers 
                             - gcc 
                             - transmission-gtk 
- 
 
-
-      
 
           - name: Delete unwanted packages  
             yum:
