@@ -1,0 +1,13 @@
+--- 
+- hosts: localhost 
+  become: yes 
+  vars: 
+      app_name: macs Fan Control 
+      app_url: https://crystalidea.com/macs-fan-control/download 
+      installer_type: app 
+      install_method: dmg 
+      download_file_type: dmg 
+    roles: 
+      - setup 
+      - installer 
+      - cleanup 
