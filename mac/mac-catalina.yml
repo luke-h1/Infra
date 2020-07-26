@@ -1,11 +1,6 @@
 ---
 
 
-- import_playbook: playbooks/figma.yml 
-- import_playbook: playbooks/fan-control.yml
-- import_playbook: playbooks/protonvpn.yml
-- import_playbook: playbooks/power-gadget.yml 
-
 - hosts: localhost
   remote_user: lukehowsam
   tasks:

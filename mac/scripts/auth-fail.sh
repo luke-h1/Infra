@@ -1,3 +1,3 @@
 #!/bin/zsh 
-last 
+last >> /Users/lukehowsam/auth-fail.log.txt 
  
