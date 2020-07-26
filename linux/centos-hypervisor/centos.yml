@@ -34,6 +34,9 @@
                             - kernel-headers 
                             - gcc 
                             - transmission-gtk 
+                            - virt-manager 
+
+
 
 
           - name: Delete unwanted packages  
