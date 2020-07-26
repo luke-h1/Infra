@@ -19,6 +19,7 @@ sudo yum install epel-release
 sudo rpm --import  https://dl.tvcdn.de/download/linux/signature/TeamViewer2017.asc 
 wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 sudo yum localinstall -y ./teamviewer.x86_64.rpm
+yum --enablerepo epel-testing list transmission\*
 echo "Match group sftp
 ChrootDirectory /home
 X11Forwarding no
