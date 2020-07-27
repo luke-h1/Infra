@@ -19,6 +19,7 @@ sudo yum install epel-release
 sudo rpm --import  https://dl.tvcdn.de/download/linux/signature/TeamViewer2017.asc 
 wget https://download.teamviewer.com/download/linux/teamviewer.x86_64.rpm
 sudo yum localinstall -y ./teamviewer.x86_64.rpm
+yum --enablerepo epel-testing list transmission\*
 echo "Match group sftp
 ChrootDirectory /home
 X11Forwarding no
@@ -27,7 +28,7 @@ ForceCommand internal-sftp
 " >> /etc/ssh/sshd_config 
 sudo service sshd restart 
 sudo groupadd sftp
-sudo useradd -c "account for sftp user" -m sftpuser -g sftp 
+sudo useradd -m sftpuser -g sftp 
 sudo passwd sftpuser
 bash --login
 sudo chmod 700 /home/sftpuser/ 
