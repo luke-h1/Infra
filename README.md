@@ -14,10 +14,13 @@ brew install git
 brew install ansible 
 ```
 
-Linux 
+Ubuntu Linux 
 ```
 apt-get install -y git ansible 
-yum install -y git && yum install -y ansible
+```
+Centos Linux 
+```
+yum install -y epel-release && yum install -y git && yum install -y ansible
 ```
 
 Clone the repo: 
