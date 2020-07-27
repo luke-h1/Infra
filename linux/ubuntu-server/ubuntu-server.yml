@@ -33,14 +33,5 @@
                           - net-tools
                           - bridge-utils   
                           - transmission-gtk 
+                          - caffeine 
                           
-
-
-        - name: apt-get update 
-          apt: 
-            update_cache: yes 
-  
-        - name: apt-get upgrade
-          apt: 
-            upgrade: dist 
-  

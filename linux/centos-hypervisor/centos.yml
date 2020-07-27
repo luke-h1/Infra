@@ -26,8 +26,6 @@
                             - bind-utils
                             - bridge-utils
                             - dnf
-                            - ffmpeg-libs 
-                            - vlc
                             - gstreamer     
                             - nano 
                             - vim-enhanced.x86_64
@@ -35,6 +33,9 @@
                             - kernel-devel
                             - kernel-headers 
                             - gcc 
+                            - caffeine-ng
+                            - transmission-gtk 
+                            - tor 
           
 
 
@@ -58,8 +59,10 @@
                - "@Security Tools" 
                - "@Fedora Packager" 
                - "@Compatibility Libraries"
-               - "@Xfce" 
+               - "@KDE Plasma Workspaces" 
                - "@Development Tools"     
+               - "GNOME Desktop" 
+               - "@Graphical Administration Tools"
           
                     
    
