@@ -336,6 +336,11 @@
         name: request
         global: yes
 
+     - name: Install "request" node.js package globally.
+      npm:
+        name: vercel 
+        global: yes
+
     - name: Install "lodash" node.js package globally.
       npm:
         name: lodash
