@@ -33,13 +33,12 @@
                             - kernel-devel
                             - kernel-headers 
                             - gcc 
-                            - caffeine-ng
                             - transmission-gtk 
-                            - tor 
-          
+                            - virt-manager 
+                            - lm_sensors 
 
 
-      
+
 
           - name: Delete unwanted packages  
             yum:
