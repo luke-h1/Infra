@@ -17,6 +17,7 @@ brew install ansible
 Linux 
 ```
 apt-get install -y git ansible 
+yum install -y git && yum install -y ansible
 ```
 
 Clone the repo: 
