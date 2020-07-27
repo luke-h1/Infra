@@ -28,7 +28,7 @@ ForceCommand internal-sftp
 " >> /etc/ssh/sshd_config 
 sudo service sshd restart 
 sudo groupadd sftp
-sudo useradd -c "account for sftp user" -m sftpuser -g sftp 
+sudo useradd -m sftpuser -g sftp 
 sudo passwd sftpuser
 bash --login
 sudo chmod 700 /home/sftpuser/ 
