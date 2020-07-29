@@ -2,7 +2,7 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <h3>👽Automation</h3>   
 
-Simple Automation of Mac & Linux with Ansible + Bash ✅
+Simple Automation of Mac with Ansible + Bash ✅
 
 ### Prerequisites
 
@@ -12,20 +12,6 @@ OS-X :
 ```
 brew install git  
 brew install ansible 
-```
-
-Ubuntu Linux 
-```
-apt-get install -y git ansible 
-```
-Centos Linux 
-```
-yum install -y epel-release && yum install -y git && yum install -y ansible
-```
-
-Clone the repo: 
-```
-git clone https://github.com/luke-h1/Automation 
 ```
 
 
