@@ -22,19 +22,19 @@ sleep 3
 echo "follow me on github... https://github.com/luke-h1" 
 sleep 3 
 echo ""
-echo "###############################################" $red
-echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
-echo "#         YOU'LL PROBABLY REGRET IT...        #" $red
-echo "#                                             #" $red
-echo "#              READ IT THOROUGHLY             #" $red
-echo "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
-echo "###############################################" $red
+cecho "###############################################" $red
+cecho "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
+cecho "#         YOU'LL PROBABLY REGRET IT...        #" $red
+cecho "#                                             #" $red
+cecho "#              READ IT THOROUGHLY             #" $red
+cecho "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
+cecho "###############################################" $red
 echo ""
 sleep 3 
 CONTINUE=false
 echo ""
-echo "Have you read through the script you're about to run and " $red
-echo "understood that it will make changes to your computer? (y/n) ? " $red
+cecho "Have you read through the script you're about to run and " $red
+cecho "understood that it will make changes to your computer? (y/n) ? " $red
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   CONTINUE=true
@@ -124,7 +124,7 @@ echo "Where do you want screenshots to be stored? (hit ENTER if you want ~/Deskt
 read screenshot_location
 echo ""
 
-f [ -z "${screenshot_location}" ]
+if [ -z "${screenshot_location}" ]
 then
   # If nothing specified, we default to ~/Desktop
   screenshot_location="${HOME}/Desktop"
