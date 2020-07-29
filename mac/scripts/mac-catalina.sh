@@ -15,16 +15,12 @@ blue=$(tput setaf 4)
 magenta=$(tput setaf 5)
 cyan=$(tput setaf 6)
 white=$(tput setaf 7)
-
-
-
 echo "Mac OS X install script" 
 sleep 3 
 echo "By luke-h1" 
 sleep 3 
 echo "follow me on github... https://github.com/luke-h1" 
 sleep 3 
-
 echo ""
 echo "###############################################" $red
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
@@ -66,7 +62,7 @@ cd /Users/lukehowsam/.nvm
 sudo git fetch
 brew services start openvpn
 brew services start mongodb-community@4.2  
-zsh --login 
+bash --login 
 echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
@@ -74,8 +70,6 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-
-
 
 
 
