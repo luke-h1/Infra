@@ -29,6 +29,11 @@
         state: upgraded
 
     - homebrew_cask:
+        name: timing 
+        state: upgraded
+
+
+    - homebrew_cask:
         name: docker
         state: upgraded
 
@@ -156,9 +161,7 @@
         name: gcc
         state: latest
 
-    - homebrew:
-        name: gnupg
-        state: latest
+
 
     - homebrew:
         name: p7zip
