@@ -1,8 +1,8 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
-<h3>👽Automation</h3>   
+<h2>Automation</h2>   
 
-Simple Automation of Mac with Ansible + Bash ✅
+Simple Automation of Mac with Ansible + Bash 
 
 ### Prerequisites
 
