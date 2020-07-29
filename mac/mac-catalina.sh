@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #                    _           _        _ _ 
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
@@ -6,15 +7,7 @@
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
 # ✅ 👽 👨‍💻 😎 🌟 🎲 
 
-# Set the colours you can use
-black=$(tput setaf 0)
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-yellow=$(tput setaf 3)
-blue=$(tput setaf 4)
-magenta=$(tput setaf 5)
-cyan=$(tput setaf 6)
-white=$(tput setaf 7)
+
 echo "Mac OS X install script" 
 sleep 3 
 echo "By luke-h1" 
@@ -22,19 +15,19 @@ sleep 3
 echo "follow me on github... https://github.com/luke-h1" 
 sleep 3 
 echo ""
-cecho "###############################################" $red
-cecho "#        DO NOT RUN THIS SCRIPT BLINDLY       #" $red
-cecho "#         YOU'LL PROBABLY REGRET IT...        #" $red
-cecho "#                                             #" $red
-cecho "#              READ IT THOROUGHLY             #" $red
-cecho "#         AND EDIT TO SUIT YOUR NEEDS         #" $red
-cecho "###############################################" $red
+echo "###############################################" 
+echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
+echo "#         YOU'LL PROBABLY REGRET IT...        #" 
+echo "#                                             #" 
+echo "#              READ IT THOROUGHLY             #" 
+echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
+echo "###############################################" 
 echo ""
 sleep 3 
 CONTINUE=false
 echo ""
-cecho "Have you read through the script you're about to run and " $red
-cecho "understood that it will make changes to your computer? (y/n) ? " $red
+echo "Have you read through the script you're about to run and " 
+echo "understood that it will make changes to your computer? (y/n) ? " 
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   CONTINUE=true
@@ -42,7 +35,7 @@ fi
 
 if ! $CONTINUE; then
   # Check if we're continuing and output a message if not
-  cecho "Please go read the script, it only takes a few minutes" $red
+  echo "Please go read the script, it only takes a few minutes" 
   exit
 fi
 
@@ -255,14 +248,14 @@ fi
 ###############################################################################
 
 echo ""
-cecho "Done!" $cyan
+echo "Done!" $cyan
 echo ""
 echo ""
-cecho "################################################################################" $white
+echo "################################################################################" $white
 echo ""
 echo ""
-cecho "Note that some of these changes require a logout/restart to take effect." $red
-cecho "Killing some open applications in order to take effect." $red
+echo "Note that some of these changes require a logout/restart to take effect." 
+echo "Killing some open applications in order to take effect." 
 echo ""
 
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
