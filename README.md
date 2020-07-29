@@ -8,7 +8,6 @@ Simple Automation of Mac with Ansible + Bash
 
 Generally you will need to run the following commands in order to clone this repo & get Ansible up & running 
 
-OS-X : 
 ```
 brew install git  
 brew install ansible 
@@ -17,15 +16,16 @@ brew install ansible
 
 Ansible playbook command: 
 
-OS-X : 
 ```
 ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
 ```
 
-Linux: 
+Bash script command: 
 ```
-sudo ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
-```
+sudo chmod 770 mac-catalina.sh 
+./mac-catalina.sh 
+``` 
+
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
