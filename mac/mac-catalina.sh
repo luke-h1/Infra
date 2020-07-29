@@ -10,10 +10,16 @@
 
 echo "Mac OS X install script" 
 sleep 3 
+echo ""
+echo"" 
 echo "By luke-h1" 
-sleep 3 
+echo ""
+echo ""
+sleep 3
 echo "follow me on github... https://github.com/luke-h1" 
-sleep 3 
+sleep 3
+echo "" 
+echo ""
 echo ""
 echo "###############################################" 
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
@@ -63,8 +69,6 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-
-
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -155,7 +159,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
 
-
 ###############################################################################
 # Chrome, Safari, & WebKit
 ###############################################################################
@@ -193,7 +196,6 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 #########################################################################
 # Transmission.app                                                            #
 ###############################################################################
-
 
 echo ""
 echo "Do you use Transmission for torrenting? (y/n)"
@@ -242,11 +244,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-
 ###############################################################################
 # Kill affected applications
 ###############################################################################
-
 echo ""
 echo "Done!" $cyan
 echo ""
