@@ -36,6 +36,10 @@ If you want to add your own feature or want to improve this repo feel free to op
 5. Submit a pull request detailing the changes made 
 
 
+## alternatives: 
+  * if you run a linux machine the following repository may be helpful in automating your setup: https://github.com/luke-h1/linux-server-automation 
+
+
 ## License
 This project is licensed under the MIT License - 
 
