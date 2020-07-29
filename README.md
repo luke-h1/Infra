@@ -37,7 +37,7 @@ If you want to add your own feature or want to improve this repo feel free to op
 
 
 ## alternatives: 
-  * if you run a linux machine the following repository may be helpful in automating your setup: https://github.com/luke-h1/linux-server-automation 
+  * if you run a linux machine the <a href="https://github.com/luke-h1/linux-server-automation">this</a>repository may be helpful in automating your setup: 
 
 
 ## License
