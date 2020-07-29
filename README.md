@@ -1,14 +1,13 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
-<h3>👽Automation</h3>   
+<h2>Automation</h2>   
 
-Simple Automation of Mac with Ansible + Bash ✅
+Simple Automation of Mac with Ansible + Bash 
 
 ### Prerequisites
 
 Generally you will need to run the following commands in order to clone this repo & get Ansible up & running 
 
-OS-X : 
 ```
 brew install git  
 brew install ansible 
@@ -17,15 +16,16 @@ brew install ansible
 
 Ansible playbook command: 
 
-OS-X : 
 ```
 ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
 ```
 
-Linux: 
+Bash script command: 
 ```
-sudo ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
-```
+sudo chmod 770 mac-catalina.sh 
+./mac-catalina.sh 
+``` 
+
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
@@ -34,6 +34,10 @@ If you want to add your own feature or want to improve this repo feel free to op
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request detailing the changes made 
+
+
+## alternatives: 
+  * if you run a linux machine <a href="https://github.com/luke-h1/linux-server-automation" target="_blank">this</a> repository may be helpful in automating your setup: 
 
 
 ## License
