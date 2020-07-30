@@ -1,13 +1,16 @@
 #!/bin/bash
-
 #                    _           _        _ _ 
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
-# ✅ 👽 👨‍💻 😎 🌟 🎲 
 
-
+echo"######################" 
+echo"#✅ 👽 👨‍💻 😎 🌟 🎲 ##" 
+echo"######################" 
+echo ""
+echo "" 
+echo "" 
 echo "Mac OS X install script" 
 sleep 3 
 echo ""
@@ -62,6 +65,11 @@ sudo git fetch
 brew services start openvpn
 brew services start mongodb-community@4.2  
 bash --login 
+##########################
+## GITHUB CONFIGURATION. ## 
+##########################
+echo "" 
+echo "" 
 echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
