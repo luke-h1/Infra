@@ -46,8 +46,6 @@ Bash script command:
 sudo chmod 770 *.sh 
 ./<name-of-bash-script>
 ``` 
-
-
 <hr>
 
 ##
@@ -58,10 +56,13 @@ sudo chmod 770 *.sh
 
 
 
-##windows 
+## Windows 
  * download winRM script on win10 host
  * run winRM script on win10 host
  * run playbook
+
+<hr> 
+
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
@@ -72,7 +73,7 @@ If you want to add your own feature or want to improve this repo feel free to op
 5. Submit a pull request detailing the changes made 
 
 
-
+<hr>
 
 ## License
 This project is licensed under the MIT License - 
