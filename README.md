@@ -47,6 +47,14 @@ sudo chmod 770 *.sh
 ./<name-of-bash-script>
 ``` 
 
+
+<hr>
+
+##
+
+
+![alt text](https://imgur.com/a/FPowH2i)
+
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
 1. Fork it 

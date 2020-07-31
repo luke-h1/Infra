@@ -1,0 +1,21 @@
+--- 
+- hosts: win 
+  remote_user: lukehowsam 
+  tasks: 
+  - name: get disk information 
+    win_disk_facts: 
+
+
+  - name: Output First Disk Size 
+    debug: 
+      var: ansible_facts.disks[0].size  
+
+  - name: Convert First disk size into HR 
+    debug: 
+      msg: '{{ disksize_gib }} vs {{ disksize_gib_human }}'
+    vars: 
+    disk: '{{ ansible_facts.disks|selectattr("system_disk")|first }}'
+    #show in GB 
+    disksize_gib_human '{{ disk.size|filesizeformat(true) }}' 
+    disksize_gib: '{{ (disk.size/1042|pow(3))|round|int}} GiB'
+
