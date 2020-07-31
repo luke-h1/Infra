@@ -53,7 +53,15 @@ sudo chmod 770 *.sh
 ##
 
 
-![](https://imgur.com/a/FPowH2i)
+![](/static/image.jpeg)
+
+
+
+
+##windows 
+ * download winRM script on win10 host
+ * run winRM script on win10 host
+ * run playbook
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
