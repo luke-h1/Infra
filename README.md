@@ -29,7 +29,7 @@ sudo chmod 770 mac-catalina.sh
 ``` 
 ## Ubuntu + Centos Linux 
 ```
-#ubuntu: sudo apt-get -y git && sudo apt-get install -y ansible   
+#ubuntu: sudo apt-get install -y git && sudo apt-get install -y ansible   
 
 #centos: sudo yum install -y epel-release && sudo yum install -y git && sudo yum install -y ansible 
 ```
