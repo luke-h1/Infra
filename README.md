@@ -53,7 +53,7 @@ sudo chmod 770 *.sh
 ##
 
 
-![alt text](https://imgur.com/a/FPowH2i)
+![](https://imgur.com/a/FPowH2i)
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
