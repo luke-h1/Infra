@@ -29,7 +29,7 @@ sudo chmod 770 mac-catalina.sh
 ``` 
 ## Ubuntu + Centos Linux 
 ```
-#ubuntu: sudo apt-get -y git && sudo apt-get install -y ansible   
+#ubuntu: sudo apt-get install -y git && sudo apt-get install -y ansible   
 
 #centos: sudo yum install -y epel-release && sudo yum install -y git && sudo yum install -y ansible 
 ```
@@ -46,14 +46,23 @@ Bash script command:
 sudo chmod 770 *.sh 
 ./<name-of-bash-script>
 ``` 
-
-
 <hr>
 
 ##
 
 
-![alt text](https://imgur.com/a/FPowH2i)
+![](/static/image.jpeg)
+
+
+
+
+## Windows 
+ * download winRM script on win10 host
+ * run winRM script on win10 host
+ * run playbook
+
+<hr> 
+
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
@@ -64,7 +73,7 @@ If you want to add your own feature or want to improve this repo feel free to op
 5. Submit a pull request detailing the changes made 
 
 
-
+<hr>
 
 ## License
 This project is licensed under the MIT License - 
