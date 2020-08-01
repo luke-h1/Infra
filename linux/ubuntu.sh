@@ -1,4 +1,37 @@
 #!/bin/bash 
+#   __  ______  __  ___   __________  __        
+#  / / / / __ )/ / / / | / /_  __/ / / /        
+# / / / / __  / / / /  |/ / / / / / / /         
+#/ /_/ / /_/ / /_/ / /|  / / / / /_/ /          
+#\____/_____/\____/_/_|_/_/_/  \____/  __       
+#   /  _/ | / / ___/_  __/   |  / /   / /       
+#   / //  |/ /\__ \ / / / /| | / /   / /        
+# _/ // /|  /___/ // / / ___ |/ /___/ /___      
+#/___/_/ |_//____//_/ /_/  |_/_____/_____/      
+                                              
+echo "###############################################" 
+echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
+echo "#         YOU'LL PROBABLY REGRET IT...        #" 
+echo "#                                             #" 
+echo "#              READ IT THOROUGHLY             #" 
+echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
+echo "###############################################" 
+sleep 3 
+CONTINUE=false
+echo ""
+echo "Have you read through the script you're about to run and " 
+echo "understood that it will make changes to your computer? (y/n) ? " 
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+  CONTINUE=true
+fi
+
+if ! $CONTINUE; then
+  # Check if we're continuing and output a message if not
+  echo "Please go read the script, it only takes a few minutes" 
+  exit
+fi
+
 sudo apt-get install -y curl 
 sudo apt install software-properties-common apt-transport-https wget -y 
 echo "now configuring your github" 
