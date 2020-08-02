@@ -56,9 +56,11 @@ sudo chmod 770 *.sh
 
 
 
-## Windows 
- * download winRM script on win10 host
- * run winRM script on win10 host
+## Windows  
+## untested 
+ * download windows remote management script on win10 host
+ * run windows remote management script on win10 host 
+ * ssh or run playbook locally on machine 
  * run playbook
 
 <hr> 
