@@ -273,7 +273,14 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   killall "${app}" > /dev/null 2>&1
 done
 
-
+echo "getting applications that cannot be" 
+echo "automated with ansible" 
+echo " "
+echo " " 
+wget https://crystalidea.com/macs-fan-control/download
+wget https://protonvpn.com/download/ProtonVPN.dmg
+wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg 
+echo "all done :) ✅" 
 sleep 3
 REBOOT=false 
 echo ""

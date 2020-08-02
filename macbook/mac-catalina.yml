@@ -144,10 +144,6 @@
     - homebrew:
         name: pkg-config
         state: latest
-        
-    - homebrew: 
-        name: tor 
-        state: latest 
 
     - homebrew:
         name: cmake
