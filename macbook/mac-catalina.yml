@@ -339,7 +339,7 @@
         name: request
         global: yes
 
-     - name: Install "request" node.js package globally.
+     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel 
         global: yes
