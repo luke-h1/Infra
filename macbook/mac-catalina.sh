@@ -272,3 +272,21 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Terminal" "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done
+
+
+sleep 3
+REBOOT=false 
+echo ""
+echo "" 
+echo "would you like to reboot in order for changes to take effect (y/n) ? " 
+read -r res 
+if [[ $res =~ ^( [yY])$ ]]; then 
+    REBOOT = true  
+    echo "enter your password to reboot"
+    sudo reboot -h now  
+    fi 
+
+if ! $res; then 
+    echo "ok not rebooting... some changes will need a reboot to function 🍦" 
+    exit 
+  fi 
