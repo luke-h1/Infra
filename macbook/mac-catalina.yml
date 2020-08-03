@@ -19,6 +19,10 @@
     - homebrew_cask:
         name: caffeine
         state: upgraded
+        
+    - homebrew_cask: 
+        name: postman 
+        state: upgraded
 
     - homebrew_cask:
         name: iterm2
