@@ -19,6 +19,10 @@
     - homebrew_cask:
         name: caffeine
         state: upgraded
+        
+    - homebrew_cask: 
+        name: postman 
+        state: upgraded
 
     - homebrew_cask:
         name: iterm2
@@ -339,7 +343,7 @@
         name: request
         global: yes
 
-     - name: Install "request" node.js package globally.
+     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel 
         global: yes
