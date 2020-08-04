@@ -46,7 +46,7 @@
         state: upgraded
 
     - homebrew_cask:
-        name: rectangle
+        name: spectacle
         state: upgraded
 
     - homebrew_cask:
