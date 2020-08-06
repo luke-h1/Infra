@@ -12,52 +12,52 @@
 
     - homebrew:
         name: mongodb-community@4.2
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: caffeine
-        state: upgraded
+        state: latest
         
     - homebrew_cask: 
         name: postman 
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: iterm2
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: visual-studio-code
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: timing 
-        state: upgraded
+        state: latest
 
 
     - homebrew_cask:
         name: docker
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: vlc
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: gpg-suite
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: spectacle
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: insomnia
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: responsively
-        state: upgraded
+        state: latest
 
     - homebrew:
         name: wget
@@ -284,7 +284,10 @@
     - homebrew:
         name: yarn
         state: latest
-        update_homebrew: yes
+
+    - homebrew: 
+        update_homebrew: yes 
+        upgrade_all: yes 
 
     - name: Create srv directory
       file:
