@@ -1,6 +1,4 @@
 ---
-
-
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
