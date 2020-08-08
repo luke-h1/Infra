@@ -47,7 +47,6 @@ if ! $CONTINUE; then
   echo "Please go read the script, it only takes a few minutes" 
   exit
 fi
-
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
@@ -77,7 +76,6 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
@@ -279,8 +277,12 @@ echo " "
 echo " " 
 wget https://crystalidea.com/macs-fan-control/download
 wget https://protonvpn.com/download/ProtonVPN.dmg
-wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg 
-echo "all done :) ✅" 
+wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
+echo ""
+echo "setting ZSH as default shell 👨‍💻" 
+echo ""
+chsh -s /bin/zsh 
+echo "all done :) ✅ 🍦 🚀" 
 sleep 3
 REBOOT=false 
 echo ""
