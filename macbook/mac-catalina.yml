@@ -324,6 +324,12 @@
         name: react
         global: yes
 
+    
+    - name: Install "vue cli" node.js package globally 
+      npm: 
+        name: @vue/cli
+        global: yes 
+ 
     - name: Install "prop-types" node.js package globally.
       npm:
         name: prop-types
