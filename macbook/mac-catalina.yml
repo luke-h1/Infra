@@ -359,6 +359,11 @@
         name: next
         global: yes
 
+     - name: Install "create-react-app" node.js package globally.
+      npm:
+        name: create-react-app
+        global: yes
+
     - name: Install "eslint" node.js package globally.
       npm:
         name: eslint
