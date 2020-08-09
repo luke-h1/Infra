@@ -3,7 +3,7 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 
 ## NOTES : 
-run the mac-catalina.sh script first as this will install homebrew and node which if left uninstalled will cause the ansible-playbook to fail. 
+run the mac-catalina.sh script first as this will install homebrew and node which if left uninstalled will cause the ansible-playbook to fail. The shell script is highly opiniated with regards to the options that are setup so it is worth it to fork this repo & edit the shell script to your own needs 
 
 
 ## unautomated apps: 
