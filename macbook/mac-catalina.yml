@@ -1,6 +1,4 @@
 ---
-
-
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
@@ -14,48 +12,52 @@
 
     - homebrew:
         name: mongodb-community@4.2
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: caffeine
-        state: upgraded
+        state: latest
+        
+    - homebrew_cask: 
+        name: postman 
+        state: latest
 
     - homebrew_cask:
         name: iterm2
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: visual-studio-code
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: timing 
-        state: upgraded
+        state: latest
 
 
     - homebrew_cask:
         name: docker
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: vlc
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: gpg-suite
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
-        name: rectangle
-        state: upgraded
+        name: spectacle
+        state: latest
 
     - homebrew_cask:
         name: insomnia
-        state: upgraded
+        state: latest
 
     - homebrew_cask:
         name: responsively
-        state: upgraded
+        state: latest
 
     - homebrew:
         name: wget
@@ -282,7 +284,10 @@
     - homebrew:
         name: yarn
         state: latest
-        update_homebrew: yes
+
+    - homebrew: 
+        update_homebrew: yes 
+        upgrade_all: yes 
 
     - name: Create srv directory
       file:
@@ -319,6 +324,12 @@
         name: react
         global: yes
 
+    
+    - name: Install "vue cli" node.js package globally 
+      npm: 
+        name: @vue/cli
+        global: yes 
+ 
     - name: Install "prop-types" node.js package globally.
       npm:
         name: prop-types
@@ -339,7 +350,7 @@
         name: request
         global: yes
 
-     - name: Install "request" node.js package globally.
+     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel 
         global: yes
@@ -352,6 +363,11 @@
     - name: Install "next" node.js package globally.
       npm:
         name: next
+        global: yes
+
+     - name: Install "create-react-app" node.js package globally.
+      npm:
+        name: create-react-app
         global: yes
 
     - name: Install "eslint" node.js package globally.

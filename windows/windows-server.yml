@@ -1,0 +1,95 @@
+---  
+
+- hosts: windows 
+  remote_user: lukehowsam 
+  tasks: 
+
+
+
+- name: Install all critical and security updates
+  win_updates:
+    category_names:
+    - CriticalUpdates
+    - SecurityUpdates
+    state: installed
+  register: update_result
+
+- name: Create Development folder
+  win_file:
+    path: C:\Development
+    state: directory
+
+- name: install packages 
+  win_chocolatey: 
+    name: 
+    - git
+    - putty
+    - winddirstat
+    - flashplayerplugin
+    - googlechrome
+    - jre8 
+    - firefox 
+    - 7zip.install 
+    - vlc 
+    - openssh 
+    - nodejs.install 
+    - notepadplusplus 
+    - python3 
+    - sysinternals 
+    - ccleaner 
+    - gimp 
+    - teamviewer 
+    - filezilla
+    - curl 
+    - autoruns 
+    - wget 
+    - libreoffice-fresh 
+    - microsoft-teams.install 
+    - vscode 
+    - php
+    - cygwin 
+    - yarn 
+    - virtualbox 
+    - wireshark 
+    - vim 
+    - cmake 
+    - golang 
+    - zoom 
+    - spotify 
+    - zabbix-agent 
+    - slack 
+    - intellijidea-community
+    - jq 
+
+
+- name: create a user 
+  win_user: 
+    name: admin 
+    password: password 
+    state: present 
+    groups: 
+      - Administrators 
+
+
+- name: ensure chocolately is present on VM 
+  win_chocolatey: 
+    name:  chocolatey
+    source: 
+
+- name: install OPENSSH service 
+  win_chocolatey: 
+    name: openssh 
+    package_params: /SSHServerFeature 
+    state: present  
+
+- name: install git  
+  win_chocolatey: 
+    name: git 
+    state: present 
+
+- name: Reboot host if required
+  win_reboot:
+  when: update_result.reboot_required
+
+
+

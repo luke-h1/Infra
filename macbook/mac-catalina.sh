@@ -1,13 +1,16 @@
 #!/bin/bash
-
 #                    _           _        _ _ 
 #  ___  _____  __   (_)_ __  ___| |_ __ _| | |
 # / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
-# ✅ 👽 👨‍💻 😎 🌟 🎲 
-
-
+#
+echo"######################" 
+echo"#✅ 👽 👨‍💻 😎 🌟 🎲 🎱 ##" 
+echo"######################" 
+echo ""
+echo "" 
+echo "" 
 echo "Mac OS X install script" 
 sleep 3 
 echo ""
@@ -44,7 +47,6 @@ if ! $CONTINUE; then
   echo "Please go read the script, it only takes a few minutes" 
   exit
 fi
-
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
@@ -62,6 +64,11 @@ sudo git fetch
 brew services start openvpn
 brew services start mongodb-community@4.2  
 bash --login 
+##########################
+## GITHUB CONFIGURATION. ## 
+##########################
+echo "" 
+echo "" 
 echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
@@ -69,7 +76,6 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
@@ -264,3 +270,32 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Terminal" "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done
+
+echo "getting applications that cannot be" 
+echo "automated with ansible" 
+echo " "
+echo " " 
+wget https://crystalidea.com/macs-fan-control/download
+wget https://protonvpn.com/download/ProtonVPN.dmg
+wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
+echo ""
+echo "setting ZSH as default shell 👨‍💻" 
+echo ""
+chsh -s /bin/zsh 
+echo "all done :) ✅ 🍦 🚀" 
+sleep 3
+REBOOT=false 
+echo ""
+echo "" 
+echo "would you like to reboot in order for changes to take effect (y/n) ? " 
+read -r res 
+if [[ $res =~ ^( [yY])$ ]]; then 
+    REBOOT = true  
+    echo "enter your password to reboot"
+    sudo reboot -h now  
+    fi 
+
+if ! $res; then 
+    echo "ok not rebooting... some changes will need a reboot to function 🍦" 
+    exit 
+  fi 
