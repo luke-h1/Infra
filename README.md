@@ -53,13 +53,6 @@ sudo chmod 770 *.sh
  * ssh or run playbook locally on machine 
 <hr> 
 
-##
-
-![](/static/image.jpeg)
-
-
-
-
 
 
 ## Contributing
@@ -82,5 +75,16 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-* **<luke-h1>** - *Initial work* - [luke-h1](https://github.com/luke-h1)
+* **<luke-h1>** - *Initial work* - [luke-h1](https://github.com/luke-h1) 
+  
+  
+  <br> 
+  <hr>
+##
+
+![](/static/image.jpeg)
+
+
+
+
 
