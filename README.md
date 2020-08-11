@@ -34,7 +34,6 @@ sudo chmod 770 mac-catalina.sh
 #centos: sudo yum install -y epel-release && sudo yum install -y git && sudo yum install -y ansible 
 ```
 
-
 Ansible playbook command: 
 
 ```
@@ -46,24 +45,23 @@ Bash script command:
 sudo chmod 770 *.sh 
 ./<name-of-bash-script>
 ``` 
-<hr>
-
-##
 
 
-![](/static/image.jpeg)
-
-
-
-
-## Windows  
-## untested 
+## Windows (untested) 
  * download windows remote management script on win10 host
  * run windows remote management script on win10 host 
  * ssh or run playbook locally on machine 
  * run playbook
 
 <hr> 
+
+##
+
+![](/static/image.jpeg)
+
+
+
+
 
 
 ## Contributing
