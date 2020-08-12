@@ -30,10 +30,6 @@
         name: visual-studio-code
         state: latest
 
-    - homebrew_cask:
-        name: timing 
-        state: latest
-
 
     - homebrew_cask:
         name: docker
@@ -44,16 +40,9 @@
         state: latest
 
     - homebrew_cask:
-        name: gpg-suite
-        state: latest
-
-    - homebrew_cask:
         name: spectacle
         state: latest
 
-    - homebrew_cask:
-        name: insomnia
-        state: latest
 
     - homebrew_cask:
         name: responsively
@@ -164,7 +153,6 @@
         state: latest
 
 
-
     - homebrew:
         name: p7zip
         state: latest
@@ -266,10 +254,6 @@
         state: latest
 
     - homebrew:
-        name: webpack
-        state: latest
-
-    - homebrew:
         name: gnu-which
         state: latest
 
@@ -283,7 +267,14 @@
 
     - homebrew:
         name: yarn
-        state: latest
+        state: latest 
+    
+    - name: start MongoDB pkg 
+      command: /usr/local/bin/brew services start mongodb-community@4.2
+    
+    - name: start openvpn pkg 
+      command: /usr/local/bin/brew services start openvpn 
+ 
 
     - homebrew: 
         update_homebrew: yes 
@@ -307,9 +298,9 @@
         state: directory
         mode: "0755"
 
-    - name: Create /srv/courses directory
+    - name: Create /Desktop/courses directory
       file:
-        path: Users/lukehowsam/srv/courses
+        path: Users/lukehowsam/Desktop/courses
         state: directory
         mode: "0755"
 
@@ -325,10 +316,6 @@
         global: yes
 
     
-    - name: Install "vue cli" node.js package globally 
-      npm: 
-        name: @vue/cli
-        global: yes 
  
     - name: Install "prop-types" node.js package globally.
       npm:

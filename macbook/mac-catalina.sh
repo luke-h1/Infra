@@ -61,8 +61,6 @@ sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-brew services start openvpn
-brew services start mongodb-community@4.2  
 bash --login 
 ##########################
 ## GITHUB CONFIGURATION. ## 
