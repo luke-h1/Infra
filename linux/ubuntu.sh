@@ -50,6 +50,8 @@ rm -rf /home/lukehowsam/Music
 rm -rf /home/lukehowsam/Videos 
 sudo apt install -y openvpn dialog python3-pip python3-setuptools 
 sudo pip3 install protonvpn-cli
+sudo apt-get install -y snap 
+sudo snap install --classic heroku
 sudo ufw enable 
 sudo ufw allow 22/tcp  
 sudo systemctl enable ufw 

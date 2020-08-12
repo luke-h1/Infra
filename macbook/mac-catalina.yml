@@ -10,6 +10,13 @@
     - homebrew_tap:
         name: mongodb/brew
 
+    - homebrew_tap: 
+        name: heroku/brew 
+
+    - homebrew: 
+        name: heroku 
+        state: latest 
+
     - homebrew:
         name: mongodb-community@4.2
         state: latest
