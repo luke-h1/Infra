@@ -11,3 +11,4 @@ run the mac-catalina.sh script first as this will install homebrew and node whic
   * /dist/torbrowser/9.5.3/TorBrowser-9.5.3-osx64_en-US.dmg 
   * /content/dam/develop/external/us/en/documents/Intel%20Power%20Gadget.dmg 
   * https://robomongo.org/download
+  * https://www.dejal.com/timeout/
