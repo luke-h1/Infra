@@ -317,18 +317,13 @@
         state: directory
         mode: "0755"
 
+
     - name: Install "react" node.js package globally.
       npm:
         name: react
         global: yes
 
-    
  
-    - name: Install "prop-types" node.js package globally.
-      npm:
-        name: prop-types
-        global: yes
-
     - name: Install "moment" node.js package globally.
       npm:
         name: moment
@@ -339,27 +334,19 @@
         name: express
         global: yes
 
-    - name: Install "request" node.js package globally.
-      npm:
-        name: request
-        global: yes
 
-     - name: Install "vercel" node.js package globally.
+    - name: Install "vercel" node.js package globally.
       npm:
         name: vercel 
         global: yes
 
-    - name: Install "lodash" node.js package globally.
-      npm:
-        name: lodash
-        global: yes
 
     - name: Install "next" node.js package globally.
       npm:
         name: next
         global: yes
 
-     - name: Install "create-react-app" node.js package globally.
+    - name: Install "create-react-app" node.js package globally.
       npm:
         name: create-react-app
         global: yes
@@ -369,27 +356,20 @@
         name: eslint
         global: yes
 
-    - name: Install "async" node.js package globally.
-      npm:
-        name: async
-        global: yes
 
     - name: Install "vue" node.js package globally.
       npm:
         name: vue
         global: yes
 
-    - name: Install "chalk" node.js package globally.
-      npm:
-        name: chalk
-        global: yes
 
-    - name: Install "debug" node.js package globally.
-      npm:
-        name: debug
-        global: yes
 
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server
+        global: yes
+
+    - name: Install "nodemon" node.js package globally.
+      npm:
+        name: nodemon
         global: yes
