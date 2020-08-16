@@ -12,8 +12,8 @@
   * stealth-mode. Allows the mac to not respond to pings or nmap queries 
   * resize dock 
   * auto hide dock and top status bar 
-  * app/mac/61189/balenaetcher/download 
-  * /dist/torbrowser/9.5.3/TorBrowser-9.5.3-osx64_en-US.dmg 
-  * /content/dam/develop/external/us/en/documents/Intel%20Power%20Gadget.dmg 
-  * https://robomongo.org/download
-  * https://www.dejal.com/timeout/
+  * balena etcher 
+  * tor browser  
+  * intel power gadget 
+  
+
