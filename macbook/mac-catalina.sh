@@ -27,6 +27,7 @@ echo ""
 echo "###############################################" 
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
 echo "#         YOU'LL PROBABLY REGRET IT...        #" 
+echo "#        ❌❌❌❌❌❌❌❌❌❌❌❌❌❌       #" 
 echo "#                                             #" 
 echo "#              READ IT THOROUGHLY             #" 
 echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
@@ -43,8 +44,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 if ! $CONTINUE; then
-  # Check if we're continuing and output a message if not
-  echo "Please go read the script, it only takes a few minutes" 
+  echo "Please go read the script, it only takes a few minutes 💻" 
   exit
 fi
 xcode-select --install
@@ -58,7 +58,7 @@ nvm install stable
 brew update 
 brew upgrade node 
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
-sudo log config --mode "private_data:on" 
+sudo log config --mode "private_data:on" # enable viewing of protected log messages 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
 bash --login 
@@ -74,6 +74,12 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
+
+
+
+###############################################################################
+# ICLOUD                                                                      #
+###############################################################################
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
@@ -101,11 +107,11 @@ echo "Would you like to set your computer name (as done via System Preferences >
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "What would you like it to be?"
-  read COMPUTER_NAME
-  sudo scutil --set ComputerName $COMPUTER_NAME
-  sudo scutil --set HostName $COMPUTER_NAME
-  sudo scutil --set LocalHostName $COMPUTER_NAME
-  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $COMPUTER_NAME
+  read HOSTNAME 
+  sudo scutil --set ComputerName $HOSTNAME
+  sudo scutil --set HostName $HOSTNAME
+  sudo scutil --set LocalHostName $HOSTNAME
+  sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
 fi
 
 echo ""
@@ -142,21 +148,6 @@ defaults write com.apple.screencapture location -string "${screenshot_location}"
 
 
 echo ""
-echo "What format should screenshots be saved as? (hit ENTER for PNG, options: BMP, GIF, JPG, PDF, TIFF) "
-read screenshot_format
-if [ -z "$1" ]
-then
-  echo ""
-  echo "Setting screenshot format to PNG"
-  defaults write com.apple.screencapture type -string "png"
-else
-  echo ""
-  echo "Setting screenshot format to $screenshot_format"
-  defaults write com.apple.screencapture type -string "$screenshot_format"
-fi
-
-
-echo ""
 echo "Show hidden files in Finder by default? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -164,9 +155,8 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 ###############################################################################
-# Chrome, Safari, & WebKit
+# SAFARI CONFIG 
 ###############################################################################
-
 echo ""
 echo "Privacy: Don't send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
@@ -197,9 +187,9 @@ echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 
-#########################################################################
-# Transmission.app                                                            #
-###############################################################################
+################################################################################
+# TRANSMISSION                                                                 #
+################################################################################
 
 echo ""
 echo "Do you use Transmission for torrenting? (y/n)"
@@ -269,6 +259,10 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   killall "${app}" > /dev/null 2>&1
 done
 
+
+###############################################################################
+# INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
+###############################################################################
 echo "getting applications that cannot be" 
 echo "automated with ansible" 
 echo " "
@@ -276,11 +270,21 @@ echo " "
 wget https://crystalidea.com/macs-fan-control/download
 wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
+
+
+###############################################################################
+# SET SHELL TO ZSH 
+###############################################################################
 echo ""
 echo "setting ZSH as default shell 👨‍💻" 
 echo ""
 chsh -s /bin/zsh 
 echo "all done :) ✅ 🍦 🚀" 
+
+
+###############################################################################
+# REBOOT 
+###############################################################################
 sleep 3
 REBOOT=false 
 echo ""
