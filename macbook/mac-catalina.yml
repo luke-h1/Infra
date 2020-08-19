@@ -363,7 +363,6 @@
         global: yes
 
 
-
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server

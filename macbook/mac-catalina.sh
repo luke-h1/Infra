@@ -5,15 +5,17 @@
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
 #
-echo"######################" 
-echo"#✅ 👽 👨‍💻 😎 🌟 🎲 🎱 ##" 
-echo"######################" 
+echo"#############################" 
+echo"#✅ 👽 👨‍💻 😎 🌟 🎲 🎱🚀 ##" 
+echo"#############################" 
 echo ""
 echo "" 
-echo "Mac OS X install script" 
+echo "#-------------------------#"
+echo "#  Mac OS Install Script  #"
+echo "#-------------------------#"
 sleep 3 
 echo ""
-echo"" 
+echo "" 
 echo "By luke-h1" 
 echo ""
 echo ""
@@ -84,7 +86,6 @@ git config --global --replace-all user.email "$email"
 echo "Your github information has now been configured globally.."
 
 
-
 ###############################################################################
 # ICLOUD                                                                      #
 ###############################################################################
@@ -108,7 +109,6 @@ defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 
 # Install System data files & security updates
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
-
 
 echo ""
 echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
@@ -153,7 +153,6 @@ else
 fi
 echo "Setting location to ${screenshot_location}"
 defaults write com.apple.screencapture location -string "${screenshot_location}"
-
 
 echo ""
 echo "Show hidden files in Finder by default? (y/n)"
@@ -204,7 +203,6 @@ echo "Do you use Transmission for torrenting? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   mkdir -p ~/Downloads/Incomplete
-
   echo ""
   echo "Setting up an incomplete downloads folder in Downloads"
   defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
@@ -266,7 +264,6 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Terminal" "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done
-
 
 ###############################################################################
 # INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
