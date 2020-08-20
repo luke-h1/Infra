@@ -228,6 +228,8 @@
     - homebrew:
         name: trash
         state: latest
+    
+
 
     - homebrew:
         name: findutils
@@ -314,6 +316,11 @@
       npm:
         name: express
         global: yes
+
+    - name: Install "Mocha" node.js package globally. 
+      npm: 
+        name: mocha 
+        global: yes 
 
 
     - name: Install "vercel" node.js package globally.
