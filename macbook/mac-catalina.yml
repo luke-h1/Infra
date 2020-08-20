@@ -156,15 +156,6 @@
         state: latest
 
     - homebrew:
-        name: gcc
-        state: latest
-
-
-    - homebrew:
-        name: p7zip
-        state: latest
-
-    - homebrew:
         name: ack
         state: latest
 
@@ -176,9 +167,6 @@
         name: certbot
         state: latest
 
-    - homebrew:
-        name: mtr
-        state: latest
 
     - homebrew:
         name: gnu-sed
@@ -197,16 +185,9 @@
         state: latest
 
     - homebrew:
-        name: aircrack-ng
-        state: latest
-
-    - homebrew:
         name: mcrypt
         state: latest
 
-    - homebrew:
-        name: libusb
-        state: latest
 
     - homebrew:
         name: fortune
