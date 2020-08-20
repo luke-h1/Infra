@@ -372,3 +372,18 @@
       npm:
         name: nodemon
         global: yes
+
+    - name: Install "artillery" node.js package globally.
+      npm:
+        name: artillery
+        global: yes
+
+
+
+
+
+
+
+
+
+        
