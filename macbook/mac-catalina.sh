@@ -251,7 +251,6 @@ echo ""
 echo "Done!" $cyan
 echo ""
 echo ""
-echo "################################################################################" $white
 echo ""
 echo ""
 echo "Note that some of these changes require a logout/restart to take effect." 
@@ -276,7 +275,6 @@ wget https://crystalidea.com/macs-fan-control/download
 wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
 
-
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
@@ -285,7 +283,6 @@ echo "setting ZSH as default shell 👨‍💻"
 echo ""
 chsh -s /bin/zsh 
 echo "all done :) ✅ 🍦 🚀" 
-
 
 ###############################################################################
 # REBOOT 
