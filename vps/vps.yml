@@ -1,0 +1,18 @@
+---
+  - hosts: localhost
+    remote_user: root 
+    tasks: 
+            - name: vps setup 
+              apt: 
+                    name: "{{ packages }}" 
+                    state: present 
+              vars: 
+                  packages: 
+                            - htop
+                            - atop 
+                            - vim
+                            - nmap 
+                            - ufw 
+                            - git 
+                            - nodejs 
+                            
