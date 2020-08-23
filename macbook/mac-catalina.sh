@@ -193,6 +193,10 @@ echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
+
+
+
+
 ###############################################################################
 # UI CONFIG 
 ###############################################################################
@@ -231,6 +235,22 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 echo "Auto hide dock"
 defaults write com.apple.dock autohide -bool true
+
+echo ""
+echo ""
+echo "Change Menu bar clock format"
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
+
+echo ""
+echo ""
+echo "Wipe all default icons from Dock"
+defaults write com.apple.dock persistent-apps -array
+
+echo ""
+echo ""
+echo "Move Dock to right"
+defaults write com.apple.dock orientation right
+
 
 ################################################################################
 # TRANSMISSION                                                                 #
