@@ -60,7 +60,9 @@ fi
 xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
-brew update
+brew update 
+echo "installing xcode " 
+xcode-select --install 2>/dev/null
 brew install ansible
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 bash --login #new shell 
@@ -193,6 +195,10 @@ echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
+
+
+
+
 ###############################################################################
 # UI CONFIG 
 ###############################################################################
@@ -231,6 +237,22 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 echo "Auto hide dock"
 defaults write com.apple.dock autohide -bool true
+
+echo ""
+echo ""
+echo "Change Menu bar clock format"
+defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
+
+echo ""
+echo ""
+echo "Wipe all default icons from Dock"
+defaults write com.apple.dock persistent-apps -array
+
+echo ""
+echo ""
+echo "Move Dock to right"
+defaults write com.apple.dock orientation right
+
 
 ################################################################################
 # TRANSMISSION                                                                 #
