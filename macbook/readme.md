@@ -10,8 +10,6 @@
 
 ### things that cannot be automated 
   * stealth-mode. Allows the mac to not respond to pings or nmap queries 
-  * resize dock 
-  * auto hide dock and top status bar 
   * balena etcher 
   * tor browser  
   * intel power gadget 
