@@ -193,6 +193,44 @@ echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
+###############################################################################
+# UI CONFIG 
+###############################################################################
+
+echo ""
+echo ""
+echo "Always show scrollbars"  
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+echo ""
+echo ""
+echo "Quit printer app once print jobs have finished" 
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+echo ""
+echo ""
+echo "require password immediately after sleep or screen saver"
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+echo ""
+echo ""
+echo "disable window animations"
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+echo ""
+echo ""
+echo "Use list view in finder windows"
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+
+echo ""
+echo ""
+echo "Speed up Mission control animation"
+defaults write com.apple.dock expose-animation-duration -float 0.1
+
+echo "Auto hide dock"
+defaults write com.apple.dock autohide -bool true
 
 ################################################################################
 # TRANSMISSION                                                                 #
