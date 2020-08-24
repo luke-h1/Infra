@@ -173,10 +173,6 @@
         state: latest
 
     - homebrew:
-        name: cowsay
-        state: latest
-
-    - homebrew:
         name: findutils
         state: latest
 
@@ -188,10 +184,6 @@
         name: mcrypt
         state: latest
 
-
-    - homebrew:
-        name: fortune
-        state: latest
 
     - homebrew:
         name: openssh
@@ -229,15 +221,10 @@
         name: trash
         state: latest
     
-
-
     - homebrew:
         name: findutils
         state: latest
 
-    - homebrew:
-        name: lolcat
-        state: latest
 
     - homebrew:
         name: e2fsprogs
