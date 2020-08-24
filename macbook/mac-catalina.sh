@@ -61,8 +61,6 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 brew update 
-echo "installing xcode " 
-xcode-select --install 2>/dev/null
 brew install ansible
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 bash --login #new shell 
@@ -86,7 +84,6 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-
 
 ###############################################################################
 # ICLOUD                                                                      #
@@ -195,14 +192,9 @@ echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
-
-
-
-
 ###############################################################################
 # UI CONFIG 
 ###############################################################################
-
 echo ""
 echo ""
 echo "Always show scrollbars"  
@@ -229,12 +221,12 @@ echo ""
 echo "Use list view in finder windows"
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-
 echo ""
 echo ""
 echo "Speed up Mission control animation"
 defaults write com.apple.dock expose-animation-duration -float 0.1
-
+echo ""
+echo ""
 echo "Auto hide dock"
 defaults write com.apple.dock autohide -bool true
 
@@ -253,11 +245,10 @@ echo ""
 echo "Move Dock to right"
 defaults write com.apple.dock orientation right
 
-
 ################################################################################
 # TRANSMISSION                                                                 #
 ################################################################################
-
+echo ""
 echo ""
 echo "Do you use Transmission for torrenting? (y/n)"
 read -r response
@@ -327,10 +318,9 @@ done
 ###############################################################################
 # INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
 ###############################################################################
-echo "getting applications that cannot be" 
-echo "automated with ansible" 
-echo " "
-echo " " 
+echo ""
+echo ""
+echo "Installing Macs-Fan-Control, ProtonVPN & OBS"
 wget https://crystalidea.com/macs-fan-control/download
 wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
