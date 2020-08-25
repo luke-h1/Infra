@@ -73,7 +73,6 @@ echo ""
 echo ""
 echo "installing ansible"
 brew install ansible 
-
 echo ""
 echo ""
 echo "install nvm & node"
@@ -182,27 +181,21 @@ echo ""
 echo "Privacy: Don't send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-
 echo ""
 echo "Hiding Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
-
 echo ""
 echo "Hiding Safari's sidebar in Top Sites"
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
-
 echo ""
 echo "Disabling Safari's thumbnail cache for History and Top Sites"
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
-
 echo ""
 echo "Enabling Safari's debug menu"
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-
 echo ""
 echo "Making Safari's search banners default to Contains instead of Starts With"
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
-
 echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
@@ -214,28 +207,23 @@ echo ""
 echo ""
 echo "Always show scrollbars"  
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-
 echo ""
 echo ""
 echo "Quit printer app once print jobs have finished" 
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-
 echo ""
 echo ""
 echo "require password immediately after sleep or screen saver"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 echo ""
 echo ""
 echo "disable window animations"
 defaults write com.apple.finder DisableAllAnimations -bool true
-
 echo ""
 echo ""
 echo "Use list view in finder windows"
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
 echo ""
 echo ""
 echo "Speed up Mission control animation"
@@ -244,17 +232,14 @@ echo ""
 echo ""
 echo "Auto hide dock"
 defaults write com.apple.dock autohide -bool true
-
 echo ""
 echo ""
 echo "Change Menu bar clock format"
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
-
 echo ""
 echo ""
 echo "Wipe all default icons from Dock"
 defaults write com.apple.dock persistent-apps -array
-
 echo ""
 echo ""
 echo "Move Dock to right"

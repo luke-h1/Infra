@@ -21,6 +21,10 @@
         name: mongodb-community@4.2
         state: latest
 
+    - homebrew: 
+        name: youtube-dl 
+        state: latest 
+
     - homebrew_cask:
         name: caffeine
         state: latest
