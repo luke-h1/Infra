@@ -255,7 +255,7 @@
         state: latest 
     
     - name: start MongoDB pkg 
-      command: /usr/local/bin/brew services start mongodb-community@4.2
+      command: /usr/local/bin/brew services start mongodb
     
     - name: start openvpn pkg 
       command: /usr/local/bin/brew services start openvpn 
