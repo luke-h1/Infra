@@ -3,9 +3,9 @@
 <h2>Automation</h2>   
 
 Simple Automation of Mac, Linux & Windows with Ansible + Bash 
+<hr> 
 
 ### Prerequisites
-
 Generally you will need to run the following commands in order to clone this repo & get Ansible up & running 
 
 
