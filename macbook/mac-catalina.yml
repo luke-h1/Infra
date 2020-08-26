@@ -347,6 +347,18 @@
         name: vue
         global: yes
 
+    
+    - name: Install "vue cli" node.js package globally. 
+      npm: 
+        name: @vue/cli 
+        global: yes 
+
+
+    - name: Install "vue devtools" node.js package globally. 
+      npm: 
+        name: vue-devtools 
+        global: yes 
+
 
     - name: Install "lite-server" node.js package globally.
       npm:
