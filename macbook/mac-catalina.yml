@@ -262,7 +262,7 @@
       
 
     - name: Install OH-MY-ZSH 
-      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh 
+      shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) | sh 
       args:
         creates: ~/.oh-my-zsh/
     
