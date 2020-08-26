@@ -28,6 +28,10 @@
     - homebrew_cask:
         name: caffeine
         state: latest
+
+    -homebrew_cask: 
+        name: spotify 
+        state: latest 
         
     - homebrew_cask: 
         name: postman 
