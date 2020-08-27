@@ -2,6 +2,9 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <h2>Automation</h2>   
 
+
+![build:passed](https://travis-ci.com/luke-h1/Automation.svg?branch=master&amp;status=passed)
+
 Simple Automation of Mac, Linux & Windows with Ansible + Bash 
 <hr> 
 
