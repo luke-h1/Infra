@@ -369,6 +369,8 @@
         name: lite-server
         global: yes
 
+
+
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
