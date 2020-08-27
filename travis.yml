@@ -1,9 +1,0 @@
-language: python
-python:
-  - '3.6'
-
-  # install dependencies
-  - pip install -r tests/test-requirements.txt
-  # command to run tests
-script:
-  - ansible-lint *.yml -x 303,701,601,206,602,403,301,502,306 -v
