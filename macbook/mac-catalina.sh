@@ -73,6 +73,8 @@ echo ""
 echo ""
 echo "installing ansible"
 brew install ansible 
+echo "install pip"
+sudo easy_install pip 
 echo ""
 echo ""
 echo "install nvm & node"
