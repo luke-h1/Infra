@@ -73,8 +73,13 @@ echo ""
 echo ""
 echo "installing ansible"
 brew install ansible 
+echo "install pip"
+sudo easy_install pip 
 echo ""
 echo ""
+echo "install ansible-lint"
+echo ""
+pip install ansible-lint
 echo "install nvm & node"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 bash --login #new shell 
