@@ -1,6 +1,0 @@
-matrix:
-  include:
-    - name: "Generic Python 3.5 on macOS"
-      os: osx
-      language: shell  # 'language: python' is an error on Travis CI macOS
-      python: 3.5
