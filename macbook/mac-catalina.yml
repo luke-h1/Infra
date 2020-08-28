@@ -2,10 +2,6 @@
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
-    - shell: ps -eo pcpu,user,args | sort -r -k1 | head -n5     # Print the shell task's stdout.
-      register: ps
-    - debug: msg={{ ps.stdout }}     # Print all contents of the shell task's output.
-    - debug: var=ps
 
     - homebrew_tap:
         name: mongodb/brew
