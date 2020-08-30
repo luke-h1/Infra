@@ -2,11 +2,6 @@
 - hosts: localhost
   remote_user: root
   tasks:
-    - apt_repository:
-        repo: ppa:libreoffice/ppa
-        tags:
-          - config
-
     - name: Install "unzip" pkg
       apt:
         name: unzip

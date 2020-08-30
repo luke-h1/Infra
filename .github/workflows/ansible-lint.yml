@@ -17,5 +17,6 @@ jobs:
         targets: | 
                 macbook/mac-catalina.yml 
                 vps/vps.yml
+                linux/ubuntu.yml
 
                 
