@@ -1,71 +1,65 @@
 ---
-- hosts: localhost   
-  tasks:  
-          - name:  pacakges  
-            yum:
-                    name: "{{ packages }}"
-                    state: present
-            vars:
-                    packages:
-                            - atop
-                            - iftop
-                            - htop
-                            - nmap
-                            - ufw
-                            - bridge-utils
-                            - libvirt
-                            - virt-install
-                            - qemu-kvm
-                            - lightdm
-                            - terminator
-                            - cmake
-                            - git
-                            - libreoffice
-                            - net-tools 
-                            - postfix
-                            - bind-utils
-                            - bridge-utils
-                            - dnf
-                            - gstreamer     
-                            - nano 
-                            - vim-enhanced.x86_64
-                            - mariadb-server
-                            - kernel-devel
-                            - kernel-headers 
-                            - gcc 
-                            - transmission-gtk 
-                            - virt-manager 
-                            - lm_sensors 
+- hosts: localhost
+  tasks:
+    - name: pacakges
+      yum:
+        name: '{{ packages }}'
+        state: present
+      vars:
+        packages:
+          - atop
+          - iftop
+          - htop
+          - nmap
+          - ufw
+          - bridge-utils
+          - libvirt
+          - virt-install
+          - qemu-kvm
+          - lightdm
+          - terminator
+          - cmake
+          - git
+          - libreoffice
+          - net-tools
+          - postfix
+          - bind-utils
+          - bridge-utils
+          - dnf
+          - gstreamer
+          - nano
+          - vim-enhanced.x86_64
+          - mariadb-server
+          - kernel-devel
+          - kernel-headers
+          - gcc
+          - transmission-gtk
+          - virt-manager
+          - lm_sensors
 
+    - name: Delete unwanted packages
+      yum:
+        name: '{{ packages }}'
+        state: absent
+      vars:
+        packages:
+          - firewalld
+          - claws
 
+    - name: install groups
+      yum:
+        name:
+          - '@Virtualization Hypervisor'
+          - '@Virtualization Client'
+          - '@Security Tools'
+          - '@Fedora Packager'
+          - '@Compatibility Libraries'
+          - '@KDE Plasma Workspaces'
+          - '@Development Tools'
+          - 'GNOME Desktop'
+          - '@Graphical Administration Tools'
 
-
-          - name: Delete unwanted packages  
-            yum:
-                    name: "{{ packages }}"
-                    state: absent
-            vars:
-                    packages:
-                            - firewalld 
-                            - claws
-           
-           
-          - name: install groups 
-            yum: 
-             name: 
-               - "@Virtualization Hypervisor" 
-               - "@Virtualization Client" 
-               - "@Security Tools" 
-               - "@Fedora Packager" 
-               - "@Compatibility Libraries"
-               - "@KDE Plasma Workspaces" 
-               - "@Development Tools"     
-               - "GNOME Desktop" 
-               - "@Graphical Administration Tools"
-          
-                    
-   
-          - name: updates all packages 
-            dnf: 
-                name: "*"
-                state: latest 
+    - name: updates all packages
+      dnf:
+        name: '*'
+        state: latest

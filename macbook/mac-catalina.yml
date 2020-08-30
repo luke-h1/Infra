@@ -2,35 +2,34 @@
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
-
     - homebrew_tap:
         name: mongodb/brew
 
-    - homebrew_tap: 
-        name: heroku/brew 
+    - homebrew_tap:
+        name: heroku/brew
 
-    - homebrew: 
-        name: heroku 
-        state: latest 
+    - homebrew:
+        name: heroku
+        state: latest
 
     - homebrew:
         name: mongodb-community@4.2
         state: latest
 
-    - homebrew: 
-        name: youtube-dl 
-        state: latest 
+    - homebrew:
+        name: youtube-dl
+        state: latest
 
     - homebrew_cask:
         name: caffeine
         state: latest
 
-    - homebrew_cask: 
-        name: spotify 
-        state: latest 
-        
-    - homebrew_cask: 
-        name: postman 
+    - homebrew_cask:
+        name: spotify
+        state: latest
+
+    - homebrew_cask:
+        name: postman
         state: latest
 
     - homebrew_cask:
@@ -40,7 +39,6 @@
     - homebrew_cask:
         name: visual-studio-code
         state: latest
-
 
     - homebrew_cask:
         name: docker
@@ -53,7 +51,6 @@
     - homebrew_cask:
         name: spectacle
         state: latest
-
 
     - homebrew_cask:
         name: responsively
@@ -171,7 +168,6 @@
         name: certbot
         state: latest
 
-
     - homebrew:
         name: gnu-sed
         state: latest
@@ -187,7 +183,6 @@
     - homebrew:
         name: mcrypt
         state: latest
-
 
     - homebrew:
         name: openssh
@@ -224,11 +219,10 @@
     - homebrew:
         name: trash
         state: latest
-    
+
     - homebrew:
         name: findutils
         state: latest
-
 
     - homebrew:
         name: e2fsprogs
@@ -248,62 +242,58 @@
 
     - homebrew:
         name: yarn
-        state: latest 
-    
-    - name: start MongoDB pkg 
-      command: /usr/local/bin/brew services start mongodb
-    
-    - name: start openvpn pkg 
-      command: /usr/local/bin/brew services start openvpn 
-      
+        state: latest
 
-    - name: Install OH-MY-ZSH 
-      shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) | sh 
+    - name: start MongoDB pkg
+      command: /usr/local/bin/brew services start mongodb
+
+    - name: start openvpn pkg
+      command: /usr/local/bin/brew services start openvpn
+
+    - name: Install OH-MY-ZSH
+      shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) | sh
       args:
         creates: ~/.oh-my-zsh/
-    
 
-    - homebrew: 
-        update_homebrew: yes 
-        upgrade_all: yes 
+    - homebrew:
+        update_homebrew: yes
+        upgrade_all: yes
 
     - name: Create srv directory
       file:
         path: /Users/lukehowsam/srv
         state: directory
-        mode: "0755"
+        mode: '0755'
 
     - name: Create iso directory
       file:
         path: /Users/lukehowsam/srv/isos
         state: directory
-        mode: "0755"
+        mode: '0755'
 
     - name: Create /srv/dev directory
       file:
         path: /Users/lukehowsam/srv/dev
         state: directory
-        mode: "0755"
+        mode: '0755'
 
     - name: Create /Desktop/courses directory
       file:
         path: Users/lukehowsam/Desktop/courses
         state: directory
-        mode: "0755"
+        mode: '0755'
 
     - name: Create notes directory
       file:
         path: Users/lukehowsam/notes
         state: directory
-        mode: "0755"
-
+        mode: '0755'
 
     - name: Install "react" node.js package globally.
       npm:
         name: react
         global: yes
 
- 
     - name: Install "moment" node.js package globally.
       npm:
         name: moment
@@ -314,17 +304,15 @@
         name: express
         global: yes
 
-    - name: Install "Mocha" node.js package globally. 
-      npm: 
-        name: mocha 
-        global: yes 
-
+    - name: Install "Mocha" node.js package globally.
+      npm:
+        name: mocha
+        global: yes
 
     - name: Install "vercel" node.js package globally.
       npm:
-        name: vercel 
+        name: vercel
         global: yes
-
 
     - name: Install "next" node.js package globally.
       npm:
@@ -341,27 +329,20 @@
         name: eslint
         global: yes
 
-
     - name: Install "vue" node.js package globally.
       npm:
         name: vue
         global: yes
 
-    
-
-
-    - name: Install "vue devtools" node.js package globally. 
-      npm: 
-        name: vue-devtools 
-        global: yes 
-
+    - name: Install "vue devtools" node.js package globally.
+      npm:
+        name: vue-devtools
+        global: yes
 
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server
         global: yes
-
-
 
     - name: Install "nodemon" node.js package globally.
       npm:
@@ -372,13 +353,3 @@
       npm:
         name: artillery
         global: yes
-
-
-
-
-
-
-
-
-
-        
