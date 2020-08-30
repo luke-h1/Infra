@@ -5,7 +5,7 @@
 
     - homebrew_tap:
         name: mongodb/brew
-      tags: 
+        tags: 
       - config 
 
     - homebrew_tap:
