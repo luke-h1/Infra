@@ -2,18 +2,61 @@
 - hosts: localhost
   remote_user: root
   tasks:
-    - name: vps setup
-      apt:
-        name: '{{ packages }}'
-        state: present
-      vars:
-        packages:
-          - htop
-          - atop
-          - vim
-          - nmap
-          - ufw
-          - git
-          - nodejs
-          tags: 
-      - config
+
+
+    - name: Install "htop" pkg 
+    apt: 
+      name: htop
+      state: present
+      tags: 
+        - config
+
+    - name: install "atop" pkg 
+    apt: 
+      name: atop
+      state: present 
+      tags: 
+        - config 
+
+    - name: install "vim" pkg 
+    apt: 
+      name: vim
+      state: present 
+      tags: 
+        - config
+
+    - name: install "nmap" pkg 
+    apt: 
+      name: nmap
+      state: present 
+      tags: 
+        - config
+
+    - name: install "ufw" pkg 
+    apt: 
+      name: ufw
+      state: present 
+      tags: 
+        - config
+
+
+    - name: install "git" pkg 
+    apt: 
+      name: git
+      state: present 
+      tags: 
+        - config
+
+    - name: install "nodejs" pkg 
+    apt: 
+      name: nodejs
+      state: present 
+      tags: 
+        - config
+
+    
+
+    
+        
+
+

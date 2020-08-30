@@ -2,81 +2,280 @@
 - hosts: localhost
   remote_user: root
   tasks:
-    - tasks 
     - apt_repository:
         repo: ppa:libreoffice/ppa
+        tags: 
+          - config 
 
-    - name: ubuntu packages
-      apt:
-        name: '{{ packages }}'
+    - name: Install "unzip" pkg 
+      apt: 
+        name: unzip
+        state: present 
+        tags: 
+          - config
+
+    - name: Install "htop" pkg 
+      apt: 
+        name: htop
         state: present
-      vars:
-        packages:
-          - unzip
-          - htop
-          - atop
-          - iftop
-          - sysstat
-          - iotop
-          - vim
-          - htop
-          - nmap
-          - ufw
-          - bridge-utils
-          - qemu-kvm
-          - cmake
-          - libreoffice
-          - bridge-utils
-          - build-essential
-          - openvpn
-          - dialog
-          - python3-pip
-          - python3-setuptools
-          - lm-sensors
-          - virt-manager
-          - pulseaudio
-          - pavucontrol
-          - build-essential
-          - curl
-          - at
-          - bluez
-          - xfce
-          - terminator
-          - blueman
-          - pulseaudio-module-bluetooth
-          - ubuntu-desktop
-          - unity-control-center
-          tags: 
-      - config
+        tags: 
+          - config
+
+    - name: Install "atop" pkg 
+      apt: 
+        name: atop
+        state: present
+        tags: 
+          - config
+
+    - name: Install "iftop" pkg 
+      apt: 
+        name: iftop
+        state: present
+        tags: 
+          - config
+
+    - name: Install "sysstat" pkg 
+      apt: 
+        name: sysstat
+        state: present
+        tags: 
+          - config
+
+    - name: Install "iotop" pkg 
+      apt: 
+        name: iotop
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "vim" pkg 
+      apt: 
+        name: vim
+        state: present
+        tags: 
+          - config
+
+    - name: Install "nmap" pkg 
+      apt: 
+        name: nmap
+        state: present
+        tags: 
+          - config
+
+    - name: Install "ufw" pkg 
+      apt: 
+        name: ufw
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "bridge-utils" pkg 
+      apt: 
+        name: bridge-utils
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "qemu-kvm" pkg 
+      apt: 
+        name: qemu-kvm
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "cmake" pkg 
+      apt: 
+        name: cmake
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "libreoffice" pkg 
+      apt: 
+        name: libreoffice
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "build-essential" pkg 
+      apt: 
+        name: unzip
+        state: present
+
+
+    - name: Install "openvpn" pkg 
+      apt: 
+        name: openvpn
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "dialog" pkg 
+      apt: 
+        name: dialog
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "python3-pip" pkg 
+      apt: 
+        name: python3-pip
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "python3-setuptools" pkg 
+      apt: 
+        name: python3-setuptools
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "lm-sensors" pkg 
+      apt: 
+        name: lm-sensors
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "virt-manager" pkg 
+      apt: 
+        name: virt-manager
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "pulseaudio" pkg 
+      apt: 
+        name: pulseaudio
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "pavucontrol" pkg 
+      apt: 
+        name: pavucontrol
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "curl" pkg 
+      apt: 
+        name: curl
+        state: present
+        tags: 
+          - config
+
+
+
+    - name: Install "at" pkg 
+      apt: 
+        name: at
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "bluez" pkg 
+      apt: 
+        name: bluez
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "xfce" pkg 
+      apt: 
+        name: xfce
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "terminator" pkg 
+      apt: 
+        name: terminator
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "blueman" pkg 
+      apt: 
+        name: blueman
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "pulseaudio-module-bluetooth" pkg 
+      apt: 
+        name: pulseaudio-module-bluetooth
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "ubuntu-desktop" pkg 
+      apt: 
+        name: ubuntu-desktop
+        state: present
+        tags: 
+          - config
+
+
+    - name: Install "unity-control-center" pkg 
+      apt: 
+        name: unity-control-center
+        state: present
+        tags: 
+          - config
+
+
 
     - name: create custom dirs
       file:
         path: /home/lukehowsam/srv
         state: directory
         tags: 
-      - config
+          - config
 
     - name: create custom dirs
       file:
         path: /home/lukehowsam/srv/dev
         state: directory
         tags: 
-      - config
+          - config
 
     - name: create custom dirs
       file:
         path: /home/lukehowsam/Desktop/courses
         tags: 
-      - config
+          - config
 
     - name: apt-get update
       apt:
         update_cache: yes
         tags: 
-      - config
+          - config
 
     - name: apt-get upgrade
       apt:
         upgrade: dist
         tags: 
-      - config
+          - config
