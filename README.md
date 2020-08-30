@@ -2,10 +2,14 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <h2>Automation</h2>   
 
+
+![build:passed](https://travis-ci.com/luke-h1/Automation.svg?branch=master&amp;status=passed) 
+![Ansible Lint](https://github.com/luke-h1/Automation/workflows/Ansible%20Lint/badge.svg?branch=master)
+
 Simple Automation of Mac, Linux & Windows with Ansible + Bash 
+<hr> 
 
 ### Prerequisites
-
 Generally you will need to run the following commands in order to clone this repo & get Ansible up & running 
 
 
@@ -34,7 +38,6 @@ sudo chmod 770 mac-catalina.sh
 #centos: sudo yum install -y epel-release && sudo yum install -y git && sudo yum install -y ansible 
 ```
 
-
 Ansible playbook command: 
 
 ```
@@ -46,24 +49,14 @@ Bash script command:
 sudo chmod 770 *.sh 
 ./<name-of-bash-script>
 ``` 
-<hr>
-
-##
 
 
-![](/static/image.jpeg)
-
-
-
-
-## Windows  
-## untested 
+## Windows (untested) 
  * download windows remote management script on win10 host
  * run windows remote management script on win10 host 
  * ssh or run playbook locally on machine 
- * run playbook
-
 <hr> 
+
 
 
 ## Contributing
@@ -86,5 +79,16 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-* **<luke-h1>** - *Initial work* - [luke-h1](https://github.com/luke-h1)
+* **<luke-h1>** - *Initial work* - [luke-h1](https://github.com/luke-h1) 
+  
+  
+  <br> 
+  <hr>
+##
+
+![](/static/image.jpeg)
+
+
+
+
 

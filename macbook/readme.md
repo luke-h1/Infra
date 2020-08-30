@@ -3,11 +3,16 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 
 ## NOTES : 
-run the mac-catalina.sh script first as this will install homebrew and node which if left uninstalled will cause the ansible-playbook to fail. The shell script is highly opiniated with regards to the options that are setup so it is worth it to fork this repo & edit the shell script to your own needs 
+* run the mac-catalina.sh script first as this will install homebrew, Ansible & Node which if left uninstalled will cause the playbook to fail. 
+
+* The shell script is highly opiniated with regards to the options that are setup so it is worth it to clone this repo & edit the shell script locally to your own needs 
 
 
-## unautomated apps: 
-  * app/mac/61189/balenaetcher/download 
-  * /dist/torbrowser/9.5.3/TorBrowser-9.5.3-osx64_en-US.dmg 
-  * /content/dam/develop/external/us/en/documents/Intel%20Power%20Gadget.dmg 
-  * https://robomongo.org/download
+### things that cannot be automated 
+  * stealth-mode. Allows the mac to not respond to pings or nmap queries 
+  * balena etcher 
+  * tor browser  
+  * intel power gadget 
+  * VS code extensions (https://github.com/luke-h1/vscode-settings/blob/master/README.MD)
+  
+
