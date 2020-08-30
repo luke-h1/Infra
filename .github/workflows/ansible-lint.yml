@@ -14,7 +14,11 @@ jobs:
       uses: ansible/ansible-lint-action@master
       with:
        
-        targets: "{{ lookup('mac-catalina', '/mac/*.yml') }}"
+        targets: | 
+          macbook/mac-catalina.yml
+          linux/ubuntu.yml
+          vps/vps.yml 
+          
 
                 
                 
@@ -23,4 +27,4 @@ jobs:
           ansible==2.9
           ansible-lint==4.2.0
       
-        args: "-r"
+        #args: "-r"
