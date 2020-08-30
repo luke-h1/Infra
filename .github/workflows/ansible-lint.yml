@@ -15,7 +15,9 @@ jobs:
       with:
        
         targets: | 
-                *.yml 
+                /macbook/mac-catalina.yml 
+                /linux/ubuntu.yml 
+                /vps/vps.yml 
                 
                 
        
