@@ -1,5 +1,4 @@
-- name: ansible-lint
-  uses: ansible/ansible-lint-action@v4.1.0.post0
+name: Ansible Lint  
 
 on: [push, pull_request]
 
@@ -14,12 +13,14 @@ jobs:
     - name: Lint Ansible Playbook
       uses: ansible/ansible-lint-action@master
       with:
+       
         targets: | 
-            macbook/mac-catalina.yml 
-            linux/ubuntu.yml
-            vps.yml 
-   
+                macbook/mac-catalina.yml 
+                vps/vps.yml
+                linux/ubuntu.yml
+       
         override-deps: |
           ansible==2.9
-          ansible-lint==4.2.0 
+          ansible-lint==4.2.0
+      
         args: "-r"
