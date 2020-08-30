@@ -51,10 +51,17 @@
             - name: create custom dirs 
               file: 
                 path: /home/lukehowsam/srv 
-                path: /home/lukehowsam/srv/dev
-                path: /home/lukehowsam/Desktop/courses 
                 state: directory 
   
+            - name: create custom dirs 
+              file: 
+                path: /home/lukehowsam/srv/dev 
+                state: directory 
+
+            - name: create custom dirs 
+              file: 
+                path: /home/lukehowsam/Desktop/courses  
+              
             - name: apt-get update 
               apt: 
                 update_cache: yes 
