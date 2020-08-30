@@ -2,6 +2,7 @@
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
+    - tasks 
     - homebrew_tap:
         name: mongodb/brew
 
@@ -10,239 +11,180 @@
 
     - homebrew:
         name: heroku
-        state: latest
 
     - homebrew:
         name: mongodb-community@4.2
-        state: latest
 
     - homebrew:
         name: youtube-dl
-        state: latest
 
     - homebrew_cask:
         name: caffeine
-        state: latest
 
     - homebrew_cask:
         name: spotify
-        state: latest
 
     - homebrew_cask:
         name: postman
-        state: latest
 
     - homebrew_cask:
         name: iterm2
-        state: latest
 
     - homebrew_cask:
         name: visual-studio-code
-        state: latest
 
     - homebrew_cask:
         name: docker
-        state: latest
 
     - homebrew_cask:
         name: vlc
-        state: latest
 
     - homebrew_cask:
         name: spectacle
-        state: latest
 
     - homebrew_cask:
         name: responsively
-        state: latest
 
     - homebrew:
         name: wget
-        state: latest
 
     - homebrew:
         name: bash
-        state: latest
 
     - homebrew:
         name: python
-        state: latest
 
     - homebrew:
         name: vcprompt
-        state: latest
 
     - homebrew:
         name: htop
-        state: latest
 
     - homebrew:
         name: vim
-        state: latest
 
     - homebrew:
         name: openvpn
-        state: latest
 
     - homebrew:
         name: tmux
-        state: latest
 
     - homebrew:
         name: screen
-        state: latest
 
     - homebrew:
         name: dialog
-        state: latest
 
     - homebrew:
         name: node
-        state: latest
 
     - homebrew:
         name: nmap
-        state: latest
 
     - homebrew:
         name: zsh
-        state: latest
 
     - homebrew:
         name: zsh-completions
-        state: latest
 
     - homebrew:
         name: zsh-syntax-highlighting
-        state: latest
 
     - homebrew:
         name: zsh-git-prompt
-        state: latest
 
     - homebrew:
         name: links
-        state: latest
 
     - homebrew:
         name: iproute2mac
-        state: latest
 
     - homebrew:
         name: watch
-        state: latest
 
     - homebrew:
         name: coreutils
-        state: latest
 
     - homebrew:
         name: openssl
-        state: latest
 
     - homebrew:
         name: pkg-config
-        state: latest
 
     - homebrew:
         name: cmake
-        state: latest
 
     - homebrew:
         name: readline
-        state: latest
 
     - homebrew:
         name: tree
-        state: latest
 
     - homebrew:
         name: ack
-        state: latest
 
     - homebrew:
         name: gnutls
-        state: latest
 
     - homebrew:
         name: certbot
-        state: latest
 
     - homebrew:
         name: gnu-sed
-        state: latest
 
     - homebrew:
         name: findutils
-        state: latest
 
     - homebrew:
         name: gnu-tar
-        state: latest
 
     - homebrew:
         name: mcrypt
-        state: latest
 
     - homebrew:
         name: openssh
-        state: latest
 
     - homebrew:
         name: pstree
-        state: latest
 
     - homebrew:
         name: grep
-        state: latest
 
     - homebrew:
         name: brew-cask-completion
-        state: latest
 
     - homebrew:
         name: moreutils
-        state: latest
 
     - homebrew:
         name: screenfetch
-        state: latest
 
     - homebrew:
         name: docker-completion
-        state: latest
 
     - homebrew:
         name: dockutil
-        state: latest
 
     - homebrew:
         name: trash
-        state: latest
 
     - homebrew:
         name: findutils
-        state: latest
 
     - homebrew:
         name: e2fsprogs
-        state: latest
 
     - homebrew:
         name: gnu-which
-        state: latest
 
     - homebrew:
         name: bash-completion
-        state: latest
 
     - homebrew:
         name: bash-git-prompt
-        state: latest
 
     - homebrew:
         name: yarn
-        state: latest
 
     - name: start MongoDB pkg
       command: /usr/local/bin/brew services start mongodb
@@ -256,6 +198,7 @@
         creates: ~/.oh-my-zsh/
 
     - homebrew:
+        name: update-homebrew
         update_homebrew: yes
         upgrade_all: yes
 

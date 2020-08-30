@@ -2,6 +2,7 @@
 - hosts: localhost
   remote_user: root
   tasks:
+    - tasks 
     - apt_repository:
         repo: ppa:libreoffice/ppa
 
