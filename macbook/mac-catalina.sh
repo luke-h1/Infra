@@ -93,7 +93,6 @@ bash --login
 echo "installing vue cli"
 npm i @vue/cli 
 echo ""
-
 ##########################
 ## GITHUB CONFIGURATION. ## 
 ##########################
