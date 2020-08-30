@@ -3,7 +3,8 @@
 <h2>Automation</h2>   
 
 
-![build:passed](https://travis-ci.com/luke-h1/Automation.svg?branch=master&amp;status=passed)
+![build:passed](https://travis-ci.com/luke-h1/Automation.svg?branch=master&amp;status=passed) 
+![Ansible Lint](https://github.com/luke-h1/Automation/workflows/Ansible%20Lint/badge.svg?branch=master)
 
 Simple Automation of Mac, Linux & Windows with Ansible + Bash 
 <hr> 
