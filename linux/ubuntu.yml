@@ -1,37 +1,64 @@
 ---
-- hosts: localhost   
-  remote_user: lukehowsam 
-  tasks: 
-          - name: ubuntu packages 
-            apt:   
-                  name: "{{ packages }}"
-                  state: present 
-            vars: 
-                packages: 
-                          - unzip 
-                          - htop 
-                          - atop 
-                          - iftop 
-                          - sysstat
-                          - iotop
-                          - nicstat
-                          - vnstat
-                          - vim
-                          - htop
-                          - nmap
-                          - ufw
-                          - bridge-utils
-                          - qemu-kvm
-                          - virt-manager 
-                          - terminator
-                          - cmake
-                          - git
-                          - libreoffice
-                          - nginx 
-                          - mariadb-server
-                          - postfix 
-                          - net-tools
-                          - bridge-utils   
-                          - transmission-gtk 
-                          - caffeine 
-                          
+  - hosts: localhost   
+    remote_user: root
+    tasks: 
+  
+            - apt_repository:
+                repo: ppa:libreoffice/ppa
+  
+            - name: ubuntu packages 
+              apt:   
+                    name: "{{ packages }}"
+                    state: present 
+              vars: 
+                  packages: 
+                            - unzip 
+                            - htop 
+                            - atop 
+                            - iftop 
+                            - sysstat
+                            - iotop
+                            - vim
+                            - htop
+                            - nmap
+                            - ufw
+                            - bridge-utils
+                            - qemu-kvm
+                            - cmake
+                            - libreoffice
+                            - bridge-utils   
+                            - build-essential
+                            - openvpn 
+                            - dialog 
+                            - python3-pip 
+                            - python3-setuptools
+                            - lm-sensors 
+                            - virt-manager  
+                            - pulseaudio 
+                            - pavucontrol 
+                            - build-essential
+                            - curl
+                            - at 
+                            - bluez
+                            - xfce 
+                            - terminator 
+                            - blueman 
+                            - pulseaudio-module-bluetooth 
+                            - ubuntu-desktop 
+                            - unity-control-center
+
+
+            - name: create custom dirs 
+              file: 
+                path: /home/lukehowsam/srv 
+                path: /home/lukehowsam/srv/dev
+                path: /home/lukehowsam/Desktop/courses 
+                state: directory 
+  
+            - name: apt-get update 
+              apt: 
+                update_cache: yes 
+  
+            - name: apt-get upgrade
+              apt: 
+                upgrade: dist 
