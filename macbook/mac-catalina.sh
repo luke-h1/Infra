@@ -76,7 +76,6 @@ brew install ansible
 echo "install pip"
 sudo easy_install pip 
 echo ""
-echo ""
 echo "install ansible-lint"
 echo ""
 pip install ansible-lint
@@ -90,7 +89,11 @@ sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" # enable viewing of protected log messages 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-bash --login 
+bash --login  
+echo "installing vue cli"
+npm i @vue/cli 
+echo ""
+
 ##########################
 ## GITHUB CONFIGURATION. ## 
 ##########################
