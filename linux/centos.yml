@@ -36,6 +36,8 @@
           - transmission-gtk
           - virt-manager
           - lm_sensors
+          tags: 
+            - config
 
     - name: Delete unwanted packages
       yum:
@@ -45,6 +47,8 @@
         packages:
           - firewalld
           - claws
+          tags: 
+            - config
 
     - name: install groups
       yum:
@@ -58,8 +62,12 @@
           - '@Development Tools'
           - 'GNOME Desktop'
           - '@Graphical Administration Tools'
+          tags: 
+            - config
 
     - name: updates all packages
       dnf:
         name: '*'
         state: latest
+        tags: 
+          - config

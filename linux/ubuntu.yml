@@ -46,25 +46,37 @@
           - pulseaudio-module-bluetooth
           - ubuntu-desktop
           - unity-control-center
+          tags: 
+      - config
 
     - name: create custom dirs
       file:
         path: /home/lukehowsam/srv
         state: directory
+        tags: 
+      - config
 
     - name: create custom dirs
       file:
         path: /home/lukehowsam/srv/dev
         state: directory
+        tags: 
+      - config
 
     - name: create custom dirs
       file:
         path: /home/lukehowsam/Desktop/courses
+        tags: 
+      - config
 
     - name: apt-get update
       apt:
         update_cache: yes
+        tags: 
+      - config
 
     - name: apt-get upgrade
       apt:
         upgrade: dist
+        tags: 
+      - config

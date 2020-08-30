@@ -15,3 +15,5 @@
           - ufw
           - git
           - nodejs
+          tags: 
+      - config
