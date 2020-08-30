@@ -15,9 +15,9 @@ jobs:
       with:
        
         targets: | 
-                macbook/mac-catalina.yml 
-                vps/vps.yml
-                linux/ubuntu.yml
+                *.yml 
+                
+                
        
         override-deps: |
           ansible==2.9
