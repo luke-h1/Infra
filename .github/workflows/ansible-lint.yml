@@ -20,11 +20,11 @@ jobs:
                 linux/ubuntu.yml
 
         warn_list: 
-          - '201'  # Trailing whitespace'                                             │
-          - '208'  mentioned'                                  │
-          - '301'  # Commands should not change things if nothing needs doing'        │
-          - '303'  # Using command rather than module'                                │
-          - '306'  # Shells that use pipes should set the pipefail option'            │
-          - '502'  # All tasks should be named'                  
+          - '201'                                            
+          - '208'                             
+          - '301' 
+          - '303'                  
+          - '306'  
+          - '502'  
 
                 
