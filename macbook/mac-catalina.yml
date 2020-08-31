@@ -460,3 +460,10 @@
         global: yes
       tags: 
       - config
+
+    - name: Install "react-bootstrap" node.js package globally.
+      npm: 
+        name: react-bootstrap
+        global: yes
+      tags: 
+      - config
