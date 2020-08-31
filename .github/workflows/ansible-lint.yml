@@ -17,7 +17,7 @@ jobs:
             vps/vps.yml
             linux/ubuntu.yml
             
-                  warn_list:
+                  skip_list:
                     - 201
                     - 208
                     - 301
