@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.com/luke-h1/Automation.svg?branch=main)](https://travis-ci.com/luke-h1/Automation)
 
-Simple Automation of Mac, Linux & Windows with Ansible + Bash 
+Simple Automation of Mac & Linux with Ansible + Bash 
 <hr> 
 
 ### Prerequisites
@@ -56,6 +56,7 @@ If you want to add your own feature or want to improve this repo feel free to op
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request detailing the changes made 
+6. Ensure the Travis ci/cd pipeline has no errors when you make your PR and correct any issues if there are 
 
 
 
