@@ -12,9 +12,4 @@ jobs:
       - name: Lint Ansible Playbook
         uses: ansible/ansible-lint-action@master
         with:
-          targets: |
-            macbook/mac-catalina.yml 
-            vps/vps.yml
-            linux/ubuntu.yml
-
           shell: 'ansible-lint -v --force-color -x 201 208 301 303 306 502 macbook/mac-catalina.yml vps/vps.yml linux/ubuntu.yml '
