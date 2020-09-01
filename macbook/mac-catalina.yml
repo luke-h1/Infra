@@ -1,0 +1,467 @@
+---
+- hosts: localhost
+  remote_user: lukehowsam
+  tasks:
+    - homebrew_tap:
+        name: mongodb/brew
+      tags:
+        - config
+    - homebrew_tap:
+        name: heroku/brew
+      tags:
+        - config
+
+    - homebrew:
+        name: heroku
+      tags:
+        - config
+
+    - homebrew:
+        name: mongodb-community@4.2
+      tags:
+        - config
+
+    - homebrew:
+        name: youtube-dl
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: caffeine
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: spotify
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: postman
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: iterm2
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: visual-studio-code
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: docker
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: vlc
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: spectacle
+      tags:
+        - config
+
+    - homebrew_cask:
+        name: responsively
+      tags:
+        - config
+
+    - homebrew:
+        name: wget
+      tags:
+        - config
+
+    - homebrew:
+        name: bash
+      tags:
+        - config
+
+    - homebrew:
+        name: python
+      tags:
+        - config
+
+    - homebrew:
+        name: vcprompt
+      tags:
+        - config
+
+    - homebrew:
+        name: htop
+      tags:
+        - config
+
+    - homebrew:
+        name: vim
+      tags:
+        - config
+
+    - homebrew:
+        name: openvpn
+      tags:
+        - config
+
+    - homebrew:
+        name: tmux
+      tags:
+        - config
+
+    - homebrew:
+        name: screen
+      tags:
+        - config
+
+    - homebrew:
+        name: dialog
+      tags:
+        - config
+
+    - homebrew:
+        name: node
+      tags:
+        - config
+
+    - homebrew:
+        name: nmap
+      tags:
+        - config
+
+    - homebrew:
+        name: zsh
+      tags:
+        - config
+
+    - homebrew:
+        name: zsh-completions
+      tags:
+        - config
+
+    - homebrew:
+        name: zsh-syntax-highlighting
+      tags:
+        - config
+
+    - homebrew:
+        name: zsh-git-prompt
+      tags:
+        - config
+
+    - homebrew:
+        name: links
+      tags:
+        - config
+
+    - homebrew:
+        name: iproute2mac
+      tags:
+        - config
+
+    - homebrew:
+        name: watch
+      tags:
+        - config
+
+    - homebrew:
+        name: coreutils
+      tags:
+        - config
+
+    - homebrew:
+        name: openssl
+      tags:
+        - config
+
+    - homebrew:
+        name: pkg-config
+      tags:
+        - config
+
+    - homebrew:
+        name: cmake
+      tags:
+        - config
+    - homebrew:
+        name: readline
+      tags:
+        - config
+
+    - homebrew:
+        name: tree
+      tags:
+        - config
+
+    - homebrew:
+        name: ack
+      tags:
+        - config
+
+    - homebrew:
+        name: gnutls
+      tags:
+        - config
+
+    - homebrew:
+        name: certbot
+      tags:
+        - config
+
+    - homebrew:
+        name: gnu-sed
+      tags:
+        - config
+
+    - homebrew:
+        name: findutils
+      tags:
+        - config
+
+    - homebrew:
+        name: gnu-tar
+      tags:
+        - config
+
+    - homebrew:
+        name: mcrypt
+      tags:
+        - config
+
+    - homebrew:
+        name: openssh
+      tags:
+        - config
+
+    - homebrew:
+        name: pstree
+      tags:
+        - config
+
+    - homebrew:
+        name: grep
+      tags:
+        - config
+
+    - homebrew:
+        name: brew-cask-completion
+      tags:
+        - config
+
+    - homebrew:
+        name: moreutils
+      tags:
+        - config
+
+    - homebrew:
+        name: screenfetch
+      tags:
+        - config
+
+    - homebrew:
+        name: docker-completion
+      tags:
+        - config
+
+    - homebrew:
+        name: dockutil
+      tags:
+        - config
+
+    - homebrew:
+        name: trash
+      tags:
+        - config
+
+    - homebrew:
+        name: findutils
+      tags:
+        - config
+
+    - homebrew:
+        name: e2fsprogs
+      tags:
+        - config
+
+    - homebrew:
+        name: gnu-which
+      tags:
+        - config
+
+    - homebrew:
+        name: bash-completion
+      tags:
+        - config
+
+    - homebrew:
+        name: bash-git-prompt
+      tags:
+        - config
+
+    - homebrew:
+        name: yarn
+      tags:
+        - config
+
+    - name: start MongoDB pkg
+      command: /usr/local/bin/brew services start mongodb
+      tags:
+        - config
+    - name: start openvpn pkg
+      command: /usr/local/bin/brew services start openvpn
+      tags:
+        - config
+
+    - name: Install OH-MY-ZSH
+      shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) | sh
+      args:
+        creates: ~/.oh-my-zsh/
+      tags:
+        - config
+
+    - homebrew:
+        name: update-homebrew
+        update_homebrew: yes
+        upgrade_all: yes
+      tags:
+        - config
+
+    - name: Create srv directory
+      file:
+        path: /Users/lukehowsam/srv
+        state: directory
+        mode: '0755'
+      tags:
+        - config
+
+    - name: Create iso directory
+      file:
+        path: /Users/lukehowsam/srv/isos
+        state: directory
+        mode: '0755'
+      tags:
+        - config
+
+    - name: Create /srv/dev directory
+      file:
+        path: /Users/lukehowsam/srv/dev
+        state: directory
+        mode: '0755'
+      tags:
+        - config
+
+    - name: Create /Desktop/courses directory
+      file:
+        path: Users/lukehowsam/Desktop/courses
+        state: directory
+        mode: '0755'
+      tags:
+        - config
+
+    - name: Create notes directory
+      file:
+        path: Users/lukehowsam/notes
+        state: directory
+        mode: '0755'
+      tags:
+        - config
+
+    - name: Install "react" node.js package globally.
+      npm:
+        name: react
+        global: yes
+      tags:
+        - config
+
+    - name: Install "moment" node.js package globally.
+      npm:
+        name: moment
+        global: yes
+      tags:
+        - config
+
+    - name: Install "express" node.js package globally.
+      npm:
+        name: express
+        global: yes
+      tags:
+        - config
+
+    - name: Install "Mocha" node.js package globally.
+      npm:
+        name: mocha
+        global: yes
+      tags:
+        - config
+
+    - name: Install "vercel" node.js package globally.
+      npm:
+        name: vercel
+        global: yes
+      tags:
+        - config
+
+    - name: Install "next" node.js package globally.
+      npm:
+        name: next
+        global: yes
+      tags:
+        - config
+
+    - name: Install "create-react-app" node.js package globally.
+      npm:
+        name: create-react-app
+        global: yes
+      tags:
+        - config
+
+    - name: Install "eslint" node.js package globally.
+      npm:
+        name: eslint
+        global: yes
+      tags:
+        - config
+
+    - name: Install "vue" node.js package globally.
+      npm:
+        name: vue
+        global: yes
+      tags:
+        - config
+
+    - name: Install "vue devtools" node.js package globally.
+      npm:
+        name: vue-devtools
+        global: yes
+      tags:
+        - config
+
+    - name: Install "lite-server" node.js package globally.
+      npm:
+        name: lite-server
+        global: yes
+      tags:
+        - config
+
+    - name: Install "nodemon" node.js package globally.
+      npm:
+        name: nodemon
+        global: yes
+      tags:
+        - config
+
+    - name: Install "artillery" node.js package globally.
+      npm:
+        name: artillery
+        global: yes
+      tags:
+        - config
+
+    - name: Install "react-bootstrap" node.js package globally.
+      npm:
+        name: react-bootstrap
+        global: yes
+      tags:
+        - config
