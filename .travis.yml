@@ -9,4 +9,6 @@ install:
 script:
   - ansible-lint install macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,220 -v 
   - ansible-lint install linux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208,220 -v 
- 
+  - ansible-lint install vps/vps.yml -x 303,701,601,206,602,403,301,502,306,208,220 -v 
+
+
