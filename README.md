@@ -50,9 +50,6 @@ sudo chmod 770 *.sh
 ``` 
 
 
-
-
-
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
 1. Fork it 
@@ -62,7 +59,6 @@ If you want to add your own feature or want to improve this repo feel free to op
 5. Submit a pull request detailing the changes made 
 
 
-<hr>
 
 ## License
 This project is licensed under the MIT License - 
@@ -74,7 +70,6 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 * **<luke-h1>** - *Initial work* - [luke-h1](https://github.com/luke-h1) 
-  
   
   <br> 
   <hr>
