@@ -12,22 +12,11 @@ jobs:
       - name: Lint Ansible Playbook
         uses: ansible/ansible-lint-action@master
         with:
+          SKIP_LIST: '201 208 301 303 306 502'
+
           targets: |
             macbook/mac-catalina.yml 
             vps/vps.yml
             linux/ubuntu.yml
-            
-        SKIP_LIST: 
-          - '201'    
-          - '208'    
-          - '301'    
-          - '303'    
-          - '306'    
-          - '502'    
 
-          args: "-x SKIP_LIST"
-            
-            
-                  
-
-
+          args: '-x SKIP_LIST'
