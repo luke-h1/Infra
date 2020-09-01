@@ -8,7 +8,7 @@
 #   / //  |/ /\__ \ / / / /| | / /   / /        
 # _/ // /|  /___/ // / / ___ |/ /___/ /___      
 #/___/_/ |_//____//_/ /_/  |_/_____/_____/      
-                                              
+                                        
 echo "###############################################" 
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
 echo "#         YOU'LL PROBABLY REGRET IT...        #" 
@@ -25,6 +25,7 @@ read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   CONTINUE=true
 fi
+
 
 if ! $CONTINUE; then
   # Check if we're continuing and output a message if not
