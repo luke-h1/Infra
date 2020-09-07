@@ -14,5 +14,7 @@
   * tor browser  
   * intel power gadget 
   * VS code extensions (https://github.com/luke-h1/vscode-settings/blob/master/README.MD)
+  * browserstack 
+  
   
 
