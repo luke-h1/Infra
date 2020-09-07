@@ -5,9 +5,9 @@
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
 #
-echo"#############################" 
-echo"#✅ 👽 👨‍💻 😎 🌟 🎲 🎱🚀 ##" 
-echo"#############################" 
+echo "#############################" 
+echo "#✅ 👽 👨‍💻 😎 🌟 🎲 🎱🚀 ##" 
+echo "#############################" 
 echo ""
 echo "" 
 echo "#-------------------------#"
@@ -25,22 +25,6 @@ sleep 3
 echo "" 
 echo ""
 echo ""
-echo "###############################################" 
-echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
-echo "#         YOU'LL PROBABLY REGRET IT...        #" 
-echo "#        ❌❌❌❌❌❌❌❌❌❌❌❌❌❌       #" 
-echo "#                                             #" 
-echo "#              READ IT THOROUGHLY             #" 
-echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
-echo "###############################################" 
-echo "###############################################" 
-echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
-echo "#         YOU'LL PROBABLY REGRET IT...        #" 
-echo "#        ❌❌❌❌❌❌❌❌❌❌❌❌❌❌       #" 
-echo "#                                             #" 
-echo "#              READ IT THOROUGHLY             #" 
-echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
-echo "###############################################" 
 echo "###############################################" 
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
 echo "#         YOU'LL PROBABLY REGRET IT...        #" 
@@ -69,6 +53,7 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 brew update 
+brew upgrade 
 echo ""
 echo ""
 echo "installing ansible"
@@ -76,12 +61,8 @@ brew install ansible
 echo "install pip"
 sudo easy_install pip 
 echo ""
-echo "install ansible-lint"
-echo ""
-pip install ansible-lint
 echo "install nvm & node"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
-bash --login #new shell 
 nvm install stable
 brew update  
 brew upgrade node 
@@ -89,7 +70,6 @@ sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" # enable viewing of protected log messages 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-bash --login  
 echo "installing vue cli"
 npm i @vue/cli 
 echo ""
@@ -306,15 +286,11 @@ fi
 # Kill affected applications
 ###############################################################################
 echo ""
-echo "Done!" $cyan
-echo ""
-echo ""
 echo ""
 echo ""
 echo "Note that some of these changes require a logout/restart to take effect." 
 echo "Killing some open applications in order to take effect." 
 echo ""
-
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
@@ -322,13 +298,10 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   killall "${app}" > /dev/null 2>&1
 done
 
-
 ###############################################################################
 # INSTALL LINTER TOOLS  
 ###############################################################################
 npm install -g prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
-
-
 
 ###############################################################################
 # INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
