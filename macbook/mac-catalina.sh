@@ -331,6 +331,9 @@ python3.8 -m pip install --upgrade pip
 echo "checking python 3.8 is the only python present (instead of python2)"
 pkgutil --pkgs | grep org.python.Python 
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
+pip3 install docutils
+robot QuickStart.rst
+robot --log report.html --name Custom_Name QuickStart.rst
 
 
 ###############################################################################
