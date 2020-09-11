@@ -314,6 +314,29 @@ wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
 
 ###############################################################################
+# SETUP PYTHON ENV 
+###############################################################################
+echo ""
+sudo rm -rf /Library/Frameworks/Python.framework/Versions/2.7
+sudo rm -rf "/Applications/Python 2.7"
+ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' 
+cd /usr/local/bin/
+ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' | awk '{print $9}' | tr -d @ | xargs rm
+brew install python 
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo easy_install pip
+pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
+pip3 install robotframework
+python3.8 -m pip install --upgrade pip
+echo "checking python 3.8 is the only python present (instead of python2)"
+pkgutil --pkgs | grep org.python.Python 
+pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
+pip3 install docutils
+robot QuickStart.rst
+robot --log report.html --name Custom_Name QuickStart.rst
+
+
+###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
 echo ""
