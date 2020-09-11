@@ -86,13 +86,6 @@
         tags:
           - config
 
-    - name: Install "libreoffice" pkg
-      apt:
-        name: libreoffice
-        state: present
-        tags:
-          - config
-
     - name: Install "build-essential" pkg
       apt:
         name: unzip
@@ -140,20 +133,6 @@
         tags:
           - config
 
-    - name: Install "pulseaudio" pkg
-      apt:
-        name: pulseaudio
-        state: present
-        tags:
-          - config
-
-    - name: Install "pavucontrol" pkg
-      apt:
-        name: pavucontrol
-        state: present
-        tags:
-          - config
-
     - name: Install "curl" pkg
       apt:
         name: curl
@@ -168,41 +147,6 @@
         tags:
           - config
 
-    - name: Install "bluez" pkg
-      apt:
-        name: bluez
-        state: present
-        tags:
-          - config
-
-    - name: Install "xfce" pkg
-      apt:
-        name: xfce
-        state: present
-        tags:
-          - config
-
-    - name: Install "terminator" pkg
-      apt:
-        name: terminator
-        state: present
-        tags:
-          - config
-
-    - name: Install "blueman" pkg
-      apt:
-        name: blueman
-        state: present
-        tags:
-          - config
-
-    - name: Install "pulseaudio-module-bluetooth" pkg
-      apt:
-        name: pulseaudio-module-bluetooth
-        state: present
-        tags:
-          - config
-
     - name: Install "ubuntu-desktop" pkg
       apt:
         name: ubuntu-desktop
@@ -210,33 +154,7 @@
         tags:
           - config
 
-    - name: Install "unity-control-center" pkg
-      apt:
-        name: unity-control-center
-        state: present
-        tags:
-          - config
-
-    - name: create custom dirs
-      file:
-        path: /home/lukehowsam/srv
-        state: directory
-        tags:
-          - config
-
-    - name: create custom dirs
-      file:
-        path: /home/lukehowsam/srv/dev
-        state: directory
-        tags:
-          - config
-
-    - name: create custom dirs
-      file:
-        path: /home/lukehowsam/Desktop/courses
-        tags:
-          - config
-
+          
     - name: apt-get update
       apt:
         update_cache: yes
