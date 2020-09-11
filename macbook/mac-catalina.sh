@@ -327,6 +327,11 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
 pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
 pip3 install robotframework
+python3.8 -m pip install --upgrade pip
+echo "checking python 3.8 is the only python present (instead of python2)"
+pkgutil --pkgs | grep org.python.Python 
+pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
+
 
 ###############################################################################
 # SET SHELL TO ZSH 
