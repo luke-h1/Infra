@@ -463,5 +463,10 @@
       npm:
         name: react-bootstrap
         global: yes
+
+    - name: Install "sass" node.js package globally. 
+      npm: 
+        name: sass
+        global: yes 
       tags:
         - config
