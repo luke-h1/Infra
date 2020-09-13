@@ -165,6 +165,15 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
 
+# SHOW MOUNTED VOLUMES ON DESKTOP 
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
+defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
+
+# ALLOW APPLICATIONS TO BE INSTALLED FROM ANYWHERE (NO SEC PROMPT)
+sudo spctl --master-disable
+
 ###############################################################################
 # SAFARI CONFIG 
 ###############################################################################
@@ -207,6 +216,27 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # UI CONFIG 
 ###############################################################################
 echo ""
+echo ""
+echo "Speed up various animations"
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g QLPanelAnimationDuration -float 0
+defaults write -g NSWindowResizeTime -float 0.001
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
+defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0.001
+
+echo ""
+echo ""
+echo "disable bouncing icons in dock"
+defaults write com.apple.dock no-bouncing -bool false
+echo ""
+echo ""
+echo "speed up launchpad animations"
+defaults write com.apple.dock springboard-show-duration -float 0.1
+defaults write com.apple.dock springboard-hide-duration -float 0.11
+defaults write com.apple.dock springboard-page-duration -float 0.1
 echo ""
 echo "Always show scrollbars"  
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
