@@ -226,7 +226,6 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
 defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0.001
-
 echo ""
 echo ""
 echo "disable bouncing icons in dock"
@@ -360,7 +359,7 @@ wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
 
 ###############################################################################
-# SETUP PYTHON ENV 
+# SETUP ROBOT ENV 
 ###############################################################################
 echo ""
 sudo rm -rf /Library/Frameworks/Python.framework/Versions/2.7
@@ -370,18 +369,20 @@ cd /usr/local/bin/
 ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' | awk '{print $9}' | tr -d @ | xargs rm
 brew install python 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+wget https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
+unzip *.zip 
+sudo mv chromedriver /usr/local/bin 
 sudo easy_install pip
 pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
 pip3 install robotframework
+pip3 install robotframework-requests
+pip3 install robotframework-react
+pip3 install --upgrade robotframework-stublibrary
 python3.8 -m pip install --upgrade pip
 echo "checking python 3.8 is the only python present (instead of python2)"
 pkgutil --pkgs | grep org.python.Python 
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
 pip3 install docutils
-robot QuickStart.rst
-robot --log report.html --name Custom_Name QuickStart.rst
-
-
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
