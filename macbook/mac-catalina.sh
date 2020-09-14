@@ -6,22 +6,22 @@
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
 #
 echo "#############################" 
-echo "#✅ 👽 👨‍💻 😎 🌟 🎲 🎱🚀 ##" 
+echo "#✅ 👽 👨‍💻 😎 🌟 🎲 🎱🚀 ########"
 echo "#############################" 
 echo ""
 echo "" 
 echo "#-------------------------#"
 echo "#  Mac OS Install Script  #"
 echo "#-------------------------#"
-sleep 3 
+sleep 2
 echo ""
 echo "" 
 echo "By luke-h1" 
 echo ""
 echo ""
-sleep 3
+sleep 2
 echo "follow me on github... https://github.com/luke-h1" 
-sleep 3
+sleep 2
 echo "" 
 echo ""
 echo ""
@@ -115,7 +115,7 @@ defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
 
 echo ""
-echo "Would you like to set your computer name (as done via System Preferences >> Sharing)?  (y/n)"
+echo "Would you like to set your hostname / computer (as done via System Preferences >> Sharing)?  (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "What would you like it to be?"
