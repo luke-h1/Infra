@@ -51,6 +51,7 @@ Bash script command:
 sudo chmod 770 *.sh 
 ./<name-of-bash-script>
 ``` 
+<hr>
 
 
 ## Contributing
@@ -63,6 +64,7 @@ If you want to add your own feature or want to improve this repo feel free to op
 6. Ensure the Travis ci/cd pipeline has no errors when you make your PR and correct any issues if there are 
 
 
+<hr>
 
 ## License
 This project is licensed under the MIT License - 
