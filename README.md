@@ -29,6 +29,8 @@ Bash script command:
 sudo chmod 770 mac-catalina.sh 
 ./mac-catalina.sh 
 ``` 
+
+<hr>
 ## Ubuntu + Centos Linux 
 ```
 #ubuntu: sudo apt-get install -y git && sudo apt-get install -y ansible   
