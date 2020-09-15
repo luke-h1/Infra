@@ -35,6 +35,11 @@
         name: spotify
       tags:
         - config
+        
+    - homebrew_cask: 
+        name: FIREFOX STABLE 
+      tags: 
+        - config 
 
     - homebrew_cask:
         name: postman
