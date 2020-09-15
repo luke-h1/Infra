@@ -35,19 +35,6 @@ echo "#         AND EDIT TO SUIT YOUR NEEDS         #"
 echo "###############################################" 
 echo ""
 sleep 3 
-CONTINUE=false
-echo ""
-echo "Have you read through the script you're about to run and " 
-echo "understood that it will make changes to your computer? (y/n) ? " 
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  CONTINUE=true
-fi
-
-if ! $CONTINUE; then
-  echo "Please go read the script, it only takes a few minutes 💻" 
-  exit
-fi
 echo "installing xcode tools" 
 xcode-select --install 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -411,6 +398,11 @@ echo "setting ZSH as default shell 👨‍💻"
 echo ""
 chsh -s /bin/zsh 
 echo "all done :) ✅ 🍦 🚀" 
+
+
+
+
+
 
 ###############################################################################
 # REBOOT 
