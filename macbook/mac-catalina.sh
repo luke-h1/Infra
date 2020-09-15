@@ -392,6 +392,14 @@ echo "checking python 3.8 is the only python present (instead of python2)"
 pkgutil --pkgs | grep org.python.Python 
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
 pip3 install docutils
+echo ""
+echo ""
+echo "setting correct permissions on web drivers"
+echo ""
+echo ""
+# put your user here ❌
+sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver 
+sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
