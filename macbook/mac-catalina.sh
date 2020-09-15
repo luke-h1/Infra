@@ -369,9 +369,18 @@ cd /usr/local/bin/
 ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' | awk '{print $9}' | tr -d @ | xargs rm
 brew install python 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+echo "installing geckodriver"
+echo ""
+echo ""
+wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-macos.tar.gz 
+echo "installing chromedriver" 
+echo ""
+echo ""
 wget https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
+echo "unzipped .zip files & moving to /usr/local/bin"
 unzip *.zip 
 sudo mv chromedriver /usr/local/bin 
+sudo mv geckodriver /usr/local/bin 
 sudo easy_install pip
 pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
 pip3 install robotframework
