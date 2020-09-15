@@ -319,14 +319,13 @@
       command: /usr/local/bin/brew services start mongodb
       tags:
         - config
+
     - name: start openvpn pkg
       command: /usr/local/bin/brew services start openvpn
       tags:
         - config
 
-    - name: start jenkins pkg 
-      command: /usr/local/bin/brew services start jenkins-lts 
-
+ 
     - name: Install OH-MY-ZSH
       shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) | sh
       args:
