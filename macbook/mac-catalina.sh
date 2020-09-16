@@ -314,21 +314,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-###############################################################################
-# Kill affected applications
-###############################################################################
-echo ""
-echo ""
-echo ""
-echo "Note that some of these changes require a logout/restart to take effect." 
-echo "Killing some open applications in order to take effect." 
-echo ""
-find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
-for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
-  "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
-  "Terminal" "Transmission"; do
-  killall "${app}" > /dev/null 2>&1
-done
 
 ###############################################################################
 # INSTALL LINTER TOOLS  
@@ -398,6 +383,23 @@ echo "setting ZSH as default shell 👨‍💻"
 echo ""
 chsh -s /bin/zsh 
 echo "all done :) ✅ 🍦 🚀" 
+
+
+###############################################################################
+# Kill affected applications
+###############################################################################
+echo ""
+echo ""
+echo ""
+echo "Note that some of these changes require a logout/restart to take effect." 
+echo "Killing some open applications in order to take effect." 
+echo ""
+find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
+for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
+  "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
+  "Terminal" "Transmission"; do
+  killall "${app}" > /dev/null 2>&1
+done
 
 
 
