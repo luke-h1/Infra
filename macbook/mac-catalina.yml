@@ -482,3 +482,10 @@
         global: yes 
       tags:
         - config
+
+    - name: Install "netlify-cli" node.js package globally 
+      npm: 
+        name: netlify-cli 
+        global: yes 
+      tags: 
+        - config 

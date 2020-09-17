@@ -28,4 +28,7 @@ code --install jacobphilip.robotframeworklinter
 code --install keith.robotframework
 code --install tomiturtiainen.rf-intellisense
 code --install snooz82.rf-intellisense
+code --install be5invis.toml
+code --install tamasfe.even-better-toml
+code --install bodil.prettier-toml
 
