@@ -359,6 +359,7 @@ pip3 install robotframework
 pip3 install robotframework-requests
 pip3 install robotframework-react
 pip3 install --upgrade robotframework-stublibrary
+pip install --upgrade robotframework-selenium2library
 python3.8 -m pip install --upgrade pip
 echo "checking python 3.8 is the only python present (instead of python2)"
 pkgutil --pkgs | grep org.python.Python 

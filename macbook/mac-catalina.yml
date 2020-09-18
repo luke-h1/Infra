@@ -61,10 +61,6 @@
       tags:
         - config
 
-    - homebrew_cask:
-        name: docker
-      tags:
-        - config
 
     - homebrew_cask:
         name: vlc
@@ -195,6 +191,7 @@
         name: cmake
       tags:
         - config
+
     - homebrew:
         name: readline
       tags:
@@ -270,13 +267,9 @@
       tags:
         - config
 
-    - homebrew:
-        name: docker-completion
-      tags:
-        - config
 
     - homebrew:
-        name: dockutil
+        name: docker-completion
       tags:
         - config
 
@@ -290,11 +283,7 @@
       tags:
         - config
 
-    - homebrew:
-        name: e2fsprogs
-      tags:
-        - config
-
+        
     - homebrew:
         name: gnu-which
       tags:
