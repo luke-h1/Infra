@@ -270,6 +270,11 @@
       tags:
         - config
 
+    - homebrew: 
+        name: trimage 
+      tags: 
+        - config 
+
     - homebrew:
         name: docker-completion
       tags:
