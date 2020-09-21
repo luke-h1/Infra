@@ -21,19 +21,19 @@ steps:
   displayName: 'Install dependencies'
   
 
-- script: | 
-    pip install ansible-lint 
-  displayName: 'install dependencies'
+# - script: | 
+#     pip install ansible-lint 
+#   displayName: 'install dependencies'
 
 
 - script: | 
-    ansible-lint install --pythonpath linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
     displayName: 'Run Linter on vps'
 
 - script: | 
-    ansible-lint install --pythonpath linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
     displayName: 'Run Linter on linux'
 
 - script: | 
-    ansible-lint install --pythonpath linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
     displayName: 'Run Linter on macbook'
