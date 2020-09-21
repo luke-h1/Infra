@@ -4,7 +4,7 @@ trigger:
 jobs: 
 - job: 'Lint' 
   pool:
-    vmImage: 'ubuntu-latest'
+    vmImage: 'vs2017-win2016'
   strategy: 
     matrix:
       Python37: 
@@ -15,9 +15,7 @@ jobs:
     - script: pip install ansible-lint
       displayName: 'Install All Dependencies needed'
       
-  
-
-    - script: ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    - script: ansible-lint install --pythonpath linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
       displayName: 'Run the Linter on Ubuntu playbooks'
       
     - script: ansible-lint install vps/*.yml -x 303,701,601,206,602,403,301,502,306 -v
