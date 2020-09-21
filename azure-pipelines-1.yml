@@ -1,7 +1,5 @@
-
 trigger:
 - main
-
 pool:
   vmImage: 'ubuntu-latest'
 strategy:
@@ -13,19 +11,11 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
-  displayName: 'Use Python $(python.version)'
 
 - script: |
     python -m pip install --upgrade pip
-    # pip install -r requirements.txt
-  displayName: 'Install dependencies'
+    pip install -r requirements.txt
   
-
-- script: | 
-    pip install ansible-lint 
-  displayName: 'install dependencies'
-
-
 - script: | 
     ansible-lint  linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on vps'
