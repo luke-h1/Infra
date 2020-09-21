@@ -1,5 +1,6 @@
 trigger:
 - main
+    
 pool:
   vmImage: 'vs2017-win2016'
 strategy:
@@ -11,19 +12,21 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
+  displayName: 'Add Python version to ${PATH}'
 
-- powershell: |
+- script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
+  displayName: 'Install dependencies'
   
-- powershell: | 
+- script: | 
     ansible-lint linux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208 -v
-    displayName: 'Run Linter on Ubuntu'
+  displayName: 'Run Linter on Ubuntu'
 
-- powershell: | 
+- script: | 
     ansible-lint vps/vps.yml -x 303,701,601,206,602,403,301,502,306,208 -v
-    displayName: 'Run Linter on VPS'
+  displayName: 'Run Linter on VPS'
 
-- powershell: | 
+- script: | 
     ansible-lint macbook/macbook-catalina.yml -x 303,701,601,206,602,403,301,502,306,208 -v
-    displayName: 'Run Linter on macbook'
+  displayName: 'Run Linter on macbook'
