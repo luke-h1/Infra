@@ -12,18 +12,18 @@ steps:
   inputs:
     versionSpec: '$(python.version)'
 
-- script: |
+- bash: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   
-- script: | 
+- bash: | 
     ansible-lint linux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on Ubuntu'
 
-- script: | 
+- bash: | 
     ansible-lint vps/vps.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on VPS'
 
-- script: | 
+- bash: | 
     ansible-lint macbook/macbook-catalina.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on macbook'
