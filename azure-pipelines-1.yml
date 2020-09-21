@@ -1,7 +1,7 @@
 trigger:
 - main
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'vs2017-win2016'
 strategy:
   matrix:
     Python37:
@@ -12,18 +12,18 @@ steps:
   inputs:
     versionSpec: '$(python.version)'
 
-- bash: |
+- powershell: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   
-- bash: | 
+- powershell: | 
     ansible-lint linux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on Ubuntu'
 
-- bash: | 
+- powershell: | 
     ansible-lint vps/vps.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on VPS'
 
-- bash: | 
+- powershell: | 
     ansible-lint macbook/macbook-catalina.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on macbook'
