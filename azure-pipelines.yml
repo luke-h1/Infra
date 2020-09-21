@@ -2,7 +2,7 @@ trigger:
 - main
 
 jobs: 
-- job: "Run ansible-lint on all playbooks" 
+- job: 'Lint' 
   pool:
     vmImage: 'ubuntu-latest'
   strategy: 
@@ -11,21 +11,16 @@ jobs:
         python.version: "3.7" 
     maxParallel: 1 
   steps: 
-    - task: UsePythonVersion@0
-      inputs: 
-      versionSpec: '3.7'
-      architecture: 'x64'
 
-steps:
-- script: pip install ansible-lint
-  displayName: 'Install All Dependencies needed'
+    - script: pip install ansible-lint
+      displayName: 'Install All Dependencies needed'
 
 
-- script: ansible-lint linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
-  displayName: 'Run the Linter on Ubuntu playbooks'
-  
-- script: ansible-lint vps/*.yml -x 303,701,601,206,602,403,301,502,306 -v
-  displayName: 'Run the Linter on VPS playbooks'
+    - script: ansible-lint linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+      displayName: 'Run the Linter on Ubuntu playbooks'
+      
+    - script: ansible-lint vps/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+      displayName: 'Run the Linter on VPS playbooks'
 
-- script: ansible-lint macbook/*.yml -x 303,701,601,206,602,403,301,502,306 -v
-  displayName: 'Run the Linter on Macbook Playbooks'
+    - script: ansible-lint macbook/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+      displayName: 'Run the Linter on Macbook Playbooks'
