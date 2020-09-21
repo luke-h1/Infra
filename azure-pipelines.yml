@@ -14,13 +14,14 @@ jobs:
 
     - script: pip install ansible-lint
       displayName: 'Install All Dependencies needed'
+      
+  
 
-
-    - script: ansible-lint linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    - script: ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306 -v
       displayName: 'Run the Linter on Ubuntu playbooks'
       
-    - script: ansible-lint vps/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    - script: ansible-lint install vps/*.yml -x 303,701,601,206,602,403,301,502,306 -v
       displayName: 'Run the Linter on VPS playbooks'
 
-    - script: ansible-lint macbook/*.yml -x 303,701,601,206,602,403,301,502,306 -v
+    - script: ansible-lint install macbook/*.yml -x 303,701,601,206,602,403,301,502,306 -v
       displayName: 'Run the Linter on Macbook Playbooks'
