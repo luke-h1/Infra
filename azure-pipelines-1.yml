@@ -17,7 +17,7 @@ steps:
     pip install -r requirements.txt
   
 - script: | 
-    ansible-lint inux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208 -v
+    ansible-lint linux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on Ubuntu'
 
 - script: | 
