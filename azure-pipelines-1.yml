@@ -27,13 +27,13 @@ steps:
 
 
 - script: | 
-    ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
+    ansible-lint  linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on vps'
 
 - script: | 
-    ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
+    ansible-lint  linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on linux'
 
 - script: | 
-    ansible-lint install linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
+    ansible-lint  linux/*.yml -x 303,701,601,206,602,403,301,502,306,208 -v
     displayName: 'Run Linter on macbook'
