@@ -375,6 +375,7 @@ sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver
 sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
+sudo gem install cocoapods
 
 ###############################################################################
 # SET SHELL TO ZSH 

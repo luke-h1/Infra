@@ -267,6 +267,10 @@
       tags:
         - config
 
+    - homebrew: 
+        name: watchman
+      tags:
+        - config
 
     - homebrew:
         name: docker-completion
