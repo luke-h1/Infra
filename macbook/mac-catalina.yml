@@ -267,6 +267,10 @@
       tags:
         - config
 
+    - homebrew: 
+        name: watchman
+      tags:
+        - config
 
     - homebrew:
         name: docker-completion
@@ -475,6 +479,13 @@
     - name: Install "expo-cli" node.js package globally. 
       npm: 
         name: expo-cli 
+        global: yes 
+      tags: 
+        - config 
+
+    - name: Install "react-native-cli" node.js package globally. 
+      npm: 
+        name: react-native-cli 
         global: yes 
       tags: 
         - config 
