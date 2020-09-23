@@ -479,6 +479,13 @@
       tags: 
         - config 
 
+    - name: Install "react-native-cli" node.js package globally. 
+      npm: 
+        name: react-native-cli 
+        global: yes 
+      tags: 
+        - config 
+
     - name: Install "netlify-cli" node.js package globally 
       npm: 
         name: netlify-cli 
