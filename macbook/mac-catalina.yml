@@ -472,6 +472,13 @@
       tags:
         - config
 
+    - name: Install "expo-cli" node.js package globally. 
+      npm: 
+        name: expo-cli 
+        global: yes 
+      tags: 
+        - config 
+
     - name: Install "netlify-cli" node.js package globally 
       npm: 
         name: netlify-cli 
