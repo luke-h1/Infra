@@ -76,7 +76,6 @@ echo "Your github information has now been configured globally.."
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
 ###############################################################################
 # ICLOUD                                                                      #
 ###############################################################################
@@ -87,11 +86,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
-
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
-
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
@@ -100,7 +97,6 @@ defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 
 # Install System data files & security updates
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
-
 echo ""
 echo "Would you like to set your hostname / computer (as done via System Preferences >> Sharing)?  (y/n)"
 read -r response
@@ -116,7 +112,6 @@ fi
 echo ""
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
 defaults write com.apple.BezelServices kDimTime -int 300
-
 echo ""
 echo "Disable display from automatically adjusting brightness? (y/n)"
 read -r response
@@ -129,7 +124,6 @@ echo "Where do you want screenshots to be stored? (hit ENTER if you want ~/Deskt
 # Thanks https://github.com/omgmog
 read screenshot_location
 echo ""
-
 if [ -z "${screenshot_location}" ]
 then
   # If nothing specified, we default to ~/Desktop
@@ -157,10 +151,8 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-
-# ALLOW APPLICATIONS TO BE INSTALLED FROM ANYWHERE (NO SEC PROMPT)
+# ALLOW APPLICATIONS TO BE INSTALLED FROM ANYWHERE (no annoying security prompt in settings)
 sudo spctl --master-disable
-
 ###############################################################################
 # SAFARI CONFIG 
 ###############################################################################
@@ -189,16 +181,11 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
-
-
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
-
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-
 ###############################################################################
 # UI CONFIG 
 ###############################################################################
@@ -263,7 +250,6 @@ echo ""
 echo ""
 echo "Move Dock to right"
 defaults write com.apple.dock orientation right
-
 ################################################################################
 # TRANSMISSION                                                                 #
 ################################################################################
@@ -313,13 +299,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistNew -bool true
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
-
-
 ###############################################################################
 # INSTALL LINTER TOOLS  
 ###############################################################################
 npm install -g prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
-
 ###############################################################################
 # INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
 ###############################################################################
@@ -329,30 +312,15 @@ echo "Installing Macs-Fan-Control, ProtonVPN & OBS"
 wget https://crystalidea.com/macs-fan-control/download
 wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
-
 ###############################################################################
-# SETUP ROBOT ENV 
+# SETUP ROBOT & PYTHON ENV 
 ###############################################################################
-echo ""
-sudo rm -rf /Library/Frameworks/Python.framework/Versions/2.7
-sudo rm -rf "/Applications/Python 2.7"
-ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' 
-cd /usr/local/bin/
-ls -l /usr/local/bin | grep '../Library/Frameworks/Python.framework/Versions/2.7' | awk '{print $9}' | tr -d @ | xargs rm
-brew install python 
+echo "setup robot-framework & python environment"
+sudo rm -rf /usr/local/bin/python*
+sudo rm -rf /Library/Frameworks/Python.framework/Versions/*
+brew install python3
+brew link python@3.8 --overwrite
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-echo "installing geckodriver"
-echo ""
-echo ""
-wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-macos.tar.gz 
-echo "installing chromedriver" 
-echo ""
-echo ""
-wget https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
-echo "unzipped .zip files & moving to /usr/local/bin"
-unzip *.zip 
-sudo mv chromedriver /usr/local/bin 
-sudo mv geckodriver /usr/local/bin 
 sudo easy_install pip
 pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
 pip3 install robotframework
@@ -365,28 +333,34 @@ echo "checking python 3.8 is the only python present (instead of python2)"
 pkgutil --pkgs | grep org.python.Python 
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
 pip3 install docutils
+###############################################################################
+# INSTALL & CONFIGURE CHROME + FIREFOX WEB DRIVERS 
+###############################################################################
+echo "installing geckodriver"
 echo ""
 echo ""
-echo "setting correct permissions on web drivers"
+wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-macos.tar.gz 
+echo "installing chromedriver" 
 echo ""
 echo ""
-# put your user here ❌
+wget https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
+echo "unzipped .zip files & moving to /usr/local/bin"
+unzip *.zip 
+sudo mv chromedriver /usr/local/bin 
+sudo mv geckodriver /usr/local/bin 
 sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver 
 sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
-sudo gem install cocoapods
-
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
 echo ""
-echo "setting ZSH as default shell 👨‍💻" 
+echo "setting ZSH as default shell 👨‍💻"  
+
 echo ""
 chsh -s /bin/zsh 
 echo "all done :) ✅ 🍦 🚀" 
-
-
 ###############################################################################
 # Kill affected applications
 ###############################################################################
@@ -402,9 +376,6 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Terminal" "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done
-
-
-
 ###############################################################################
 # REBOOT 
 ###############################################################################
