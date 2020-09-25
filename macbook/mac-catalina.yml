@@ -309,7 +309,7 @@
         - config
 
     - name: start MongoDB pkg
-      command: /usr/local/bin/brew services start mongodb
+      command: /usr/local/bin/brew services start mongodb-community
       tags:
         - config
 
