@@ -33,8 +33,3 @@ code --install tamasfe.even-better-toml
 code --install bodil.prettier-toml
 code --install donjayamanne.python-extension-pack
 code --install ms-python.python 
-code --install kevinrose.vsc-python-indent
-code --install bibhasdn.django-html 
-code --install batisteo.vscode-django
-code --install samuelcolvin.jinjahtml
-code --install wholroyd.jinja
