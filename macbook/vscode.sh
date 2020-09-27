@@ -36,3 +36,5 @@ code --install ms-python.python
 code --install kevinrose.vsc-python-indent
 code --install bibhasdn.django-html 
 code --install batisteo.vscode-django
+code --install samuelcolvin.jinjahtml
+code --install wholroyd.jinja
