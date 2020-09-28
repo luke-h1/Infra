@@ -317,6 +317,7 @@ echo "Installing Macs-Fan-Control, ProtonVPN & OBS"
 wget https://crystalidea.com/macs-fan-control/download
 wget https://protonvpn.com/download/ProtonVPN.dmg
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  
+wget https://cdn.loom.com/desktop-packages/Loom-0.50.11.dmg
 ###############################################################################
 # SETUP ROBOT & PYTHON ENV 
 ###############################################################################
