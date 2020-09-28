@@ -2,7 +2,7 @@
 
 # install all vs code extensions 
 code --install christian-kohler.npm-intellisense
-code --install nur.just-black
+code --install enkia.tokyo-night
 code --install esbenp.prettier-vscode
 code --install dbaeumer.vscode-eslint
 code --install wix.vscode-import-cost
