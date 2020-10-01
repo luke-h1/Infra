@@ -33,4 +33,4 @@ code --install tamasfe.even-better-toml
 code --install bodil.prettier-toml
 code --install donjayamanne.python-extension-pack
 code --install ms-python.python 
-code --install fallenmax.styled-components 
+code --install jpoissonnier.vscode-styled-components
