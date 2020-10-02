@@ -34,3 +34,4 @@ code --install bodil.prettier-toml
 code --install donjayamanne.python-extension-pack
 code --install ms-python.python 
 code --install jpoissonnier.vscode-styled-components
+code --install ms-vscode.vscode-typescript-tslint-plugin
