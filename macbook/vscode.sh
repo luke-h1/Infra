@@ -35,3 +35,6 @@ code --install donjayamanne.python-extension-pack
 code --install ms-python.python 
 code --install jpoissonnier.vscode-styled-components
 code --install ms-vscode.vscode-typescript-tslint-plugin
+code --install orta.vscode-jest
+code --install andys8.jest-snippets
+
