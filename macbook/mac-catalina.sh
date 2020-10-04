@@ -340,8 +340,6 @@ pkgutil --pkgs | grep org.python.Python
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
 pip3 install docutils
 pip3 installl pipenv
-
-
 ###############################################################################
 # INSTALL & CONFIGURE CHROME + FIREFOX WEB DRIVERS 
 ###############################################################################
@@ -361,6 +359,17 @@ sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver
 sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
+###############################################################################
+# PHP SETUP  
+###############################################################################
+cd /Users/lukehowsam/ 
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '795f976fe0ebd8b75f26a6dd68f78fd3453ce79f32ecb33e7fd087d39bfeb978342fb73ac986cd4f54edd0dc902601dc') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+wget https://xamppguide.com/download/7-4-6-for-mac-osx/?wpdmdl=1209&amp;refresh=5f343e14226b91597259284
+
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
