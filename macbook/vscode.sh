@@ -38,3 +38,7 @@ code --install ms-vscode.vscode-typescript-tslint-plugin
 code --install orta.vscode-jest
 code --install andys8.jest-snippets
 code --install bradlc.vscode-tailwindcss
+code --install felixfbecker.php-intellisense
+code --install felixfbecker.php-debug
+code --install rifi2k.format-html-in-php
+code --install formulahendry.docker-extension-pack
