@@ -43,3 +43,4 @@ code --install felixfbecker.php-debug
 code --install rifi2k.format-html-in-php
 code --install formulahendry.docker-extension-pack
 code --install brapifra.phpserver
+code --install azurite

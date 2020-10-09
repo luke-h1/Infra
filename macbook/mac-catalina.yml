@@ -496,3 +496,16 @@
         global: yes 
       tags: 
         - config 
+
+    - name: Install "Azure Functions CLI" node.js package globally 
+      npm: 
+        name: azure-functions-core-tools@core
+        global: yes 
+      tags: 
+        - config 
+    - name: Install "azurite" node.js package globally 
+      npm: 
+        name: azurite
+        global: yes 
+      tags: 
+        - config 
