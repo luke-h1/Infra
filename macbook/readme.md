@@ -14,6 +14,7 @@
   * tor browser  
   * intel power gadget 
   * browserstack 
+  * visual studio + azure & nodejs extensions
   
   
 
