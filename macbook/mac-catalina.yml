@@ -21,10 +21,6 @@
       tags:
         - config
 
-    - homebrew: 
-        name: jenkins-lts 
-      tags: 
-        - config 
 
     - homebrew:
         name: youtube-dl
@@ -36,11 +32,7 @@
       tags:
         - config
 
-    - homebrew_cask:
-        name: spotify
-      tags:
-        - config
-        
+
     - homebrew_cask: 
         name: FIREFOX STABLE 
       tags: 
@@ -493,19 +485,6 @@
     - name: Install "netlify-cli" node.js package globally 
       npm: 
         name: netlify-cli 
-        global: yes 
-      tags: 
-        - config 
-
-    - name: Install "Azure Functions CLI" node.js package globally 
-      npm: 
-        name: azure-functions-core-tools@core
-        global: yes 
-      tags: 
-        - config 
-    - name: Install "azurite" node.js package globally 
-      npm: 
-        name: azurite
         global: yes 
       tags: 
         - config 
