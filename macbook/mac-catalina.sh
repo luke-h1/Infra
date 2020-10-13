@@ -304,10 +304,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistNew -bool true
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
-###############################################################################
-# INSTALL LINTER TOOLS  
-###############################################################################
-npm install -g prettier eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
+
 ###############################################################################
 # INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
 ###############################################################################
@@ -359,17 +356,6 @@ sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver
 sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
-###############################################################################
-# PHP SETUP  
-###############################################################################
-cd /Users/lukehowsam/ 
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('sha384', 'composer-setup.php') === '795f976fe0ebd8b75f26a6dd68f78fd3453ce79f32ecb33e7fd087d39bfeb978342fb73ac986cd4f54edd0dc902601dc') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-sudo mv composer.phar /usr/local/bin/composer
-wget https://xamppguide.com/download/7-4-6-for-mac-osx/?wpdmdl=1209&amp;refresh=5f343e14226b91597259284
-
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
