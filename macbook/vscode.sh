@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # install all vs code extensions 
 code --install christian-kohler.npm-intellisense
 code --install enkia.tokyo-night

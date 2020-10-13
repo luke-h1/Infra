@@ -313,11 +313,10 @@ npm install -g prettier eslint-config-airbnb eslint-config-prettier eslint-plugi
 ###############################################################################
 echo ""
 echo ""
-echo "Installing Macs-Fan-Control, Loom, color picker,  ProtonVPN & OBS"
+echo "Installing Macs-Fan-Control, color picker,  ProtonVPN & OBS"
 wget https://crystalidea.com/macs-fan-control/download # macs fan control 
 wget https://protonvpn.com/download/ProtonVPN.dmg # protonvpn 
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  # obs 
-wget https://cdn.loom.com/desktop-packages/Loom-0.50.11.dmg # loom desktop recorder 
 wget https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.1/CCA-3.1.1.dmg # color picker
 ###############################################################################
 # SETUP ROBOT & PYTHON ENV 
