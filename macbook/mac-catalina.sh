@@ -315,6 +315,9 @@ wget https://crystalidea.com/macs-fan-control/download # macs fan control
 wget https://protonvpn.com/download/ProtonVPN.dmg # protonvpn 
 wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  # obs 
 wget https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.1/CCA-3.1.1.dmg # color picker
+wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.3.1/gatling-charts-highcharts-bundle-3.3.1-bundle.zip
+cd /Users/lukehowsam/Downloads 
+unzip * 
 ###############################################################################
 # SETUP ROBOT & PYTHON ENV 
 ###############################################################################
