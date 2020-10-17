@@ -17,13 +17,11 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
     CONTINUE=true
 fi
 
-
 if ! $CONTINUE; then
     # Check if we're continuing and output a message if not
     echo "Please go read the script, it only takes a few minutes"
     exit
 fi
-
 sudo apt-get install -y curl
 sudo apt install software-properties-common apt-transport-https wget -y
 echo "now configuring your github"
@@ -46,18 +44,12 @@ sudo apt-get install -y snap
 sudo snap install --classic heroku
 sudo ufw enable
 sudo apt-get install -y openssh*
-sudo apt install ./teamviewer_amd64.deb
 sudo apt-get install -y ssh*
 sudo apt-get install -y xfce*
 sudo service ssh restart
 sudo -v
 sudo chmod 700 /home/sftpuser/
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
-sudo yum groupinstall "Server with GUI" -y
-sudo yum groupinstall "Xfce" -y
 sudo systemctl set-default graphical.target
 sudo ufw disable
 sudo ufw enable
-echo "rebooting now..."
-sleep 3
-sudo reboot -h 3
