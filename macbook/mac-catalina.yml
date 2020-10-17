@@ -431,3 +431,9 @@
         global: yes 
       tags: 
         - config 
+    - name: Install "gatsby" node.js package globally 
+      npm: 
+        name: gatsby 
+        global: yes 
+      tags: 
+        - config 
