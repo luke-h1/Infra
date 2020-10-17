@@ -9,7 +9,7 @@ strategy:
       python.version: '3.7'
 
 steps:
-- task: UsePythonVersion@0
+- task: Lint Playbooks
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Add Python version to ${PATH}'
