@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  remote_user: root
+  remote_user: lukehowsam
   tasks:
     - name: Install "unzip" pkg
       apt:

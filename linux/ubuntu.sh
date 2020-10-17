@@ -1,5 +1,4 @@
 #!/bin/bash
-
 echo "###############################################"
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #"
 echo "#         YOU'LL PROBABLY REGRET IT...        #"
