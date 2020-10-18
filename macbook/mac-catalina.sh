@@ -5,43 +5,52 @@
 #| (_) \__ \>  <    | | | | \__ \ || (_| | | |
 # \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
 #
-echo "#############################" 
-echo "#✅ 👽 👨‍💻 😎 🌟 🎲 🎱🚀 ########"
-echo "#############################" 
-echo ""
-echo "" 
-echo "#-------------------------#"
-echo "#  Mac OS Install Script  #"
-echo "#-------------------------#"
-sleep 2
+echo "##########################"
+echo "✨ Mac OS Install Script ✨"
+echo "##########################"
 echo ""
 echo "" 
 echo "By luke-h1" 
 echo ""
 echo ""
-sleep 2
+sleep 1
 echo "follow me on github... https://github.com/luke-h1" 
-sleep 2
+sleep 3
 echo "" 
 echo ""
 echo ""
 echo "###############################################" 
 echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
 echo "#         YOU'LL PROBABLY REGRET IT...        #" 
-echo "#        ❌❌❌❌❌❌❌❌❌❌❌❌❌❌       #" 
-echo "#                                             #" 
 echo "#              READ IT THOROUGHLY             #" 
 echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
 echo "###############################################" 
 echo ""
-sleep 3 
+echo ""
+echo "" 
+echo "Have you read thru this script & understood what changes it will make to your"
+echo "Machine (y/n) ?" 
+read -r agree
+if [[ $agree =~ ^( [yY])$ ]]; then 
+    START = true  
+    echo "Starting script.." 
+    fi 
+
+if ! $agree; then 
+    echo "Not starting" 
+    exit 
+  fi 
+echo ""
+echo ""
+echo ""
+echo ""
+sleep 2
 echo "installing xcode tools" 
 xcode-select --install 
 echo ""
 echo ""
 echo ""
 echo "Installing homebrew"
-
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 brew update 
@@ -62,12 +71,9 @@ sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" # enable viewing of protected log messages 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
-echo "installing vue cli"
-npm i @vue/cli 
-echo ""
-##########################
+###########################
 ## GITHUB CONFIGURATION. ## 
-##########################
+###########################
 echo "" 
 echo "" 
 echo "Enter your github username:"
@@ -305,9 +311,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-###############################################################################
-# INSTALL APPLICATIONS THAT CANNOT BE AUTOMATED W/ BASH & ANSIBLE 
-###############################################################################
+####################
+# Get various DMGs #
+####################
 echo ""
 echo ""
 echo "Installing Macs-Fan-Control, color picker,  ProtonVPN & OBS"
@@ -317,11 +323,10 @@ wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  # obs
 wget https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.1/CCA-3.1.1.dmg # color picker
 wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.3.1/gatling-charts-highcharts-bundle-3.3.1-bundle.zip
 wget https://download.visualstudio.microsoft.com/download/pr/5fd170f1-05d8-4126-ae8f-9ff9dc683466/997547015dac7edcb155e5ac917b0c72/aspnetcore-runtime-3.1.9-osx-x64.tar.gz
-
 cd /Users/lukehowsam/Downloads 
 unzip * 
 ###############################################################################
-# SETUP ROBOT & PYTHON ENV 
+# SETUP PYTHON & ROBOT ENV 
 ###############################################################################
 echo "setup robot-framework & python environment"
 sudo rm -rf /usr/local/bin/python*
@@ -370,12 +375,10 @@ echo "setting ZSH as default shell 👨‍💻"
 echo ""
 chsh -s /bin/zsh 
 echo "all done :) ✅ 🍦 🚀" 
-
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################
 softwareupdate --all --install --force
-
 ###############################################################################
 # Kill affected applications
 ###############################################################################
@@ -398,7 +401,7 @@ sleep 3
 REBOOT=false 
 echo ""
 echo "" 
-echo "would you like to reboot in order for changes to take effect (y/n) ? " 
+echo "Would you like to reboot in order for changes to take effect (y/n) ? " 
 read -r res 
 if [[ $res =~ ^( [yY])$ ]]; then 
     REBOOT = true  
@@ -407,6 +410,6 @@ if [[ $res =~ ^( [yY])$ ]]; then
     fi 
 
 if ! $res; then 
-    echo "ok not rebooting... some changes will need a reboot to function 🍦" 
+    echo "Not rebooting. Some changes will need a reboot to function " 
     exit 
   fi 
