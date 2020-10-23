@@ -437,3 +437,10 @@
         global: yes 
       tags: 
         - config 
+
+    - name: Install "pa11y" node.js package globally 
+      npm: 
+        name: pa11y 
+        global: yes 
+      tags: 
+        - config 
