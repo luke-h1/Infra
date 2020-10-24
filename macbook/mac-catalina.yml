@@ -431,6 +431,14 @@
         global: yes 
       tags: 
         - config 
+
+    - name: Install "node-sass" node.js package globally 
+      npm: 
+        name: node-sass 
+        global: yes 
+      tags: 
+        - config
+    
     - name: Install "gatsby" node.js package globally 
       npm: 
         name: gatsby 
