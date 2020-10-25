@@ -28,18 +28,21 @@ echo "###############################################"
 echo ""
 echo ""
 echo "" 
-echo "Have you read thru this script & understood what changes it will make to your"
-echo "Machine (y/n) ?" 
-read -r agree
-if [[ $agree =~ ^( [yY])$ ]]; then 
-    START = true  
-    echo "Starting script.." 
-    fi 
+sleep 3
+CONTINUE=false
+echo ""
+echo "Have you read through the script you're about to run and "
+echo "understood that it will make changes to your computer? (y/n) ? "
+read -r response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    CONTINUE=true
+fi
 
-if ! $agree; then 
-    echo "Not starting" 
-    exit 
-  fi 
+if ! $CONTINUE; then
+    # Check if we're continuing and output a message if not
+    echo "Please go read the script, it only takes a few minutes"
+    exit
+fi
 echo ""
 echo ""
 echo ""
@@ -49,10 +52,10 @@ echo "installing xcode tools"
 xcode-select --install 
 echo ""
 echo ""
-echo ""
 echo "Installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+echo "updating homebrew"
 brew update 
 brew upgrade 
 echo ""
@@ -84,6 +87,8 @@ read email
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
 
+echo "" 
+echo "icloud section" 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
@@ -97,6 +102,9 @@ defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
+echo "" 
+echo "" 
+echo "Mac App store section" 
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
@@ -168,6 +176,7 @@ sudo spctl --master-disable
 # SAFARI CONFIG 
 ###############################################################################
 echo ""
+echo "Safari section" 
 # Warn about fraudulent websites
 defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 echo ""
@@ -192,11 +201,18 @@ defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+echo "" 
+echo "" 
+echo "photo sections" 
+
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+echo "" 
+echo "" 
+echo "Ui Section" 
 ###############################################################################
 # UI CONFIG 
 ###############################################################################
@@ -261,6 +277,9 @@ echo ""
 echo ""
 echo "Move Dock to right"
 defaults write com.apple.dock orientation right
+echo "" 
+echo "" 
+echo "Transmission section" 
 ################################################################################
 # TRANSMISSION                                                                 #
 ################################################################################
@@ -311,6 +330,9 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
+echo "" 
+echo "" 
+echo "Install DMG sections" 
 ####################
 # Get various DMGs #
 ####################
@@ -325,10 +347,12 @@ wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcha
 wget https://download.visualstudio.microsoft.com/download/pr/5fd170f1-05d8-4126-ae8f-9ff9dc683466/997547015dac7edcb155e5ac917b0c72/aspnetcore-runtime-3.1.9-osx-x64.tar.gz
 cd /Users/lukehowsam/Downloads 
 unzip * 
+echo "" 
+echo "" 
+echo "Setup python + robot env section" 
 ###############################################################################
 # SETUP PYTHON & ROBOT ENV 
 ###############################################################################
-echo "setup robot-framework & python environment"
 sudo rm -rf /usr/local/bin/python*
 sudo rm -rf /Library/Frameworks/Python.framework/Versions/*
 brew install python3
@@ -347,6 +371,9 @@ pkgutil --pkgs | grep org.python.Python
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
 pip3 install docutils
 pip3 installl pipenv
+echo "" 
+echo "" 
+echo "Install chrome & firefox webdrivers section" 
 ###############################################################################
 # INSTALL & CONFIGURE CHROME + FIREFOX WEB DRIVERS 
 ###############################################################################
@@ -366,6 +393,8 @@ sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver
 sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
+echo "" 
+echo "" 
 ###############################################################################
 # SET SHELL TO ZSH 
 ###############################################################################
@@ -378,6 +407,9 @@ echo "all done :) ✅ 🍦 🚀"
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################
+echo "" 
+echo "" 
+echo "Check for Macos related updates section" 
 softwareupdate --all --install --force
 ###############################################################################
 # Kill affected applications
