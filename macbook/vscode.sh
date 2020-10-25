@@ -39,7 +39,6 @@ code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension felixfbecker.php-intellisense
 code --install-extension felixfbecker.php-debug
-code --install-extension rifi2k.format-html-in-php
 code --install-extension formulahendry.docker-extension-pack
 code --install-extension brapifra.phpserver
 code --install-extension azurite#!/bin/bash
