@@ -20,7 +20,7 @@
         name: mongodb-community@4.2
       tags:
         - config
-
+        
 
     - homebrew:
         name: youtube-dl
@@ -31,11 +31,6 @@
         name: caffeine
       tags:
         - config
-
-    - homebrew_cask: 
-        name: FIREFOX STABLE 
-      tags: 
-        - config 
 
     - homebrew_cask:
         name: postman
@@ -62,10 +57,6 @@
       tags:
         - config
 
-    - homebrew:
-        name: wget
-      tags:
-        - config
 
     - homebrew:
         name: bash
@@ -264,31 +255,6 @@
       tags:
         - config
 
-    - name: start MongoDB pkg
-      command: /usr/local/bin/brew services start mongodb-community
-      tags:
-        - config
-
-    - name: start openvpn pkg
-      command: /usr/local/bin/brew services start openvpn
-      tags:
-        - config
-
- 
-    - name: Install OH-MY-ZSH
-      shell: curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) | sh
-      args:
-        creates: ~/.oh-my-zsh/
-      tags:
-        - config
-
-    - homebrew:
-        name: update-homebrew
-        update_homebrew: yes
-        upgrade_all: yes
-      tags:
-        - config
-
     - name: Create srv directory
       file:
         path: /Users/lukehowsam/srv
@@ -297,9 +263,9 @@
       tags:
         - config
 
-    - name: Create iso directory
+    - name: Create design directory
       file:
-        path: /Users/lukehowsam/srv/isos
+        path: /Users/lukehowsam/srv/design
         state: directory
         mode: '0755'
       tags:

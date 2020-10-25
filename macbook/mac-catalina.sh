@@ -65,6 +65,9 @@ brew install ansible
 echo "install pip"
 sudo easy_install pip 
 echo ""
+echo ""
+echo "installing wget"
+brew install wget
 echo "install nvm & node"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 nvm install stable
@@ -345,8 +348,7 @@ wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  # obs
 wget https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.1/CCA-3.1.1.dmg # color picker
 wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.3.1/gatling-charts-highcharts-bundle-3.3.1-bundle.zip
 wget https://download.visualstudio.microsoft.com/download/pr/5fd170f1-05d8-4126-ae8f-9ff9dc683466/997547015dac7edcb155e5ac917b0c72/aspnetcore-runtime-3.1.9-osx-x64.tar.gz
-cd /Users/lukehowsam/Downloads 
-unzip * 
+sleep  3 
 echo "" 
 echo "" 
 echo "Setup python + robot env section" 
@@ -395,15 +397,7 @@ sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
 echo "" 
 echo "" 
-###############################################################################
-# SET SHELL TO ZSH 
-###############################################################################
-echo ""
-echo "setting ZSH as default shell 👨‍💻"  
 
-echo ""
-chsh -s /bin/zsh 
-echo "all done :) ✅ 🍦 🚀" 
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################
@@ -420,6 +414,7 @@ echo ""
 echo "Note that some of these changes require a logout/restart to take effect." 
 echo "Killing some open applications in order to take effect." 
 echo ""
+sleep 5 
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
@@ -429,19 +424,3 @@ done
 ###############################################################################
 # REBOOT 
 ###############################################################################
-sleep 3
-REBOOT=false 
-echo ""
-echo "" 
-echo "Would you like to reboot in order for changes to take effect (y/n) ? " 
-read -r res 
-if [[ $res =~ ^( [yY])$ ]]; then 
-    REBOOT = true  
-    echo "enter your password to reboot"
-    sudo reboot -h now  
-    fi 
-
-if ! $res; then 
-    echo "Not rebooting. Some changes will need a reboot to function " 
-    exit 
-  fi 
