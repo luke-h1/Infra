@@ -9,7 +9,6 @@ code --install-extension christian-kohler.path-intellisense
 code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension pkief.material-icon-theme
 code --install-extension zignd.html-css-class-completion
-code --install-extension ritwickdey.live-sass
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension octref.vetur
 code --install-extension donjayamanne.githistory
