@@ -425,7 +425,6 @@ if ! $REBOOT; then
     echo "Ok not rebooting 💻"
     exit
 fi
-
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
