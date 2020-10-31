@@ -410,17 +410,24 @@ softwareupdate --all --install --force
 ###############################################################################
 echo ""
 echo ""
+echo "the following command will kill all applications in order for changes to take effect (including this terminal window 👨‍💻 ."
+echo "After this ternimal has closed it's best to reboot in order for changes to take effect"
+sleep 3
+REBOOT=false
 echo ""
-echo "Note that some of these changes require a logout/restart to take effect." 
-echo "Killing some open applications in order to take effect." 
-echo ""
-sleep 5 
+echo "Do you want to kill all applications in order for changes to take effect ? (y/n)"
+read -r USER_INPUT
+if [[ $USER_INPUT =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    REBOOT=true
+fi
+
+if ! $REBOOT; then
+    echo "Ok not rebooting 💻"
+    exit
+fi
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
   "Terminal" "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done
-###############################################################################
-# REBOOT 
-###############################################################################
