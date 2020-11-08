@@ -48,6 +48,7 @@ echo ""
 echo ""
 echo ""
 sleep 2
+osascript -e 'tell application "System Preferences" to quit'
 echo "installing xcode tools" 
 xcode-select --install 
 echo ""
