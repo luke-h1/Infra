@@ -207,7 +207,6 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 echo "" 
 echo "" 
 echo "photo sections" 
-
 ###############################################################################
 # Photos                                                                      #
 ###############################################################################
@@ -215,7 +214,7 @@ echo "photo sections"
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 echo "" 
 echo "" 
-echo "Ui Section" 
+echo "UI Section" 
 ###############################################################################
 # UI CONFIG 
 ###############################################################################
@@ -375,7 +374,7 @@ pip3 install docutils
 pip3 installl pipenv
 echo "" 
 echo "" 
-echo "Install chrome & firefox webdrivers section" 
+echo "Install chrome & firefox webdrivers" 
 ###############################################################################
 # INSTALL & CONFIGURE CHROME + FIREFOX WEB DRIVERS 
 ###############################################################################
