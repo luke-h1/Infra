@@ -5,255 +5,257 @@
     - homebrew_tap:
         name: mongodb/brew
       tags:
-        - config
+        - databases
+
     - homebrew_tap:
         name: heroku/brew
       tags:
-        - config
+        - deployment
 
     - homebrew:
         name: heroku
       tags:
-        - config
+        - deployment
 
     - homebrew:
         name: mongodb-community@4.2
       tags:
-        - config
+        - databases
         
-
     - homebrew:
         name: youtube-dl
       tags:
         - config
 
     - homebrew_cask:
-        name: caffeine
+        name: pycharm
       tags:
-        - config
+        - editors
 
+    - homebrew_cask:
+        name: ImageOptim
+      tags:
+        - Image Optimization
+        
     - homebrew_cask:
         name: postman
       tags:
-        - config
+        - Tools
 
     - homebrew_cask:
         name: iterm2
       tags:
-        - config
+        - Tools
 
     - homebrew_cask:
         name: visual-studio-code
       tags:
-        - config
+        - Editors
 
     - homebrew_cask:
         name: vlc
       tags:
-        - config
+        - misc
 
     - homebrew_cask:
         name: spectacle
       tags:
-        - config
-
+        - Tools
 
     - homebrew:
         name: bash
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: python
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: htop
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: vim
       tags:
-        - config
+        - editors
 
     - homebrew:
         name: openvpn
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: tmux
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: screen
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: node
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: nmap
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: zsh
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: zsh-completions
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: zsh-syntax-highlighting
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: zsh-git-prompt
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: iproute2mac
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: watch
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: coreutils
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: openssl
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: pkg-config
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: cmake
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: readline
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: tree
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: ack
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: gnutls
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: certbot
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: gnu-sed
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: findutils
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: gnu-tar
       tags:
-        - config
-
+        - Tools
 
     - homebrew:
         name: openssh
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: pstree
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: grep
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: brew-cask-completion
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: moreutils
       tags:
-        - config
+        - Tools
 
     - homebrew: 
         name: watchman
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: docker-completion
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: findutils
       tags:
-        - config
+        - Tools
 
-        
     - homebrew:
         name: gnu-which
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: bash-completion
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: bash-git-prompt
       tags:
-        - config
+        - Tools
 
     - homebrew:
         name: yarn
       tags:
-        - config
+        - Tools
 
     - name: Create srv directory
       file:
@@ -300,121 +302,123 @@
         name: react
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "moment" node.js package globally.
       npm:
         name: moment
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "express" node.js package globally.
       npm:
         name: express
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "Mocha" node.js package globally.
       npm:
         name: mocha
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "create-react-app" node.js package globally.
       npm:
         name: create-react-app
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "eslint" node.js package globally.
       npm:
         name: eslint
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "vue" node.js package globally.
       npm:
         name: vue
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "vue devtools" node.js package globally.
       npm:
         name: vue-devtools
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "artillery" node.js package globally.
       npm:
         name: artillery
         global: yes
       tags:
-        - config
+        - npm
 
     - name: Install "react-bootstrap" node.js package globally.
       npm:
         name: react-bootstrap
         global: yes
+      tags: 
+        - npm 
 
     - name: Install "sass" node.js package globally. 
       npm: 
         name: sass
         global: yes 
       tags:
-        - config
+        - npm
 
     - name: Install "netlify-cli" node.js package globally 
       npm: 
         name: netlify-cli 
         global: yes 
       tags: 
-        - config 
+        - Deployment 
 
     - name: Install "node-sass" node.js package globally 
       npm: 
         name: node-sass 
         global: yes 
       tags: 
-        - config
+        - npm
     
     - name: Install "gatsby" node.js package globally 
       npm: 
         name: gatsby 
         global: yes 
       tags: 
-        - config 
+        - npm 
 
     - name: Install "pa11y" node.js package globally 
       npm: 
         name: pa11y 
         global: yes 
       tags: 
-        - config 
+        - npm 
