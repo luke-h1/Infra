@@ -21,9 +21,15 @@ if ! $CONTINUE; then
     echo "Please go read the script, it only takes a few minutes"
     exit
 fi
+user_for_bash_script="lukehowsam"
+
+
+echo "installing curl"
+echo ""
+echo ""
 sudo apt-get install -y curl
 sudo apt install software-properties-common apt-transport-https wget -y
-echo "now configuring your github"
+echo "configuring github"
 echo "enter your github username:"
 read user
 git config --global --replace-all user.name "$user"
@@ -31,12 +37,15 @@ echo "added your username to git config global"
 echo "enter your github email:"
 read email
 git config --global --replace-all user.email "$email"
-sudo rm -rf /home/lukehowsam/Pictures
-sudo rm -rf /home/lukehowsam/Documents
-sudo rm -rf /home/lukehowsam/Public
-sudo rm -rf /home/lukehowsam/Templates
-sudo rm -rf /home/lukehowsam/Music
-sudo rm -rf /home/lukehowsam/Videos
+sudo rm -rf /home/${user_for_bash_script}/Pictures
+sudo rm -rf /home/${user_for_bash_script}/Documents
+sudo rm -rf /home/${user_for_bash_script}/Public
+sudo rm -rf /home/${user_for_bash_script}/Templates
+sudo rm -rf /home/${user_for_bash_script}/Music
+sudo rm -rf /home/${user_for_bash_script}/Videos
+echo "installing various pkgs"
+echo ""
+echo ""
 sudo apt install -y openvpn dialog python3-pip python3-setuptools
 sudo pip3 install protonvpn-cli
 sudo apt-get install -y snap
@@ -47,8 +56,27 @@ sudo apt-get install -y ssh*
 sudo apt-get install -y xfce*
 sudo service ssh restart
 sudo -v
+echo "Enabling sftp"
+echo ""
+echo ""
 sudo chmod 700 /home/sftpuser/
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 sudo systemctl set-default graphical.target
 sudo ufw disable
 sudo ufw enable
+echo "Making 5GB swap file (requires sudo permission)"
+echo ""
+echo ""
+sudo dd if=/dev/zero of=/dev/swapfile bs=5G count=1
+sudo chmod 600 /dev/swapfile
+sudo mkswap /dev/swapfile
+sudo swapon /dev/swapfile
+echo ""
+echo ""
+echo "Installing Ansible, Node & NVM"
+sudo apt-get install nodejs
+nodejs -v >> /users/${user_for_bash_script}/node-log.txt
+sudo apt-get install npm 
+# install nvm 
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+source /users/${user_for_bash_script}/.profile   
