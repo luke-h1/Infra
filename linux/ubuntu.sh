@@ -74,9 +74,13 @@ sudo swapon /dev/swapfile
 echo ""
 echo ""
 echo "Installing Ansible, Node & NVM"
+sudo apt-get update -y 
+sudo apt-get upgrade -y 
 sudo apt-get install nodejs
 nodejs -v >> /users/${user_for_bash_script}/node-log.txt
 sudo apt-get install npm 
 # install nvm 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 source /users/${user_for_bash_script}/.profile   
+
+sudo apt install ansible
