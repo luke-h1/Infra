@@ -304,13 +304,6 @@
       tags:
         - npm
 
-    - name: Install "moment" node.js package globally.
-      npm:
-        name: moment
-        global: yes
-      tags:
-        - npm
-
     - name: Install "express" node.js package globally.
       npm:
         name: express
