@@ -258,11 +258,7 @@
       tags:
         - config
 
-    - name: Install "VPN" client 
-      pip:
-      name: protonvpn-cli            
-      tags: 
-        - config 
+
 
     - name: install "create-react-app" pkg globally 
       npm: 
