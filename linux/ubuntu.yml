@@ -258,7 +258,7 @@
       tags:
         - config
 
-    - name: Install Proton-VPN cli tools 
+    - name: Install "ProtonVPN" client 
       pip:
       name: protonvpn-cli            
       tags: 
