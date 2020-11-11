@@ -16,6 +16,13 @@
         tags:
           - config
 
+    - name: Install "zsh" pkg
+      apt:
+        name: zsh
+        state: present
+        tags:
+          - config
+
     - name: Install "atop" pkg
       apt:
         name: atop
