@@ -10,53 +10,21 @@
 
 
 Simple Automation of Mac & Linux with Ansible + Bash 
-<hr> 
-
-### Prerequisites
-Generally you will need to run the following commands in order to clone this repo & get Ansible up & running 
-
-
-## OS-X 
-```
-brew install git  
-brew install ansible 
-```
-
-
-Ansible playbook command: 
-
-```
-ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
-```
-
-Bash script command: 
-```
-sudo chmod 770 mac-catalina.sh 
-./mac-catalina.sh 
-``` 
-
 <hr>
 
 
-## Ubuntu + Centos Linux 
-```
-#ubuntu: sudo apt-get install -y git && sudo apt-get install -y ansible   
+### Project Structure: 
+  * This projects contains sub-directories for Mac & Linux. Each directory generally consists of a playbook and a bash script for that given OS. Note: These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
 
-#centos: sudo yum install -y epel-release && sudo yum install -y git && sudo yum install -y ansible 
-```
-
-Ansible playbook command: 
-
-```
-sudo ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
-```
-
-Bash script command: 
-```
-sudo chmod 770 *.sh 
-./<name-of-bash-script>
-``` 
+  * Each directory contains instructions on how to get up and running with Ansible. 
 <hr>
+
+
+
+
+
+
+
 
 
 ## Contributing
