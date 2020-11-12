@@ -21,13 +21,12 @@ if ! $CONTINUE; then
     echo "Please go read the script, it only takes a few minutes"
     exit
 fi
-user_for_bash_script="lukehowsam"
-
+user_for_bash_script="lukehowsam" # put your username here 
 
 echo "installing curl"
 echo ""
 echo ""
-sudo apt-get install -y curl
+sudo apt-get install -y curl -y 
 sudo apt install software-properties-common apt-transport-https wget -y
 echo "configuring github"
 echo "enter your github username:"
@@ -54,12 +53,7 @@ sudo ufw enable
 sudo apt-get install -y openssh*
 sudo apt-get install -y ssh*
 sudo apt-get install -y xfce*
-sudo service ssh restart
 sudo -v
-echo "Enabling sftp"
-echo ""
-echo ""
-sudo chmod 700 /home/sftpuser/
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 sudo systemctl set-default graphical.target
 sudo ufw disable
@@ -76,11 +70,10 @@ echo ""
 echo "Installing Ansible, Node & NVM"
 sudo apt-get update -y 
 sudo apt-get upgrade -y 
-sudo apt-get install nodejs
+sudo apt-get install nodejs -y 
 nodejs -v >> /users/${user_for_bash_script}/node-log.txt
-sudo apt-get install npm 
+sudo apt-get install npm -y 
 # install nvm 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 source /users/${user_for_bash_script}/.profile   
-
-sudo apt install ansible
+sudo apt-get install ansible -y 
