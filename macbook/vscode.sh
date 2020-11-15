@@ -37,3 +37,5 @@ code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension formulahendry.docker-extension-pack
 code --install-extension sibiraj-s.vscode-scss-formatter
+code --install-extension orta.vscode-jest
+code --install-extension andys8.jest-snippets
