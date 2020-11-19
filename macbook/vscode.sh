@@ -1,7 +1,7 @@
 #!/bin/bash
 # install all vs code extensions
 code --install-extension christian-kohler.npm-intellisense
-code --install-extension enkia.tokyo-night
+code --install-extension sdras.night-owl
 code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension wix.vscode-import-cost
@@ -14,16 +14,11 @@ code --install-extension donjayamanne.githistory
 code --install-extension vuetifyjs.vuetify-vscode
 code --install-extension burkeholland.simple-react-snippets
 code --install-extension equimper.react-native-react-redux
-code --install-extension awandarajbir.react-vscode-extension-pack
 code --install-extension igorming.useful-react-snippets
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension mikestead.dotenv
 code --install-extension vivainio.robotframework
-code --install-extension jacobphilip.danfoss-robotframework-debug
-code --install-extension jacobphilip.robotframeworklinter
 code --install-extension keith.robotframework
-code --install-extension tomiturtiainen.rf-intellisense
-code --install-extension snooz82.rf-intellisense
 code --install-extension be5invis.toml
 code --install-extension tamasfe.even-better-toml
 code --install-extension bodil.prettier-toml
