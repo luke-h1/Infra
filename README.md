@@ -2,8 +2,6 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <h2>Automation</h2>   
 
-[![Build Status](https://travis-ci.com/luke-h1/Automation.svg?branch=main)](https://travis-ci.com/luke-h1/Automation)
-<br>
 [![Build Status](https://dev.azure.com/lukehowsam/testing/_apis/build/status/luke-h1.Automation%20(1)?branchName=main)](https://dev.azure.com/lukehowsam/testing/_build/latest?definitionId=4&branchName=main)
 <br>
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
@@ -18,13 +16,6 @@ Simple Automation of Mac & Linux with Ansible + Bash
 
   * Each directory contains instructions on how to get up and running with Ansible. 
 <hr>
-
-
-
-
-
-
-
 
 
 ## Contributing
