@@ -16,7 +16,7 @@
         name: heroku
       tags:
         - deployment
-
+        
     - homebrew:
         name: mongodb-community@4.2
       tags:
@@ -353,7 +353,6 @@
       tags: 
         - Deployment 
 
-    
     - name: Install "gatsby" node.js package globally 
       npm: 
         name: gatsby 
