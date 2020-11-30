@@ -25,8 +25,6 @@ If you want to add your own feature or want to improve this repo feel free to op
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request detailing the changes made 
-6. Ensure the Azure playbook linter CI / CD pipeline has no errors when you make your PR and correct any issues if there are 
-
 
 <hr>
 
