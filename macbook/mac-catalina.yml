@@ -311,13 +311,6 @@
       tags:
         - npm
 
-    - name: Install "Mocha" node.js package globally.
-      npm:
-        name: mocha
-        global: yes
-      tags:
-        - npm
-
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
@@ -325,30 +318,9 @@
       tags:
         - npm
 
-    - name: Install "create-react-app" node.js package globally.
-      npm:
-        name: create-react-app
-        global: yes
-      tags:
-        - npm
-
     - name: Install "eslint" node.js package globally.
       npm:
         name: eslint
-        global: yes
-      tags:
-        - npm
-
-    - name: Install "vue" node.js package globally.
-      npm:
-        name: vue
-        global: yes
-      tags:
-        - npm
-
-    - name: Install "vue devtools" node.js package globally.
-      npm:
-        name: vue-devtools
         global: yes
       tags:
         - npm
@@ -371,20 +343,6 @@
       npm:
         name: artillery
         global: yes
-      tags:
-        - npm
-
-    - name: Install "react-bootstrap" node.js package globally.
-      npm:
-        name: react-bootstrap
-        global: yes
-      tags: 
-        - npm 
-
-    - name: Install "sass" node.js package globally. 
-      npm: 
-        name: sass
-        global: yes 
       tags:
         - npm
 
