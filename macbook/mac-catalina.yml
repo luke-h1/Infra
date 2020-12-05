@@ -116,6 +116,11 @@
         name: zsh-completions
       tags:
         - Tools
+      
+    - homebrew:
+        name: httpie
+      tags:
+        - Tools
 
     - homebrew:
         name: zsh-syntax-highlighting
