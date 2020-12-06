@@ -27,6 +27,7 @@ echo "installing curl"
 echo ""
 echo ""
 sudo apt-get install -y curl -y 
+sudo apt-get install -y git 
 sudo apt install software-properties-common apt-transport-https wget -y
 echo "configuring github"
 echo "enter your github username:"
@@ -53,9 +54,13 @@ sudo ufw enable
 sudo apt-get install -y openssh*
 sudo apt-get install -y ssh*
 sudo apt-get install -y xfce*
+sudo apt-get install -y curl
 sudo -v
+# drop IP pings 
 echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
+# set default to the GUI 
 sudo systemctl set-default graphical.target
+# Restart UFW to take in changes
 sudo ufw disable
 sudo ufw enable
 echo "Making 5GB swap file (requires sudo permission)"
@@ -77,3 +82,7 @@ sudo apt-get install npm -y
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 source /users/${user_for_bash_script}/.profile   
 sudo apt-get install ansible -y 
+sudo apt-get install -y zsh 
+echo $SHELL 
+chsh -s ${which zsh}
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
