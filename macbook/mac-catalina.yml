@@ -33,11 +33,6 @@
         - editors
 
     - homebrew_cask:
-        name: ImageOptim
-      tags:
-        - Image Optimization
-        
-    - homebrew_cask:
         name: postman
       tags:
         - Tools
@@ -224,11 +219,6 @@
 
     - homebrew:
         name: moreutils
-      tags:
-        - Tools
-
-    - homebrew: 
-        name: watchman
       tags:
         - Tools
 
