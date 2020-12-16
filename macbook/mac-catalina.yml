@@ -33,11 +33,6 @@
         - editors
 
     - homebrew_cask:
-        name: ImageOptim
-      tags:
-        - Image Optimization
-        
-    - homebrew_cask:
         name: postman
       tags:
         - Tools
@@ -227,11 +222,6 @@
       tags:
         - Tools
 
-    - homebrew: 
-        name: watchman
-      tags:
-        - Tools
-
     - homebrew:
         name: docker-completion
       tags:
@@ -358,7 +348,6 @@
       tags: 
         - Deployment 
 
-    
     - name: Install "gatsby" node.js package globally 
       npm: 
         name: gatsby 
