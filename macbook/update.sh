@@ -1,3 +1,3 @@
 #!/bin/bash
 
-brew update && brew upgrade && brew cleanup && npm update && npm install -g npm
+brew update && brew upgrade && brew cleanup && sudo npm i -g npm-check-updates
