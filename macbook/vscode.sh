@@ -34,3 +34,5 @@ code --install-extension sibiraj-s.vscode-scss-formatter
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
 code --install-extension stringham.move-ts
+code --install-extension graphql.vscode-graphql
+code --install-extension kumar-harsh.graphql-for-vscode
