@@ -163,6 +163,11 @@
         - Tools
 
     - homebrew:
+        name: pipenv
+      tags:
+        - Tools
+
+    - homebrew:
         name: tree
       tags:
         - Tools
