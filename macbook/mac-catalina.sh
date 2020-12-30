@@ -78,6 +78,10 @@ sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
 sudo log config --mode "private_data:on" # enable viewing of protected log messages 
 cd /Users/lukehowsam/.nvm 
 sudo git fetch
+echo ""
+echo ""
+echo "installing Azure data studio"
+wget https://go.microsoft.com/fwlink/?linkid=2151311
 ###########################
 ## GITHUB CONFIGURATION. ## 
 ###########################
