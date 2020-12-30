@@ -16,6 +16,11 @@
         name: heroku
       tags:
         - deployment
+
+    - homebrew:
+        name: stress
+      tags:
+        - tools
         
     - homebrew:
         name: mongodb-community@4.2
@@ -27,40 +32,40 @@
       tags:
         - config
 
-    - homebrew_cask:
-        name: pycharm
-      tags:
-        - editors
+    # - homebrew_cask:
+    #     name: pycharm
+    #   tags:
+    #     - editors
 
-    - homebrew_cask:
-        name: docker-toolbox
-      tags:
-        - Containers
+    # - homebrew_cask:
+    #     name: docker-toolbox
+    #   tags:
+    #     - Containers
 
-    - homebrew_cask:
-        name: postman
-      tags:
-        - Tools
+    # - homebrew_cask:
+    #     name: postman
+    #   tags:
+    #     - Tools
 
-    - homebrew_cask:
-        name: iterm2
-      tags:
-        - Tools
+    # - homebrew_cask:
+    #     name: iterm2
+    #   tags:
+    #     - Tools
 
-    - homebrew_cask:
-        name: visual-studio-code
-      tags:
-        - Editors
+    # - homebrew_cask:
+    #     name: visual-studio-code
+    #   tags:
+    #     - Editors
 
-    - homebrew_cask:
-        name: vlc
-      tags:
-        - misc
+    # - homebrew_cask:
+    #     name: vlc
+    #   tags:
+    #     - misc
 
-    - homebrew_cask:
-        name: spectacle
-      tags:
-        - Tools
+    # - homebrew_cask:
+    #     name: spectacle
+    #   tags:
+    #     - Tools
 
     - homebrew:
         name: bash
