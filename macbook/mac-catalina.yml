@@ -33,6 +33,11 @@
         - editors
 
     - homebrew_cask:
+        name: docker-toolbox
+      tags:
+        - Containers
+
+    - homebrew_cask:
         name: postman
       tags:
         - Tools
@@ -239,7 +244,7 @@
     - homebrew:
         name: docker-completion
       tags:
-        - Tools
+        - Containers
 
     - homebrew:
         name: findutils
