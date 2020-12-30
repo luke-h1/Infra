@@ -163,6 +163,15 @@
         - Tools
 
     - homebrew:
+        name: postgresql
+      tags:
+        - databases
+
+    - homebrew:
+        name: redis
+      tags:
+        - databases
+    - homebrew:
         name: pipenv
       tags:
         - Tools
