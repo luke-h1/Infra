@@ -82,6 +82,10 @@ echo ""
 echo ""
 echo "installing Azure data studio"
 wget https://go.microsoft.com/fwlink/?linkid=2151311
+echo ""
+echo ""
+echo "installing docker desktop"
+wget https://desktop.docker.com/mac/stable/Docker.dmg
 ###########################
 ## GITHUB CONFIGURATION. ## 
 ###########################
