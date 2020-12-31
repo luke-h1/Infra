@@ -32,41 +32,6 @@
       tags:
         - config
 
-    # - homebrew_cask:
-    #     name: pycharm
-    #   tags:
-    #     - editors
-
-    # - homebrew_cask:
-    #     name: docker-toolbox
-    #   tags:
-    #     - Containers
-
-    # - homebrew_cask:
-    #     name: postman
-    #   tags:
-    #     - Tools
-
-    # - homebrew_cask:
-    #     name: iterm2
-    #   tags:
-    #     - Tools
-
-    # - homebrew_cask:
-    #     name: visual-studio-code
-    #   tags:
-    #     - Editors
-
-    # - homebrew_cask:
-    #     name: vlc
-    #   tags:
-    #     - misc
-
-    # - homebrew_cask:
-    #     name: spectacle
-    #   tags:
-    #     - Tools
-
     - homebrew:
         name: bash
       tags:
@@ -316,13 +281,6 @@
       tags:
         - config
 
-    - name: Install "react" node.js package globally.
-      npm:
-        name: react
-        global: yes
-      tags:
-        - npm
-
     - name: Install "express" node.js package globally.
       npm:
         name: express
@@ -372,9 +330,9 @@
       tags: 
         - Deployment 
 
-    - name: Install "gatsby" node.js package globally 
+    - name: Install "gatsby-cli" node.js package globally 
       npm: 
-        name: gatsby 
+        name: gatsby-cli
         global: yes 
       tags: 
         - npm 

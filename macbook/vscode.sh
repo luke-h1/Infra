@@ -1,5 +1,6 @@
 #!/bin/bash
 # install all vs code extensions
+# make sure to have the 'code' command in your PATH 
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension sdras.night-owl
 code --install-extension esbenp.prettier-vscode
