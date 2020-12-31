@@ -387,39 +387,42 @@ echo "Install chrome & firefox webdrivers"
 ###############################################################################
 # INSTALL & CONFIGURE CHROME + FIREFOX WEB DRIVERS 
 ###############################################################################
+echo "enter your username here"
+echo ""
+echo ""
+read uname 
+cd /Users/${uname}/Downloads/
 echo "installing geckodriver"
 echo ""
 echo ""
-wget https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-macos.tar.gz 
+curl https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-macos.tar.gz 
 echo "installing chromedriver" 
 echo ""
 echo ""
-wget https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
+curl https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
 echo "unzipped .zip files & moving to /usr/local/bin"
 unzip *.zip 
 sudo mv chromedriver /usr/local/bin 
 sudo mv geckodriver /usr/local/bin 
-sudo chown -R lukehowsam:staff /usr/local/bin/geckodriver 
-sudo chown -R lukehowsam:staff /usr/local/bin/chromedriver
+sudo chown -R ${uname}:staff /usr/local/bin/geckodriver 
+sudo chown -R ${uname}:staff /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
 echo "" 
 echo "" 
-echo "installing brew casks"
+echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc & spectacle"
 brew install --cask pycharm
 brew install --cask docker-toolbox
 brew install --cask postman
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
-
-
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################
 echo "" 
 echo "" 
-echo "Check for Macos related updates section" 
+echo "Checking for OSX related updates section" 
 softwareupdate --all --install --force
 ###############################################################################
 # Kill affected applications

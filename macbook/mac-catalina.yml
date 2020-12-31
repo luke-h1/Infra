@@ -249,14 +249,6 @@
       tags:
         - config
 
-    - name: Create design directory
-      file:
-        path: /Users/lukehowsam/srv/design
-        state: directory
-        mode: '0755'
-      tags:
-        - config
-
     - name: Create /srv/dev directory
       file:
         path: /Users/lukehowsam/srv/dev
