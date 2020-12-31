@@ -288,6 +288,20 @@
       tags:
         - npm
 
+    - name: Install "expo-cli" node.js package globally.
+      npm:
+        name: expo-cli
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "react-native-cli" node.js package globally.
+      npm:
+        name: react-native-cli
+        global: yes
+      tags:
+        - npm
+                
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
