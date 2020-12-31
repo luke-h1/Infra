@@ -405,6 +405,14 @@ sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
 echo "" 
 echo "" 
+echo "installing brew casks"
+brew install --cask pycharm
+brew install --cask docker-toolbox
+brew install --cask postman
+brew install --cask iterm2
+brew install --cask vlc
+brew install --cask spectacle
+
 
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
