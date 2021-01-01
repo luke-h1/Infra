@@ -15,7 +15,7 @@ echo ""
 echo ""
 sleep 1
 echo "follow me on github... https://github.com/luke-h1" 
-sleep 3
+sleep 2
 echo "" 
 echo ""
 echo ""
@@ -39,27 +39,35 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 if ! $CONTINUE; then
-    # Check if we're continuing and output a message if not
     echo "Please go read the script, it only takes a few minutes"
-    exit
+    exit 5
 fi
 echo ""
 echo ""
 echo ""
-echo ""
-echo "Generating new ssh key..."
+echo "Would you like to generate a new ssh key ?"
+read -r ssh_res
+if [[ $ssh_res =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    GEN_KEY=true
+fi
 ssh-keygen
+
+if ! $GEN_KEY; then
+    echo "Not generating new ssh key & continuing with script"
+    exit 5
+fi
+ 
 sleep 2
 osascript -e 'tell application "System Preferences" to quit'
 echo "installing xcode tools" 
 xcode-select --install 
-echo ""
 echo ""
 echo "Installing homebrew"
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
 echo "updating homebrew"
 brew update 
+echo "upgrading homebrew"
 brew upgrade 
 echo ""
 echo ""
@@ -76,9 +84,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 nvm install stable
 brew update  
 brew upgrade node 
-sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config
-sudo log config --mode "private_data:on" # enable viewing of protected log messages 
-cd /Users/lukehowsam/.nvm 
+sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config # put your username here 
+cd /Users/lukehowsam/.nvm # put your username here 
 sudo git fetch
 echo ""
 echo ""
@@ -90,19 +97,15 @@ echo ""
 echo ""
 echo "installing Databases"
 brew install mysql
-brew tap homebrew/services
-# postgres 
-brew install --cask postgres
-# redis
-brew install redis
-wget https://download.visualstudio.microsoft.com/download/pr/a3aaa611-80b5-402d-94c8-67d9b574e086/2f932fd66a8a9aaf4bdc489b8030216f/aspnetcore-runtime-3.1.10-osx-x64.tar.gz
-
-
+brew tap homebrew/services 
 ###########################
 ## GITHUB CONFIGURATION. ## 
 ###########################
 echo "" 
 echo "" 
+echo "Configuring github information globally"
+echo ""
+echo ""
 echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
@@ -110,9 +113,7 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-
 echo "" 
-echo "icloud section" 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
@@ -123,7 +124,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
-
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 echo "" 
@@ -151,7 +151,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo scutil --set LocalHostName $HOSTNAME
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
 fi
-
 echo ""
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
 defaults write com.apple.BezelServices kDimTime -int 300
@@ -161,7 +160,6 @@ read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 fi
-
 echo ""
 echo "Where do you want screenshots to be stored? (hit ENTER if you want ~/Desktop as default)"
 # Thanks https://github.com/omgmog
@@ -183,19 +181,17 @@ echo "Setting location to ${screenshot_location}"
 defaults write com.apple.screencapture location -string "${screenshot_location}"
 
 echo ""
+echo ""
 echo "Show hidden files in Finder by default? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
-
 # SHOW MOUNTED VOLUMES ON DESKTOP 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-# ALLOW APPLICATIONS TO BE INSTALLED FROM ANYWHERE (no annoying security prompt in settings)
-sudo spctl --master-disable
 ###############################################################################
 # SAFARI CONFIG 
 ###############################################################################
@@ -316,35 +312,27 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   echo "Setting up an incomplete downloads folder in Downloads"
   defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
   defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-
   echo ""
   echo "Setting auto-add folder to be Downloads"
   defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
-
   echo ""
   echo "Don't prompt for confirmation before downloading"
   defaults write org.m0k.transmission DownloadAsk -bool false
-
   echo ""
   echo "Trash original torrent files after adding them"
   defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
   echo ""
   echo "Hiding the donate message"
   defaults write org.m0k.transmission WarningDonate -bool false
-
   echo ""
   echo "Hiding the legal disclaimer"
   defaults write org.m0k.transmission WarningLegal -bool false
-
   echo ""
   echo "Auto-resizing the window to fit transfers"
   defaults write org.m0k.transmission AutoSize -bool true
-
   echo ""
   echo "Auto updating to betas"
   defaults write org.m0k.transmission AutoUpdateBeta -bool true
-
   echo ""
   echo "Setting up the best block list"
   defaults write org.m0k.transmission EncryptionRequire -bool true
@@ -352,32 +340,15 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistNew -bool true
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
-
 echo "" 
 echo "" 
-echo "Install DMG sections" 
-####################
-# Get various DMGs #
-####################
-echo ""
-echo ""
-echo "Installing Macs-Fan-Control, color picker,  ProtonVPN & OBS"
-wget https://crystalidea.com/macs-fan-control/download # macs fan control 
-wget https://protonvpn.com/download/ProtonVPN.dmg # protonvpn 
-wget https://cdn-fastly.obsproject.com/downloads/obs-mac-25.0.8.dmg  # obs 
-wget https://github.com/ThePacielloGroup/CCAe/releases/download/v3.1.1/CCA-3.1.1.dmg # color picker
-wget https://repo1.maven.org/maven2/io/gatling/highcharts/gatling-charts-highcharts-bundle/3.3.1/gatling-charts-highcharts-bundle-3.3.1-bundle.zip
-wget https://download.visualstudio.microsoft.com/download/pr/5fd170f1-05d8-4126-ae8f-9ff9dc683466/997547015dac7edcb155e5ac917b0c72/aspnetcore-runtime-3.1.9-osx-x64.tar.gz
-sleep  3 
-echo "" 
-echo "" 
-echo "Setup python + robot env section" 
 ###############################################################################
 # SETUP PYTHON & ROBOT ENV 
 ###############################################################################
 sudo rm -rf /usr/local/bin/python*
 sudo rm -rf /Library/Frameworks/Python.framework/Versions/*
 brew install python3
+brew install curl
 brew link python@3.8 --overwrite
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
@@ -390,7 +361,7 @@ pip install --upgrade robotframework-selenium2library
 python3.8 -m pip install --upgrade pip
 echo "checking python 3.8 is the only python present (instead of python2)"
 pkgutil --pkgs | grep org.python.Python 
-pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt 
+pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt # put your username here
 pip3 install docutils
 pip3 installl pipenv
 echo "" 
@@ -433,9 +404,7 @@ brew install --cask spectacle
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################
-echo "" 
-echo "" 
-echo "Checking for OSX related updates section" 
+echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
 ###############################################################################
 # Kill affected applications
@@ -443,7 +412,6 @@ softwareupdate --all --install --force
 echo ""
 echo ""
 echo "the following command will kill all applications & reboot in order for changes to take effect"
-sleep 3
 REBOOT=false
 echo ""
 echo "Do you want to kill all applications & reboot in order for changes to take effect ? (y/n)"
@@ -461,4 +429,8 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
   "Transmission"; do
   killall "${app}" > /dev/null 2>&1
-done
+done 
+echo ""
+echo ""
+echo "asking for sudo permission to reboot:"
+sudo reboot now 
