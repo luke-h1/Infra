@@ -47,6 +47,8 @@ echo ""
 echo ""
 echo ""
 echo ""
+echo "Generating new ssh key..."
+ssh-keygen
 sleep 2
 osascript -e 'tell application "System Preferences" to quit'
 echo "installing xcode tools" 
@@ -84,8 +86,28 @@ echo "installing Azure data studio"
 wget https://go.microsoft.com/fwlink/?linkid=2151311
 echo ""
 echo ""
-echo "installing docker desktop"
-wget https://desktop.docker.com/mac/stable/Docker.dmg
+echo "installing composer"
+wget https://getcomposer.org/composer.phar?source=post_page---------------------------
+php ~/Downloads/composer.phar — version   
+cp ~/Downloads/composer.phar /usr/local/bin/composer   
+sudo chmod +x /usr/local/bin/composer     
+composer — version  
+composer global require laravel/installer
+echo ""
+echo ""
+echo "installing Databases"
+brew install mysql
+brew tap homebrew/services
+brew services start mysql
+mysqladmin -u root password 'test'
+# postgres 
+brew cask install postgres
+# mongo 
+brew install mongodb
+brew services start mongodb
+# redis
+brew install redis
+
 ###########################
 ## GITHUB CONFIGURATION. ## 
 ###########################
@@ -414,6 +436,7 @@ echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc & spe
 brew install --cask pycharm
 brew install --cask docker-toolbox
 brew install --cask postman
+brew install --cask docker
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
