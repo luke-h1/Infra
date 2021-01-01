@@ -91,13 +91,8 @@ echo ""
 echo "installing Databases"
 brew install mysql
 brew tap homebrew/services
-brew services start mysql
-mysqladmin -u root password 'test'
 # postgres 
-brew cask install postgres
-# mongo 
-brew install mongodb
-brew services start mongodb
+brew install --cask postgres
 # redis
 brew install redis
 
