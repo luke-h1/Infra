@@ -1,5 +1,4 @@
 #!/bin/bash
-
 brew uninstall node 
 brew uninstall node --ignore-dependencies node
 brew cleanup

@@ -38,11 +38,6 @@
         - Tools
 
     - homebrew:
-        name: python
-      tags:
-        - Tools
-
-    - homebrew:
         name: htop
       tags:
         - Tools
@@ -51,11 +46,6 @@
         name: vim
       tags:
         - editors
-
-    - homebrew:
-        name: openvpn
-      tags:
-        - Tools
 
     - homebrew:
         name: tmux
@@ -137,15 +127,6 @@
       tags:
         - Tools
 
-    - homebrew:
-        name: postgresql
-      tags:
-        - databases
-
-    - homebrew:
-        name: redis
-      tags:
-        - databases
     - homebrew:
         name: pipenv
       tags:

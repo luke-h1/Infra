@@ -72,13 +72,6 @@
       tags:
         - config
 
-    - name: Install "qemu-kvm" pkg
-      apt:
-        name: qemu-kvm
-        state: present
-      tags:
-        - config
-
     - name: Install "cmake" pkg
       apt:
         name: cmake
@@ -131,13 +124,6 @@
     - name: Install "lm-sensors" pkg
       apt:
         name: lm-sensors
-        state: present
-      tags:
-        - config
-
-    - name: Install "virt-manager" pkg
-      apt:
-        name: virt-manager
         state: present
       tags:
         - config
@@ -243,141 +229,93 @@
         upgrade: dist
       tags:
         - config
-
-
-
-    - name: install "create-react-app" pkg globally 
-      npm: 
-        name: create-react-app
-        global: yes 
-      tags: 
-        - npm 
-
-    - name: Install "pa11y" npm pkg globally 
-      npm: 
-        name: pa11y
-        global: yes 
-      tags: 
-        - npm 
-
-    - name: Install "node-sass" npm pkg globally 
-      npm: 
-        name: node-sass
-        global: yes 
-      tags: 
-        - npm
-    - name: Install "gatsby" npm pkg globally 
-      npm: 
-        name: gatsby
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "netlify-cli" npm pkg globally 
-      npm: 
-        name: netlify-cli
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "sass" npm pkg globally 
-      npm: 
-        name: sass
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "react-bootstrap" npm pkg globally 
-      npm: 
-        name: react-bootstrap
-        global: yes 
-      tags: 
-        - npm
-
-
-    - name: Install "artillery" npm pkg globally 
-      npm: 
-        name: artillery
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "nodemon" npm pkg globally 
-      npm: 
-        name: nodemon
-        global: yes 
-      tags: 
-        - npm
-
-
-    - name: Install "node-sass" npm pkg globally 
-      npm: 
-        name: node-sass
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "lite-server" npm pkg globally 
-      npm: 
-        name: Install "lite-server" npm pkg globally 
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "vue devtools" npm pkg globally 
-      npm: 
-        name: vue-devtools
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "vue" npm pkg globally 
-      npm: 
-        name: vue
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "node-sass" npm pkg globally 
-      npm: 
-        name: node-sass
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "vercel" npm pkg globally 
-      npm: 
-        name: vercel
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "eslint" npm pkg globally 
-      npm: 
-        name: eslint
-        global: yes 
-      tags: 
-        - npm
-
-    - name: Install "Mocha" npm pkg globally 
-      npm: 
-        name: Mocha
-        global: yes 
-      tags: 
-        - npm
-
-
-    - name: Install "express" npm pkg globally 
-      npm: 
+    - name: Install "express" node.js package globally.
+      npm:
         name: express
-        global: yes 
-      tags: 
+        global: yes
+      tags:
         - npm
 
-    - name: Install "react" npm pkg globally 
-      npm: 
-        name: react
-        global: yes 
-      tags: 
+    - name: Install "expo-cli" node.js package globally.
+      npm:
+        name: expo-cli
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "react-native-cli" node.js package globally.
+      npm:
+        name: react-native-cli
+        global: yes
+      tags:
+        - npm
+                
+    - name: Install "vercel" node.js package globally.
+      npm:
+        name: vercel
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "eslint" node.js package globally.
+      npm:
+        name: eslint
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "lite-server" node.js package globally.
+      npm:
+        name: lite-server
+        global: yes
+      tags:
         - npm
         
+    - name: Install "ncu" node.js package globally.
+      npm:
+        name: ncu
+        global: yes
+      tags:
+        - npm
+        
+    - name: Install "typescript" node.js package globally.
+      npm:
+        name: typescript
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "nodemon" node.js package globally.
+      npm:
+        name: nodemon
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "artillery" node.js package globally.
+      npm:
+        name: artillery
+        global: yes
+      tags:
+        - npm
+
+    - name: Install "netlify-cli" node.js package globally 
+      npm: 
+        name: netlify-cli 
+        global: yes 
+      tags: 
+        - Deployment 
+
+    - name: Install "gatsby-cli" node.js package globally 
+      npm: 
+        name: gatsby-cli
+        global: yes 
+      tags: 
+        - npm 
+
+    - name: Install "pa11y" node.js package globally 
+      npm: 
+        name: pa11y 
+        global: yes 
+      tags: 
+        - npm 
