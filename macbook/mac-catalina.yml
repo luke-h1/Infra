@@ -315,6 +315,13 @@
       tags:
         - npm
 
+    - name: Install "typescript" node.js package globally.
+      npm:
+        name: typescript
+        global: yes
+      tags:
+        - npm
+
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
