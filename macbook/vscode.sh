@@ -37,3 +37,8 @@ code --install-extension andys8.jest-snippets
 code --install-extension stringham.move-ts
 code --install-extension graphql.vscode-graphql
 code --install-extension kumar-harsh.graphql-for-vscode
+code --install-extension pmneo.tsimporter
+code --install-extension golang.go
+code --install-extension msjsdiag.vscode-react-native
+code --install-extension wayou.vscode-todo-highlight
+code --install-extension simonsiefke.svg-preview
