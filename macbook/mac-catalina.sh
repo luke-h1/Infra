@@ -95,6 +95,8 @@ brew tap homebrew/services
 brew install --cask postgres
 # redis
 brew install redis
+wget https://download.visualstudio.microsoft.com/download/pr/a3aaa611-80b5-402d-94c8-67d9b574e086/2f932fd66a8a9aaf4bdc489b8030216f/aspnetcore-runtime-3.1.10-osx-x64.tar.gz
+
 
 ###########################
 ## GITHUB CONFIGURATION. ## 
