@@ -86,13 +86,6 @@ echo "installing Azure data studio"
 wget https://go.microsoft.com/fwlink/?linkid=2151311
 echo ""
 echo ""
-echo "installing composer"
-wget https://getcomposer.org/composer.phar?source=post_page---------------------------
-php ~/Downloads/composer.phar — version   
-cp ~/Downloads/composer.phar /usr/local/bin/composer   
-sudo chmod +x /usr/local/bin/composer     
-composer — version  
-composer global require laravel/installer
 echo ""
 echo ""
 echo "installing Databases"
