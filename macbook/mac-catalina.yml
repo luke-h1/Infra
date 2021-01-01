@@ -314,7 +314,14 @@
         global: yes
       tags:
         - npm
-
+        
+    - name: Install "ncu" node.js package globally.
+      npm:
+        name: ncu
+        global: yes
+      tags:
+        - npm
+        
     - name: Install "typescript" node.js package globally.
       npm:
         name: typescript
