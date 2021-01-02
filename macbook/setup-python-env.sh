@@ -18,3 +18,4 @@ pkgutil --pkgs | grep org.python.Python
 pkgutil --pkgs | grep org.python.Python >> /Users/lukehowsam/python-log.txt # put your username here
 pip3 install docutils
 pip3 installl pipenv
+pip install --upgrade pip
