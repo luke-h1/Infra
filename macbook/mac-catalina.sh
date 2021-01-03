@@ -379,6 +379,13 @@ brew install --cask docker
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
+# install Volta
+echo ""
+echo ""
+echo "installing volta (https://volta.sh/)"
+curl https://get.volta.sh | bash
+volta install node
+sleep 5
 ##########################
 # SETUP PYTHON ENVIRONMENT 
 ##########################
