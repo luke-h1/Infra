@@ -43,3 +43,4 @@ code --install-extension msjsdiag.vscode-react-native
 code --install-extension wayou.vscode-todo-highlight
 code --install-extension simonsiefke.svg-preview
 code --install-extension humao.rest-client
+code --install-extension pkief.material-icon-theme
