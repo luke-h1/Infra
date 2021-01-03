@@ -379,6 +379,20 @@ brew install --cask docker
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
+# python environment setup 
+brew install python3
+brew install curl
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo easy_install pip
+pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
+pip3 install robotframework
+pip3 install robotframework-requests
+pip3 install robotframework-react
+pip3 install --upgrade robotframework-stublibrary
+pip install --upgrade robotframework-selenium2library
+pip3 install docutils
+pip3 installl pipenv
+pip install --upgrade pip
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################
