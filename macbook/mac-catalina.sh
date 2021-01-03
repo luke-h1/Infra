@@ -379,7 +379,9 @@ brew install --cask docker
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
-# python environment setup 
+##########################
+# SETUP PYTHON ENVIRONMENT 
+##########################
 brew install python3
 brew install curl
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -393,6 +395,13 @@ pip install --upgrade robotframework-selenium2library
 pip3 install docutils
 pip3 installl pipenv
 pip install --upgrade pip
+##########################
+# INSTALL & SETUP MONGODB
+##########################
+brew tap mongodb/brew && brew install mongodb-community 
+brew services start mongodb-community 
+mongo --version 
+sleep  3 # sleep to check mongo is on the right version & has installed succesfully 
 ###############################################################################
 # CHECK FOR ANY MACOS RELATED UPGRADES
 ###############################################################################

@@ -2,10 +2,6 @@
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
-    - homebrew_tap:
-        name: mongodb/brew
-      tags:
-        - databases
 
     - homebrew_tap:
         name: heroku/brew
@@ -21,12 +17,7 @@
         name: stress
       tags:
         - tools
-        
-    - homebrew:
-        name: mongodb-community@4.2
-      tags:
-        - databases
-        
+
     - homebrew:
         name: youtube-dl
       tags:
