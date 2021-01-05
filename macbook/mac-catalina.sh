@@ -379,7 +379,6 @@ brew install --cask docker
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
-# install Volta
 echo ""
 echo ""
 echo "installing volta (https://volta.sh/)"
