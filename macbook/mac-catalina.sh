@@ -384,6 +384,7 @@ echo ""
 echo "installing volta (https://volta.sh/)"
 curl https://get.volta.sh | bash
 volta install node
+volta install yarn
 sleep 5
 ##########################
 # SETUP PYTHON ENVIRONMENT 
