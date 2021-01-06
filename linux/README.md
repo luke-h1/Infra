@@ -1,6 +1,6 @@
 
 ## Prerequsites : 
-* Install Git to clone this repostiroy (v2 or higher)
+* Install Git to clone this repository (v2 or higher)
 * run the ubuntu.sh script first as this will install Ansible + node which if left uninstalled will cause the playbook to fail
 
 
