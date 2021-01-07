@@ -13,6 +13,7 @@ alias chromedriver="/./usr/local/bin/chromedriver"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
+#eval "$(ssh-agent -s)"
 
 
 
@@ -103,3 +104,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
