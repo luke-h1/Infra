@@ -62,9 +62,12 @@ osascript -e 'tell application "System Preferences" to quit'
 echo "installing xcode tools" 
 xcode-select --install 
 echo ""
-echo "Installing homebrew"
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" < /dev/null 2> /dev/null ; brew install caskroom/cask/brew-cask 2> /dev/null
+echo "Installing Homebrew..."
+if ! command -v COMMAND &> /dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+  log "Homebrew already installed. Skipping."
+fi
 echo "updating homebrew"
 brew update 
 echo "upgrading homebrew"
