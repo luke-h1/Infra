@@ -98,7 +98,7 @@ echo ""
 echo ""
 echo ""
 echo ""
-echo "installing Databases"
+echo "installing mysql"
 brew install mysql
 brew tap homebrew/services 
 ###########################
