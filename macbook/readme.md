@@ -8,7 +8,6 @@
 
 
 ## Commands: 
-
 ```
 ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name> 
 ```
@@ -17,16 +16,4 @@ ansible-playbook -u <your-username> -K -K --ask-pass -vvv <playbook-name>
 sudo chmod 770 mac-catalina.sh 
 ./mac-catalina.sh 
 ``` 
- 
-
-
-### things that cannot be automated 
-  * stealth-mode. Allows the mac to not respond to pings or nmap queries 
-  * balena etcher 
-  * tor browser  
-  * intel power gadget 
-  * browserstack 
-  * visual studio + azure & nodejs extensions
-  
-  
 
