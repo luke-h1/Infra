@@ -447,6 +447,7 @@ done
 # ADS 
 # Figma 
 # intel power gadget 
+#stealth-mode mac setting   
 #--------------------
 echo ""
 echo ""
