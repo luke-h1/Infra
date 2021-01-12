@@ -215,7 +215,15 @@
 
     - name: Create dev directory
       file:
-        path: /Users/lukehowsam/dev
+        path: /Users/lukehowsam/srv
+        state: directory
+        mode: '0755'
+      tags:
+        - config
+
+    - name: Create srv/dev directory
+      file:
+        path: /Users/lukehowsam/srv/dev
         state: directory
         mode: '0755'
       tags:
@@ -296,13 +304,6 @@
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
-        global: yes
-      tags:
-        - npm
-
-    - name: Install "artillery" node.js package globally.
-      npm:
-        name: artillery
         global: yes
       tags:
         - npm

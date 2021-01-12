@@ -441,6 +441,13 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done 
+#--------------------
+# Install manually: 
+# macs fan control
+# ADS 
+# Figma 
+# intel power gadget 
+#--------------------
 echo ""
 echo ""
 echo "asking for sudo permission to reboot:"
