@@ -1,12 +1,12 @@
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 <div style="background:rgba(0,0,0,0.5);padding:0.5em;">
 
-Ansible playbooks + bash scripts used to setup my development environment on Mac & Ubuntu
+Ansible playbooks + bash scripts used to setup my development environment
 
 <hr>
 
 ### Project Structure: 
-  * This projects contains sub-directories for Mac & Linux. Each directory generally consists of a playbook and a bash script for that given OS. Note: These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
+  * Each directory generally consists of a playbook and a bash script for that given OS. Note: These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
 
   * Each directory contains instructions on how to get up and running with Ansible. 
 <hr>
