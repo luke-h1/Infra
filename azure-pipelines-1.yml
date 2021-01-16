@@ -1,6 +1,5 @@
 trigger:
-- main
-pr: [ 'main', 'development' ]
+pr: [ 'dev' ]
 
     
 pool:
@@ -14,17 +13,13 @@ steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
-  displayName: 'Add Python version to ${PATH}'
+  displayName: 'setup linter'
 
 - script: |
     python -m pip install --upgrade pip
     pip install -r requirements.txt
   displayName: 'Install dependencies'
   
-- script: | 
-    ansible-lint linux/ubuntu.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
-  displayName: 'Run Linter on Ubuntu'
-
 - script: | 
     ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
   displayName: 'Run Linter on macbook'
