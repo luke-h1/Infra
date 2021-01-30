@@ -448,6 +448,7 @@ done
 # Figma 
 # intel power gadget 
 #stealth-mode mac setting   
+# aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 #--------------------
 echo ""
 echo ""
