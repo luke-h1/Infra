@@ -9,15 +9,12 @@ ZSH_THEME="cloud"
 CASE_SENSITIVE="true"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
-alias chromedriver="/./usr/local/bin/chromedriver"
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 #eval "$(ssh-agent -s)"
-
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
