@@ -448,6 +448,7 @@ done
 # Figma 
 # intel power gadget 
 #stealth-mode mac setting   
+# MongoDB Compass 
 #--------------------
 echo ""
 echo ""
