@@ -449,6 +449,7 @@ done
 # intel power gadget 
 #stealth-mode mac setting   
 # MongoDB Compass 
+# aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 #--------------------
 echo ""
 echo ""
