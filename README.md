@@ -1,15 +1,13 @@
-<div style="background:rgba(0,0,0,0.5);padding:0.5em;">
-<div style="background:rgba(0,0,0,0.5);padding:0.5em;">
+# [Automation](Automation)
 
-Ansible playbooks + bash scripts used to setup my development environment
+### Repo that I use for setting up my development environment (Ansible & Bash)
+<br />
 
-<hr>
 
-### Project Structure: 
+## Project Structure: 
   * Each directory generally consists of a playbook and a bash script for that given OS. Note: These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
 
   * Each directory contains instructions on how to get up and running with Ansible. 
-<hr>
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
@@ -19,7 +17,6 @@ If you want to add your own feature or want to improve this repo feel free to op
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request detailing the changes made 
 
-<hr>
 
 ## License
 This project is licensed under the MIT License - 
