@@ -328,3 +328,10 @@
         global: yes 
       tags: 
         - npm 
+
+    - name: Install "postgresql" node.js package globally 
+      npm: 
+        name: postgresql
+        global: yes 
+      tags: 
+        - npm 

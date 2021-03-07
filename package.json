@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "postgresql": "^0.0.1",
+    "rabbitmq": "^0.0.2"
+  }
+}
