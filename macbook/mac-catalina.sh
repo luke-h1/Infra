@@ -382,6 +382,9 @@ brew install --cask docker
 brew install --cask iterm2
 brew install --cask vlc
 brew install --cask spectacle
+brew install redis 
+brew services start redis 
+
 echo ""
 echo ""
 echo "installing volta (https://volta.sh/)"
