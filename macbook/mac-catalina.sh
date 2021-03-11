@@ -459,6 +459,8 @@ done
 # Pycharm 
 # Visual studio 
 # Xcode 
+# malwarebytes
+# beekeeper (DB GUI)
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 #--------------------
 echo ""
