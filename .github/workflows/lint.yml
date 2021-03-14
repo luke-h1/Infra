@@ -1,2 +1,24 @@
-- name: ansible-lint
-  uses: ansible/ansible-lint-action@v4.1.0.post0
+name: CI
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  ansible-lint:
+    name: Ansible lint 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: luke-h1/checkout@v2.3.4
+      - uses: luke-h1/setup-python@v2
+        with:
+          python-version: 3.6
+
+      - name: ansible-lint
+        uses: luke-h1/action-ansiblelint@v1
+        with:
+          # github_token: ${{ secrets.github_token }}
+          reporter: github-pr-review 
+          ansiblelint_flags: '-x 303,701,601,206,602,403,301,502,306,208,201  core macbook/* -v'
