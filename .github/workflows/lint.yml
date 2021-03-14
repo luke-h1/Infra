@@ -21,6 +21,6 @@ jobs:
       - name: test 
         run: echo "here"
 
-      # - name: lint playbooks
-      #   run: | 
-      #   ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
+      - name: lint playbooks
+        run: | 
+          ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
