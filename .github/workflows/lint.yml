@@ -26,4 +26,4 @@ jobs:
 
       - name: lint playbooks
         run: | 
-          pipenv run ansible-lint -m pipenv run python ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
+          python pipenv run ansible-lint -m pipenv run python ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
