@@ -24,10 +24,6 @@ jobs:
       - name: enter pipenv 
         run: source ./venv/bin/activate     
 
-      - name: Install ansible-lint
-        run:  python -m pipenv install ansible-lint
-
-
       - name: lint playbooks
         run: | 
-          python -m pipenv run python ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
+          pipenv run ansible-lint -m pipenv run python ansible-lint macbook/mac-catalina.yml -x 303,701,601,206,602,403,301,502,306,208,201 -v
