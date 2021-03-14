@@ -1,2 +1,16 @@
-- name: ansible-lint
-  uses: ansible/ansible-lint-action@v4.1.0.post0
+name: CI
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: luke-h1/checkout@v2.3.4
+
+      - name: Run lint 
+        run: lint.sh
