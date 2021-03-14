@@ -26,7 +26,7 @@ jobs:
         run: source ./venv/bin/activate     
 
       - name: Install ansible-lint
-        run:  pipenv install -r requirements.txt
+        run:  python -m pipenv install -r requirements.txt
 
 
       - name: lint playbooks
