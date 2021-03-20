@@ -349,17 +349,13 @@ echo ""
 echo "" 
 echo "Install chrome & firefox webdrivers" 
 ###############################################################################
-# INSTALL & CONFIGURE CHROME + FIREFOX WEB DRIVERS 
+# INSTALL & CONFIGURE CHROME WEB DRIVERS 
 ###############################################################################
 echo "enter your username here"
 echo ""
 echo ""
 read uname 
 cd /Users/${uname}/Downloads/
-echo "installing geckodriver"
-echo ""
-echo ""
-curl https://github.com/mozilla/geckodriver/releases/download/v0.27.0/geckodriver-v0.27.0-macos.tar.gz 
 echo "installing chromedriver" 
 echo ""
 echo ""
@@ -374,7 +370,7 @@ sudo chmod 770 /usr/local/bin/chromedriver
 sudo chmod 770 /usr/local/bin/geckodriver
 echo "" 
 echo "" 
-echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc & spectacle"
+echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc, spectacle & redis"
 brew install --cask pycharm
 brew install --cask docker-toolbox
 brew install --cask postman
@@ -384,14 +380,6 @@ brew install --cask vlc
 brew install --cask spectacle
 brew install redis 
 brew services start redis 
-
-echo ""
-echo ""
-echo "installing volta (https://volta.sh/)"
-curl https://get.volta.sh | bash
-volta install node
-volta install yarn
-sleep 5
 ##########################
 # SETUP PYTHON ENVIRONMENT 
 ##########################
@@ -399,11 +387,7 @@ brew install python3
 brew install curl
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
-pip3 install -U https://github.com/robotframework/RIDE/archive/master.zip
 pip3 install robotframework
-pip3 install robotframework-requests
-pip3 install robotframework-react
-pip3 install --upgrade robotframework-stublibrary
 pip install --upgrade robotframework-selenium2library
 pip3 install docutils
 pip3 installl pipenv
@@ -456,7 +440,6 @@ done
 # Insomnia 
 # Google Chrome Dev (for work account)
 # PIA client 
-# Pycharm 
 # Visual studio 
 # Xcode 
 # malwarebytes
