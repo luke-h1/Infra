@@ -9,7 +9,7 @@ sudo apt-get update -y && curl -sL https://deb.nodesource.com/setup_14.x | bash 
 
 # edit nginx config 
 # sudo vim /etc/nginx/sites-available/default 
-# after done editing config run sudo nginx t && sudo service nginx restart 
+# after done editing config run sudo nginx -t && sudo service nginx restart 
 
 
 # Install certbot 
