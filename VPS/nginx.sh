@@ -13,5 +13,5 @@ sudo apt-get update -y && curl -sL https://deb.nodesource.com/setup_14.x | bash 
 
 
 # Install certbot 
-sudo apt-get update -y && sudo apt-get install -y snapd && sudo snap install snap-store && sudo snap install rtbot --classic
+sudo apt-get update -y && sudo apt-get install -y snapd && sudo snap install snap-store && sudo snap install certbot --classic
 # sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
