@@ -21,4 +21,4 @@ jobs:
         with:
           # github_token: ${{ secrets.github_token }}
           reporter: github-pr-review 
-          ansiblelint_flags: '-x 303,701,601,206,602,403,301,502,306,208,201  core macbook/* -v'
+          ansiblelint_flags: '-x 303,701,601,206,602,403,301,502,306,208,201 -v'
