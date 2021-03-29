@@ -39,7 +39,7 @@
 
 
     - name: Install "bridge-utils" pkg
-      apt:
+      apt: this is an intentional mistake
         name: bridge-utils
         state: present
       tags:
