@@ -21,12 +21,30 @@ if ! $CONTINUE; then
     echo "Please go read the script, it only takes a few minutes"
     exit
 fi
-user_for_bash_script="lukehowsam" # put your username here 
+
+echo ""
+echo ""
+echo ""
+echo "Would you like to generate a new ssh key ?"
+read -r ssh_res
+if [[ $ssh_res =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    GEN_KEY=true
+fi
+ssh-keygen
+
+if ! $GEN_KEY; then
+    echo "Not generating new ssh key & continuing with script"
+    exit 5
+fi
+echo ""
+echo ""
+echo "fetching fresh packages"
+sudo apt-get update -y && sudo apt-get upgrade -y 
 
 echo "installing curl"
 echo ""
 echo ""
-sudo apt-get install -y curl -y 
+sudo apt-get install -y curl 
 sudo apt-get install -y git 
 sudo apt install software-properties-common apt-transport-https wget -y
 echo "configuring github"
@@ -37,12 +55,6 @@ echo "added your username to git config global"
 echo "enter your github email:"
 read email
 git config --global --replace-all user.email "$email"
-sudo rm -rf /home/${user_for_bash_script}/Pictures
-sudo rm -rf /home/${user_for_bash_script}/Documents
-sudo rm -rf /home/${user_for_bash_script}/Public
-sudo rm -rf /home/${user_for_bash_script}/Templates
-sudo rm -rf /home/${user_for_bash_script}/Music
-sudo rm -rf /home/${user_for_bash_script}/Videos
 echo "installing various pkgs"
 echo ""
 echo ""
@@ -51,16 +63,8 @@ sudo pip3 install protonvpn-cli
 sudo apt-get install -y snap
 sudo snap install --classic heroku
 sudo ufw enable
-sudo apt-get install -y openssh*
-sudo apt-get install -y ssh*
-sudo apt-get install -y xfce*
-sudo apt-get install -y curl
-sudo -v
 # drop IP pings 
-echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
-# set default to the GUI 
-sudo systemctl set-default graphical.target
-# Restart UFW to take in changes
+# echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 sudo ufw disable
 sudo ufw enable
 echo "Making 5GB swap file (requires sudo permission)"
@@ -76,13 +80,92 @@ echo "Installing Ansible, Node & NVM"
 sudo apt-get update -y 
 sudo apt-get upgrade -y 
 sudo apt-get install nodejs -y 
-nodejs -v >> /users/${user_for_bash_script}/node-log.txt
+nodejs -v >> /users/lhowsam/node-log.txt
 sudo apt-get install npm -y 
 # install nvm 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-source /users/${user_for_bash_script}/.profile   
+source /users/lhowsam/.profile   
 sudo apt-get install ansible -y 
 sudo apt-get install -y zsh 
 echo $SHELL 
 chsh -s ${which zsh}
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# DBs 
+sudo apt install postgresql postgresql-contrib
+sudo apt install mysql-server
+sudo mysql_secure_installation
+systemctl status mysql.service
+#--------------------
+# Install manually: 
+# Figma 
+# intel power gadget 
+# set ip tables stealth setting
+# MongoDB Compass 
+# Insomnia 
+# Visual studio 
+# malwarebytes
+# beekeeper (DB GUI)
+# aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
+#--------------------
+echo ""
+echo ""
+echo "asking for sudo permission to reboot:"
+sudo reboot now 
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo easy_install pip
+pip3 install robotframework
+pip install --upgrade robotframework-selenium2library
+pip3 install docutils
+pip3 installl pipenv
+pip install --upgrade pip
+curl https://dl.pstmn.io/download/latest/linux 
+ar -xzf Postman-linux-x64-*.tar.gz
+sudo rm -rf /opt/Postman 
+sudo mv Postman /opt 
+sudo ln -s /opt/Postman/Postman /usr/local/bin/postman
+echo "
+[Desktop Entry]
+Type=Application
+Name=Postman
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+Exec="/opt/Postman/Postman"
+Comment=Postman GUI
+Categories=Development;Code;
+" >> /usr/share/applications/postman.desktop
+sudo apt-get remove docker docker-engine docker.io
+sudo apt install docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version
+sudo snap install pycharm-community --classic
+sudo apt install redis-server
+sudo su - 
+sudo passwd root 
+echo "
+. . .
+# If you run Redis from upstart or systemd, Redis can interact with your
+# supervision tree. Options:
+#   supervised no      - no supervision interaction
+#   supervised upstart - signal upstart by putting Redis into SIGSTOP mode
+#   supervised systemd - signal systemd by writing READY=1 to $NOTIFY_SOCKET
+#   supervised auto    - detect upstart or systemd method based on
+#                        UPSTART_JOB or NOTIFY_SOCKET environment variables
+# Note: these supervision methods only signal "process is ready."
+#       They do not enable continuous liveness pings back to your supervisor.
+supervised systemd
+
+. . .
+" >> /etc/redis/redis.conf
+sudo systemctl restart redis.service
+sudo systemctl status redis
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.8
+#https://software.opensuse.org/download.html?project=shells%3Azsh-users%3Azsh-completions&package=zsh-completions
+sudo su - lhowsam
+sudo curl \
+    -L https://raw.githubusercontent.com/docker/compose/1.28.6/contrib/completion/bash/docker-compose \
+    -o /etc/bash_completion.d/docker-compose
+# if [ -f $(brew --prefix)/etc/bash_completion ]; then
+#     . $(brew --prefix)/etc/bash_completion
+# fi

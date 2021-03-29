@@ -16,40 +16,19 @@
       tags:
         - config
 
-    - name: Install "atop" pkg
-      apt:
-        name: atop
-        state: present
-      tags:
-        - config
-
-    - name: Install "iftop" pkg
-      apt:
-        name: iftop
-        state: present
-      tags:
-        - config
-
-    - name: Install "sysstat" pkg
-      apt:
-        name: sysstat
-        state: present
-      tags:
-        - config
-
-    - name: Install "iotop" pkg
-      apt:
-        name: iotop
-        state: present
-      tags:
-        - config
-
     - name: Install "vim" pkg
       apt:
         name: vim
         state: present
       tags:
         - config
+
+    - name: Install "tmux" pkg
+      apt:
+        name: tmux
+        state: present
+      tags:
+        - config 
 
     - name: Install "nmap" pkg
       apt:
@@ -58,12 +37,6 @@
       tags:
         - config
 
-    - name: Install "ufw" pkg
-      apt:
-        name: ufw
-        state: present
-      tags:
-        - config
 
     - name: Install "bridge-utils" pkg
       apt:
@@ -93,12 +66,6 @@
       tags: 
         - config 
 
-    - name: Install "openvpn" pkg
-      apt:
-        name: openvpn
-        state: present
-      tags:
-        - config
 
     - name: Install "dialog" pkg
       apt:
@@ -156,19 +123,6 @@
       tags:
         - config
 
-    - name: Install "xfce" pkg
-      apt:
-        name: xfce
-        state: present
-      tags:
-        - config
-
-    - name: Install "terminator" pkg
-      apt:
-        name: terminator
-        state: present
-      tags:
-        - config
 
     - name: Install "blueman" pkg
       apt:
@@ -212,29 +166,6 @@
       tags:
         - config
 
-    - name: create custom dirs
-      file:
-        path: /home/lukehowsam/Desktop/courses
-      tags:
-        - config
-
-    - name: apt-get update
-      apt:
-        update_cache: yes
-      tags:
-        - config
-
-    - name: apt-get upgrade
-      apt:
-        upgrade: dist
-      tags:
-        - config
-    - name: Install "express" node.js package globally.
-      npm:
-        name: express
-        global: yes
-      tags:
-        - npm
 
     - name: Install "expo-cli" node.js package globally.
       npm:
@@ -257,12 +188,6 @@
       tags:
         - npm
 
-    - name: Install "eslint" node.js package globally.
-      npm:
-        name: eslint
-        global: yes
-      tags:
-        - npm
 
     - name: Install "lite-server" node.js package globally.
       npm:
