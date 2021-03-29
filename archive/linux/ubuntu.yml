@@ -64,7 +64,7 @@
         name: unzip
         state: present
       tags: 
-        - config 
+        - config
 
 
     - name: Install "dialog" pkg
