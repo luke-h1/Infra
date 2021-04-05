@@ -14,8 +14,11 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-#eval "$(ssh-agent -s)"
-
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+#eval "$(ssh-agent -s)
+ZSH_DISABLE_COMPFIX=true
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
