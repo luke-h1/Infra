@@ -44,3 +44,9 @@ code --install-extension wayou.vscode-todo-highlight
 code --install-extension simonsiefke.svg-preview
 code --install-extension humao.rest-client
 code --install-extension pkief.material-icon-theme
+code --install-extension doggy8088.netcore-extension-pack
+code --install-extension jchannon.csharpextensions
+code --install-extension jorgeserrano.vscode-csharp-snippets
+code --install-extension msjsdiag.vscode-react-native
+code --install-extension svelte.svelte-vscode
+code --install-extension ardenivanov.svelte-intellisense
