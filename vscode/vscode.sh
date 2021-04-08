@@ -49,4 +49,3 @@ code --install-extension jchannon.csharpextensions
 code --install-extension jorgeserrano.vscode-csharp-snippets
 code --install-extension msjsdiag.vscode-react-native
 code --install-extension svelte.svelte-vscode
-code --install-extension ardenivanov.svelte-intellisense
