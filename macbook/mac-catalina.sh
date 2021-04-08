@@ -446,6 +446,7 @@ done
 # beekeeper (DB GUI)
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
+# dotnet sdk
 #--------------------
 echo ""
 echo ""
