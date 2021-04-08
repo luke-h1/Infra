@@ -2,7 +2,6 @@
 # install all vs code extensions
 # make sure to have the 'code' command in your PATH 
 code --install-extension christian-kohler.npm-intellisense
-code --install-extension sdras.night-owl
 code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension wix.vscode-import-cost
@@ -42,8 +41,6 @@ code --install-extension golang.go
 code --install-extension msjsdiag.vscode-react-native
 code --install-extension wayou.vscode-todo-highlight
 code --install-extension simonsiefke.svg-preview
-code --install-extension humao.rest-client
-code --install-extension pkief.material-icon-theme
 code --install-extension doggy8088.netcore-extension-pack
 code --install-extension jchannon.csharpextensions
 code --install-extension jorgeserrano.vscode-csharp-snippets
