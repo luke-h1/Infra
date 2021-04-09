@@ -169,3 +169,5 @@ sudo curl \
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #     . $(brew --prefix)/etc/bash_completion
 # fi
+sudo apt-get install -y stress youtube-dl htop vim tmux  nmap  httpie watch coreutils cmake ack certbot  grep lm-sensors dialog pulseaudio pavucontrol at bluez blueman pulseaudio-module-bluetooth unity-control-center
+
