@@ -66,7 +66,7 @@ echo "Installing Homebrew..."
 if ! command -v COMMAND &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-  log "Homebrew already installed. Skipping."
+  echo "Homebrew already installed. Skipping."
 fi
 echo "updating homebrew"
 brew update 
@@ -75,13 +75,21 @@ brew upgrade
 echo ""
 echo ""
 echo "installing ansible"
-brew install ansible 
+brew tap homebrew/services \ 
+  mongodb/brew
+
+
+brew install ansible \ 
+  python3 \ 
+  curl \ 
+  wget \ 
+  mysql \ 
+  mongodb-community 
+
 echo "install pip"
 sudo easy_install pip 
 echo ""
 echo ""
-echo "installing wget"
-brew install wget
 echo "install nvm & node"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 nvm install stable
@@ -95,15 +103,9 @@ echo ""
 echo "installing Azure data studio"
 wget https://go.microsoft.com/fwlink/?linkid=2151311
 echo ""
-echo ""
-echo ""
-echo ""
-echo "installing mysql"
-brew install mysql
-brew tap homebrew/services 
-###########################
-## GITHUB CONFIGURATION. ## 
-###########################
+
+
+# GITHUB CONFIGURATION
 echo "" 
 echo "" 
 echo "Configuring github information globally"
@@ -117,12 +119,13 @@ read email
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
 echo "" 
+
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-###############################################################################
-# ICLOUD                                                                      #
-###############################################################################
+
+
+# ICLOUD
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
@@ -132,9 +135,9 @@ defaults write com.apple.screencapture disable-shadow -bool true
 echo "" 
 echo "" 
 echo "Mac App store section" 
-###############################################################################
-# Mac App Store                                                               #
-###############################################################################
+
+
+# Mac App Store
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
@@ -190,14 +193,16 @@ read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
+
+
 # SHOW MOUNTED VOLUMES ON DESKTOP 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
-###############################################################################
+
+
 # SAFARI CONFIG 
-###############################################################################
 echo ""
 echo "Safari section" 
 # Warn about fraudulent websites
@@ -227,17 +232,17 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 echo "" 
 echo "" 
 echo "photo sections" 
-###############################################################################
-# Photos                                                                      #
-###############################################################################
+
+
+
+# Photos
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 echo "" 
 echo "" 
 echo "UI Section" 
-###############################################################################
-# UI CONFIG 
-###############################################################################
+
+# UI CONFIG
 echo ""
 echo ""
 echo "Speed up various animations"
@@ -302,9 +307,8 @@ defaults write com.apple.dock orientation right
 echo "" 
 echo "" 
 echo "Transmission section" 
-################################################################################
-# TRANSMISSION                                                                 #
-################################################################################
+
+# TRANSMISSION                                               
 echo ""
 echo ""
 echo "Do you use Transmission for torrenting? (y/n)"
@@ -347,10 +351,6 @@ echo ""
 echo "" 
 echo "" 
 echo "" 
-echo "Install chrome & firefox webdrivers" 
-###############################################################################
-# INSTALL & CONFIGURE CHROME WEB DRIVERS 
-###############################################################################
 echo "enter your username here"
 echo ""
 echo ""
@@ -371,20 +371,20 @@ sudo chmod 770 /usr/local/bin/geckodriver
 echo "" 
 echo "" 
 echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc, spectacle & redis"
-brew install --cask pycharm
-brew install --cask docker-toolbox
-brew install --cask postman
-brew install --cask docker
-brew install --cask iterm2
-brew install --cask vlc
-brew install --cask spectacle
-brew install redis 
-brew services start redis 
-##########################
+brew install --cask pycharm \ 
+  docker-toolbox \ 
+  postman \  
+  docker \ 
+  iterm2 \ 
+  vlc \ 
+  spectacle \ 
+  redis
+
+
+brew services start redis
+
+
 # SETUP PYTHON ENVIRONMENT 
-##########################
-brew install python3
-brew install curl
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
 pip3 install robotframework
@@ -392,21 +392,17 @@ pip install --upgrade robotframework-selenium2library
 pip3 install docutils
 pip3 installl pipenv
 pip install --upgrade pip
-##########################
-# INSTALL & SETUP MONGODB
-##########################
-brew tap mongodb/brew && brew install mongodb-community 
+
+# SETUP MONGODB
 brew services start mongodb-community 
 mongo --version 
-sleep  3 # sleep to check mongo is on the right version & has installed succesfully 
-###############################################################################
+
 # CHECK FOR ANY MACOS RELATED UPGRADES
-###############################################################################
 echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
-###############################################################################
+
+
 # Kill affected applications
-###############################################################################
 echo ""
 echo ""
 echo "the following command will kill all applications & reboot in order for changes to take effect"

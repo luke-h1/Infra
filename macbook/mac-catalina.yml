@@ -229,28 +229,6 @@
       tags:
         - config
 
-    - name: Create /Desktop/courses directory
-      file:
-        path: Users/lukehowsam/Desktop/courses
-        state: directory
-        mode: '0755'
-      tags:
-        - config
-
-    - name: Create notes directory
-      file:
-        path: Users/lukehowsam/notes
-        state: directory
-        mode: '0755'
-      tags:
-        - config
-
-    - name: Install "express" node.js package globally.
-      npm:
-        name: express
-        global: yes
-      tags:
-        - npm
 
     - name: Install "expo-cli" node.js package globally.
       npm:
@@ -269,13 +247,6 @@
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
-        global: yes
-      tags:
-        - npm
-
-    - name: Install "eslint" node.js package globally.
-      npm:
-        name: eslint
         global: yes
       tags:
         - npm
