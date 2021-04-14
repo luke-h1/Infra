@@ -178,7 +178,26 @@ sudo curl \
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #     . $(brew --prefix)/etc/bash_completion
 # fi
-sudo apt install lightdm
-sudo apt-get install -y nodejs npm -y && node -v && npm -v 
-sudo apt-get install -y stress youtube-dl htop vim tmux  nmap  httpie watch coreutils cmake ack certbot  grep lm-sensors dialog pulseaudio pavucontrol at bluez blueman pulseaudio-module-bluetooth unity-control-center
-npm i -g nodemon netlify-cli gatsby-cli pa11y artillery typescript lite-server vercel react-native-cli expo-cli 
+sudo apt-get install -y lightdm \ 
+  nodejs \ 
+  npm \ 
+  stress \ 
+  youtube-dl \ 
+  htop \
+  vim \ 
+  tmux \ 
+  nmap \  
+  httpie \ 
+  watch \ 
+  coreutils \ 
+  cmake \ 
+  ack \ 
+  lm-sensors \ 
+  pulseaudio \ 
+  pavucontrol \ 
+  bluez \ 
+  blueman \ 
+  pulseaudio-module-bluetooth \ 
+  unity-control-center \  
+
+sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 

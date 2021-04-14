@@ -80,10 +80,10 @@ brew tap homebrew/services \
 
 
 brew install ansible \ 
-  python3 \
-  curl \
-  wget \
-  mysql \
+  python3 \ 
+  curl \ 
+  wget \ 
+  mysql \ 
   mongodb-community 
 
 echo "install pip"
@@ -372,13 +372,15 @@ echo ""
 echo "" 
 echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc, spectacle & redis"
 brew install --cask pycharm \ 
-  docker-toolbox
-  postman
-  docker
-  iterm2
-  vlc
-  spectacle
+  docker-toolbox \ 
+  postman \  
+  docker \ 
+  iterm2 \ 
+  vlc \ 
+  spectacle \ 
   redis
+
+
 brew services start redis
 
 
