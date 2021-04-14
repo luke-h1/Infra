@@ -198,6 +198,6 @@ sudo apt-get install -y lightdm \
   bluez \ 
   blueman \ 
   pulseaudio-module-bluetooth \ 
-  unity-control-center \  
+  unity-control-center
 
 sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
