@@ -74,7 +74,6 @@ nodejs -v >> /users/lhowsam/node-log.txt
 sudo apt-get install npm -y 
 # install nvm 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-source ~/.zshrc 
 sudo apt-get install ansible -y 
 sudo apt-get install -y zsh 
 echo $SHELL 
@@ -208,4 +207,5 @@ sudo apt-get install -y lightdm \
   unity-control-center
 
 sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
+source ~/.zshrc 
 sudo reboot now
