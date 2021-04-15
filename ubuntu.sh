@@ -178,6 +178,21 @@ sudo curl \
 # if [ -f $(brew --prefix)/etc/bash_completion ]; then
 #     . $(brew --prefix)/etc/bash_completion
 # fi
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb 
+sudo dpkg -i packages-microsoft-prod.deb 
+wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+
+sudo dpkg -i packages-microsoft-prod.deb 
+
+sudo apt-get update 
+
+sudo apt-get install apt-transport-https -y
+
+sudo apt-get install dotnet-sdk-2.1 -y
+
+sudo apt-get install azure-functions-core-tools -y
+
+
 sudo apt-get install -y lightdm \ 
   nodejs \ 
   npm \ 
