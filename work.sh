@@ -67,16 +67,6 @@ sudo ufw enable
 # echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
 sudo ufw disable
 sudo ufw enable
-echo "Making 5GB swap file (requires sudo permission)"
-echo ""
-echo ""
-sudo dd if=/dev/zero of=/dev/swapfile bs=5G count=1
-sudo chmod 600 /dev/swapfile
-sudo mkswap /dev/swapfile
-sudo swapon /dev/swapfile
-echo ""
-echo ""
-echo "Installing Ansible, Node & NVM"
 sudo apt-get update -y 
 sudo apt-get upgrade -y 
 sudo apt-get install nodejs -y 
@@ -84,7 +74,7 @@ nodejs -v >> /users/lhowsam/node-log.txt
 sudo apt-get install npm -y 
 # install nvm 
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-source /users/lhowsam/.profile   
+source ~/.zshrc 
 sudo apt-get install ansible -y 
 sudo apt-get install -y zsh 
 echo $SHELL 
@@ -218,3 +208,4 @@ sudo apt-get install -y lightdm \
   unity-control-center
 
 sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
+sudo reboot now
