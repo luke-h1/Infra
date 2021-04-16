@@ -180,9 +180,12 @@ sudo apt-get install apt-transport-https -y
 sudo apt-get install dotnet-sdk-2.1 -y
 
 sudo apt-get install azure-functions-core-tools -y
-
+sudo apt-get install bluetooth bluez bluez-tools rfkill -y
+sudo systemctl restart bluetooth
+sudo rfkill list 
 sudo apt install docker-compose && sudo snap install docker
 sudo systemctl start docker && sudo systemctl enable docker
+sudo apt-get install blueman -y && blueman-manager
 
 sudo apt-get install -y lightdm \ 
   nodejs \ 
