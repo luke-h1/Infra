@@ -12,7 +12,6 @@
       "\t\treturn ($3);",
       "}",
       "export default $TM_FILENAME_BASE;",
-      ""
     ],
     "description": "Typescript React Function Component"
   }
