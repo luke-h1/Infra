@@ -1,5 +1,3 @@
-# go to preferences > user snippets > typescriptreact.json 
-# and place this here (remove comments)
 {
   "Typescript React Function Component": {
     "prefix": "rh",
@@ -10,9 +8,11 @@
       "$1",
       "}",
       "",
-      "export const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
+      "const $TM_FILENAME_BASE: React.FC<${TM_FILENAME_BASE}Props> = ({$2}) => {",
       "\t\treturn ($3);",
-      "}"
+      "}",
+      "export default $TM_FILENAME_BASE;",
+      ""
     ],
     "description": "Typescript React Function Component"
   }
