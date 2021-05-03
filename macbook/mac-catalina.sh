@@ -78,7 +78,6 @@ echo "installing ansible"
 brew tap homebrew/services \ 
   mongodb/brew
 
-
 brew install ansible \ 
   python3 \ 
   curl \ 
@@ -125,7 +124,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 
-# ICLOUD
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
@@ -136,8 +134,6 @@ echo ""
 echo "" 
 echo "Mac App store section" 
 
-
-# Mac App Store
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
@@ -194,15 +190,12 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
 
-
 # SHOW MOUNTED VOLUMES ON DESKTOP 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-
-# SAFARI CONFIG 
 echo ""
 echo "Safari section" 
 # Warn about fraudulent websites
@@ -230,17 +223,10 @@ echo ""
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 echo "" 
-echo "" 
-echo "photo sections" 
 
-
-
-# Photos
-# Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 echo "" 
 echo "" 
-echo "UI Section" 
 
 # UI CONFIG
 echo ""
@@ -347,10 +333,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistNew -bool true
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
-echo "" 
-echo "" 
-echo "" 
-echo "" 
+
 echo "enter your username here"
 echo ""
 echo ""
@@ -380,9 +363,7 @@ brew install --cask pycharm \
   spectacle \ 
   redis
 
-
 brew services start redis
-
 
 # SETUP PYTHON ENVIRONMENT 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
@@ -400,7 +381,6 @@ mongo --version
 # CHECK FOR ANY MACOS RELATED UPGRADES
 echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
-
 
 # Kill affected applications
 echo ""
