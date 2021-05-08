@@ -215,5 +215,10 @@ sudo apt-get install -y lightdm \
 sudo apt remove nautilus gnome-power-manager gnome-screensaver gnome-termina* gnome-pane* gnome-applet* gnome-bluetooth gnome-desktop* gnome-sessio* gnome-user* gnome-shell-common compiz compiz* unity unity* hud zeitgeist zeitgeist* python-zeitgeist libzeitgeist* activity-log-manager-common gnome-control-center gnome-screenshot overlay-scrollba* && sudo apt-get install xubuntu-community-wallpapers && sudo apt-get autoremove
 sudo snap install --classic code
 sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
+sudo fallocate -l 20G /swapfile-1
+sudo chown root:root /swapfile-1 
+sudo chmod 0600 /swapfile-1 
+sudo mkswap /swapfile-1
+sudo swapon -s
 source ~/.zshrc 
 sudo reboot now
