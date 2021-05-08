@@ -208,7 +208,11 @@ sudo apt-get install -y lightdm \
   blueman \ 
   pulseaudio-module-bluetooth \ 
   unity-control-center
+  xubuntu-desktop
+  vim
 
+sudo apt remove nautilus gnome-power-manager gnome-screensaver gnome-termina* gnome-pane* gnome-applet* gnome-bluetooth gnome-desktop* gnome-sessio* gnome-user* gnome-shell-common compiz compiz* unity unity* hud zeitgeist zeitgeist* python-zeitgeist libzeitgeist* activity-log-manager-common gnome-control-center gnome-screenshot overlay-scrollba* && sudo apt-get install xubuntu-community-wallpapers && sudo apt-get autoremove
+sudo snap install --classic code
 sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
 source ~/.zshrc 
 sudo reboot now
