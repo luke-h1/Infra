@@ -24,6 +24,11 @@
         - config
 
     - homebrew:
+        name: php
+      tags:
+        - development
+
+    - homebrew:
         name: bash
       tags:
         - Tools
