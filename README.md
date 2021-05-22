@@ -3,9 +3,10 @@
 ### Repo that I use for setting up my development environment (Ansible & Bash)
 <br />
 
+[![CI](https://github.com/luke-h1/Automation/actions/workflows/lint.yml/badge.svg)](https://github.com/luke-h1/Automation/actions/workflows/lint.yml)
 
 ## Project Structure: 
-  * Each directory generally consists of a playbook and a bash script for that given OS. Note: These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
+  * Each directory generally consists of a playbook and a bash script for that given OS. These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
 
   * Each directory contains instructions on how to get up and running with Ansible. 
 
