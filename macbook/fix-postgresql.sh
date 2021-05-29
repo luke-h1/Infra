@@ -19,9 +19,9 @@ brew services list
 brew services start postgresql
 brew services list
 psql -U postgres
-# local user is lhowsam for all databases 
+# local user is lukehowsam for all databases 
 # Run the below SQL statement
-# ALTER ROLE lhowsam WITH PASSWORD '123'; 
+# ALTER ROLE lukehowsam WITH PASSWORD '123'; 
 # running \du should result in: 
 
 #                                    List of roles
