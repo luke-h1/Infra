@@ -32,7 +32,7 @@
 
 **VPS / EC2** 
 * Pull the Docker image you've pushed up to Docker hub: `docker pull <USERNAME>/<API_NAME>`
-* Tag the docker image: docker tag <USERNAME>/<API_NAME>:<VERSION> dokku/<API_NAME>:latest
+* Tag the docker image: `docker tag <USERNAME>/<API_NAME>:<VERSION> dokku/<API_NAME>:latest`
 * Deploy the image: `dokku tags:deploy <API_NAME> latest`
 * Go to DNS provider
 * Go to advanced DNS records 
@@ -47,19 +47,19 @@
 * `dokku domains:remove <API_NAME> <VPS NAME>  (DOMAIN APP VHOSTS)`
 * Once that's done we need to check if it's removed: 
 * `dokku domains:report`
-* If it's not removed repeat the above steps / check the docs
-* If it is removed let's continue to add a custom domain name: 
+* If it's not removed repeat the above steps or check the <a href="https://dokku.com/docs/getting-started/installation/">dokku</a> docs 
+* If it is removed let's continue to add a custom domain name:
 * `dokku domains:add <API_NAME> <DOMAIN_NAME>`
 * Check the ports: `dokku proxy:ports <API_NAME>`
 * Assign the ports to the API name. This should match whatever you've exposed in your Docker image
 * dokku proxy:ports-add <API_NAME> http:80:<PORT_IN_DOCKER_IMAGE>
-* At this point you should be able to get access via the browser (cannot get / message). You may get a 502 response from the server if DNS hasn't finished propogating.
+* At this point you should be able to get access via the browser (`cannot get /` message). If you see this it means the above steps have worked. You may get a 502 response from the server if DNS hasn't finished propogating.
 * Now that we've assigned a domain name, configured the correct ports, we can enable let's encrypt:  `dokku letsencrypt:enable <API_NAME>`
 * At the point of enabling letencrypt you may get some errors about the domain name. If so check if your advanced DNS config is correct
 * build fresh docker image on server & push to docker hub
 * Tag the new release: `docker tag <USERNAME>/<API_NAME>:<VERSION> dokku/<API_NAME>:latest`
 * Deploy the API to production: `dokku tags:deploy <API_NAME> latest`
-
+* Your backend should now be successfully deployed
 
 **Frontend**
 * Add a URL redirect to your DNS config to the main domain name (assuming you've setup a sub domain such as `api.yourdomainname.com` for the API).
