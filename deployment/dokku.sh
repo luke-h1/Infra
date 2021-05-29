@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Deploy with Dokku process: 
+# Follow instructions in the dokku.md file
 
 echo What should the version be ?
 read VERSION
