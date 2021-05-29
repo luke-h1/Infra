@@ -9,24 +9,24 @@
 
 **VPS**
 - create new VPS with dokku image or install dokku yourself 
-- go to VM IP addr in browser
+- go to VM IP address in browser
 - check virtual hosts option
 - ssh into VPS
-- run `dokku apps:create <API_NAME>`
-- run `sudo dokku plugin:install <https://github.com/dokku/dokku-postgres.git`>
-- run `dokku postgres:create <DATABASE_NAME>`
-- run `dokku postgres:link <DATABASE_NAME> <API_NAME>`
+- create a dokku app (API) `dokku apps:create <API_NAME>`
+- install the postgres dokku plugin `sudo dokku plugin:install <https://github.com/dokku/dokku-postgres.git`>
+- create the database `dokku postgres:create <DATABASE_NAME>`
+- Link postgres to the API `dokku postgres:link <DATABASE_NAME> <API_NAME>`
 - Install redis: `sudo dokku plugin:install <https://github.com/dokku/dokku-redis.git`>
 - create redis instance: `sudo dokku redis:create <REDIS_INSTANCE_NAME>`
-- run `dokku redis:link <REDIS_INSTANCE_NAME> <API_NAME>`
+- Link the redis instance to the API `dokku redis:link <REDIS_INSTANCE_NAME> <API_NAME>`
 - run `docker container list` & make postgres & redis are running
 
 
 **Locally** 
-* comment out old migrations 
-* Generate base DB tables 
+* comment out any old migrations 
+* Generate an initial migration (this will be responsible for creating the initial tables on the production database)  
 * Create a repository on Docker hub 
-* Create a Dockerfile image locally (this will be responsible for building & running the for production)
+* Create a Dockerfile image locally (this will be responsible for building & running the backend for production)
 * Push the Docker image up to Docker hub
 
 
