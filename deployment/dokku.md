@@ -7,7 +7,7 @@
 
 &nbsp;
 
-**VPS**
+**VPS / EC2**
 - create new VPS with dokku image or install dokku yourself 
 - go to VM IP address in browser
 - check virtual hosts option
@@ -30,7 +30,7 @@
 * Push the Docker image up to Docker hub
 
 
-**VPS** 
+**VPS / EC2** 
 * Pull the Docker image you've pushed up to Docker hub: `docker pull <USERNAME>/<API_NAME>`
 * Tag the docker image: docker tag <USERNAME>/<API_NAME>:<VERSION> dokku/<API_NAME>:latest
 * Deploy the image: `dokku tags:deploy <API_NAME> latest`
