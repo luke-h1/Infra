@@ -1,7 +1,7 @@
 This command is responsible for starting SSE: `docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123' -p 1433:1433 mcr.microsoft.com/mssql/server:2019-latest`
 
 
-** Azure data studio
+## Azure data studio
 Another hurdle with using SQL Server on macOS is the lack of SQL Server Management Studio (SSMS), a software tool that is used for configuring, managing, and administering all components within Microsoft SQL Server. It includes scripting tools for creating and running queries and graphical tools for use with objects and features within SQL Server.
 
 However, Azure Data Studio has got you covered.
