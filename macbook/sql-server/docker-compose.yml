@@ -20,6 +20,6 @@ services:
         # Wait 30 seconds for it to be available
         sleep 30
         # Run the setup script to create the two databases
-        /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -l 30 -e -i /scripts/setup-db.sql
+        # /opt/mssql-tools/bin/sqlcmd -U sa -P $$SA_PASSWORD -l 30 -e -i /scripts/setup-db.sql
         # So that the container doesn't shut down, sleep this thread
         sleep infinity
