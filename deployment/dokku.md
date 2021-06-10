@@ -7,6 +7,22 @@
 
 &nbsp;
 
+
+## Cloud providers
+
+Before getting started with the below steps you will need to open up the following ports regardless of whether you use Digital Ocean or AWS
+
+- 80: For Nginx 
+- <PORT_OF_API>: Allows your API through the firewall. This should match whatever you `expose` on your docker image
+- 22: For ssh 
+
+AWS & Digital ocean provide Dokku images (among other useful images - https://aws.amazon.com/marketplace) which removes some of the pain points you can run into when setting Dokku up on a plain Ubuntu image. 
+
+* AWS: https://aws.amazon.com/marketplace/pp/Miri-Infotech-Dokku-Platform-as-a-service-solution/B08GYPVW4M 
+ 
+
+&nbsp;
+
 **VPS / EC2**
 - create new VPS with dokku image or install dokku yourself 
 - go to VM IP address in browser
