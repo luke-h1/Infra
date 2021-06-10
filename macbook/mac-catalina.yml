@@ -262,7 +262,14 @@
         global: yes
       tags:
         - npm
-        
+
+    - name: Install "sql-cli" node.js package globally.
+      npm:
+        name: sql-cli
+        global: yes
+      tags:
+        - npm
+
     - name: Install "ncu" node.js package globally.
       npm:
         name: ncu
