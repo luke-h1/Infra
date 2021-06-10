@@ -1,6 +1,11 @@
 This command is responsible for starting SQL server: `docker run -d --name sql_server -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=123' -p 1433:1433 mcr.microsoft.com/mssql/server:2019-latest`
 
 
+You may get the following error when trying to connect via the command line to SQL if your password isn't complex enough: 
+```
+Error: Failed to connect to localhost:1433 - connect ECONNREFUSED 127.0.0.1:1433
+```
+
 ## Azure data studio
 Another hurdle with using SQL Server on macOS is the lack of SQL Server Management Studio (SSMS), a software tool that is used for configuring, managing, and administering all components within Microsoft SQL Server. It includes scripting tools for creating and running queries and graphical tools for use with objects and features within SQL Server.
 
