@@ -2,17 +2,6 @@
 - hosts: localhost
   remote_user: lukehowsam
   tasks:
-
-    - homebrew_tap:
-        name: heroku/brew
-      tags:
-        - deployment
-
-    - homebrew:
-        name: heroku
-      tags:
-        - deployment
-
     - homebrew:
         name: stress
       tags:
@@ -72,12 +61,7 @@
         name: zsh-completions
       tags:
         - Tools
-      
-    - homebrew:
-        name: httpie
-      tags:
-        - Tools
-
+  
     - homebrew:
         name: zsh-syntax-highlighting
       tags:
@@ -204,16 +188,6 @@
         - Tools
 
     - homebrew:
-        name: bash-completion
-      tags:
-        - Tools
-
-    - homebrew:
-        name: bash-git-prompt
-      tags:
-        - Tools
-
-    - homebrew:
         name: yarn
       tags:
         - Tools
@@ -234,7 +208,6 @@
       tags:
         - config
 
-
     - name: Install "expo-cli" node.js package globally.
       npm:
         name: expo-cli
@@ -242,13 +215,6 @@
       tags:
         - npm
 
-    - name: Install "react-native-cli" node.js package globally.
-      npm:
-        name: react-native-cli
-        global: yes
-      tags:
-        - npm
-                
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
@@ -272,7 +238,7 @@
 
     - name: Install "ncu" node.js package globally.
       npm:
-        name: ncu
+        name: npm-check-updates
         global: yes
       tags:
         - npm
@@ -308,13 +274,6 @@
     - name: Install "pa11y" node.js package globally 
       npm: 
         name: pa11y 
-        global: yes 
-      tags: 
-        - npm 
-
-    - name: Install "postgresql" node.js package globally 
-      npm: 
-        name: postgresql
         global: yes 
       tags: 
         - npm 
