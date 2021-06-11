@@ -1,12 +1,6 @@
 #!/bin/bash
-#                    _           _        _ _ 
-#  ___  _____  __   (_)_ __  ___| |_ __ _| | |
-# / _ \/ __\ \/ /   | | '_ \/ __| __/ _` | | |
-#| (_) \__ \>  <    | | | | \__ \ || (_| | | |
-# \___/|___/_/\_\   |_|_| |_|___/\__\__,_|_|_|
-#
 echo "##########################"
-echo "✨ Mac OS Install Script ✨"
+echo "✨ Mac Install Script ✨ "
 echo "##########################"
 echo ""
 echo "" 
@@ -14,7 +8,7 @@ echo "By luke-h1"
 echo ""
 echo ""
 sleep 1
-echo "follow me on github... https://github.com/luke-h1" 
+echo "follow me on github: https://github.com/luke-h1" 
 sleep 2
 echo "" 
 echo ""
@@ -290,13 +284,7 @@ echo ""
 echo ""
 echo "Move Dock to right"
 defaults write com.apple.dock orientation right
-echo "" 
-echo "" 
-echo "Transmission section" 
 
-# TRANSMISSION                                               
-echo ""
-echo ""
 echo "Do you use Transmission for torrenting? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -334,26 +322,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-echo "enter your username here"
-echo ""
-echo ""
-read uname 
-cd /Users/${uname}/Downloads/
-echo "installing chromedriver" 
-echo ""
-echo ""
-curl https://chromedriver.storage.googleapis.com/85.0.4183.87/chromedriver_mac64.zip 
-echo "unzipped .zip files & moving to /usr/local/bin"
-unzip *.zip 
-sudo mv chromedriver /usr/local/bin 
-sudo mv geckodriver /usr/local/bin 
-sudo chown -R ${uname}:staff /usr/local/bin/geckodriver 
-sudo chown -R ${uname}:staff /usr/local/bin/chromedriver
-sudo chmod 770 /usr/local/bin/chromedriver
-sudo chmod 770 /usr/local/bin/geckodriver
-echo "" 
-echo "" 
-echo "installing brew casks: pycharm, docker-toolbox, postman, iterm2, vlc, spectacle & redis"
 brew install --cask pycharm \ 
   docker-toolbox \ 
   postman \  
@@ -365,7 +333,6 @@ brew install --cask pycharm \
 
 brew services start redis
 
-# SETUP PYTHON ENVIRONMENT 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
 pip3 install robotframework
@@ -374,20 +341,42 @@ pip3 install docutils
 pip3 installl pipenv
 pip install --upgrade pip
 
-# SETUP MONGODB
 brew services start mongodb-community 
 mongo --version 
 
-# CHECK FOR ANY MACOS RELATED UPGRADES
+echo "running wget.sh"
+./wget.sh
+echo "running composer.sh"
+./composer.sh
+echo "running ansible playbook"
+ansible-playbook -u lukehowsam -K -K --ask-pass -vvv mac.yml
+
+cp -r dotfiles/.ssh /Users/lukehowsam/.ssh 
+cp -r dotfiles/.zshrc /Users/lukehowsam/.zshrc
+cp -r dotfiles/.gitignore_global /Users/lukehowsam/.gitignore_global
+
+echo "Do you have VS code installed ? (y/n)"
+read -r IS_INSTALLED
+if [[ $IS_INSTALLED =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    INSTALL=true
+fi
+
+if ! $IS_INSTALLED; then
+    echo "Ok not installing VS code extensions"
+    exit
+fi
+source ~/.zshrc
+cd ..
+./vscode.sh
+./nvm.sh
+
+cd mac
 echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
 
-# Kill affected applications
-echo ""
-echo ""
 echo "the following command will kill all applications & reboot in order for changes to take effect"
 REBOOT=false
-echo ""
+
 echo "Do you want to kill all applications & reboot in order for changes to take effect ? (y/n)"
 read -r USER_INPUT
 if [[ $USER_INPUT =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -407,14 +396,13 @@ done
 #--------------------
 # Install manually: 
 # macs fan control
-# ADS 
-# Figma 
+# Adobe XD 
 # intel power gadget 
 # stealth-mode mac setting   
 # MongoDB Compass 
 # Postman 
 # Insomnia 
-# Google Chrome Dev (for work account)
+# Google Chrome Dev
 # PIA client 
 # Visual studio 
 # Xcode 
