@@ -1,14 +1,12 @@
 # [Automation](Automation)
 
-### Repo that I use for setting up my development environment (Ansible & Bash)
 <br />
 
 [![CI](https://github.com/luke-h1/Automation/actions/workflows/lint.yml/badge.svg)](https://github.com/luke-h1/Automation/actions/workflows/lint.yml)
 
 ## Project Structure: 
-  * Each directory generally consists of a playbook and a bash script for that given OS. These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
-
-  * Each directory contains instructions on how to get up and running with Ansible. 
+  * Each directory generally consists of a playbook and a bash script. These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
+  
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
