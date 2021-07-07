@@ -44,4 +44,3 @@ code --install-extension simonsiefke.svg-preview
 code --install-extension msjsdiag.vscode-react-native
 code --install-extension pranaygp.vscode-css-peek
 code --install-extension kamikillerto.vscode-colorize
-code --install-extension ms-dotnettools.csharp
