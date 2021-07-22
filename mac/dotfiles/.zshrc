@@ -3,6 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=${PATH}:/Users/lukehowsam/Library/Python/3.7/bin
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
+export PATH=${PATH}:/Users/lukehowsam/.dotnet/tools
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukehowsam/.oh-my-zsh"
 ZSH_THEME="cloud" 
@@ -14,9 +15,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
 #eval "$(ssh-agent -s)
 ZSH_DISABLE_COMPFIX=true
 # Set list of themes to pick from when loading at random
