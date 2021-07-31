@@ -6,14 +6,11 @@ sudo rm -rf /Users/lukehowsam/Library/Caches/Homebrew/downloads/
 sudo rm /etc/sysctl.conf
 sudo rm -rf /usr/local/share/doc/postgresql
 sudo rm -rf /usr/local/share/doc/postgresql
-79b5fb151bc9b6321bf739af9d66cfc49ab76e86ba3549205f1693a063971b52--postgresql--13.3.big_sur.bottle.tar.gz
 brew uninstall postgresql 
 brew remove postgresql
 brew uninstall postgresql13.1
 brew remove postgresql13.1
 brew doctor
-sudo rm -rf /Library/Developer/CommandLineTools
-sudo xcode-select --install
 brew install postgresql 
 brew services list
 brew services start postgresql
