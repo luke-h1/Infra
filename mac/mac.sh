@@ -369,7 +369,7 @@ source ~/.zshrc
 cd ..
 ./vscode.sh
 ./nvm.sh
-
+./composer.sh 
 cd mac
 echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
