@@ -55,20 +55,14 @@ sleep 2
 osascript -e 'tell application "System Preferences" to quit'
 echo "installing xcode tools" 
 xcode-select --install 
-echo ""
 echo "Installing Homebrew..."
 if ! command -v COMMAND &> /dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   echo "Homebrew already installed. Skipping."
 fi
-echo "updating homebrew"
 brew update 
-echo "upgrading homebrew"
 brew upgrade 
-echo ""
-echo ""
-echo "installing ansible"
 brew tap homebrew/services \ 
   mongodb/brew
 
@@ -79,11 +73,7 @@ brew install ansible \
   mysql \ 
   mongodb-community 
 
-echo "install pip"
 sudo easy_install pip 
-echo ""
-echo ""
-echo "install nvm & node"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 nvm install stable
 brew update  
@@ -95,8 +85,6 @@ echo ""
 echo ""
 echo "installing Azure data studio"
 wget https://go.microsoft.com/fwlink/?linkid=2151311
-echo ""
-
 
 # GITHUB CONFIGURATION
 echo "" 
@@ -111,12 +99,10 @@ echo "Enter your github email:"
 read email 
 git config --global --replace-all user.email "$email" 
 echo "Your github information has now been configured globally.."
-echo "" 
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
 
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
@@ -330,9 +316,8 @@ brew install --cask pycharm \
   vlc \ 
   spectacle \ 
   redis
-
+  
 brew services start redis
-
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
 pip3 install robotframework
@@ -340,10 +325,8 @@ pip install --upgrade robotframework-selenium2library
 pip3 install docutils
 pip3 installl pipenv
 pip install --upgrade pip
-
 brew services start mongodb-community 
 mongo --version 
-
 echo "running wget.sh"
 ./wget.sh
 echo "running composer.sh"
@@ -413,7 +396,5 @@ done
 # dotnet sdk (https://docs.microsoft.com/en-us/dotnet/core/install/macos)
 # dotnet ef (dotnet tool install -g dotnet-ef)
 #--------------------
-echo ""
-echo ""
-echo "asking for sudo permission to reboot:"
+echo "asking for sudo permission to reboot"
 sudo reboot now 
