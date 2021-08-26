@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "##########################"
-echo "✨ Mac Install Script ✨ "
+echo "Mac Install Script 🔥"
 echo "##########################"
 echo ""
 echo "" 
@@ -71,7 +71,16 @@ brew install ansible \
   curl \ 
   wget \ 
   mysql \ 
-  mongodb-community 
+  mongodb-community
+
+brew install --cask pycharm \ 
+  docker-toolbox \ 
+  postman \  
+  docker \ 
+  iterm2 \ 
+  vlc \ 
+  spectacle \ 
+  redis
 
 sudo easy_install pip 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
@@ -108,11 +117,9 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
+
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
-echo "" 
-echo "" 
-echo "Mac App store section" 
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -122,7 +129,7 @@ defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
 
 # Install System data files & security updates
 defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
-echo ""
+
 echo "Would you like to set your hostname / computer (as done via System Preferences >> Sharing)?  (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -162,15 +169,13 @@ fi
 echo "Setting location to ${screenshot_location}"
 defaults write com.apple.screencapture location -string "${screenshot_location}"
 
-echo ""
-echo ""
 echo "Show hidden files in Finder by default? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
 
-# SHOW MOUNTED VOLUMES ON DESKTOP 
+# SHOW MOUNTED VOLUMES ON DESKTOP
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
@@ -205,12 +210,8 @@ defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 echo "" 
 
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-echo "" 
-echo "" 
 
 # UI CONFIG
-echo ""
-echo ""
 echo "Speed up various animations"
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
 defaults write -g QLPanelAnimationDuration -float 0
@@ -220,54 +221,43 @@ defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
 defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
 defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0.001
-echo ""
-echo ""
+
 echo "disable bouncing icons in dock"
 defaults write com.apple.dock no-bouncing -bool false
-echo ""
-echo ""
+
 echo "speed up launchpad animations"
 defaults write com.apple.dock springboard-show-duration -float 0.1
 defaults write com.apple.dock springboard-hide-duration -float 0.11
 defaults write com.apple.dock springboard-page-duration -float 0.1
-echo ""
+
 echo "Always show scrollbars"  
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-echo ""
-echo ""
+
 echo "Quit printer app once print jobs have finished" 
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
-echo ""
-echo ""
+
 echo "require password immediately after sleep or screen saver"
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
-echo ""
-echo ""
+
 echo "disable window animations"
 defaults write com.apple.finder DisableAllAnimations -bool true
-echo ""
-echo ""
+
 echo "Use list view in finder windows"
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-echo ""
-echo ""
+
 echo "Speed up Mission control animation"
 defaults write com.apple.dock expose-animation-duration -float 0.1
-echo ""
-echo ""
+
 echo "Auto hide dock"
 defaults write com.apple.dock autohide -bool true
-echo ""
-echo ""
+
 echo "Change Menu bar clock format"
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
-echo ""
-echo ""
+
 echo "Wipe all default icons from Dock"
 defaults write com.apple.dock persistent-apps -array
-echo ""
-echo ""
+
 echo "Move Dock to right"
 defaults write com.apple.dock orientation right
 
@@ -275,32 +265,31 @@ echo "Do you use Transmission for torrenting? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   mkdir -p ~/Downloads/Incomplete
-  echo ""
   echo "Setting up an incomplete downloads folder in Downloads"
   defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
   defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-  echo ""
+
   echo "Setting auto-add folder to be Downloads"
   defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
-  echo ""
+
   echo "Don't prompt for confirmation before downloading"
   defaults write org.m0k.transmission DownloadAsk -bool false
-  echo ""
+
   echo "Trash original torrent files after adding them"
   defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-  echo ""
+
   echo "Hiding the donate message"
   defaults write org.m0k.transmission WarningDonate -bool false
-  echo ""
+
   echo "Hiding the legal disclaimer"
   defaults write org.m0k.transmission WarningLegal -bool false
-  echo ""
+
   echo "Auto-resizing the window to fit transfers"
   defaults write org.m0k.transmission AutoSize -bool true
-  echo ""
+
   echo "Auto updating to betas"
   defaults write org.m0k.transmission AutoUpdateBeta -bool true
-  echo ""
+
   echo "Setting up the best block list"
   defaults write org.m0k.transmission EncryptionRequire -bool true
   defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
@@ -308,15 +297,7 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-brew install --cask pycharm \ 
-  docker-toolbox \ 
-  postman \  
-  docker \ 
-  iterm2 \ 
-  vlc \ 
-  spectacle \ 
-  redis
-  
+
 brew services start redis
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
@@ -327,12 +308,15 @@ pip3 installl pipenv
 pip install --upgrade pip
 brew services start mongodb-community 
 mongo --version 
+
 echo "running wget.sh"
 ./wget.sh
+
 echo "running composer.sh"
 ./composer.sh
+
 echo "running ansible playbook"
-ansible-playbook -u lukehowsam -K -K --ask-pass -vvv mac.yml
+ansible-playbook -u lukehowsam -K -K --ask-pass -vvv index.yml
 
 cp -r dotfiles/.ssh /Users/lukehowsam/.ssh 
 cp -r dotfiles/.zshrc /Users/lukehowsam/.zshrc
@@ -352,7 +336,6 @@ source ~/.zshrc
 cd ..
 ./vscode.sh
 ./nvm.sh
-
 cd mac
 echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
