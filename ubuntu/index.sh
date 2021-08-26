@@ -17,14 +17,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 if ! $CONTINUE; then
-    # Check if we're continuing and output a message if not
     echo "Please go read the script, it only takes a few minutes"
     exit
 fi
 
-echo ""
-echo ""
-echo ""
 echo "Would you like to generate a new ssh key ?"
 read -r ssh_res
 if [[ $ssh_res =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -36,17 +32,35 @@ if ! $GEN_KEY; then
     echo "Not generating new ssh key & continuing with script"
     exit 5
 fi
-echo ""
-echo ""
-echo "fetching fresh packages"
+
 sudo apt-get update -y && sudo apt-get upgrade -y 
 
-echo "installing curl"
-echo ""
-echo ""
 sudo apt-get install -y curl 
 sudo apt-get install -y git 
 sudo apt install software-properties-common apt-transport-https wget -y
+sudo apt install -y openvpn dialog python3-pip python3-setuptools
+sudo pip3 install protonvpn-cli
+sudo apt-get install -y snap
+sudo snap install --classic heroku
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+sudo apt-get install ansible -y 
+sudo apt-get install -y zsh 
+echo $SHELL 
+chsh -s ${which zsh}
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo apt install postgresql postgresql-contrib
+sudo apt install mysql-server
+sudo mysql_secure_installation
+systemctl status mysql.service
+sudo ufw enable
+echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
+sudo ufw disable
+sudo ufw enable
+sudo apt-get update -y 
+sudo apt-get upgrade -y 
+sudo apt-get install nodejs -y 
+nodejs -v >> /users/lukehowsam/node-log.txt
+sudo apt-get install npm -y 
 echo "configuring github"
 echo "enter your github username:"
 read user
@@ -55,39 +69,6 @@ echo "added your username to git config global"
 echo "enter your github email:"
 read email
 git config --global --replace-all user.email "$email"
-echo "installing various pkgs"
-echo ""
-echo ""
-sudo apt install -y openvpn dialog python3-pip python3-setuptools
-sudo pip3 install protonvpn-cli
-sudo apt-get install -y snap
-sudo snap install --classic heroku
-sudo ufw enable
-# drop IP pings 
-# echo "-A ufw-before-input -p icmp --icmp-type echo-request -j DROP" >> /etc/ufw/before.rules
-sudo ufw disable
-sudo ufw enable
-sudo apt-get update -y 
-sudo apt-get upgrade -y 
-sudo apt-get install nodejs -y 
-nodejs -v >> /users/lukehowsam/node-log.txt
-sudo apt-get install npm -y 
-# install nvm 
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
-sudo apt-get install ansible -y 
-sudo apt-get install -y zsh 
-echo $SHELL 
-chsh -s ${which zsh}
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# DBs 
-sudo apt install postgresql postgresql-contrib
-sudo apt install mysql-server
-sudo mysql_secure_installation
-systemctl status mysql.service
-echo ""
-echo ""
-echo "asking for sudo permission to reboot:"
-sudo reboot now 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
 pip3 install robotframework
@@ -173,31 +154,58 @@ sudo systemctl start docker && sudo systemctl enable docker
 sudo apt-get install blueman -y && blueman-manager
 
 sudo apt-get install -y lightdm \ 
-  nodejs \ 
-  npm \ 
-  stress \ 
-  youtube-dl \ 
-  htop \
-  vim \ 
-  tmux \ 
-  nmap \  
-  httpie \ 
-  watch \ 
-  coreutils \ 
-  cmake \ 
-  ack \ 
-  lm-sensors \ 
-  pulseaudio \ 
-  pavucontrol \ 
-  bluez \ 
-  blueman \ 
-  pulseaudio-module-bluetooth \ 
-  unity-control-center \
-  xubuntu-desktop \
-  vim \ 
-  htop
+    nodejs \ 
+    npm \ 
+    stress \ 
+    youtube-dl \ 
+    htop \
+    vim \ 
+    tmux \ 
+    nmap \  
+    httpie \ 
+    watch \ 
+    coreutils \ 
+    cmake \ 
+    ack \ 
+    lm-sensors \ 
+    pulseaudio \ 
+    pavucontrol \ 
+    bluez \ 
+    blueman \ 
+    pulseaudio-module-bluetooth \ 
+    unity-control-center \
+    xubuntu-desktop \
+    vim \ 
+    htop \ 
+    xubuntu-community-wallpapers \ 
+    autoremove
 
-sudo apt remove nautilus gnome-power-manager gnome-screensaver gnome-termina* gnome-pane* gnome-applet* gnome-bluetooth gnome-desktop* gnome-sessio* gnome-user* gnome-shell-common compiz compiz* unity unity* hud zeitgeist zeitgeist* python-zeitgeist libzeitgeist* activity-log-manager-common gnome-control-center gnome-screenshot overlay-scrollba* && sudo apt-get install xubuntu-community-wallpapers && sudo apt-get autoremove
+sudo apt remove -y nautilus \ 
+    gnome-power-manager \ 
+    gnome-screensaver \ 
+    gnome-termina* \ 
+    gnome-pane* \ 
+    gnome-applet* \ 
+    gnome-bluetooth \ 
+    gnome-desktop* \ 
+    gnome-sessio* \ 
+    gnome-user* \ 
+    gnome-shell-common \ 
+    compiz \ 
+    compiz* \ 
+    unity \ 
+    unity* \ 
+    hud \ 
+    zeitgeist \ 
+    zeitgeist* \ 
+    python-zeitgeist \ 
+    libzeitgeist* \ 
+    activity-log-manager-common \ 
+    gnome-control-center \ 
+    gnome-screenshot \ 
+    overlay-scrollba*
+
+
 sudo snap install --classic code
 sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
 source ~/.zshrc 
