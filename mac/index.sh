@@ -326,6 +326,7 @@ done
 # Visual studio 
 # Xcode 
 # malwarebytes
+# xamp
 # beekeeper (DB GUI)
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
