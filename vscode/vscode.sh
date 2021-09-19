@@ -44,3 +44,11 @@ code --install-extension simonsiefke.svg-preview
 code --install-extension msjsdiag.vscode-react-native
 code --install-extension pranaygp.vscode-css-peek
 code --install-extension kamikillerto.vscode-colorize
+code --install-extension abusaidm.html-snippets
+code --install-extension ecmel.vscode-html-css
+code --install-extension eamodio.gitlens
+code --install-extension felixfbecker.php-pack
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-vscode.vscode-node-azure-pack
+code --install-extension eg2.vscode-npm-script

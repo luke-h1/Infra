@@ -44,43 +44,17 @@ read -r ssh_res
 if [[ $ssh_res =~ ^([yY][eE][sS]|[yY])$ ]]; then
     GEN_KEY=true
 fi
-ssh-keygen
 
 if ! $GEN_KEY; then
     echo "Not generating new ssh key & continuing with script"
     exit 5
 fi
- 
-sleep 2
-osascript -e 'tell application "System Preferences" to quit'
-echo "installing xcode tools" 
-xcode-select --install 
-echo "Installing Homebrew..."
-if ! command -v COMMAND &> /dev/null; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
-  echo "Homebrew already installed. Skipping."
-fi
+ssh-keygen
+
 brew update 
 brew upgrade 
-brew tap homebrew/services \ 
-  mongodb/brew
+brew install ansible python3 curl wget mysql mongodb-community node 
 
-brew install ansible \ 
-  python3 \ 
-  curl \ 
-  wget \ 
-  mysql \ 
-  mongodb-community
-
-brew install --cask pycharm \ 
-  docker-toolbox \ 
-  postman \  
-  docker \ 
-  iterm2 \ 
-  vlc \ 
-  spectacle \ 
-  redis
 
 sudo easy_install pip 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
@@ -88,16 +62,10 @@ nvm install stable
 brew update  
 brew upgrade node 
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config # put your username here 
-cd /Users/lukehowsam/.nvm # put your username here 
-sudo git fetch
-echo ""
-echo ""
-echo "installing Azure data studio"
-wget https://go.microsoft.com/fwlink/?linkid=2151311
+
 
 # GITHUB CONFIGURATION
-echo "" 
-echo "" 
+
 echo "Configuring github information globally"
 echo ""
 echo ""
@@ -298,7 +266,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
 fi
 
 
-brew services start redis
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 sudo easy_install pip
 pip3 install robotframework
@@ -308,19 +275,6 @@ pip3 installl pipenv
 pip install --upgrade pip
 brew services start mongodb-community 
 mongo --version 
-
-echo "running wget.sh"
-./wget.sh
-
-echo "running composer.sh"
-./composer.sh
-
-echo "running ansible playbook"
-ansible-playbook -u lukehowsam -K -K --ask-pass -vvv index.yml
-
-cp -r dotfiles/.ssh /Users/lukehowsam/.ssh 
-cp -r dotfiles/.zshrc /Users/lukehowsam/.zshrc
-cp -r dotfiles/.gitignore_global /Users/lukehowsam/.gitignore_global
 
 echo "Do you have VS code installed ? (y/n)"
 read -r IS_INSTALLED
@@ -333,10 +287,6 @@ if ! $IS_INSTALLED; then
     exit
 fi
 source ~/.zshrc
-cd ..
-./vscode.sh
-./nvm.sh
-cd mac
 echo "Checking for OSX related updates" 
 softwareupdate --all --install --force
 
@@ -366,6 +316,9 @@ done
 # intel power gadget 
 # stealth-mode mac setting   
 # MongoDB Compass 
+# Azure data studio 
+# Table plus
+# wget & composer scripts 
 # Postman 
 # Insomnia 
 # Google Chrome Dev
@@ -373,6 +326,7 @@ done
 # Visual studio 
 # Xcode 
 # malwarebytes
+# xamp
 # beekeeper (DB GUI)
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
