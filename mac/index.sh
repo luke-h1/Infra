@@ -5,9 +5,6 @@ echo "##########################"
 echo ""
 echo "" 
 echo "By luke-h1" 
-echo ""
-echo ""
-sleep 1
 echo "follow me on github: https://github.com/luke-h1" 
 sleep 2
 echo "" 
@@ -54,18 +51,20 @@ ssh-keygen
 brew update 
 brew upgrade 
 brew install ansible python3 curl wget mysql mongodb-community node 
-
-
 sudo easy_install pip 
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+pip3 install docutils
+pip3 installl pipenv
+pip install --upgrade pip
+brew services start mongodb-community 
+mongo --version 
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 nvm install stable
 brew update  
 brew upgrade node 
-sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config # put your username here 
-
+sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
 
 # GITHUB CONFIGURATION
-
 echo "Configuring github information globally"
 echo ""
 echo ""
@@ -265,17 +264,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-sudo easy_install pip
-pip3 install robotframework
-pip install --upgrade robotframework-selenium2library
-pip3 install docutils
-pip3 installl pipenv
-pip install --upgrade pip
-brew services start mongodb-community 
-mongo --version 
-
 echo "Do you have VS code installed ? (y/n)"
 read -r IS_INSTALLED
 if [[ $IS_INSTALLED =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -309,6 +297,20 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done 
+./wget.sh 
+./composer.sh
+cp -r ./dotfiles/* /Users/lukehowsam
+SHOULD_INSTALL=false
+echo "Do you have vscode installed and the 'code' command in your path? (in order to install extensions)"
+read -r VSCODE_INPUT 
+if [[ $VSCODE_INPUT =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    SHOULD_INSTALL=true
+fi
+if ! $VSCODE_INPUT; then 
+    echo "Ok not installing extensions"
+    exit 
+fi 
+./vscode.sh
 #--------------------
 # Install manually: 
 # macs fan control
@@ -318,7 +320,6 @@ done
 # MongoDB Compass 
 # Azure data studio 
 # Table plus
-# wget & composer scripts 
 # Postman 
 # Insomnia 
 # Google Chrome Dev
@@ -326,7 +327,6 @@ done
 # Visual studio 
 # Xcode 
 # malwarebytes
-# xamp
 # beekeeper (DB GUI)
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/

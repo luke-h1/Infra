@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    container_name: sqlserver
+    image: 'mcr.microsoft.com/mssql/server:latest'
+    restart: always 
+    ports:
+      - 1433:1433 
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=mypassword12345
+    volumes:
+      - .dbdata:/var/lib/sqlserver

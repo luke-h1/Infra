@@ -3,11 +3,6 @@
   remote_user: lukehowsam
   tasks:
     - homebrew:
-        name: stress
-      tags:
-        - tools
-
-    - homebrew:
         name: youtube-dl
       tags:
         - config
@@ -44,11 +39,6 @@
 
     - homebrew:
         name: node
-      tags:
-        - Tools
-
-    - homebrew:
-        name: nmap
       tags:
         - Tools
 
@@ -124,11 +114,6 @@
 
     - homebrew:
         name: gnutls
-      tags:
-        - Tools
-
-    - homebrew:
-        name: certbot
       tags:
         - Tools
 
@@ -256,27 +241,6 @@
         global: yes
       tags:
         - npm
-
-    - name: Install "netlify-cli" node.js package globally 
-      npm: 
-        name: netlify-cli 
-        global: yes 
-      tags: 
-        - Deployment 
-
-    - name: Install "gatsby-cli" node.js package globally 
-      npm: 
-        name: gatsby-cli
-        global: yes 
-      tags: 
-        - npm 
-
-    - name: Install "pa11y" node.js package globally 
-      npm: 
-        name: pa11y 
-        global: yes 
-      tags: 
-        - npm 
 
     - name: Install "typeorm" node.js package globally 
       npm: 
