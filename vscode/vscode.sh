@@ -52,3 +52,4 @@ code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode.vscode-node-azure-pack
 code --install-extension eg2.vscode-npm-script
+code --install-extension sanity-io.vscode-sanity
