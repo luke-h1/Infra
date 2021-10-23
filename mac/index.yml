@@ -5,177 +5,177 @@
     - homebrew:
         name: youtube-dl
       tags:
-        - config
+        - tag
 
     - homebrew:
         name: php
       tags:
-        - development
+        - tag
 
     - homebrew:
         name: bash
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: htop
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: vim
       tags:
-        - editors
+        - tag
 
     - homebrew:
         name: tmux
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: screen
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: node
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: zsh
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: zsh-completions
       tags:
-        - Tools
+        - tag
   
     - homebrew:
         name: zsh-syntax-highlighting
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: zsh-git-prompt
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: iproute2mac
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: watch
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: coreutils
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: openssl
       tags:
-        - Tools
+        - tag
 
     - homebrew:
-        name: pkg-config
+        name: pkg-tag
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: cmake
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: readline
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: pipenv
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: tree
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: ack
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: gnutls
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: gnu-sed
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: findutils
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: gnu-tar
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: openssh
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: pstree
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: grep
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: brew-cask-completion
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: moreutils
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: docker-completion
       tags:
-        - Containers
+        - tag
 
     - homebrew:
         name: findutils
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: gnu-which
       tags:
-        - Tools
+        - tag
 
     - homebrew:
         name: yarn
       tags:
-        - Tools
+        - tag
 
     - name: Create dev directory
       file:
@@ -183,7 +183,7 @@
         state: directory
         mode: '0755'
       tags:
-        - config
+        - tag
 
     - name: Create srv/dev directory
       file:
@@ -191,60 +191,60 @@
         state: directory
         mode: '0755'
       tags:
-        - config
+        - tag
 
     - name: Install "expo-cli" node.js package globally.
       npm:
         name: expo-cli
         global: yes
       tags:
-        - npm
+        - tag
 
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
         global: yes
       tags:
-        - npm
+        - tag
 
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server
         global: yes
       tags:
-        - npm
+        - tag
 
     - name: Install "sql-cli" node.js package globally.
       npm:
         name: sql-cli
         global: yes
       tags:
-        - npm
+        - tag
 
     - name: Install "ncu" node.js package globally.
       npm:
         name: npm-check-updates
         global: yes
       tags:
-        - npm
+        - tag
         
     - name: Install "typescript" node.js package globally.
       npm:
         name: typescript
         global: yes
       tags:
-        - npm
+        - tag
 
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
         global: yes
       tags:
-        - npm
+        - tag
 
     - name: Install "typeorm" node.js package globally 
       npm: 
         name: typeorm 
         global: yes 
       tags: 
-        - npm 
+        - tag
