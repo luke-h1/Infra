@@ -39,12 +39,10 @@ sudo apt-get install -y curl
 sudo apt-get install -y git 
 sudo apt install software-properties-common apt-transport-https wget -y
 sudo apt install -y openvpn dialog python3-pip python3-setuptools
-sudo pip3 install protonvpn-cli
 sudo apt-get install -y snap
-sudo snap install --classic heroku
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
 sudo apt-get install ansible -y 
-sudo apt-get install -y zsh 
+sudo apt-get install -y zsh
 echo $SHELL 
 chsh -s ${which zsh}
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -59,7 +57,6 @@ sudo ufw enable
 sudo apt-get update -y 
 sudo apt-get upgrade -y 
 sudo apt-get install nodejs -y 
-nodejs -v >> /users/lukehowsam/node-log.txt
 sudo apt-get install npm -y 
 echo "configuring github"
 echo "enter your github username:"
@@ -207,6 +204,6 @@ sudo apt remove -y nautilus \
 
 
 sudo snap install --classic code
-sudo npm i -g nodemon netlify-cli gatsby-cli artillery typescript expo-cli lite-server vercel react-native-cli postgresql pa11y typeorm typescript ncu 
+sudo npm i -g nodemon artillery typescript lite-server vercel react-native-cli postgresql typescript 
 source ~/.zshrc 
 sudo reboot now
