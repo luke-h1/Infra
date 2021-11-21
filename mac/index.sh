@@ -142,6 +142,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
 
+# Disable the sound effects on boot
+# thanks github.com/kentcdodds
+sudo nvram SystemAudioVolume=" "
+
 # SHOW MOUNTED VOLUMES ON DESKTOP
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
