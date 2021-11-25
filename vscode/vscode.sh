@@ -9,9 +9,7 @@ code --install-extension christian-kohler.path-intellisense
 code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension zignd.html-css-class-completion
 code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension octref.vetur
 code --install-extension donjayamanne.githistory
-code --install-extension vuetifyjs.vuetify-vscode
 code --install-extension burkeholland.simple-react-snippets
 code --install-extension equimper.react-native-react-redux
 code --install-extension igorming.useful-react-snippets
@@ -19,17 +17,12 @@ code --install-extension formulahendry.auto-rename-tag
 code --install-extension mikestead.dotenv
 code --install-extension vivainio.robotframework
 code --install-extension keith.robotframework
-code --install-extension be5invis.toml
-code --install-extension tamasfe.even-better-toml
-code --install-extension bodil.prettier-toml
-code --install-extension donjayamanne.python-extension-pack
 code --install-extension ms-python.python
 code --install-extension jpoissonnier.vscode-styled-components
 code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
-code --install-extension formulahendry.docker-extension-pack
 code --install-extension sibiraj-s.vscode-scss-formatter
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
@@ -49,8 +42,6 @@ code --install-extension ecmel.vscode-html-css
 code --install-extension eamodio.gitlens
 code --install-extension felixfbecker.php-pack
 code --install-extension bmewburn.vscode-intelephense-client
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-vscode.vscode-node-azure-pack
 code --install-extension eg2.vscode-npm-script
 code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
