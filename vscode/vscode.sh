@@ -45,3 +45,5 @@ code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension eg2.vscode-npm-script
 code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
+code --install-extension github.vscode-pull-request-github
+code --install-extension github.copilot
