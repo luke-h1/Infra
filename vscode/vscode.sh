@@ -6,7 +6,6 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension wix.vscode-import-cost
 code --install-extension christian-kohler.path-intellisense
-code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension zignd.html-css-class-completion
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension donjayamanne.githistory
@@ -19,7 +18,6 @@ code --install-extension vivainio.robotframework
 code --install-extension keith.robotframework
 code --install-extension ms-python.python
 code --install-extension jpoissonnier.vscode-styled-components
-code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
@@ -46,4 +44,3 @@ code --install-extension eg2.vscode-npm-script
 code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
-code --install-extension github.copilot
