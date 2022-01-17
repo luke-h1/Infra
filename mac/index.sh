@@ -318,12 +318,8 @@ fi
 #--------------------
 # Install manually: 
 # macs fan control
-# Adobe XD 
 # intel power gadget 
 # stealth-mode mac setting   
-# MongoDB Compass 
-# Azure data studio 
-# Table plus
 # Postman 
 # Insomnia 
 # Google Chrome Dev
@@ -331,11 +327,15 @@ fi
 # Visual studio 
 # Xcode 
 # malwarebytes
-# beekeeper (DB GUI)
+# beekeeper
+# OBS 
+# Amphetamine 
+# Spectacle 
+# Android studio
+# expo 
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
-# dotnet sdk (https://docs.microsoft.com/en-us/dotnet/core/install/macos)
-# dotnet ef (dotnet tool install -g dotnet-ef)
+# 
 #--------------------
 echo "asking for sudo permission to reboot"
 sudo reboot now 
