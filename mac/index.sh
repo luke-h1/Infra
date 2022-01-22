@@ -301,25 +301,14 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done 
-./wget.sh 
-./composer.sh
-cp -r ./dotfiles/* /Users/lukehowsam
-SHOULD_INSTALL=false
-echo "Do you have vscode installed and the 'code' command in your path? (in order to install extensions)"
-read -r VSCODE_INPUT 
-if [[ $VSCODE_INPUT =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    SHOULD_INSTALL=true
-fi
-if ! $VSCODE_INPUT; then 
-    echo "Ok not installing extensions"
-    exit 
-fi 
+echo "TODO: copy .ssh confing, .zshrc, install apps listed below & setup Android studio default android emulators"
 #--------------------
-# Install manually: 
+# Manual Install: 
 # macs fan control
 # intel power gadget 
 # stealth-mode mac setting   
 # Postman 
+# Android studio
 # Insomnia 
 # Google Chrome Dev
 # PIA client 
@@ -330,7 +319,6 @@ fi
 # OBS 
 # Amphetamine 
 # Spectacle 
-# Android studio
 # expo 
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
