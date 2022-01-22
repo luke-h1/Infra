@@ -314,7 +314,6 @@ if ! $VSCODE_INPUT; then
     echo "Ok not installing extensions"
     exit 
 fi 
-./vscode.sh
 #--------------------
 # Install manually: 
 # macs fan control
@@ -335,7 +334,6 @@ fi
 # expo 
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
-# 
 #--------------------
 echo "asking for sudo permission to reboot"
 sudo reboot now 
