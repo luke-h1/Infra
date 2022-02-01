@@ -2,8 +2,6 @@
 
 <br />
 
-[![CI](https://github.com/luke-h1/Automation/actions/workflows/lint.yml/badge.svg)](https://github.com/luke-h1/Automation/actions/workflows/lint.yml)
-
 ## Project Structure: 
   * Each directory generally consists of a playbook and a bash script. These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
   
