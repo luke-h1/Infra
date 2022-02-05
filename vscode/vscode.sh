@@ -46,4 +46,4 @@ code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
 code --install-extension batisteo.vscode-django
 code --install-extension samuelcolvin.jinjahtml
-code --install-extension tabnine.tabnine-vscode
+code --install-extension fwcd.kotlin
