@@ -4,247 +4,201 @@
   tasks:
     - homebrew:
         name: youtube-dl
-      tags:
-        - config
+
 
     - homebrew:
         name: php
-      tags:
-        - development
+
 
     - homebrew:
         name: bash
-      tags:
-        - Tools
+
 
     - homebrew:
         name: htop
-      tags:
-        - Tools
+
 
     - homebrew:
         name: vim
-      tags:
-        - editors
+
 
     - homebrew:
         name: tmux
-      tags:
-        - Tools
+
 
     - homebrew:
         name: screen
-      tags:
-        - Tools
+
 
     - homebrew:
         name: node
-      tags:
-        - Tools
+
 
     - homebrew:
         name: zsh
-      tags:
-        - Tools
+
 
     - homebrew:
         name: zsh-completions
-      tags:
-        - Tools
+
   
     - homebrew:
         name: zsh-syntax-highlighting
-      tags:
-        - Tools
+
 
     - homebrew:
         name: zsh-git-prompt
-      tags:
-        - Tools
+
 
     - homebrew:
         name: iproute2mac
-      tags:
-        - Tools
+
 
     - homebrew:
         name: watch
-      tags:
-        - Tools
+
 
     - homebrew:
         name: coreutils
-      tags:
-        - Tools
+
 
     - homebrew:
         name: openssl
-      tags:
-        - Tools
+
 
     - homebrew:
-        name: pkg-config
-      tags:
-        - Tools
+        name: pkg-tag
+
 
     - homebrew:
         name: cmake
-      tags:
-        - Tools
+
 
     - homebrew:
         name: readline
-      tags:
-        - Tools
+
 
     - homebrew:
         name: pipenv
-      tags:
-        - Tools
+
 
     - homebrew:
         name: tree
-      tags:
-        - Tools
+
 
     - homebrew:
         name: ack
-      tags:
-        - Tools
+
 
     - homebrew:
         name: gnutls
-      tags:
-        - Tools
+
 
     - homebrew:
         name: gnu-sed
-      tags:
-        - Tools
+
 
     - homebrew:
         name: findutils
-      tags:
-        - Tools
+
 
     - homebrew:
         name: gnu-tar
-      tags:
-        - Tools
+
 
     - homebrew:
         name: openssh
-      tags:
-        - Tools
+
 
     - homebrew:
         name: pstree
-      tags:
-        - Tools
+
 
     - homebrew:
         name: grep
-      tags:
-        - Tools
+
 
     - homebrew:
         name: brew-cask-completion
-      tags:
-        - Tools
+
 
     - homebrew:
         name: moreutils
-      tags:
-        - Tools
+
 
     - homebrew:
         name: docker-completion
-      tags:
-        - Containers
+
 
     - homebrew:
         name: findutils
-      tags:
-        - Tools
+
 
     - homebrew:
         name: gnu-which
-      tags:
-        - Tools
+
 
     - homebrew:
         name: yarn
-      tags:
-        - Tools
+
 
     - name: Create dev directory
       file:
         path: /Users/lukehowsam/srv
         state: directory
         mode: '0755'
-      tags:
-        - config
+
 
     - name: Create srv/dev directory
       file:
         path: /Users/lukehowsam/srv/dev
         state: directory
         mode: '0755'
-      tags:
-        - config
+
 
     - name: Install "expo-cli" node.js package globally.
       npm:
         name: expo-cli
         global: yes
-      tags:
-        - npm
+
 
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
         global: yes
-      tags:
-        - npm
+
 
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server
         global: yes
-      tags:
-        - npm
+
 
     - name: Install "sql-cli" node.js package globally.
       npm:
         name: sql-cli
         global: yes
-      tags:
-        - npm
+
 
     - name: Install "ncu" node.js package globally.
       npm:
         name: npm-check-updates
         global: yes
-      tags:
-        - npm
+
         
     - name: Install "typescript" node.js package globally.
       npm:
         name: typescript
         global: yes
-      tags:
-        - npm
+
 
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
         global: yes
-      tags:
-        - npm
+
 
     - name: Install "typeorm" node.js package globally 
       npm: 
         name: typeorm 
         global: yes 
-      tags: 
-        - npm 

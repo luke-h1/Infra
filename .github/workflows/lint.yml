@@ -1,4 +1,4 @@
-name: CI
+name: CI / lint
 
 on:
   push:
@@ -19,6 +19,5 @@ jobs:
       - name: ansible-lint
         uses: luke-h1/action-ansiblelint@v1
         with:
-          # github_token: ${{ secrets.github_token }}
           reporter: github-pr-review 
           ansiblelint_flags: '-x 303,701,601,206,602,403,301,502,306,208,201 -v'

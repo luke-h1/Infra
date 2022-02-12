@@ -142,6 +142,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write com.apple.Finder AppleShowAllFiles -bool true
 fi
 
+# Disable the sound effects on boot
+# thanks github.com/kentcdodds
+sudo nvram SystemAudioVolume=" "
+
 # SHOW MOUNTED VOLUMES ON DESKTOP
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
@@ -297,41 +301,27 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done 
-./wget.sh 
-./composer.sh
-cp -r ./dotfiles/* /Users/lukehowsam
-SHOULD_INSTALL=false
-echo "Do you have vscode installed and the 'code' command in your path? (in order to install extensions)"
-read -r VSCODE_INPUT 
-if [[ $VSCODE_INPUT =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    SHOULD_INSTALL=true
-fi
-if ! $VSCODE_INPUT; then 
-    echo "Ok not installing extensions"
-    exit 
-fi 
-./vscode.sh
+echo "TODO: copy .ssh confing, .zshrc, install apps listed below & setup Android studio default android emulators"
 #--------------------
-# Install manually: 
+# Manual Install: 
 # macs fan control
-# Adobe XD 
 # intel power gadget 
 # stealth-mode mac setting   
-# MongoDB Compass 
-# Azure data studio 
-# Table plus
 # Postman 
+# Android studio
 # Insomnia 
 # Google Chrome Dev
 # PIA client 
 # Visual studio 
 # Xcode 
 # malwarebytes
-# beekeeper (DB GUI)
+# beekeeper
+# OBS 
+# Amphetamine 
+# Spectacle 
+# expo 
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
-# dotnet sdk (https://docs.microsoft.com/en-us/dotnet/core/install/macos)
-# dotnet ef (dotnet tool install -g dotnet-ef)
 #--------------------
 echo "asking for sudo permission to reboot"
 sudo reboot now 
