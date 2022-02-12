@@ -4,247 +4,201 @@
   tasks:
     - homebrew:
         name: youtube-dl
-      tags:
-        - tag
+
 
     - homebrew:
         name: php
-      tags:
-        - tag
+
 
     - homebrew:
         name: bash
-      tags:
-        - tag
+
 
     - homebrew:
         name: htop
-      tags:
-        - tag
+
 
     - homebrew:
         name: vim
-      tags:
-        - tag
+
 
     - homebrew:
         name: tmux
-      tags:
-        - tag
+
 
     - homebrew:
         name: screen
-      tags:
-        - tag
+
 
     - homebrew:
         name: node
-      tags:
-        - tag
+
 
     - homebrew:
         name: zsh
-      tags:
-        - tag
+
 
     - homebrew:
         name: zsh-completions
-      tags:
-        - tag
+
   
     - homebrew:
         name: zsh-syntax-highlighting
-      tags:
-        - tag
+
 
     - homebrew:
         name: zsh-git-prompt
-      tags:
-        - tag
+
 
     - homebrew:
         name: iproute2mac
-      tags:
-        - tag
+
 
     - homebrew:
         name: watch
-      tags:
-        - tag
+
 
     - homebrew:
         name: coreutils
-      tags:
-        - tag
+
 
     - homebrew:
         name: openssl
-      tags:
-        - tag
+
 
     - homebrew:
         name: pkg-tag
-      tags:
-        - tag
+
 
     - homebrew:
         name: cmake
-      tags:
-        - tag
+
 
     - homebrew:
         name: readline
-      tags:
-        - tag
+
 
     - homebrew:
         name: pipenv
-      tags:
-        - tag
+
 
     - homebrew:
         name: tree
-      tags:
-        - tag
+
 
     - homebrew:
         name: ack
-      tags:
-        - tag
+
 
     - homebrew:
         name: gnutls
-      tags:
-        - tag
+
 
     - homebrew:
         name: gnu-sed
-      tags:
-        - tag
+
 
     - homebrew:
         name: findutils
-      tags:
-        - tag
+
 
     - homebrew:
         name: gnu-tar
-      tags:
-        - tag
+
 
     - homebrew:
         name: openssh
-      tags:
-        - tag
+
 
     - homebrew:
         name: pstree
-      tags:
-        - tag
+
 
     - homebrew:
         name: grep
-      tags:
-        - tag
+
 
     - homebrew:
         name: brew-cask-completion
-      tags:
-        - tag
+
 
     - homebrew:
         name: moreutils
-      tags:
-        - tag
+
 
     - homebrew:
         name: docker-completion
-      tags:
-        - tag
+
 
     - homebrew:
         name: findutils
-      tags:
-        - tag
+
 
     - homebrew:
         name: gnu-which
-      tags:
-        - tag
+
 
     - homebrew:
         name: yarn
-      tags:
-        - tag
+
 
     - name: Create dev directory
       file:
         path: /Users/lukehowsam/srv
         state: directory
         mode: '0755'
-      tags:
-        - tag
+
 
     - name: Create srv/dev directory
       file:
         path: /Users/lukehowsam/srv/dev
         state: directory
         mode: '0755'
-      tags:
-        - tag
+
 
     - name: Install "expo-cli" node.js package globally.
       npm:
         name: expo-cli
         global: yes
-      tags:
-        - tag
+
 
     - name: Install "vercel" node.js package globally.
       npm:
         name: vercel
         global: yes
-      tags:
-        - tag
+
 
     - name: Install "lite-server" node.js package globally.
       npm:
         name: lite-server
         global: yes
-      tags:
-        - tag
+
 
     - name: Install "sql-cli" node.js package globally.
       npm:
         name: sql-cli
         global: yes
-      tags:
-        - tag
+
 
     - name: Install "ncu" node.js package globally.
       npm:
         name: npm-check-updates
         global: yes
-      tags:
-        - tag
+
         
     - name: Install "typescript" node.js package globally.
       npm:
         name: typescript
         global: yes
-      tags:
-        - tag
+
 
     - name: Install "nodemon" node.js package globally.
       npm:
         name: nodemon
         global: yes
-      tags:
-        - tag
+
 
     - name: Install "typeorm" node.js package globally 
       npm: 
         name: typeorm 
         global: yes 
-      tags: 
-        - tag
