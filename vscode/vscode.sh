@@ -45,6 +45,4 @@ code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
 code --install-extension batisteo.vscode-django
-code --install-extension samuelcolvin.jinjahtml
-code --install-extension fwcd.kotlin
-streetsidesoftware.code-spell-checker
+code --install-extension streetsidesoftware.code-spell-checker
