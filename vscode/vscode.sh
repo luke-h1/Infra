@@ -18,6 +18,7 @@ code --install-extension vivainio.robotframework
 code --install-extension keith.robotframework
 code --install-extension ms-python.python
 code --install-extension jpoissonnier.vscode-styled-components
+code --install-extension styled-components.vscode-styled-components
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
