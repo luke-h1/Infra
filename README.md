@@ -1,10 +1,6 @@
 # Automation
 
 
-## Project Structure: 
-  * Each directory generally consists of a playbook and a bash script. These playbooks & bash scripts are very opinionated and if you intend to run these on your machine it is very advisable to edit to your own needs / preference. 
-  
-
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
 1. Fork it 
