@@ -48,21 +48,7 @@ if ! $GEN_KEY; then
 fi
 ssh-keygen
 
-brew update 
-brew upgrade 
-brew install ansible python3 curl wget mysql mongodb-community node 
-sudo easy_install pip 
-curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-pip3 install docutils
-pip3 installl pipenv
-pip install --upgrade pip
-brew services start mongodb-community 
-mongo --version 
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
-nvm install stable
-brew update  
-brew upgrade node 
-sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
+
 
 # GITHUB CONFIGURATION
 echo "Configuring github information globally"
@@ -310,16 +296,16 @@ echo "TODO: copy .ssh confing, .zshrc, install apps listed below & setup Android
 # Postman 
 # Android studio
 # Insomnia 
-# Google Chrome Dev
+# Firefox
 # PIA client 
 # Visual studio 
 # Xcode 
 # malwarebytes
 # beekeeper
 # OBS 
-# Amphetamine 
-# Spectacle 
-# expo 
+# Amphetamine
+# Spectacle
+# expo
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
 #--------------------
