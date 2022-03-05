@@ -1,6 +1,6 @@
 # Automation
 
-Dotfiles & setup scripts that I use to setup development & deployment environments
+Dotfiles & scripts that I use to setup development & deployment environments
 
 
 ## Contributing
