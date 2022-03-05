@@ -18,6 +18,7 @@ code --install-extension vivainio.robotframework
 code --install-extension keith.robotframework
 code --install-extension ms-python.python
 code --install-extension jpoissonnier.vscode-styled-components
+code --install-extension styled-components.vscode-styled-components
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
@@ -45,6 +46,4 @@ code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
 code --install-extension batisteo.vscode-django
-code --install-extension samuelcolvin.jinjahtml
-code --install-extension fwcd.kotlin
-streetsidesoftware.code-spell-checker
+code --install-extension streetsidesoftware.code-spell-checker
