@@ -1,5 +1,7 @@
 # Automation
 
+Dotfiles & scripts that I use to setup development & deployment environments
+
 
 ## Contributing
 If you want to add your own feature or want to improve this repo feel free to open a pull request detailing your changes
