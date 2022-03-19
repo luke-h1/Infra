@@ -51,3 +51,4 @@ code --install-extension vscjava.vscode-java-pack
 code --install-extension redhat.java
 code --install-extension vscjava.vscode-gradle
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension idleberg.applescript
