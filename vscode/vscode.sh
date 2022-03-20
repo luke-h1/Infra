@@ -47,3 +47,8 @@ code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
 code --install-extension batisteo.vscode-django
 code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension vscjava.vscode-java-pack
+code --install-extension redhat.java
+code --install-extension vscjava.vscode-gradle
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension idleberg.applescript
