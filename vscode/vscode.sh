@@ -1,54 +1,59 @@
 #!/bin/bash
 # install all vs code extensions
 # make sure to have the 'code' command in your PATH 
-code --install-extension christian-kohler.npm-intellisense
-code --install-extension esbenp.prettier-vscode
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension wix.vscode-import-cost
-code --install-extension christian-kohler.path-intellisense
-code --install-extension zignd.html-css-class-completion
-code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension donjayamanne.githistory
-code --install-extension burkeholland.simple-react-snippets
-code --install-extension equimper.react-native-react-redux
-code --install-extension igorming.useful-react-snippets
-code --install-extension formulahendry.auto-rename-tag
-code --install-extension mikestead.dotenv
-code --install-extension vivainio.robotframework
-code --install-extension keith.robotframework
-code --install-extension ms-python.python
-code --install-extension jpoissonnier.vscode-styled-components
-code --install-extension styled-components.vscode-styled-components
-code --install-extension orta.vscode-jest
-code --install-extension andys8.jest-snippets
-code --install-extension bradlc.vscode-tailwindcss
-code --install-extension sibiraj-s.vscode-scss-formatter
-code --install-extension orta.vscode-jest
-code --install-extension andys8.jest-snippets
-code --install-extension stringham.move-ts
-code --install-extension graphql.vscode-graphql
-code --install-extension kumar-harsh.graphql-for-vscode
-code --install-extension pmneo.tsimporter
-code --install-extension golang.go
-code --install-extension msjsdiag.vscode-react-native
-code --install-extension wayou.vscode-todo-highlight
-code --install-extension simonsiefke.svg-preview
-code --install-extension msjsdiag.vscode-react-native
-code --install-extension pranaygp.vscode-css-peek
-code --install-extension kamikillerto.vscode-colorize
-code --install-extension abusaidm.html-snippets
-code --install-extension ecmel.vscode-html-css
-code --install-extension eamodio.gitlens
-code --install-extension felixfbecker.php-pack
-code --install-extension bmewburn.vscode-intelephense-client
-code --install-extension eg2.vscode-npm-script
-code --install-extension sanity-io.vscode-sanity
-code --install-extension knisterpeter.vscode-commitizen
-code --install-extension github.vscode-pull-request-github
-code --install-extension batisteo.vscode-django
-code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension vscjava.vscode-java-pack
-code --install-extension redhat.java
-code --install-extension vscjava.vscode-gradle
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension idleberg.applescript
+
+local EXTENSIONS=(
+  christian-kohler.npm-intellisense
+  esbenp.prettier-vscode
+  dbaeumer.vscode-eslint
+  wix.vscode-import-cost
+  christian-kohler.path-intellisense
+  zignd.html-css-class-completion
+  dsznajder.es7-react-js-snippets
+  donjayamanne.githistory
+  burkeholland.simple-react-snippets
+  equimper.react-native-react-redux
+  igorming.useful-react-snippets
+  formulahendry.auto-rename-tag
+  mikestead.dotenv
+  vivainio.robotframework
+  keith.robotframework
+  ms-python.python
+  jpoissonnier.vscode-styled-components
+  styled-components.vscode-styled-components
+  orta.vscode-jest
+  andys8.jest-snippets
+  bradlc.vscode-tailwindcss
+  sibiraj-s.vscode-scss-formatter
+  orta.vscode-jest
+  andys8.jest-snippets
+  stringham.move-ts
+  graphql.vscode-graphql
+  kumar-harsh.graphql-for-vscode
+  pmneo.tsimporter
+  golang.go
+  msjsdiag.vscode-react-native
+  wayou.vscode-todo-highlight
+  simonsiefke.svg-preview
+  msjsdiag.vscode-react-native
+  pranaygp.vscode-css-peek
+  kamikillerto.vscode-colorize
+  abusaidm.html-snippets
+  ecmel.vscode-html-css
+  eamodio.gitlens
+  felixfbecker.php-pack
+  bmewburn.vscode-intelephense-client
+  eg2.vscode-npm-script
+  sanity-io.vscode-sanity
+  knisterpeter.vscode-commitizen
+  github.vscode-pull-request-github
+  batisteo.vscode-django
+  streetsidesoftware.code-spell-checker
+  vscjava.vscode-java-pack
+  redhat.java
+  vscjava.vscode-gradle
+  ms-kubernetes-tools.vscode-kubernetes-tools
+  idleberg.applescript
+  yzhang.markdown-all-in-one
+)
+code --install-extension $EXTENSIONS

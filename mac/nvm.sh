@@ -19,5 +19,6 @@ source ~/.zshrc
 nvm ls-remote 
 nvm install node 
 nvm install 12
-nvm install 14 
-nvm use 14
+nvm install 14
+nvm install 16
+nvm use 16
