@@ -55,5 +55,6 @@ local EXTENSIONS=(
   ms-kubernetes-tools.vscode-kubernetes-tools
   idleberg.applescript
   yzhang.markdown-all-in-one
+  GitHub.copilot
 )
 code --install-extension $EXTENSIONS
