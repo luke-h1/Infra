@@ -1,27 +1,5 @@
 #!/bin/bash
-echo "##########################"
-echo "Mac Install Script 🔥"
-echo "##########################"
-echo ""
-echo "" 
-echo "By luke-h1" 
-echo "follow me on github: https://github.com/luke-h1" 
-sleep 2
-echo "" 
-echo ""
-echo ""
-echo "###############################################" 
-echo "#        DO NOT RUN THIS SCRIPT BLINDLY       #" 
-echo "#         YOU'LL PROBABLY REGRET IT...        #" 
-echo "#              READ IT THOROUGHLY             #" 
-echo "#         AND EDIT TO SUIT YOUR NEEDS         #" 
-echo "###############################################" 
-echo ""
-echo ""
-echo "" 
-sleep 3
 CONTINUE=false
-echo ""
 echo "Have you read through the script you're about to run and "
 echo "understood that it will make changes to your computer? (y/n) ? "
 read -r response
@@ -33,9 +11,7 @@ if ! $CONTINUE; then
     echo "Please go read the script, it only takes a few minutes"
     exit 5
 fi
-echo ""
-echo ""
-echo ""
+
 echo "Would you like to generate a new ssh key ?"
 read -r ssh_res
 if [[ $ssh_res =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -48,12 +24,8 @@ if ! $GEN_KEY; then
 fi
 ssh-keygen
 
-
-
 # GITHUB CONFIGURATION
 echo "Configuring github information globally"
-echo ""
-echo ""
 echo "Enter your github username:"
 read user 
 git config --global --replace-all user.name "$user" 
@@ -93,20 +65,16 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo scutil --set LocalHostName $HOSTNAME
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
 fi
-echo ""
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
 defaults write com.apple.BezelServices kDimTime -int 300
-echo ""
 echo "Disable display from automatically adjusting brightness? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo defaults write /Library/Preferences/com.apple.iokit.AmbientLightSensor "Automatic Display Enabled" -bool false
 fi
-echo ""
 echo "Where do you want screenshots to be stored? (hit ENTER if you want ~/Desktop as default)"
 # Thanks https://github.com/omgmog
 read screenshot_location
-echo ""
 if [ -z "${screenshot_location}" ]
 then
   # If nothing specified, we default to ~/Desktop
@@ -138,34 +106,33 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
-echo ""
+
 echo "Safari section" 
 # Warn about fraudulent websites
 defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
-echo ""
+
 echo "Privacy: Don't send search queries to Apple"
 defaults write com.apple.Safari UniversalSearchEnabled -bool false
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-echo ""
+
 echo "Hiding Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
-echo ""
+
 echo "Hiding Safari's sidebar in Top Sites"
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
-echo ""
+
 echo "Disabling Safari's thumbnail cache for History and Top Sites"
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
-echo ""
+
 echo "Enabling Safari's debug menu"
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-echo ""
+
 echo "Making Safari's search banners default to Contains instead of Starts With"
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
-echo ""
+
 echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
-echo "" 
-
+ 
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 # UI CONFIG
@@ -310,4 +277,4 @@ echo "TODO: copy .ssh confing, .zshrc, install apps listed below & setup Android
 # go https://golang.org/dl/
 #--------------------
 echo "asking for sudo permission to reboot"
-sudo reboot now 
+sudo reboot now
