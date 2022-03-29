@@ -1,0 +1,59 @@
+version: '3.9'
+services:
+  db:
+    image: postgres
+    restart: always
+    networks:
+      - backend
+    volumes:
+      - ./.db-data:/var/lib/postgresql/data
+      # - ./app/config/init.sql:/docker-entrypoint-initdb.d/10-init.sql
+    env_file:
+      - ./src/config/.env
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-q",
+          "-d",
+          "devdb",
+          "-U",
+          "dev"
+        ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+
+  cache:
+    image: redis
+    container_name: redis
+    healthcheck:
+      test: [ "CMD-SHELL", "redis-cli ping | grep PONG" ]
+      interval: 1s
+      timeout: 3s
+      retries: 5
+    command: >
+      --requirepass test
+    volumes:
+      - ./.redis:/var/lib/redis/data
+    ports:
+      - "6379"
+    env_file:
+      - ./src/config/.env
+
+  backend:
+    build: .
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+
+networks:
+    backend:
+        driver: bridge

@@ -1,6 +1,7 @@
 #!/bin/bash
 # install all vs code extensions
 # make sure to have the 'code' command in your PATH 
+
 code --install-extension christian-kohler.npm-intellisense
 code --install-extension esbenp.prettier-vscode
 code --install-extension dbaeumer.vscode-eslint
@@ -52,3 +53,5 @@ code --install-extension redhat.java
 code --install-extension vscjava.vscode-gradle
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension idleberg.applescript
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension GitHub.copilot
