@@ -55,3 +55,5 @@ code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension idleberg.applescript
 code --install-extension yzhang.markdown-all-in-one
 code --install-extension GitHub.copilot
+code --install-extension mathiasfrohlich.Kotlin
+code --install-extension formulahendry.code-runner
