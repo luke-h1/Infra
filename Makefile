@@ -2,7 +2,7 @@ default: help
 
 .PHONY: help
 help:
-## help: This helpful list of commands
+## help: Print help message
 	@echo "Usage: \n"
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' | sed -e 's/^/-/'
 
