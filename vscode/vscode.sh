@@ -18,10 +18,7 @@ code --install-extension mikestead.dotenv
 code --install-extension vivainio.robotframework
 code --install-extension keith.robotframework
 code --install-extension ms-python.python
-code --install-extension jpoissonnier.vscode-styled-components
 code --install-extension styled-components.vscode-styled-components
-code --install-extension orta.vscode-jest
-code --install-extension andys8.jest-snippets
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension sibiraj-s.vscode-scss-formatter
 code --install-extension orta.vscode-jest
@@ -48,12 +45,4 @@ code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
 code --install-extension batisteo.vscode-django
 code --install-extension streetsidesoftware.code-spell-checker
-code --install-extension vscjava.vscode-java-pack
-code --install-extension redhat.java
-code --install-extension vscjava.vscode-gradle
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension idleberg.applescript
-code --install-extension yzhang.markdown-all-in-one
 code --install-extension GitHub.copilot
-code --install-extension mathiasfrohlich.Kotlin
-code --install-extension formulahendry.code-runner
