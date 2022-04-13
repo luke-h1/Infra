@@ -57,3 +57,4 @@ code --install-extension yzhang.markdown-all-in-one
 code --install-extension GitHub.copilot
 code --install-extension mathiasfrohlich.Kotlin
 code --install-extension formulahendry.code-runner
+code --install-extension Prisma.prisma
