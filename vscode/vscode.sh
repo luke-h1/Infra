@@ -23,10 +23,8 @@ code --install-extension bradlc.vscode-tailwindcss
 code --install-extension sibiraj-s.vscode-scss-formatter
 code --install-extension orta.vscode-jest
 code --install-extension andys8.jest-snippets
-code --install-extension stringham.move-ts
 code --install-extension graphql.vscode-graphql
 code --install-extension kumar-harsh.graphql-for-vscode
-code --install-extension pmneo.tsimporter
 code --install-extension golang.go
 code --install-extension msjsdiag.vscode-react-native
 code --install-extension wayou.vscode-todo-highlight
@@ -43,7 +41,5 @@ code --install-extension eg2.vscode-npm-script
 code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
-code --install-extension batisteo.vscode-django
-code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension GitHub.copilot
 code --install-extension Prisma.prisma
