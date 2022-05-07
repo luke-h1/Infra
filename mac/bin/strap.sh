@@ -5,8 +5,13 @@ set -e
 [[ "$1" = "--debug" || -o xtrace ]] && STRAP_DEBUG="1"
 STRAP_SUCCESS=""
 
+# replace with your own values here
 NAME='Luke Howsam'
 EMAIL='luke.howsam@yahoo.com'
+
+STRAP_GIT_NAME='luke-h1'
+STRAP_GIT_EMAIL='luke.howsam@yahoo.com'
+STRAP_GITHUB_USER='luke-h1'
 
 sudo_askpass() {
   if [ -n "$SUDO_ASKPASS" ]; then
@@ -39,7 +44,7 @@ trap "cleanup" EXIT
 
 if [ -n "$STRAP_DEBUG" ]; then
   set -x
-else
+else  
   STRAP_QUIET_FLAG="-q"
   Q="$STRAP_QUIET_FLAG"
 fi
@@ -177,21 +182,6 @@ sudo_refresh() {
   reset_debug
 }
 
-
-
-CONTINUE=false
-echo "Have you read through the script you're about to run and "
-echo "understood that it will make changes to your computer? (y/n) ? "
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    CONTINUE=true
-fi
-
-if ! $CONTINUE; then
-    echo "Please go read the script, it only takes a few minutes"
-    exit 5
-fi
-
 [ "$USER" = "root" ] && abort "Run Strap as yourself, not root."
 groups | grep $Q -E "\b(admin)\b" || abort "Add $USER to the admin group."
 
@@ -212,7 +202,7 @@ sudo_askpass defaults write /Library/Preferences/com.apple.alf globalstate -int 
 sudo_askpass launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist 2>/dev/null
 
 if [ -n "$NAME" ] && [ -n "$EMAIL" ]; then
-  LOGIN_TEXT=$(escape "Found this computer? Please contact $NAME at $EMAIL. (reward for finding this laptop if stolen/lost")
+	LOGIN_TEXT=$(escape "Found this computer? Please contact $NAME at $EMAIL. (reward for finding this laptop if stolen/lost)")
   echo "$LOGIN_TEXT" | grep -q '[()]' && LOGIN_TEXT="'$LOGIN_TEXT'"
   sudo_askpass defaults write /Library/Preferences/com.apple.loginwindow \
     LoginwindowText \
