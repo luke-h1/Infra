@@ -202,7 +202,7 @@ sudo_askpass defaults write /Library/Preferences/com.apple.alf globalstate -int 
 sudo_askpass launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist 2>/dev/null
 
 if [ -n "$NAME" ] && [ -n "$EMAIL" ]; then
-	LOGIN_TEXT=$(escape "Found this computer? Please contact $NAME at $EMAIL. (reward for finding this laptop if stolen/lost)")
+	LOGIN_TEXT=$(escape "Found this computer? Please contact $NAME at $EMAIL.")
   echo "$LOGIN_TEXT" | grep -q '[()]' && LOGIN_TEXT="'$LOGIN_TEXT'"
   sudo_askpass defaults write /Library/Preferences/com.apple.loginwindow \
     LoginwindowText \
