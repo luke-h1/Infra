@@ -13,6 +13,10 @@ STRAP_GIT_NAME='luke-h1'
 STRAP_GIT_EMAIL='luke.howsam@yahoo.com'
 STRAP_GITHUB_USER='luke-h1'
 
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cat $HOME/srv/dev/Automation/mac/dotfiles/.zshrc >> $HOME/.zshrc
+
 sudo_askpass() {
   if [ -n "$SUDO_ASKPASS" ]; then
     sudo --askpass "$@"
@@ -548,19 +552,6 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 fi
 
-echo "Do you have VS code installed ? (y/n)"
-read -r IS_INSTALLED
-if [[ $IS_INSTALLED =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    INSTALL=true
-fi
-
-if ! $IS_INSTALLED; then
-    echo "Ok not installing VS code extensions"
-    exit
-fi
-source ~/.zshrc
-
-
 brew update
 brew upgrade
 brew bundle
@@ -568,11 +559,13 @@ sudo easy_install pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 pip3 installl pipenv
 pip install --upgrade pip
+brew install pyenv
+pyenv install 3.10
+pyenv global 3.10
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 nvm install stable
 brew update
 brew upgrade node 
-mkdir -p /Users/lukhowsam/srv/dev
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
 npm i -g vercel lite-server expo-cli typescript
 
@@ -589,17 +582,6 @@ mkdir /Users/lukehowsam/.nvm
 # add the below to .zshrc if you haven't already
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
-
-source ~/.zshrc
-
-nvm ls-remote 
-nvm install node 
-nvm install 12
-nvm install 14
-nvm install 16
-nvm use 16
-
-
 
 echo "the following command will kill all applications & reboot in order for changes to take effect"
 REBOOT=false
