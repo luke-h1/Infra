@@ -606,22 +606,15 @@ STRAP_SUCCESS="1"
 log "Your system is now Bootstrapped! ✅"
 #--------------------
 # Manual Install: 
-# macs fan control
-# intel power gadget 
+# macs fan control 
 # stealth-mode mac setting   
 # Postman 
-# Android studio
-# Insomnia 
-# Firefox
 # PIA client 
-# Visual studio 
-# Xcode 
 # malwarebytes
 # beekeeper
-# OBS 
+# OBS
 # Amphetamine
 # Spectacle
-# expo
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
 #--------------------
