@@ -560,8 +560,8 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 pip3 installl pipenv
 pip install --upgrade pip
 brew install pyenv
-pyenv install 3.10
-pyenv global 3.10
+pyenv install 3.10.0
+pyenv global 3.10.0
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
 nvm install stable
 brew update
