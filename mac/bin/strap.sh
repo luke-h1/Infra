@@ -12,7 +12,7 @@ EMAIL='luke.howsam@yahoo.com'
 STRAP_GIT_NAME='luke-h1'
 STRAP_GIT_EMAIL='luke.howsam@yahoo.com'
 STRAP_GITHUB_USER='luke-h1'
-
+STRAP_ISSUES_URL='https://github.com/luke-h1/Automation/issues'
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cat $HOME/srv/dev/Automation/mac/dotfiles/.zshrc >> $HOME/.zshrc
