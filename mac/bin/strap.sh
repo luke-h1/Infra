@@ -510,6 +510,17 @@ defaults write com.apple.dock autohide -bool true
 echo "Change Menu bar clock format"
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
 
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+###############################################################################
+# Spectacle.app                                                               #
+###############################################################################
+
+brew install spectacle
+# Set up my preferred keyboard shortcuts
+cp -r ../Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
+
 echo "Wipe all default icons from Dock"
 defaults write com.apple.dock persistent-apps -array
 
