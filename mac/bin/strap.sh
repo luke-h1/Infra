@@ -524,10 +524,10 @@ cp -r ../Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 
 echo "Wipe all default icons from Dock"
 defaults write com.apple.dock persistent-apps -array
 
-echo "Move Dock to right"
+log "Move Dock to right"
 defaults write com.apple.dock orientation right
 
-echo "Do you use Transmission for torrenting? (y/n)"
+log "Do you use Transmission for torrenting? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   mkdir -p ~/Downloads/Incomplete
@@ -594,19 +594,6 @@ mkdir /Users/lukehowsam/.nvm
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
 
-echo "the following command will kill all applications & reboot in order for changes to take effect"
-REBOOT=false
-
-echo "Do you want to kill all applications & reboot in order for changes to take effect ? (y/n)"
-read -r USER_INPUT
-if [[ $USER_INPUT =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    REBOOT=true
-fi
-
-if ! $USER_INPUT; then
-    echo "Ok not rebooting 💻"
-    exit
-fi
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
@@ -629,5 +616,5 @@ log "Your system is now Bootstrapped! ✅"
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
 #--------------------
-echo "asking for sudo permission to reboot"
+log "asking for sudo permission to reboot"
 sudo reboot now
