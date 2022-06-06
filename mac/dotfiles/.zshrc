@@ -3,6 +3,10 @@ export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=${PATH}:/Users/lukehowsam/Library/Python/3.7/bin
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=${PATH}:/Users/lukehowsam/.dotnet/tools
+export HISTFILE=~/.history # location for the history file
+export HISTSIZE=5500000 # save lots of history in memory
+export SAVEHIST=5000000 # save lots of history to disk
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukehowsam/.oh-my-zsh"
