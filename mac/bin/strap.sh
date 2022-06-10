@@ -14,8 +14,6 @@ STRAP_GIT_EMAIL='luke.howsam@yahoo.com'
 STRAP_GITHUB_USER='luke-h1'
 STRAP_ISSUES_URL='https://github.com/luke-h1/Automation/issues'
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cat $HOME/srv/dev/Automation/mac/dotfiles/.zshrc >> $HOME/.zshrc
 
 sudo_askpass() {
   if [ -n "$SUDO_ASKPASS" ]; then
@@ -517,9 +515,6 @@ sudo nvram SystemAudioVolume=" "
 # Spectacle.app                                                               #
 ###############################################################################
 
-brew install spectacle
-# Set up my preferred keyboard shortcuts
-cp -r ../Shortcuts.json ~/Library/Application\ Support/Spectacle/Shortcuts.json 2> /dev/null
 
 echo "Wipe all default icons from Dock"
 defaults write com.apple.dock persistent-apps -array
@@ -527,72 +522,65 @@ defaults write com.apple.dock persistent-apps -array
 log "Move Dock to right"
 defaults write com.apple.dock orientation right
 
-log "Do you use Transmission for torrenting? (y/n)"
-read -r response
-if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
-  mkdir -p ~/Downloads/Incomplete
-  echo "Setting up an incomplete downloads folder in Downloads"
-  defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-  defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
+# mkdir -p ~/Downloads/Incomplete
+# log "Setting up an incomplete downloads folder in Downloads"
+# defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+# defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-  echo "Setting auto-add folder to be Downloads"
-  defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
+# log "Setting auto-add folder to be Downloads"
+# defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
 
-  echo "Don't prompt for confirmation before downloading"
-  defaults write org.m0k.transmission DownloadAsk -bool false
+# log "Don't prompt for confirmation before downloading"
+# defaults write org.m0k.transmission DownloadAsk -bool false
 
-  echo "Trash original torrent files after adding them"
-  defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+# log "Trash original torrent files after adding them"
+# defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
-  echo "Hiding the donate message"
-  defaults write org.m0k.transmission WarningDonate -bool false
+# log "Hiding the donate message"
+# defaults write org.m0k.transmission WarningDonate -bool false
 
-  echo "Hiding the legal disclaimer"
-  defaults write org.m0k.transmission WarningLegal -bool false
+# log "Hiding the legal disclaimer"
+# defaults write org.m0k.transmission WarningLegal -bool false
 
-  echo "Auto-resizing the window to fit transfers"
-  defaults write org.m0k.transmission AutoSize -bool true
+# log "Auto-resizing the window to fit transfers"
+# defaults write org.m0k.transmission AutoSize -bool true
 
-  echo "Auto updating to betas"
-  defaults write org.m0k.transmission AutoUpdateBeta -bool true
+# log "Auto updating to betas"
+# defaults write org.m0k.transmission AutoUpdateBeta -bool true
 
-  echo "Setting up the best block list"
-  defaults write org.m0k.transmission EncryptionRequire -bool true
-  defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-  defaults write org.m0k.transmission BlocklistNew -bool true
-  defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-fi
+# log "Setting up the best block list"
+# defaults write org.m0k.transmission EncryptionRequire -bool true
+# defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+# defaults write org.m0k.transmission BlocklistNew -bool true
+# defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 
 brew update
 brew upgrade
 brew bundle
-sudo easy_install pip 
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-pip3 installl pipenv
+python3 get-pip.py
+pip3 install pipenv
 pip install --upgrade pip
 brew install pyenv
 pyenv install 3.10.0
 pyenv global 3.10.0
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash 
-nvm install stable
-brew update
-brew upgrade node 
-sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
-npm i -g vercel lite-server expo-cli typescript
+# # rm any existing versions of node 
+# brew uninstall --ignore-dependencies node 
+# brew uninstall --force node 
 
-# rm any existing versions of node 
-brew uninstall --ignore-dependencies node 
-brew uninstall --force node 
+# # install nvm
+# brew update && brew install nvm 
 
-# install nvm
-brew update && brew install nvm 
-
-# mkdir nvm in home 
-mkdir /Users/lukehowsam/.nvm 
-
-# add the below to .zshrc if you haven't already
-# export NVM_DIR=~/.nvm
+# # mkdir nvm in home 
+# mkdir /Users/lukehowsam/.nvm 
+# nvm install node
+# nvm install 16
+# nvm use 16
+# echo "export NVM_DIR=~/.nvm" >> /Users/lukehowsam/.zshrc
 # source $(brew --prefix nvm)/nvm.sh
+
+# sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
+# npm i -g vercel lite-server expo-cli typescript
 
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
