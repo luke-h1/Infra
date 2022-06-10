@@ -599,6 +599,7 @@ log "Your system is now Bootstrapped! ✅"
 # malwarebytes
 # beekeeper
 # OBS
+# https://matthewpalmer.net/rocket/
 # Amphetamine
 # Spectacle
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
