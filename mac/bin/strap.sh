@@ -522,37 +522,37 @@ defaults write com.apple.dock persistent-apps -array
 log "Move Dock to right"
 defaults write com.apple.dock orientation right
 
-# mkdir -p ~/Downloads/Incomplete
-# log "Setting up an incomplete downloads folder in Downloads"
-# defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-# defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
+mkdir -p ~/Downloads/Incomplete
+log "Setting up an incomplete downloads folder in Downloads"
+defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-# log "Setting auto-add folder to be Downloads"
-# defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
+log "Setting auto-add folder to be Downloads"
+defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
 
-# log "Don't prompt for confirmation before downloading"
-# defaults write org.m0k.transmission DownloadAsk -bool false
+log "Don't prompt for confirmation before downloading"
+defaults write org.m0k.transmission DownloadAsk -bool false
 
-# log "Trash original torrent files after adding them"
-# defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+log "Trash original torrent files after adding them"
+defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
-# log "Hiding the donate message"
-# defaults write org.m0k.transmission WarningDonate -bool false
+log "Hiding the donate message"
+defaults write org.m0k.transmission WarningDonate -bool false
 
-# log "Hiding the legal disclaimer"
-# defaults write org.m0k.transmission WarningLegal -bool false
+log "Hiding the legal disclaimer"
+defaults write org.m0k.transmission WarningLegal -bool false
 
-# log "Auto-resizing the window to fit transfers"
-# defaults write org.m0k.transmission AutoSize -bool true
+log "Auto-resizing the window to fit transfers"
+defaults write org.m0k.transmission AutoSize -bool true
 
-# log "Auto updating to betas"
-# defaults write org.m0k.transmission AutoUpdateBeta -bool true
+log "Auto updating to betas"
+defaults write org.m0k.transmission AutoUpdateBeta -bool true
 
-# log "Setting up the best block list"
-# defaults write org.m0k.transmission EncryptionRequire -bool true
-# defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-# defaults write org.m0k.transmission BlocklistNew -bool true
-# defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+log "Setting up the best block list"
+defaults write org.m0k.transmission EncryptionRequire -bool true
+defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+defaults write org.m0k.transmission BlocklistNew -bool true
+defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 
 brew update
 brew upgrade
@@ -564,23 +564,23 @@ pip install --upgrade pip
 brew install pyenv
 pyenv install 3.10.0
 pyenv global 3.10.0
-# # rm any existing versions of node 
-# brew uninstall --ignore-dependencies node 
-# brew uninstall --force node 
+# rm any existing versions of node 
+brew uninstall --ignore-dependencies node 
+brew uninstall --force node 
 
-# # install nvm
-# brew update && brew install nvm 
+# install nvm
+brew update && brew install nvm 
 
-# # mkdir nvm in home 
-# mkdir /Users/lukehowsam/.nvm 
-# nvm install node
-# nvm install 16
-# nvm use 16
-# echo "export NVM_DIR=~/.nvm" >> /Users/lukehowsam/.zshrc
-# source $(brew --prefix nvm)/nvm.sh
+# mkdir nvm in home 
+mkdir /Users/lukehowsam/.nvm 
+nvm install node
+nvm install 16
+nvm use 16
+echo "export NVM_DIR=~/.nvm" >> /Users/lukehowsam/.zshrc
+source $(brew --prefix nvm)/nvm.sh
 
-# sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
-# npm i -g vercel lite-server expo-cli typescript
+sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
+npm i -g vercel lite-server expo-cli typescript
 
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
