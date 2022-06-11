@@ -576,12 +576,11 @@ mkdir /Users/lukehowsam/.nvm
 nvm install node
 nvm install 16
 nvm use 16
-echo "export NVM_DIR=~/.nvm" >> /Users/lukehowsam/.zshrc
-source $(brew --prefix nvm)/nvm.sh
-
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
 npm i -g vercel lite-server expo-cli typescript
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
