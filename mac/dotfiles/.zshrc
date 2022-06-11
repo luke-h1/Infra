@@ -168,4 +168,39 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
    
 alias ios="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"
+alias watchos="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator\ \(Watch\).app"# If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
+export PATH=${PATH}:/Users/lukehowsam/Library/Python/3.7/bin
+export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
+export PATH=${PATH}:/Users/lukehowsam/.dotnet/tools
+export ZSH="/Users/lukehowsam/.oh-my-zsh"
+ZSH_THEME="cloud" 
+CASE_SENSITIVE="true"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export PATH="/usr/local/opt/qt/bin:$PATH"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+ZSH_DISABLE_COMPFIX=true
+
+
+
+ENABLE_CORRECTION="true"
+
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+export MANPATH="/usr/local/man:$MANPATH"
+
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+
+alias gwp='git add -A; git commit -am "--wip-- [skip ci]"'
