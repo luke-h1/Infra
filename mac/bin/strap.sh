@@ -591,16 +591,10 @@ STRAP_SUCCESS="1"
 log "Your system is now Bootstrapped! ✅"
 #--------------------
 # Manual Install: 
-# macs fan control 
-# stealth-mode mac setting   
-# Postman 
-# PIA client 
-# malwarebytes
-# beekeeper
-# OBS
-# https://matthewpalmer.net/rocket/
+# macs fan control
+# stealth-mode mac setting
+# PIA client
 # Amphetamine
-# Spectacle
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
 #--------------------
