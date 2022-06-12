@@ -553,7 +553,6 @@ defaults write org.m0k.transmission EncryptionRequire -bool true
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
-
 brew update
 brew upgrade
 brew bundle
@@ -564,18 +563,12 @@ pip install --upgrade pip
 brew install pyenv
 pyenv install 3.10.0
 pyenv global 3.10.0
-# rm any existing versions of node 
-brew uninstall --ignore-dependencies node 
-brew uninstall --force node 
-
-# install nvm
 brew update && brew install nvm 
-
-# mkdir nvm in home 
 mkdir /Users/lukehowsam/.nvm 
 nvm install node
-nvm install 16
-nvm use 16
+nvm install 16.14.2
+nvm alias default 16.14.2
+nvm use 16.14.2
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
 npm i -g vercel lite-server expo-cli typescript
 
@@ -598,5 +591,9 @@ log "Your system is now Bootstrapped! ✅"
 # aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
 # go https://golang.org/dl/
 #--------------------
+cat << EOF >> ~/.zprofile
+# Add Visual Studio Code (code)
+export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+EOF
 log "asking for sudo permission to reboot"
 sudo reboot now
