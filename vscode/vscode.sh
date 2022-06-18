@@ -43,3 +43,5 @@ code --install-extension knisterpeter.vscode-commitizen
 code --install-extension github.vscode-pull-request-github
 code --install-extension GitHub.copilot
 code --install-extension Prisma.prisma
+code --install-extension silvenon.mdx
+code --install-extension xyc.vscode-mdx-preview
