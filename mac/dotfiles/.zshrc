@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+ZSH_DISABLE_COMPFIX="true"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=${PATH}:/Users/lukehowsam/Library/Python/3.7/bin
@@ -19,7 +20,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-ZSH_DISABLE_COMPFIX=true
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ENABLE_CORRECTION="true"
 
