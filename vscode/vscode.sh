@@ -29,4 +29,4 @@ code --install-extension sanity-io.vscode-sanity
 code --install-extension knisterpeter.vscode-commitizen
 code --install-extension GitHub.copilot
 code --install-extension Prisma.prisma
-code --install-extension d-biehl.robotcode
+code --install-extension TomiTurtiainen.rf-intellisense
