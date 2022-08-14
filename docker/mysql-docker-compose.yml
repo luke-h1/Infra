@@ -2,27 +2,15 @@ version: '3.9'
 services:
   db:
     container_name: mysql
-    image: mysql:5.7.22
+    image: mysql:latest
     restart: always
     environment:
-      MYSQL_DATABASE: dbname
-      MYSQL_USER: root
+      MYSQL_DATABASE: root
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_TCP_PORT: 9500
     volumes:
       - .dbdata:/var/lib/mysql
     ports:
-      - 9500:9500
-    expose: 
-      - 9500
-
-  redis:
-    image: redis:latest
-    restart: always
-    command: --port 7600
+      - 3306:3306
     expose:
-      - "6380"
-
-    ports: 
-      - 7600:7600
+      - 3306
