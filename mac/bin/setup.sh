@@ -2,18 +2,16 @@
 
 set -e
 
-[[ "$1" = "--debug" || -o xtrace ]] && STRAP_DEBUG="1"
-STRAP_SUCCESS=""
+[[ "$1" = "--debug" || -o xtrace ]] && DEBUG="1"
 
-# replace with your own values here
+SUCCESS=""
 NAME='Luke Howsam'
-EMAIL='luke.howsam@yahoo.com'
+EMAIL=''
 
-STRAP_GIT_NAME='luke-h1'
-STRAP_GIT_EMAIL='luke.howsam@yahoo.com'
-STRAP_GITHUB_USER='luke-h1'
-STRAP_ISSUES_URL='https://github.com/luke-h1/Automation/issues'
-
+GIT_NAME='luke-h1'
+GIT_EMAIL=''
+GITHUB_USER='luke-h1'
+ISSUES_URL='https://github.com/luke-h1/Automation/issues'
 
 sudo_askpass() {
   if [ -n "$SUDO_ASKPASS" ]; then
@@ -23,10 +21,10 @@ sudo_askpass() {
   fi
 }
 
-abort() { STRAP_STEP="";   echo "!!! $*" >&2; exit 1; }
-log()   { STRAP_STEP="$*"; sudo_refresh; echo "--> $*"; }
-logn()  { STRAP_STEP="$*"; sudo_refresh; printf -- "--> %s " "$*"; }
-logk()  { STRAP_STEP="";   echo "OK"; }
+abort() { STEP="";   echo "!!! $*" >&2; exit 1; }
+log()   { STEP="$*"; sudo_refresh; echo "--> $*"; }
+logn()  { STEP="$*"; sudo_refresh; printf -- "--> %s " "$*"; }
+logk()  { STEP="";   echo "OK"; }
 escape() {
   printf '%s' "${1//\'/\'}"
 }
@@ -44,30 +42,30 @@ sudo_refresh() {
 
 trap "cleanup" EXIT
 
-if [ -n "$STRAP_DEBUG" ]; then
+if [ -n "$DEBUG" ]; then
   set -x
 else  
-  STRAP_QUIET_FLAG="-q"
-  Q="$STRAP_QUIET_FLAG"
+  QUIET_FLAG="-q"
+  Q="$QUIET_FLAG"
 fi
 
 STDIN_FILE_DESCRIPTOR="0"
-[ -t "$STDIN_FILE_DESCRIPTOR" ] && STRAP_INTERACTIVE="1"
+[ -t "$STDIN_FILE_DESCRIPTOR" ] && INTERACTIVE="1"
 
 cleanup() {
   set +e
   sudo_askpass rm -rf "$CLT_PLACEHOLDER" "$SUDO_ASKPASS" "$SUDO_ASKPASS_DIR"
   sudo --reset-timestamp
-  if [ -z "$STRAP_SUCCESS" ]; then
-    if [ -n "$STRAP_STEP" ]; then
-      echo "!!! $STRAP_STEP FAILED" >&2
+  if [ -z "$SUCCESS" ]; then
+    if [ -n "$STEP" ]; then
+      echo "!!! $STEP FAILED" >&2
     else
       echo "!!! FAILED" >&2
     fi
-    if [ -z "$STRAP_DEBUG" ]; then
+    if [ -z "$DEBUG" ]; then
       echo "!!! Run '$0 --debug' for debugging output." >&2
       echo "!!! If you're stuck: file an issue with debugging output at:" >&2
-      echo "!!!   $STRAP_ISSUES_URL" >&2
+      echo "!!!   $ISSUES_URL" >&2
     fi
   fi
 }
@@ -82,14 +80,14 @@ clear_debug() {
 }
 
 reset_debug() {
-  if [ -n "$STRAP_DEBUG" ]; then
+  if [ -n "$DEBUG" ]; then
     set -x
   fi
 }
 
 # Initialise (or reinitialise) sudo to save unhelpful prompts later.
 sudo_init() {
-  if [ -z "$STRAP_INTERACTIVE" ]; then
+  if [ -z "$INTERACTIVE" ]; then
     return
   fi
 
@@ -133,7 +131,7 @@ BASH
 
 # Initialise (or reinitialise) sudo to save unhelpful prompts later.
 sudo_init() {
-  if [ -z "$STRAP_INTERACTIVE" ]; then
+  if [ -z "$INTERACTIVE" ]; then
     return
   fi
 
@@ -216,9 +214,9 @@ logk
 logn "Checking full-disk encryption status:"
 if fdesetup status | grep $Q -E "FileVault is (On|Off, but will be enabled after the next restart)."; then
   logk
-elif [ -n "$STRAP_CI" ]; then
+elif [ -n "$CI" ]; then
   echo "SKIPPED (for CI)"
-elif [ -n "$STRAP_INTERACTIVE" ]; then
+elif [ -n "$INTERACTIVE" ]; then
   echo
   log "Enabling full-disk encryption on next reboot:"
   sudo_askpass fdesetup enable -user "$USER" \
@@ -247,7 +245,7 @@ then
   sudo_askpass rm -f "$CLT_PLACEHOLDER"
   if ! [ -f "/Library/Developer/CommandLineTools/usr/bin/git" ]
   then
-    if [ -n "$STRAP_INTERACTIVE" ]; then
+    if [ -n "$INTERACTIVE" ]; then
       echo
       logn "Requesting user install of Xcode Command Line Tools:"
       xcode-select --install
@@ -262,7 +260,7 @@ fi
 # Check if the Xcode license is agreed to and agree if not.
 xcode_license() {
   if /usr/bin/xcrun clang 2>&1 | grep $Q license; then
-    if [ -n "$STRAP_INTERACTIVE" ]; then
+    if [ -n "$INTERACTIVE" ]; then
       logn "Asking for Xcode license confirmation:"
       sudo_askpass xcodebuild -license
       logk
@@ -276,16 +274,16 @@ xcode_license
 
 # Setup Git configuration.
 logn "Configuring Git:"
-if [ -n "$STRAP_GIT_NAME" ] && ! git config user.name >/dev/null; then
-  git config --global user.name "$STRAP_GIT_NAME"
+if [ -n "$GIT_NAME" ] && ! git config user.name >/dev/null; then
+  git config --global user.name "$GIT_NAME"
 fi
 
-if [ -n "$STRAP_GIT_EMAIL" ] && ! git config user.email >/dev/null; then
-  git config --global user.email "$STRAP_GIT_EMAIL"
+if [ -n "$GIT_EMAIL" ] && ! git config user.email >/dev/null; then
+  git config --global user.email "$GIT_EMAIL"
 fi
 
-if [ -n "$STRAP_GITHUB_USER" ] && [ "$(git config github.user)" != "$STRAP_GITHUB_USER" ]; then
-  git config --global github.user "$STRAP_GITHUB_USER"
+if [ -n "$GITHUB_USER" ] && [ "$(git config github.user)" != "$GITHUB_USER" ]; then
+  git config --global github.user "$GITHUB_USER"
 fi
 
 # Setup Homebrew directory and permissions.
@@ -353,7 +351,7 @@ if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
 else
   echo
   log "Installing software updates:"
-  if [ -z "$STRAP_CI" ]; then
+  if [ -z "$CI" ]; then
     sudo_askpass softwareupdate --install --all
     xcode_license
     logk
@@ -566,9 +564,10 @@ pyenv global 3.10.0
 brew update && brew install nvm 
 mkdir /Users/lukehowsam/.nvm 
 nvm install node
-nvm install 16.14.2
-nvm alias default 16.14.2
-nvm use 16.14.2
+nvm install 16
+nvm install 18
+nvm alias default 16
+nvm use 16
 sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
 npm i -g vercel lite-server expo-cli typescript
 
@@ -580,7 +579,7 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Transmission"; do
   killall "${app}" > /dev/null 2>&1
 done 
-STRAP_SUCCESS="1"
+SUCCESS="1"
 log "Your system is now Bootstrapped! ✅"
 #--------------------
 # Manual Install: 
