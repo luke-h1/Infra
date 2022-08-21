@@ -19,6 +19,9 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 #eval "$(ssh-agent -s)
 ZSH_DISABLE_COMPFIX=true
+alias idea="open -a 'IntelliJ IDEA CE.app'"
+alias charm="open -a 'PyCharm CE.app'"
+alias rider="open -a 'Rider.app'"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
