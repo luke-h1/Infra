@@ -561,15 +561,21 @@ pip install --upgrade pip
 brew install pyenv
 pyenv install 3.10.0
 pyenv global 3.10.0
+brew update 
+brew upgrade 
+brew install node
+brew link node
 brew update && brew install nvm 
-mkdir /Users/lukehowsam/.nvm 
+mkdir /Users/lukehowsam/.nvm
 nvm install node
 nvm install 16
 nvm install 18
 nvm alias default 16
 nvm use 16
-sudo chown -R $USER:$(id -gn $USER) /Users/lukehowsam/.config 
+sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
+sudo gem install cocoapods
+sudo xcodebuild -license accept
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
