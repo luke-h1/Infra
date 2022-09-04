@@ -587,15 +587,23 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 done 
 SUCCESS="1"
 log "Your system is now Bootstrapped! ✅"
-#--------------------
-# Manual Install: 
-# macs fan control
-# stealth-mode mac setting
-# PIA client
-# Amphetamine
-# aws cli (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html)
-# go https://golang.org/dl/
-#--------------------
+
+log "❌---------------------------------------❌" 
+
+
+log "remember to setup manually:" 
+
+log "macs fan control"
+log "stealth-mode mac setting"
+log "PIA client"
+log "Amphetamine"
+log "Android studio"
+log "Docker"
+log "vscode extensions" 
+log "libmagic"
+
+log "❌---------------------------------------❌" 
+
 cat << EOF >> ~/.zprofile
 # Add Visual Studio Code (code)
 export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
