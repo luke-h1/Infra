@@ -5,9 +5,9 @@ set -e
 [[ "$1" = "--debug" || -o xtrace ]] && DEBUG="1"
 
 SUCCESS=""
+
 NAME='Luke Howsam'
 EMAIL=''
-
 GIT_NAME='luke-h1'
 GIT_EMAIL=''
 GITHUB_USER='luke-h1'
@@ -509,11 +509,6 @@ defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
-###############################################################################
-# Spectacle.app                                                               #
-###############################################################################
-
-
 echo "Wipe all default icons from Dock"
 defaults write com.apple.dock persistent-apps -array
 
@@ -589,10 +584,7 @@ SUCCESS="1"
 log "Your system is now Bootstrapped! ✅"
 
 log "❌---------------------------------------❌" 
-
-
 log "remember to setup manually:" 
-
 log "macs fan control"
 log "stealth-mode mac setting"
 log "PIA client"
@@ -601,7 +593,6 @@ log "Android studio"
 log "Docker"
 log "vscode extensions" 
 log "libmagic"
-
 log "❌---------------------------------------❌" 
 
 cat << EOF >> ~/.zprofile
