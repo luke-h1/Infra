@@ -13,7 +13,6 @@ code --install-extension mikestead.dotenv
 code --install-extension ms-python.python
 code --install-extension styled-components.vscode-styled-components
 code --install-extension sibiraj-s.vscode-scss-formatter
-code --install-extension orta.vscode-jest
 code --install-extension graphql.vscode-graphql
 code --install-extension kumar-harsh.graphql-for-vscode
 code --install-extension golang.go
