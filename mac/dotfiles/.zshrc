@@ -114,4 +114,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"export NVM_DIR=~/.nvm
+export PNPM_HOME="/Users/lukehive/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
 source $(brew --prefix nvm)/nvm.sh
