@@ -566,6 +566,7 @@ nvm install node
 nvm install 16
 nvm install 18
 nvm alias default 16
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 nvm use 16
 sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
