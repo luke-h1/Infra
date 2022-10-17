@@ -114,6 +114,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"export NVM_DIR=~/.nvm
-export PNPM_HOME="/Users/lukehive/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
 source $(brew --prefix nvm)/nvm.sh
+eval "$(pyenv init --path)"
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
