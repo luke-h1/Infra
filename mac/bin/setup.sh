@@ -565,9 +565,9 @@ mkdir /Users/lukehowsam/.nvm
 nvm install node
 nvm install 16
 nvm install 18
-nvm alias default 16
+nvm alias default 18
 curl -fsSL https://get.pnpm.io/install.sh | sh -
-nvm use 16
+nvm use 18
 sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
 sudo gem install cocoapods
