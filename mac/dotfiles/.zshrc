@@ -1,65 +1,21 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
-export PATH=${PATH}:/Users/lukehowsam/Library/Python/3.7/bin
-export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
-export PATH=${PATH}:/Users/lukehowsam/.dotnet/tools
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/lukehowsam/.oh-my-zsh"
-ZSH_THEME="cloud" 
-CASE_SENSITIVE="true"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-ZSH_DISABLE_COMPFIX=true
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-alias gwp='git add -A; git commit -am "--wip-- [skip ci]"'
-
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/lukehowsam/.oh-my-zsh"
-ZSH_THEME="cloud" 
-CASE_SENSITIVE="true"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-#eval "$(ssh-agent -s)
-ZSH_DISABLE_COMPFIX=true
-export JAVA_HOME=$(/usr/libexec/java_home)
-
-export ANDROID_HOME=/Users/lukehowsam/Library/Android/sdk
-export ANDROID_SDK_ROOT=/Users/lukehowsam/Library/Android/sdk
-export ANDROID_AVD_HOME=/Users/lukehowsam/.android/avd
-export PATH=$ANDROID_HOME/platform-tools:$PATH
-
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=${PATH}:/Users/lukehowsam/Library/Python/3.7/bin
 export PATH=/usr/local/bin:/usr/local/sbin:${PATH}
 export PATH=${PATH}:/Users/lukehowsam/.dotnet/tools
+export PATH=${PATH}:/Users/lukehowsam/.composer/vendor/bin
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukehowsam/.oh-my-zsh"
 ZSH_THEME="cloud" 
 CASE_SENSITIVE="true"
 plugins=(git)
+plugins=(zsh-autosuggestions)
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
@@ -68,7 +24,9 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 #eval "$(ssh-agent -s)
 ZSH_DISABLE_COMPFIX=true
-export JAVA_HOME=$(/usr/libexec/java_home)
+alias idea="open -a 'IntelliJ IDEA CE.app'"
+alias charm="open -a 'PyCharm CE.app'"
+alias rider="open -a 'Rider.app'"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -121,10 +79,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
-export ANDROID_HOME=/Users/lukehowsam/Library/Android/sdk
-export ANDROID_SDK_ROOT=/Users/lukehowsam/Library/Android/sdk
-export ANDROID_AVD_HOME=/Users/lukehowsam/.android/avd
-export PATH=$ANDROID_HOME/platform-tools:$PATH
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -158,6 +113,17 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias idea="open -a 'IntelliJ IDEA CE.app'"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# alias ohmyzsh="mate ~/.oh-my-zsh"export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# pnpm
+export PNPM_HOME="/Users/lukehowsam/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
