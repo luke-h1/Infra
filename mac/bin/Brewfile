@@ -54,7 +54,7 @@ brew "gnupg"
 brew "shellcheck"
 brew "pnpm"
 cask "chromedriver"
-cask "onyx"
+
 cask "postman"
 cask "visual-studio-code"
 cask "insomnia"

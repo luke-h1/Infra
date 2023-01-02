@@ -111,9 +111,28 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+# Open the pull requests for a repo
+pulls() {
+    gitURL="$(git config --get remote.origin.url)"
+    gitURL="${gitURL%.git}" # Remove .git from the end of the git URL
+    if [[ ! -z $1 && ! -z $2 ]]; then
+        open https://github.com/"$1"/"$2"/pulls # Replace with GitHub Enterprise URL (if applicable)
+    elif [[ $gitURL =~ ^git@ ]]; then
+        gitURL="$(echo $gitURL | sed 's/git@//')" # Remove git@ from the start of the git URL
+        github="$(echo $gitURL | sed 's/\:/\//')" # Replace the : between the URL and org with a / in the URL for GitHub
+        open http://"$github"/pulls
+    elif [[ $gitURL =~ ^https?:// ]]; then
+        open "$gitURL"/pulls
+    else
+        open https://github.com/pulls # Replace with GitHub Enterprise URL (if applicable)
+    fi
+    echo "🔃 Opened GitHub pull requests"
+}
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"export NVM_DIR=~/.nvm
+alias pulls=pulls
 source $(brew --prefix nvm)/nvm.sh
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
