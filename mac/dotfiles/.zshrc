@@ -26,6 +26,11 @@ ZSH_DISABLE_COMPFIX=true
 alias idea="open -a 'IntelliJ IDEA CE.app'"
 alias charm="open -a 'PyCharm CE.app'"
 alias rider="open -a 'Rider.app'"
+alias studio="open -a 'Android Studio.app'"
+alias code="open -a 'Visual Studio Code.app'"
+alias push="git push"
+alias g="git"
+alias gs="git status"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -63,27 +68,10 @@ alias rider="open -a 'Rider.app'"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
@@ -114,22 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 #
 #
-pulls() {
-    gitURL="$(git config --get remote.origin.url)"
-    gitURL="${gitURL%.git}" # Remove .git from the end of the git URL
-    if [[ ! -z $1 && ! -z $2 ]]; then
-        open https://github.com/"$1"/"$2"/pulls # Replace with GitHub Enterprise URL (if applicable)
-    elif [[ $gitURL =~ ^git@ ]]; then
-        gitURL="$(echo $gitURL | sed 's/git@//')" # Remove git@ from the start of the git URL
-        github="$(echo $gitURL | sed 's/\:/\//')" # Replace the : between the URL and org with a / in the URL for GitHub
-        open http://"$github"/pulls
-    elif [[ $gitURL =~ ^https?:// ]]; then
-        open "$gitURL"/pulls
-    else
-        open https://github.com/pulls # Replace with GitHub Enterprise URL (if applicable)
-    fi
-    echo "🔃 Opened GitHub pull requests"
-}
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
