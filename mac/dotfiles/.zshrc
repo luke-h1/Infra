@@ -20,8 +20,7 @@ source $ZSH/oh-my-zsh.sh
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+eval "$(fnm env --use-on-cd)"
 #eval "$(ssh-agent -s)
 ZSH_DISABLE_COMPFIX=true
 alias idea="open -a 'IntelliJ IDEA CE.app'"
@@ -111,7 +110,10 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Open the pull requests for a repo
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+#
+#
 pulls() {
     gitURL="$(git config --get remote.origin.url)"
     gitURL="${gitURL%.git}" # Remove .git from the end of the git URL
