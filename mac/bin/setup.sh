@@ -562,12 +562,7 @@ brew install node
 brew link node
 brew update && brew install nvm 
 mkdir /Users/lukehowsam/.nvm
-nvm install node
-nvm install 16
-nvm install 18
-nvm alias default 18
 curl -fsSL https://get.pnpm.io/install.sh | sh -
-nvm use 18
 sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
 sudo gem install cocoapods
