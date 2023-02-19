@@ -12,6 +12,7 @@ GIT_NAME='luke-h1'
 GIT_EMAIL=''
 GITHUB_USER='luke-h1'
 ISSUES_URL='https://github.com/luke-h1/Automation/issues'
+mkdir -p ~/.config && touch ~/.config/starship.toml
 
 sudo_askpass() {
   if [ -n "$SUDO_ASKPASS" ]; then
@@ -345,20 +346,20 @@ RUBY
 logk
 
 # Check and install any remaining software updates.
-logn "Checking for software updates:"
-if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
-  logk
-else
-  echo
-  log "Installing software updates:"
-  if [ -z "$CI" ]; then
-    sudo_askpass softwareupdate --install --all
-    xcode_license
-    logk
-  else
-    echo "SKIPPED (for CI)"
-  fi
-fi
+# logn "Checking for software updates:"
+# if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
+#   logk
+# else
+#   echo
+#   log "Installing software updates:"
+#   if [ -z "$CI" ]; then
+#     sudo_askpass softwareupdate --install --all
+#     xcode_license
+#     logk
+#   else
+#     echo "SKIPPED (for CI)"
+#   fi
+# fi
 
 
 # Avoid creating .DS_Store files on network or USB volumes
@@ -546,9 +547,10 @@ defaults write org.m0k.transmission EncryptionRequire -bool true
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew update
 brew upgrade
-brew bundle
+# brew bundle
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3 get-pip.py
 pip3 install pipenv
@@ -560,16 +562,21 @@ brew update
 brew upgrade 
 brew install node
 brew link node
-brew update && brew install nvm 
+brew update && brew install nvm
 mkdir /Users/lukehowsam/.nvm
+# nvm install node
+# nvm install 16
+# nvm install 18
+# nvm alias default 18
+
+brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
+
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
 sudo gem install cocoapods
 sudo xcodebuild -license accept
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
 for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   "Dock" "Finder" "Mail" "Messages" "Safari" "SystemUIServer" \
