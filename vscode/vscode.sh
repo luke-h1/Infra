@@ -21,3 +21,4 @@ code --install-extension TomiTurtiainen.rf-intellisense
 code --install-extension eamodio.gitlens
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension vscode-icons-team.vscode-icons
+code --install-extension Vue.volar
