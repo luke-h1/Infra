@@ -1,0 +1,10 @@
+regions:
+- global
+
+
+accounts:
+  "": {}
+
+
+account-blocklist: 
+  - "0000"
