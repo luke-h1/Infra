@@ -20,7 +20,6 @@ source $ZSH/oh-my-zsh.sh
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
-eval "$(fnm env --use-on-cd)"
 #eval "$(ssh-agent -s)
 ZSH_DISABLE_COMPFIX=true
 alias idea="open -a 'IntelliJ IDEA CE.app'"
