@@ -23,3 +23,7 @@ code --install-extension Gruntfuggly.todo-tree
 code --install-extension vscode-icons-team.vscode-icons
 code --install-extension Vue.volar
 code --install-extension GitHub.vscode-github-actions
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension GitHub.copilot
+code --install-extension mquandalle.graphql
+code --install-extension firsttris.vscode-jest-runner
