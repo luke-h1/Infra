@@ -37,7 +37,6 @@
     "go.toolsManagement.autoUpdate": true,
     "window.zoomLevel": 1,
     "importCost.vueExtensions": [
-
         "\\.vue$"
     ]
 }
