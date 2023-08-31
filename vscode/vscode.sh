@@ -27,3 +27,4 @@ code --install-extension GitHub.copilot
 code --install-extension mquandalle.graphql
 code --install-extension firsttris.vscode-jest-runner
 code --install-extension tamasfe.even-better-toml
+code --install-extension blanu.vscode-styled-jsx
