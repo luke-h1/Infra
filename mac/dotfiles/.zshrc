@@ -8,28 +8,29 @@ export PATH=${PATH}:/Users/lukehowsam/.composer/vendor/bin
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukehowsam/.oh-my-zsh"
 ZSH_THEME="cloud" 
 CASE_SENSITIVE="true"
-plugins=(git)
-plugins=(zsh-autosuggestions)
+plugins=(
+  git 
+  zsh-autosuggestions
+  bundler
+  dotenv
+  macos
+  rake
+  rbenv
+  ruby
+)
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export PATH="/usr/local/opt/qt/bin:$PATH"
-#eval "$(ssh-agent -s)
-ZSH_DISABLE_COMPFIX=true
-alias idea="open -a 'IntelliJ IDEA CE.app'"
-alias charm="open -a 'PyCharm CE.app'"
-alias rider="open -a 'Rider.app'"
 alias studio="open -a 'Android Studio.app'"
 alias code="open -a 'Visual Studio Code.app'"
-alias push="git push"
-alias g="git"
-alias gs="git status"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -67,12 +68,6 @@ alias gs="git status"
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -103,7 +98,6 @@ plugins=(git)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"export NVM_DIR=~/.nvm
-alias pulls=pulls
 source $(brew --prefix nvm)/nvm.sh
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
@@ -127,6 +121,7 @@ esac
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export PATH="$PATH:/Users/lukehowsam/Downloads/flutter/bin"
 
 ####
 # ZSH function to auto-switch to correct Node version
@@ -209,8 +204,17 @@ auto-switch-node-version() {
     fi
   fi
 }
+# if [ "$(arch)" = "arm64" ]; then
+    # eval "$(/opt/homebrew/bin/brew shellenv)"
+# else
+    # eval "$(/usr/local/bin/brew shellenv)"
+# fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Run the above function in ZSH whenever you change directory
 autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
+export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
