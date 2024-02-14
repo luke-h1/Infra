@@ -29,3 +29,4 @@ code --install-extension tamasfe.even-better-toml
 code --install-extension blanu.vscode-styled-jsx
 code --install-extension Orta.vscode-jest
 code --install-extension Dart-Code.dart-code
+code --install-extension matheusq94.TFS
