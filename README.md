@@ -1,3 +1,3 @@
-# Automation
+# Infra
 
-Central repo for my dotfiles and deployment configurations
+Shared Infrastructure configuration files for various projects
