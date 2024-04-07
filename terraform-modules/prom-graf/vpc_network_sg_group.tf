@@ -16,6 +16,7 @@ resource "aws_internet_gateway" "prometheus_ig" {
   tags = {
     Name        = "${var.name}_ig"
     Environment = var.env
+    Service     = "Monitoring"
   }
 }
 

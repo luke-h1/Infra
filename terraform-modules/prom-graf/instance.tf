@@ -16,12 +16,12 @@ resource "aws_instance" "prometheus_instance" {
   key_name               = aws_key_pair.prometheus_key_pair.id
   vpc_security_group_ids = [aws_security_group.prometheus_security_group.id]
   subnet_id              = aws_subnet.prometheus_subnet.id
-
   connection {
     user        = "ubuntu"
     host        = self.public_ip
     private_key = tls_private_key.sskeygen_execution.private_key_pem
   }
+
 
   # Copy prometheus file to instance
   provisioner "file" {

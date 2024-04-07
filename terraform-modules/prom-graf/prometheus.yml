@@ -9,7 +9,7 @@ alerting:
   alertmanagers:
     - static_configs:
         - targets:
-          # - alertmanager:9093
+            - alertmanager:9093
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
@@ -31,9 +31,10 @@ scrape_configs:
   - job_name: "node"
     ec2_sd_configs:
       - region: eu-west-2
-        access_key: <access_key>
-        secret_key: <secret_key>
+        access_key: ""
+        secret_key: ""
         port: 9100
+
     relabel_configs:
       - source_labels:
           - "__meta_ec2_tag_Name"
