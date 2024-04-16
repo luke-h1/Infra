@@ -27,7 +27,7 @@ def lambda_handler(event, context):
     for log_group in log_groups:
         response = logs.list_tags_log_group(logGroupName=log_group['logGroupName'])
         log_group_tags = response['tags']
-        if 's3_sync' in log_group_tags and log_group_tags['s3_sync'] == 'true':
+        if 's3export' in log_group_tags and log_group_tags['s3export'] == 'true':
             log_groups_to_export.append(log_group['logGroupName'])
 
     for log_group_name in log_groups_to_export:
