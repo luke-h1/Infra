@@ -100,9 +100,10 @@ resource "aws_lambda_function" "log_exporter" {
 }
 
 resource "aws_cloudwatch_event_rule" "log_exporter" {
-  name                = "log-exporter-role"
-  description         = "Rule to trigger the log exporter lambda"
-  schedule_expression = "rate(8 hours)"
+  name        = "log-exporter-role"
+  description = "Rule to trigger the log exporter lambda"
+  #   schedule_expression = "rate(8 hours)"
+  schedule_expression = "rate(1 minute)"
 }
 
 resource "aws_cloudwatch_event_target" "log_exporter" {
