@@ -1,6 +1,6 @@
 resource "aws_cloudwatch_event_rule" "cloudwatch_exporter" {
   name                = "cloudwatch-exporter-rule"
-  schedule_expression = "rate(1 minute)"
+  schedule_expression = "rate(8 hours)"
 }
 
 resource "aws_cloudwatch_event_target" "cloudwatch_exporter" {
