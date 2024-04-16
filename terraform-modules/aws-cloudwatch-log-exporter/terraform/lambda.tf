@@ -57,7 +57,7 @@ resource "aws_iam_role_policy" "log_exporter" {
       "Action": [
         "logs:CreateExportTask",
         "logs:Describe*",
-        "logs:ListTagsLogGroup"
+        "cloudwatch:ListMetrics"
       ],
       "Effect": "Allow",
       "Resource": "*"
