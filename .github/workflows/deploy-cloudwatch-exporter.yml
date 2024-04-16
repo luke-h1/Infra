@@ -37,7 +37,7 @@ jobs:
       - name: Build lambda
         working-directory: terraform-modules/aws-cloudwatch-log-exporter/lambda
         run: |
-          go build -o main main.go
+          go build -o bootstrap main.go
           zip main.zip main
           mv main.zip ../terraform
 

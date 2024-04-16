@@ -1,7 +1,7 @@
 data "archive_file" "lambda_archive" {
   type        = "zip"
   source_dir  = "${path.module}/../lambda"
-  output_path = "${path.module}/main.zip"
+  output_path = "${path.module}/bootstrap.zip"
 }
 
 resource "aws_lambda_function" "cloudwatch_exporter" {
