@@ -46,7 +46,7 @@ resource "aws_iam_role_policy_attachment" "lambda_policy_attachments" {
 }
 
 resource "aws_iam_role_policy" "log_exporter" {
-  name = "log-exporter-${random_string.random.result}"
+  name = "log-exporter-policy"
   role = aws_iam_role.lambda_role.id
 
   policy = <<EOF
