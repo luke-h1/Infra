@@ -1,4 +1,4 @@
-name: Deploy cw exporter
+name: Deploy cloudwatch log exporter
 on:
   workflow_dispatch:
 concurrency:
@@ -6,7 +6,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    name: Deploy cw exporter
+    name: Deploy cloudwatch log exporter
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
