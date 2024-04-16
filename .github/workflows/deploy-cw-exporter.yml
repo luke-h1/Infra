@@ -34,17 +34,24 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
+      - name: Build lambda
+        working-directory: terraform-modules/aws-cloudwatch-log-exporter/lambda
+        run: |
+          go build -o main main.go
+          zip main.zip main
+          mv main.zip ../terraform
+
       - name: Terraform init
-        working-directory: terraform-modules/cw-exporter
+        working-directory: terraform-modules/aws-cloudwatch-log-exporter/terraform
         run: terraform init -input=false
 
       - name: Terraform lint
-        working-directory: terraform-modules/cw-exporter
+        working-directory: terraform-modules/aws-cloudwatch-log-exporter/terraform
         run: terraform fmt -check
 
       - name: Terraform plan
         id: plan
-        working-directory: terraform-modules/cw-exporter
+        working-directory: terraform-modules/aws-cloudwatch-log-exporter/terraform
         run: terraform plan -no-color -out=tfplan
 
       - name: Terraform Plan Status
@@ -52,5 +59,5 @@ jobs:
         run: exit 1
 
       - name: Terraform apply
-        working-directory: terraform-modules/cw-exporter
+        working-directory: terraform-modules/aws-cloudwatch-log-exporter/terraform
         run: terraform apply -auto-approve tfplan
