@@ -43,6 +43,7 @@ func getLogGroupsTaggedWithS3Export(ctx context.Context) ([]string, error) {
         TagFilters: []types.TagFilter{
             {
                 Key:    aws.String("s3Export"),
+                Values: []string{"true"},
             },
         },
         ResourceTypeFilters: []string{"logs:log-group"},
