@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "cw-terraform-tfstate"
+    bucket = "cw-log-exporter-terraform-tfstate"
     key    = "vpc/terraform.tfstate"
     region = "eu-west-2"
   }
