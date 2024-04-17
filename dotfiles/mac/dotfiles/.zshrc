@@ -11,10 +11,10 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lukehowsam/.oh-my-zsh"
-ZSH_THEME="cloud" 
+ZSH_THEME="cloud"
 CASE_SENSITIVE="true"
 plugins=(
-  git 
+  git
   zsh-autosuggestions
   bundler
   dotenv
@@ -138,7 +138,7 @@ export PATH="$PATH:/Users/lukehowsam/Downloads/flutter/bin"
 #   prints a clear warning, so you can decide whether you want to run `nvm install`.
 #
 # - If no .nvmrc is found, it does `nvm use default`.
-# 
+#
 # Recommended: leave your default as something generic,
 # e.g. do `nvm alias default stable`
 ####
@@ -218,3 +218,9 @@ autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
 export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
+export DENO_INSTALL="/Users/lukehowsam/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
