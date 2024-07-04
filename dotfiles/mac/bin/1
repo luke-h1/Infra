@@ -293,6 +293,15 @@ logn "Updating Homebrew:"
 brew update --quiet
 logk
 
+# Install Homebrew Bundle, Cask and Services tap.
+log "Installing Homebrew taps and extensions:"
+brew bundle --quiet --file=- <<RUBY
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "homebrew/services"
+RUBY
+logk
+
 # Check and install any remaining software updates.
 # logn "Checking for software updates:"
 # if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
@@ -382,6 +391,33 @@ defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 
+
+echo "Safari section" 
+# Warn about fraudulent websites
+defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+
+echo "Privacy: Don't send search queries to Apple"
+defaults write com.apple.Safari UniversalSearchEnabled -bool false
+defaults write com.apple.Safari SuppressSearchSuggestions -bool true
+
+echo "Hiding Safari's bookmarks bar by default"
+defaults write com.apple.Safari ShowFavoritesBar -bool false
+
+echo "Hiding Safari's sidebar in Top Sites"
+defaults write com.apple.Safari ShowSidebarInTopSites -bool false
+
+echo "Disabling Safari's thumbnail cache for History and Top Sites"
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+
+echo "Enabling Safari's debug menu"
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+echo "Making Safari's search banners default to Contains instead of Starts With"
+defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
+
+echo "Removing useless icons from Safari's bookmarks bar"
+defaults write com.apple.Safari ProxiesInBookmarksBar "()"
+ 
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 # UI CONFIG
@@ -468,11 +504,20 @@ defaults write org.m0k.transmission EncryptionRequire -bool true
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
 defaults write org.m0k.transmission BlocklistNew -bool true
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew update
 brew upgrade
+# brew bundle
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+pip3 install pipenv
+pip install --upgrade pip
+pyenv install 3.10.0
+pyenv global 3.10.0
+brew update 
+brew upgrade 
 brew install node
 brew link node
-brew bundle
 brew update && brew install nvm
 mkdir /Users/lukehowsam/.nvm
 # nvm install node
@@ -482,6 +527,7 @@ mkdir /Users/lukehowsam/.nvm
 
 brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 
+curl -fsSL https://get.pnpm.io/install.sh | sh -
 sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
 sudo gem install cocoapods
