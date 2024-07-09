@@ -27,3 +27,7 @@ provider "newrelic" {
   api_key    = var.api_key
   region     = "EU"
 }
+
+resource "newrelic_one_dashboard_json" "lambda_dashboard" {
+  json = file("${path.module}/dashboards/lambda.json")
+}
