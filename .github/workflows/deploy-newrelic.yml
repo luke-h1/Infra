@@ -39,16 +39,16 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform init
-        working-directory: terraform-modules/new-relic/
+        working-directory: terraform-modules/newrelic/
         run: terraform init -input=false
 
       - name: Terraform lint
-        working-directory: terraform-modules/new-relic/
+        working-directory: terraform-modules/newrelic/
         run: terraform fmt -check
 
       - name: Terraform plan
         id: plan
-        working-directory: terraform-modules/new-relic/
+        working-directory: terraform-modules/newrelic/
         run: terraform plan -no-color -out=tfplan
 
       - name: Terraform Plan Status
@@ -56,5 +56,5 @@ jobs:
         run: exit 1
 
       - name: Terraform apply
-        working-directory: terraform-modules/new-relic/
+        working-directory: terraform-modules/newrelic/
         run: terraform apply -auto-approve tfplan
