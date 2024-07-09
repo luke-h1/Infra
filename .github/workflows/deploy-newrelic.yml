@@ -1,0 +1,60 @@
+name: Deploy newrelic infrastructure
+on:
+  workflow_dispatch:
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+env:
+  TF_VAR_api_key: ${{ secrets.NR_API_KEY }}
+  TF_VAR_account_id: ${{ secrets.NR_ACCOUNT_ID }}
+
+jobs:
+  deploy:
+    name: Deploy newrelic infrastructure
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install moreutils
+        run: sudo apt install moreutils
+
+      # https://github.com/actions/virtual-environments/issues/1187
+      - name: tune linux network
+        run: sudo ethtool -K eth0 tx off rx off
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-2
+          mask-aws-account-id: true
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform init
+        working-directory: terraform-modules/new-relic/
+        run: terraform init -input=false
+
+      - name: Terraform lint
+        working-directory: terraform-modules/new-relic/
+        run: terraform fmt -check
+
+      - name: Terraform plan
+        id: plan
+        working-directory: terraform-modules/new-relic/
+        run: terraform plan -no-color -out=tfplan
+
+      - name: Terraform Plan Status
+        if: steps.plan.outcome == 'failure'
+        run: exit 1
+
+      - name: Terraform apply
+        working-directory: terraform-modules/new-relic/
+        run: terraform apply -auto-approve tfplan
