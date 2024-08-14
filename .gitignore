@@ -55,4 +55,4 @@ tmp
 *.test
 *.out
 go.work
-lambda.zip
+lambda.zip.idea

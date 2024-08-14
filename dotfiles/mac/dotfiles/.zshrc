@@ -115,13 +115,9 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# bun completions
-[ -s "/Users/lukehowsam/.bun/_bun" ] && source "/Users/lukehowsam/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$PATH:/Users/lukehowsam/Downloads/flutter/bin"
+alias idea="open -na 'IntelliJ IDEA.app'"
+
 
 ####
 # ZSH function to auto-switch to correct Node version
@@ -204,11 +200,7 @@ auto-switch-node-version() {
     fi
   fi
 }
-# if [ "$(arch)" = "arm64" ]; then
-    # eval "$(/opt/homebrew/bin/brew shellenv)"
-# else
-    # eval "$(/usr/local/bin/brew shellenv)"
-# fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -217,10 +209,9 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U add-zsh-hook
 add-zsh-hook chpwd auto-switch-node-version
 auto-switch-node-version
-export PATH="/usr/local/opt/game-porting-toolkit/bin:$PATH"
-export DENO_INSTALL="/Users/lukehowsam/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+[[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
