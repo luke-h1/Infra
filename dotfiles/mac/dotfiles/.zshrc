@@ -116,8 +116,7 @@ esac
 # pnpm end
 
 
-alias idea="open -na 'IntelliJ IDEA.app'"
-
+alias idea="open -na 'IntelliJ IDEA.app' --args '$@'"
 
 ####
 # ZSH function to auto-switch to correct Node version

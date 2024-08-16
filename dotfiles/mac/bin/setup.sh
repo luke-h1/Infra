@@ -475,10 +475,7 @@ brew link node
 brew bundle
 brew update && brew install nvm
 mkdir /Users/lukehowsam/.nvm
-# nvm install node
-# nvm install 16
-# nvm install 18
-# nvm alias default 18
+curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" && sudo installer -pkg AWSCLIV2.pkg -target /
 
 brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 
