@@ -463,6 +463,10 @@ defaults write org.m0k.transmission AutoSize -bool true
 log "Auto updating to betas"
 defaults write org.m0k.transmission AutoUpdateBeta -bool true
 
+log "key-repeat speed ups"
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 1
+
 log "Setting up the best block list"
 defaults write org.m0k.transmission EncryptionRequire -bool true
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
