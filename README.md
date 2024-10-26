@@ -1,7 +1,7 @@
 # Infra
 
-Shared Infrastructure configuration files for various projects
+Shared dotfiles for laptop setup and IAC configuration for various projects
 
-[![Deploy newrelic infrastructure](https://github.com/luke-h1/Infra/actions/workflows/deploy-newrelic.yml/badge.svg)](https://github.com/luke-h1/Infra/actions/workflows/deploy-newrelic.yml)
 
-[![Clear cache](https://github.com/luke-h1/Infra/actions/workflows/clear-github-cache.yml/badge.svg)](https://github.com/luke-h1/Infra/actions/workflows/clear-github-cache.yml)
+
+> This repo consists of several dotfiles for setting up a new laptop and terraform IAC config files to automate common cloud configurations   
