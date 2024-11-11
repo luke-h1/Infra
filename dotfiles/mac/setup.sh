@@ -11,7 +11,8 @@ EMAIL=''
 GIT_NAME='luke-h1'
 GIT_EMAIL=''
 GITHUB_USER='luke-h1'
-ISSUES_URL='https://github.com/luke-h1/Automation/issues'
+WORK=false
+ISSUES_URL='https://github.com/luke-h1/infra/issues'
 mkdir -p ~/.config && touch ~/.config/starship.toml
 
 sudo_askpass() {
@@ -129,7 +130,6 @@ BASH
   fi
 }
 
-
 # Initialise (or reinitialise) sudo to save unhelpful prompts later.
 sudo_init() {
   if [ -z "$INTERACTIVE" ]; then
@@ -188,6 +188,17 @@ groups | grep $Q -E "\b(admin)\b" || abort "Add $USER to the admin group."
 
 # Prevent sleeping during script execution, as long as the machine is on AC power
 caffeinate -s -w $$ &
+
+if [ -z "$EMAIL" ] || [ -z "$GIT_EMAIL" ]; then
+  echo "Warning: Email or Git email is not set. Would you like to set it now? (y/n)"
+  read -r response
+  if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    echo "Please enter your email: "
+    read -r EMAIL
+    echo "Please enter your git email: "
+    read -r GIT_EMAIL
+  fi
+fi
 
 # Set some basic security settings.
 logn "Configuring security settings:"
@@ -294,20 +305,20 @@ brew update --quiet
 logk
 
 # Check and install any remaining software updates.
-# logn "Checking for software updates:"
-# if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
-#   logk
-# else
-#   echo
-#   log "Installing software updates:"
-#   if [ -z "$CI" ]; then
-#     sudo_askpass softwareupdate --install --all
-#     xcode_license
-#     logk
-#   else
-#     echo "SKIPPED (for CI)"
-#   fi
-# fi
+logn "Checking for software updates:"
+if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
+  logk
+else
+  echo
+  log "Installing software updates:"
+  if [ -z "$CI" ]; then
+    sudo_askpass softwareupdate --install --all
+    xcode_license
+    logk
+  else
+    echo "SKIPPED (for CI)"
+  fi
+fi
 
 
 # Avoid creating .DS_Store files on network or USB volumes
@@ -429,6 +440,7 @@ echo "Change Menu bar clock format"
 defaults write com.apple.menuextra.clock DateFormat -string "EEE MMM d  H:mm"
 
 # Disable the sound effects on boot
+echo "disabling sound effects on boot"
 sudo nvram SystemAudioVolume=" "
 
 echo "Wipe all default icons from Dock"
@@ -439,53 +451,71 @@ defaults write com.apple.dock orientation right
 
 mkdir -p ~/Downloads/Incomplete
 log "Setting up an incomplete downloads folder in Downloads"
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-log "Setting auto-add folder to be Downloads"
-defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
 
-log "Don't prompt for confirmation before downloading"
-defaults write org.m0k.transmission DownloadAsk -bool false
+if [ "$WORK" = false ]; then
+  defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+  defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-log "Trash original torrent files after adding them"
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+  log "Setting auto-add folder to be Downloads"
+  defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
 
-log "Hiding the donate message"
-defaults write org.m0k.transmission WarningDonate -bool false
+  log "Don't prompt for confirmation before downloading"
+  defaults write org.m0k.transmission DownloadAsk -bool false
 
-log "Hiding the legal disclaimer"
-defaults write org.m0k.transmission WarningLegal -bool false
+  log "Trash original torrent files after adding them"
+  defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
-log "Auto-resizing the window to fit transfers"
-defaults write org.m0k.transmission AutoSize -bool true
+  log "Hiding the donate message"
+  defaults write org.m0k.transmission WarningDonate -bool false
 
-log "Auto updating to betas"
-defaults write org.m0k.transmission AutoUpdateBeta -bool true
+  log "Hiding the legal disclaimer"
+  defaults write org.m0k.transmission WarningLegal -bool false
 
-log "key-repeat speed ups"
+  log "Auto-resizing the window to fit transfers"
+  defaults write org.m0k.transmission AutoSize -bool true
+
+  log "Auto updating to betas"
+  defaults write org.m0k.transmission AutoUpdateBeta -bool true
+else
+  log "Not setting up transmission for work laptop"
+fi
+
+
+log "Speeding up key-repeat"
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 1
 
-log "Setting up the best block list"
-defaults write org.m0k.transmission EncryptionRequire -bool true
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+if [ "$WORK" = false ]; then
+  log "Setting up the best block list"
+  defaults write org.m0k.transmission EncryptionRequire -bool true
+  defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+  defaults write org.m0k.transmission BlocklistNew -bool true
+  defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+else 
+  log "Transmission setup disabled for work laptop"
+fi
+
 brew update
 brew upgrade
 brew install node
 brew link node
+sudo softwareupdate --install-rosetta
 brew bundle
-brew update && brew install nvm
-mkdir /Users/lukehowsam/.nvm
+brew link node
+brew update
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg" && sudo installer -pkg AWSCLIV2.pkg -target /
-
-brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 
 sudo chown -R $USER:$(id -gn $USER) /Users/$USER/.config 
 npm i -g vercel lite-server expo-cli typescript
-sudo gem install cocoapods
+cd ~/
+
+log "setting up zsh"
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
+
 sudo xcodebuild -license accept
 
 find ~/Library/Application\ Support/Dock -name "*.db" -maxdepth 1 -delete
@@ -497,17 +527,21 @@ done
 SUCCESS="1"
 log "Your system is now Bootstrapped! ✅"
 
-log "❌---------------------------------------❌" 
-log "remember to setup manually:" 
-log "macs fan control"
-log "stealth-mode mac setting"
-log "PIA client"
-log "Amphetamine"
-log "Android studio"
-log "Docker"
-log "vscode extensions" 
-log "libmagic"
-log "❌---------------------------------------❌" 
+log "⭐️---------------------------------------⭐️" 
+log "Remember to set up manually:" 
+log "+-------------------------+"
+log "| Applications            |"
+log "+-------------------------+"
+log "| macs fan control        |"
+log "| stealth-mode mac setting|"
+log "| PIA client              |"
+log "| Amphetamine             |"
+log "| Android studio          |"
+log "| Docker                  |"
+log "| vscode extensions       |"
+log "| libmagic                |"
+log "+-------------------------+"
+log "⭐️---------------------------------------⭐️"
 
 cat << EOF >> ~/.zprofile
 # Add Visual Studio Code (code)
