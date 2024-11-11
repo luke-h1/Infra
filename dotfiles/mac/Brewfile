@@ -28,7 +28,6 @@ brew "jq"
 brew "k6"
 brew "moreutils"
 brew "nghttp2"
-brew "font-ubuntu-nerd-font"
 brew "nmap"
 brew "node", link: false
 brew "nvm"
