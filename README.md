@@ -1,4 +1,4 @@
-# Automation
+# config
 
 Dotfiles
 
