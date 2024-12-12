@@ -12,6 +12,8 @@ GIT_NAME='luke-h1'
 GIT_EMAIL=''
 GITHUB_USER='luke-h1'
 ISSUES_URL='https://github.com/luke-h1/Automation/issues'
+IS_WORK=false
+
 mkdir -p ~/.config && touch ~/.config/starship.toml
 
 sudo_askpass() {
@@ -39,7 +41,6 @@ sudo_refresh() {
   fi
   reset_debug
 }
-
 
 trap "cleanup" EXIT
 
@@ -189,44 +190,49 @@ groups | grep $Q -E "\b(admin)\b" || abort "Add $USER to the admin group."
 # Prevent sleeping during script execution, as long as the machine is on AC power
 caffeinate -s -w $$ &
 
-# Set some basic security settings.
-logn "Configuring security settings:"
-sudo_askpass defaults write com.apple.Safari \
-  com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled \
-  -bool false
-sudo_askpass defaults write com.apple.Safari \
-  com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles \
-  -bool false
-sudo_askpass defaults write com.apple.screensaver askForPassword -int 1
-sudo_askpass defaults write com.apple.screensaver askForPasswordDelay -int 0
-sudo_askpass defaults write /Library/Preferences/com.apple.alf globalstate -int 1
-sudo_askpass launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist 2>/dev/null
+if [ "$WORK" != true ]; then
+  # Set some basic security settings.
+  logn "Configuring security settings:"
+  sudo_askpass defaults write com.apple.Safari \
+    com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled \
+    -bool false
+  sudo_askpass defaults write com.apple.Safari \
+    com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabledForLocalFiles \
+    -bool false
+  sudo_askpass defaults write com.apple.screensaver askForPassword -int 1
+  sudo_askpass defaults write com.apple.screensaver askForPasswordDelay -int 0
+  sudo_askpass defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+  sudo_askpass launchctl load /System/Library/LaunchDaemons/com.apple.alf.agent.plist 2>/dev/null
 
-if [ -n "$NAME" ] && [ -n "$EMAIL" ]; then
-	LOGIN_TEXT=$(escape "Found this computer? Please contact $NAME at $EMAIL.")
-  echo "$LOGIN_TEXT" | grep -q '[()]' && LOGIN_TEXT="'$LOGIN_TEXT'"
-  sudo_askpass defaults write /Library/Preferences/com.apple.loginwindow \
-    LoginwindowText \
-    "$LOGIN_TEXT"
-fi
-logk
-
+  if [ -n "$NAME" ] && [ -n "$EMAIL" ]; then
+    LOGIN_TEXT=$(escape "Found this computer? Please contact $NAME at $EMAIL.")
+    echo "$LOGIN_TEXT" | grep -q '[()]' && LOGIN_TEXT="'$LOGIN_TEXT'"
+    sudo_askpass defaults write /Library/Preferences/com.apple.loginwindow \
+      LoginwindowText \
+      "$LOGIN_TEXT"
+  fi
 # Check and enable full-disk encryption.
-logn "Checking full-disk encryption status:"
-if fdesetup status | grep $Q -E "FileVault is (On|Off, but will be enabled after the next restart)."; then
-  logk
-elif [ -n "$CI" ]; then
-  echo "SKIPPED (for CI)"
-elif [ -n "$INTERACTIVE" ]; then
-  echo
-  log "Enabling full-disk encryption on next reboot:"
-  sudo_askpass fdesetup enable -user "$USER" \
-    | tee ~/Desktop/"FileVault Recovery Key.txt"
+  logn "Checking full-disk encryption status:"
+  if fdesetup status | grep $Q -E "FileVault is (On|Off, but will be enabled after the next restart)."; then
+    logk
+  elif [ -n "$CI" ]; then
+    echo "SKIPPED (for CI)"
+  elif [ -n "$INTERACTIVE" ]; then
+    echo
+    log "Enabling full-disk encryption on next reboot:"
+    sudo_askpass fdesetup enable -user "$USER" \
+      | tee ~/Desktop/"FileVault Recovery Key.txt"
+    logk
+  else
+    echo
+    abort "Run 'sudo fdesetup enable -user \"$USER\"' to enable full-disk encryption."
+  fi
+
   logk
 else
-  echo
-  abort "Run 'sudo fdesetup enable -user \"$USER\"' to enable full-disk encryption."
+  log "Security settings configuration is disabled for work."
 fi
+
 
 
 # Install the Xcode Command Line Tools.
@@ -346,21 +352,24 @@ RUBY
 logk
 
 # Check and install any remaining software updates.
-# logn "Checking for software updates:"
-# if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
-#   logk
-# else
-#   echo
-#   log "Installing software updates:"
-#   if [ -z "$CI" ]; then
-#     sudo_askpass softwareupdate --install --all
-#     xcode_license
-#     logk
-#   else
-#     echo "SKIPPED (for CI)"
-#   fi
-# fi
-
+if [ "$WORK" != true ]; then
+  logn "Checking for software updates:"
+  if softwareupdate -l 2>&1 | grep $Q "No new software available."; then
+    logk
+  else
+    echo
+    log "Installing software updates:"
+    if [ -z "$CI" ]; then
+      sudo_askpass softwareupdate --install --all
+      xcode_license
+      logk
+    else
+      echo "SKIPPED (for CI)"
+    fi
+  fi
+else
+  log "Software update check is disabled for work."
+fi
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -393,8 +402,10 @@ if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
   sudo scutil --set LocalHostName $HOSTNAME
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $HOSTNAME
 fi
+
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
 defaults write com.apple.BezelServices kDimTime -int 300
+
 echo "Disable display from automatically adjusting brightness? (y/n)"
 read -r response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
@@ -517,36 +528,42 @@ log "Move Dock to right"
 defaults write com.apple.dock orientation right
 
 mkdir -p ~/Downloads/Incomplete
-log "Setting up an incomplete downloads folder in Downloads"
-defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-log "Setting auto-add folder to be Downloads"
-defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
+if [ "$WORK" != true ]; then
+  log "Setting up an incomplete downloads folder in Downloads"
+  defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
+  defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
 
-log "Don't prompt for confirmation before downloading"
-defaults write org.m0k.transmission DownloadAsk -bool false
+  log "Setting auto-add folder to be Downloads"
+  defaults write org.m0k.transmission AutoImportDirectory -string "${HOME}/Downloads"
 
-log "Trash original torrent files after adding them"
-defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
+  log "Don't prompt for confirmation before downloading"
+  defaults write org.m0k.transmission DownloadAsk -bool false
 
-log "Hiding the donate message"
-defaults write org.m0k.transmission WarningDonate -bool false
+  log "Trash original torrent files after adding them"
+  defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
 
-log "Hiding the legal disclaimer"
-defaults write org.m0k.transmission WarningLegal -bool false
+  log "Hiding the donate message"
+  defaults write org.m0k.transmission WarningDonate -bool false
 
-log "Auto-resizing the window to fit transfers"
-defaults write org.m0k.transmission AutoSize -bool true
+  log "Hiding the legal disclaimer"
+  defaults write org.m0k.transmission WarningLegal -bool false
 
-log "Auto updating to betas"
-defaults write org.m0k.transmission AutoUpdateBeta -bool true
+  log "Auto-resizing the window to fit transfers"
+  defaults write org.m0k.transmission AutoSize -bool true
 
-log "Setting up the best block list"
-defaults write org.m0k.transmission EncryptionRequire -bool true
-defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
-defaults write org.m0k.transmission BlocklistNew -bool true
-defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+  log "Auto updating to betas"
+  defaults write org.m0k.transmission AutoUpdateBeta -bool true
+
+  log "Setting up the best block list"
+  defaults write org.m0k.transmission EncryptionRequire -bool true
+  defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+  defaults write org.m0k.transmission BlocklistNew -bool true
+  defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
+else
+  log "Transmission setup is disabled for work."
+fi
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 brew update
 brew upgrade
@@ -564,10 +581,6 @@ brew install node
 brew link node
 brew update && brew install nvm
 mkdir /Users/lukehowsam/.nvm
-# nvm install node
-# nvm install 16
-# nvm install 18
-# nvm alias default 18
 
 brew tap homebrew/cask-fonts && brew install --cask font-fira-code-nerd-font
 
@@ -584,7 +597,7 @@ for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
   killall "${app}" > /dev/null 2>&1
 done 
 SUCCESS="1"
-log "Your system is now Bootstrapped! ✅"
+log "✅ System is now Bootstrapped! ✅"
 
 log "❌---------------------------------------❌" 
 log "remember to setup manually:" 
