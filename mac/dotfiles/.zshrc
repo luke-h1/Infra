@@ -36,7 +36,6 @@ alias studio="open -a 'Android Studio.app'"
 alias code="open -a 'Visual Studio Code.app'"
 alias ws="open -a 'WebStorm.app'"
 
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
